@@ -18,5 +18,4 @@ When creating an issue please copy, paste and update the following template. Not
 
 **What's your request? (please include any relevant images, size requirements etc)**?
 {{ let me know what you're looking for
-
 ```
