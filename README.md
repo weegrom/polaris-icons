@@ -5,17 +5,17 @@ When creating an issue please copy, paste and update the following template. Not
 
 ```
 **Name**
-{{ your name}}
+Your name
 
 **Slack handle**
-{{ you on Slack }}
+@yourslackhandle
 
 **What team / project is this for?**
-{{ your team / project }}
+Your team
 
 **When would you like it by?** 
-{{ launch date / design deadline etc }}
+DD/MM/YYYY
 
 **What's your request? (please include any relevant images, size requirements etc)**?
-{{ let me know what you're looking for
+Description
 ```
