@@ -50,7 +50,7 @@ When to use minor icons:
 
 Polaris icons will continue to expand just as fast as the rest of the platform, as our needs dictate.
 
-If you’ve identified the need for a specific icon not already present within the icon system, please submit an icon request using the template below.
+If you’ve identified the need for a specific icon not already present within the icon system, please submit an icon request in this /polaris-icons GitHub repo using the template below.
 
 ```
 **Name**
