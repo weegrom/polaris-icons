@@ -46,7 +46,7 @@ When to use minor icons:
 * Inline, usually accompanying text, to add clarity to an action
 * In form elements (`<input>`, `<button>`, etc)
 
-## 3.	Expanding the system
+## 3.	Request an icon
 
 Polaris icons will continue to expand just as fast as the rest of the platform, as our needs dictate.
 
