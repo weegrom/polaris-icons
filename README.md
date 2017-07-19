@@ -10,9 +10,9 @@ The sketch file contains everything within the Polaris icons system. The `Polari
 
 The sketch file can be found in Abstract [here](https://share.abstractapp.com/f348c474-832c-4032-8867-4c84286d8666).
 
-_In the vast majority of cases, icons have been designed for a specific use. When using icons, please be sympathetic toward our goal of cohesion and don’t use an icon for a purpose it was not intended for. If you need an icon, please see section 3 below._
+_When using icons, please be sympathetic toward our goal of cohesion and don’t use an icon for a purpose it was not intended for. If you need an icon, please see *Section 3* below._
 
-## 2.	Major and Minor icons?
+## 2.	Major and Minor icons
 
 Within the system there are 2 distinct icon variants, namely `major` and `minor` icons. While they are part of the same larger system, they differ in design and usage.
 
@@ -50,7 +50,7 @@ When to use minor icons:
 
 Polaris icons will continue to expand just as fast as the rest of the platform, as our needs dictate.
 
-If you’ve identified the need for a specific icon not already present within the icon system, please submit an icon request using the template below:
+If you’ve identified the need for a specific icon not already present within the icon system, please submit an icon request using the template below.
 
 ```
 **Name**
