@@ -50,7 +50,7 @@ When to use minor icons:
 
 Polaris icons will continue to expand just as fast as the rest of the platform, as our needs dictate.
 
-If you’ve identified the need for a specific icon not already present within the icon system:
+If you’ve identified the need for a specific icon not already present within the icon system:  
 **[Request a new icon](https://github.com/Shopify/polaris-icons/issues/new)**
 
 _It is vital that existing icons are not repurposed. Icons are designed, in the vast majority of cases, for a single use. This ensures we don’t start to mix metaphors, and that merchants only ever associate an icon with a single meaning._
