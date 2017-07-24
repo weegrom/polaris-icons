@@ -50,24 +50,8 @@ When to use minor icons:
 
 Polaris icons will continue to expand just as fast as the rest of the platform, as our needs dictate.
 
-If you’ve identified the need for a specific icon not already present within the icon system, please submit an icon request in this /polaris-icons GitHub repo using the template below.
-
-```
-**Name**
-Your name
-
-**Slack handle**
-@yourslackhandle
-
-**What team / project is this for?**
-Your team
-
-**When would you like it by?** 
-DD/MM/YYYY
-
-**What's your request? (please include any relevant images, size requirements etc)**?
-Description
-```
+If you’ve identified the need for a specific icon not already present within the icon system:  
+**[Request a new icon](https://github.com/Shopify/polaris-icons/issues/new)**
 
 _It is vital that existing icons are not repurposed. Icons are designed, in the vast majority of cases, for a single use. This ensures we don’t start to mix metaphors, and that merchants only ever associate an icon with a single meaning._
 
