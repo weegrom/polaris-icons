@@ -14,17 +14,31 @@ _When using icons, please be sympathetic toward our goal of cohesion and don’t
 
 ## 2.	Major and Minor icons
 
-Within the system there are 2 distinct icon variants, namely `major` and `minor` icons. While they are part of the same larger system, they differ in design and usage.
+Within the system there are 2 distinct icon variants, `major` and `minor` icons. While they are part of the same larger system, they differ in design and implementation and have specific use cases.
 
-### 2a.	Major
+### 2a. Design
 
-Major icons:
+#### 2a1. Major
 
-* Are `20px` by `20px` in size
-* Are primarily composed of strokes
-* Have 2 colour variants (monotone and two-tone)
+Major icons are designed on a `20px` by `20px` bounding box. While icons may not use the full height, or width, of the bounding box, they will use as much of the space as is possible (while maintaining correct visual proportions).
 
-When to use major icons:
+Major icons are primarily composed of strokes and have 2 colour variants.
+
+#### 2a2. Minor
+
+Minor icons are designed on a `16px` by `16px` bounding box.
+
+Minor icons are primarily composed of solid shapes and have a single colour variant.
+
+### 2b. Implementation
+
+In **both** cases, icons are exported on a `20px` by `20px` SVG canvas. The reason for this is to make using them in production code as simple as possible. All that’s needed is to identify the type of icon (i.e. `major` or `minor`) without worrying about setting explicit sizing.
+
+### 2c. Use cases
+
+#### 2c1. Major icons
+
+Major icons should be used:
 
 * In main navigation in apps, mobile web and web
 * To help promote, reinforce, or draw special attention to a specific area or metaphor
@@ -33,15 +47,9 @@ Apart from their use in main navigation, major icons are not actionable or click
 
 _In most cases you will use the monotone version of a given icon. The two-tone variant is there for active-states or when specific highlight needs to be given to the icon. Every major icon has 2 variants, regardless of if the two-tone variant has a fill or not._
 
-### 2b. Minor
+#### 2c2. Minor icons
 
-Minor icons:
-
-* Are `16px` by `16px` in size.
-* Are primarily composed of solid shapes.
-* Have a single colour variant.
-
-When to use minor icons:
+Minor icons should be used:
 
 * Inline, usually accompanying text, to add clarity to an action
 * In form elements (`<input>`, `<button>`, etc)
