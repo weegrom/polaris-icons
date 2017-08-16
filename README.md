@@ -4,6 +4,22 @@ Polaris icons is the collective name for our new, cohesive, icon system. As part
 
 Icons within this system are simple and friendly. Each icon is an exercise in distillation, in taking a metaphor and representing its most basic form.
 
+##### Table of contents
+* [Sketch file](#1sketch-file)
+* [Major and Minor icons](#2major-and-minor-icons)
+  * [Design](#2a-design)
+    * [Major icons](#2a1-major)
+    * [Minor icons](#2a2-minor)
+  * [Implementation](#2b-implementation)
+    * [Neutron](#2b1-neutron)
+    * [Inline icon helper](#2b2-inline-icon-helper)
+  * [Use cases](#2c-use-cases)
+    * [Major icons](#2c1-major-icons)
+    * [Minor icons](#2c2-minor-icons)
+* [Request an icon](#3request-an-icon)
+* [Questions?](#4questions)
+
+
 ## 1.	Sketch file
 
 The sketch file contains everything within the Polaris icons system. The `Polaris icons` page contains an alphabetically sorted list of icons within the system, split into `major` and `minor` sections for ease of browsing.
@@ -33,6 +49,14 @@ Minor icons are primarily composed of solid shapes and have a single colour vari
 ### 2b. Implementation
 
 In **both** cases, icons are exported on a `20px` by `20px` SVG canvas. The reason for this is to make using them in production code as simple as possible. All that’s needed is to identify the type of icon (i.e. `major` or `minor`) without worrying about setting explicit sizing.
+
+#### 2b1. Neutron
+
+Coming soon.
+
+#### 2b2. Inline icon helper
+
+Coming soon
 
 ### 2c. Use cases
 
