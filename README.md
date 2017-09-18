@@ -11,8 +11,8 @@ Icons within this system are simple and friendly. Each icon is an exercise in di
     * [Major icons](#2a1-major)
     * [Minor icons](#2a2-minor)
   * [Implementation](#2b-implementation)
-    * [Neutron](#2b1-neutron)
-    * [Inline icon helper](#2b2-inline-icon-helper)
+    * [React](#2b1-react)
+    * [Rails](#2b2-rails)
   * [Use cases](#2c-use-cases)
     * [Major icons](#2c1-major-icons)
     * [Minor icons](#2c2-minor-icons)
@@ -50,11 +50,11 @@ Minor icons are primarily composed of solid shapes and have a single colour vari
 
 In **both** cases, icons are exported on a `20px` by `20px` SVG canvas. The reason for this is to make using them in production code as simple as possible. All that’s needed is to identify the type of icon (i.e. `major` or `minor`) without worrying about setting explicit sizing.
 
-#### 2b1. Neutron
+#### 2b1. React
 
 Coming soon.
 
-#### 2b2. Inline icon helper
+#### 2b2. Rails
 
 Coming soon
 
