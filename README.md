@@ -16,7 +16,7 @@ Icons within this system are simple and friendly. Each icon is an exercise in di
   * [Use cases](#2c-use-cases)
     * [Major icons](#2c1-major-icons)
     * [Minor icons](#2c2-minor-icons)
-* [Naming icons] (#3naming-icons)
+* [Naming icons](#3naming-icons)
 * [Request an icon](#4request-an-icon)
 * [Questions?](#5questions)
 
