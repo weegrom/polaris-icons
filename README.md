@@ -81,16 +81,17 @@ Minor icons should be used:
 
 ## 3.	Naming icons
 
-Icons are named three ways:
+The goal of this icon naming strategy is to make icon usage clear. Product area icon names have a single use, whereas generic icons named by functionality or by how they look are a little more forgiving. In most cases, tehre will be a clear action associated with an icon (add image), but in some, we'll have to support an action or idea by choosing a name that describes how it looks (circle alert). 
+
+### Icons are named three ways:
 
 1. By product area (i.e. home, orders, products, etc)
 
 These icons are explicit, and have a single-application. They shouldn’t be used to symbolize anything other than their product area.
 
 2. By functionality/action (i.e. add image)
-3. If an icon has more than one function, we default to naming it by how it looks (i.e. camera, clock)
 
-The goal is to make their intended usage clear than if all icons were named according to how they look (ie house, inbox, swing tag etc). Generic icons are a little more forgiving in their application. In most cases, their use will be a clear action (add image), or used to support an action or idea by choosing a name that describes how it looks (circle alert). 
+3. If an icon has more than one function, we default to naming it by how it looks (i.e. camera, clock)
 
 ## 4.	Request an icon
 
