@@ -81,7 +81,7 @@ Minor icons should be used:
 
 ## 3.	Naming icons
 
-The goal of this icon naming strategy is to make icon usage clear. Product area icon names have a single use, whereas generic icons named by functionality or by how they look are a little more forgiving. In most cases, tehre will be a clear action associated with an icon (add image), but in some, we'll have to support an action or idea by choosing a name that describes how it looks (circle alert). 
+The goal of this icon naming strategy is to make icon usage clear. Product area icon names have a single use, whereas generic icons named by functionality or by how they look are a little more forgiving. In most cases, there will be a clear action associated with an icon (add image), but in some, we'll have to support an action or idea by choosing a name that describes how it looks (circle alert). 
 
 ### Icons are named three ways:
 
