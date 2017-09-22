@@ -16,8 +16,9 @@ Icons within this system are simple and friendly. Each icon is an exercise in di
   * [Use cases](#2c-use-cases)
     * [Major icons](#2c1-major-icons)
     * [Minor icons](#2c2-minor-icons)
-* [Request an icon](#3request-an-icon)
-* [Questions?](#4questions)
+* [Naming icons] (#3naming-icons)
+* [Request an icon](#4request-an-icon)
+* [Questions?](#5questions)
 
 
 ## 1.	Sketch file
@@ -78,7 +79,20 @@ Minor icons should be used:
 * Inline, usually accompanying text, to add clarity to an action
 * In form elements (`<input>`, `<button>`, etc)
 
-## 3.	Request an icon
+## 3.	Naming icons
+
+Icons are named three ways:
+
+1. By product area (i.e. home, orders, products, etc)
+
+These icons are explicit, and have a single-application. They shouldn’t be used to symbolize anything other than their product area.
+
+2. By functionality/action (i.e. add image)
+3. If an icon has more than one function, we default to naming it by how it looks (i.e. camera, clock)
+
+The goal is to make their intended usage clear than if all icons were named according to how they look (ie house, inbox, swing tag etc). Generic icons are a little more forgiving in their application. In most cases, their use will be a clear action (add image), or used to support an action or idea by choosing a name that describes how it looks (circle alert). 
+
+## 4.	Request an icon
 
 Polaris icons will continue to expand just as fast as the rest of the platform, as our needs dictate.
 
@@ -87,6 +101,6 @@ If you’ve identified the need for a specific icon not already present within t
 
 _It is vital that existing icons are not repurposed. Icons are designed, in the vast majority of cases, for a single use. This ensures we don’t start to mix metaphors, and that merchants only ever associate an icon with a single meaning._
 
-## 4.	Questions?
+## 5.	Questions?
 
 If you’ve got any questions, head over to the `#polaris-icons` channel on Slack.
