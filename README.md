@@ -16,6 +16,7 @@ Icons within this system are simple and friendly. Each icon is an exercise in di
   * [Use cases](#use-cases)
     * [Major icons](#major-icons)
     * [Minor icons](#minor-icons)
+* [Spot icons](#spot-icons)
 * [Naming icons](#naming-icons)
 * [Request an icon](#request-an-icon)
 * [Questions?](#questions)
@@ -83,6 +84,15 @@ Minor icons should be used:
 
 * Inline, usually accompanying text, to add clarity to an action
 * In form elements (`<input>`, `<button>`, etc)
+
+## Spot icons
+
+WIP, more information coming soon.
+
+Our spot icon system was redesigned in August 2018, and as of now (early September 2018), is currently in the process of being rolled out.  Moving forward, any new spot icons will be developed in this new style.
+
+- [Unicorn project](https://unicorn.shopify.io/projects/5221)
+- [WIP principles](https://docs.google.com/document/d/1Tq4s_afceREkXeeA5WmfAdScAqfu3AcJCiVXRCqlOsQ/edit)
 
 ## Naming icons
 
