@@ -1,0 +1,6 @@
+# https://services.shopify.io/services/polaris-icons/testing
+org_line: 
+owners:
+- Shopify/polaris
+testing:
+  classification: library
