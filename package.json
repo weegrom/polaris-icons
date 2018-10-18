@@ -5,5 +5,13 @@
   "license": "MIT",
   "publishConfig": {
     "access": "restricted"
+  },
+  "dependencies": {
+    "rollup": "^0.66.5"
+  },
+  "devDependencies": {
+    "rollup-plugin-svgo": "^1.0.1",
+    "rollup-plugin-typescript2": "^0.17.1",
+    "typescript": "^3.1.3"
   }
 }
