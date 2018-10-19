@@ -1,7 +1,7 @@
 {
   "name": "@shopify/polaris-icons-internal",
   "version": "1.0.1",
-  "main": "npm/types.ts",
+  "main": "js/index.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "restricted"
