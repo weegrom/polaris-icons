@@ -6,7 +6,7 @@ import {svgOptions} from '@shopify/images/optimize';
 export default {
   input: 'js/index.ts',
   output: {
-    file: 'bundle.js',
+    file: 'build/bundle.js',
     format: 'cjs'
   },
   plugins: [
