@@ -1,6 +1,7 @@
 // rollup.config.js
 import typescript from 'rollup-plugin-typescript2';
 import svgo from 'rollup-plugin-svgo';
+import {svgOptions} from '@shopify/images/optimize';
 
 export default {
   input: 'js/index.ts',
@@ -12,6 +13,6 @@ export default {
     typescript({
       module: 'ESNext',
     }),
-    svgo(),
+    svgo(svgOptions()),
   ],
 };
