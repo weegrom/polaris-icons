@@ -6,12 +6,13 @@ import {svgOptions} from '@shopify/images/optimize';
 export default {
   input: 'js/index.ts',
   output: {
-    file: 'build/bundle.js',
+    file: 'index.js',
     format: 'cjs'
   },
   plugins: [
     typescript({
       module: 'ESNext',
+      useTsconfigDeclarationDir: true,
     }),
     svgo(svgOptions()),
   ],

@@ -2,10 +2,14 @@
   "name": "@shopify/polaris-icons-internal",
   "version": "1.0.1",
   "main": "js/index.ts",
-  "license": "MIT",
+  "license": "custom",
   "publishConfig": {
     "access": "restricted"
   },
+  "files": [
+    "index.js",
+    "types/"
+  ],
   "dependencies": {
     "@shopify/images": "^1.1.5",
     "rollup": "^0.66.5"
