@@ -2,14 +2,18 @@
   "name": "@shopify/polaris-icons-internal",
   "version": "1.0.2",
   "main": "js/index.ts",
-  "license": "custom",
+  "license": "SEE LICENSE IN LICENSE.md",
   "publishConfig": {
     "access": "restricted"
   },
+  "prepublish": "yarn run build",
   "files": [
     "index.js",
     "types/"
   ],
+  "scripts": {
+    "build": "yarn run rollup -c"
+  },
   "dependencies": {
     "@shopify/images": "^1.1.5",
     "rollup": "^0.66.5"
