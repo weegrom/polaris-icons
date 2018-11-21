@@ -12,6 +12,7 @@ export default {
   plugins: [
     typescript({
       module: 'ESNext',
+      useTsconfigDeclarationDir: true,
     }),
     svgo(svgOptions()),
   ],
