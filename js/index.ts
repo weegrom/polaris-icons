@@ -21,7 +21,7 @@ import {default as circleChevronLeft} from '../icons/polaris/circle-chevron-left
 import {default as circleChevronRight} from '../icons/polaris/circle-chevron-right.svg';
 import {default as circleChevronUp} from '../icons/polaris/circle-chevron-up.svg';
 import {default as circleInformation} from '../icons/polaris/circle-information.svg';
-import {default as circlePlus} from '../icons/polaris/circle-plus.svg';
+import {default as circlePlusOutline} from '../icons/polaris/circle-plus-outline.svg';
 import {default as conversation} from '../icons/polaris/conversation.svg';
 import {default as deleteIcon} from '../icons/polaris/delete.svg';
 import {default as disable} from '../icons/polaris/disable.svg';
@@ -32,12 +32,18 @@ import {default as embed} from '../icons/polaris/embed.svg';
 import {default as exportIcon} from '../icons/polaris/export.svg';
 import {default as external} from '../icons/polaris/external.svg';
 import {default as help} from '../icons/polaris/help.svg';
+import {default as home} from '../icons/polaris/home.svg';
 import {default as horizontalDots} from '../icons/polaris/horizontal-dots.svg';
 import {default as importIcon} from '../icons/polaris/import.svg';
+import {default as logOut} from '../icons/polaris/logOut.svg';
 import {default as menu} from '../icons/polaris/menu.svg';
 import {default as notes} from '../icons/polaris/notes.svg';
 import {default as notification} from '../icons/polaris/notification.svg';
+import {default as onlineStore} from '../icons/polaris/onlineStore.svg';
+import {default as orders} from '../icons/polaris/orders.svg';
 import {default as print} from '../icons/polaris/print.svg';
+import {default as products} from '../icons/polaris/products.svg';
+import {default as profile} from '../icons/polaris/profile.svg';
 import {default as refresh} from '../icons/polaris/refresh.svg';
 import {default as risk} from '../icons/polaris/risk.svg';
 import {default as save} from '../icons/polaris/save.svg';
@@ -69,7 +75,7 @@ const POLARIS_ICONS = {
   circleChevronRight,
   circleChevronUp,
   circleInformation,
-  circlePlus,
+  circlePlusOutline,
   conversation,
   deleteIcon,
   disable,
@@ -80,12 +86,18 @@ const POLARIS_ICONS = {
   exportIcon,
   external,
   help,
+  home,
   horizontalDots,
   importIcon,
+  logOut,
   menu,
   notes,
   notification,
+  onlineStore,
+  orders,
   print,
+  products,
+  profile,
   refresh,
   risk,
   save,
