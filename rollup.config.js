@@ -3,11 +3,11 @@ import typescript from 'rollup-plugin-typescript2';
 import svgo from 'rollup-plugin-svgo';
 import {svgOptions} from '@shopify/images/optimize';
 
-export default {
+const rollupConfig = {
   input: 'js/index.ts',
   output: {
     file: 'index.js',
-    format: 'cjs'
+    format: 'cjs',
   },
   plugins: [
     typescript({
@@ -17,3 +17,5 @@ export default {
     svgo(svgOptions()),
   ],
 };
+
+export default rollupConfig;

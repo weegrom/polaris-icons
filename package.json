@@ -13,13 +13,17 @@
   "types": "types/js/index.d.ts",
   "scripts": {
     "build": "yarn run rollup -c",
-    "prepublish": "yarn run build"
+    "prepublish": "yarn run build",
+    "lint": "yarn run eslint ."
   },
   "dependencies": {
     "@shopify/images": "^1.1.5",
     "rollup": "^0.66.5"
   },
   "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-plugin-shopify": "^26.1.1",
+    "prettier": "^1.15.2",
     "rollup-plugin-svgo": "^1.0.1",
     "rollup-plugin-typescript2": "^0.17.1",
     "typescript": "^3.1.3"
