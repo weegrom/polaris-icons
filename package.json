@@ -1,0 +1,11 @@
+
+{
+  "name": "@shopify/polaris-icons-internal",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "build": "echo 'hello world'"
+  }
+}
