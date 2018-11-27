@@ -2,9 +2,15 @@ containers:
   default:
     docker: circleci/ruby:2.5.1-node-browsers
 
-steps:
-- label: Tests
-  timeout: 5m
-  run:
-  - echo "Hello World"
+shared:
+  tests: &tests
+    label: "🎩 Tests"
+    container: default
+    timeout: 5m
+    dependencies:
+      - yarn
+    run:
+      - yarn run build 
 
+steps:
+  - <<: *tests
