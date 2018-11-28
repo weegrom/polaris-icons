@@ -13,7 +13,6 @@
   "types": "types/js/index.d.ts",
   "scripts": {
     "build": "yarn run rollup -c",
-    "prepublish": "yarn run build",
     "lint": "yarn run eslint ."
   },
   "dependencies": {
@@ -21,7 +20,9 @@
     "ajv": "^6.5.5",
     "glob": "^7.1.3",
     "js-yaml": "^3.12.0",
-    "rollup": "^0.66.5"
+    "rollup": "^0.66.5",
+    "rollup-pluginutils": "^2.3.3",
+    "svgo": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "^5.9.0",

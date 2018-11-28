@@ -1,7 +1,6 @@
 // rollup.config.js
 import typescript from 'rollup-plugin-typescript2';
-import svgo from 'rollup-plugin-svgo';
-import {svgOptions} from '@shopify/images/optimize';
+import icon from './config/rollup/plugins/icon';
 
 const rollupConfig = {
   input: 'js/index.ts',
@@ -14,7 +13,10 @@ const rollupConfig = {
       module: 'ESNext',
       useTsconfigDeclarationDir: true,
     }),
-    svgo(svgOptions()),
+    icon({
+      include: 'icons/polaris/*.svg',
+      exclude: 'node_modules/**',
+    }),
   ],
 };
 
