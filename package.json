@@ -13,6 +13,7 @@
   "types": "types/js/index.d.ts",
   "scripts": {
     "build": "yarn run rollup -c",
+    "prepublish": "yarn run build",
     "lint": "yarn run eslint ."
   },
   "dependencies": {
