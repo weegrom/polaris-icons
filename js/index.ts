@@ -21,6 +21,7 @@ import {default as circleChevronLeft} from '../icons/polaris/circle-chevron-left
 import {default as circleChevronRight} from '../icons/polaris/circle-chevron-right.svg';
 import {default as circleChevronUp} from '../icons/polaris/circle-chevron-up.svg';
 import {default as circleInformation} from '../icons/polaris/circle-information.svg';
+import {default as circlePlus} from '../icons/polaris/circle-plus.svg';
 import {default as circlePlusOutline} from '../icons/polaris/circle-plus-outline.svg';
 import {default as conversation} from '../icons/polaris/conversation.svg';
 import {default as deleteIcon} from '../icons/polaris/delete.svg';
@@ -75,6 +76,7 @@ const POLARIS_ICONS = {
   circleChevronRight,
   circleChevronUp,
   circleInformation,
+  circlePlus,
   circlePlusOutline,
   conversation,
   deleteIcon,
