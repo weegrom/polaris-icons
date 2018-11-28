@@ -2,6 +2,11 @@
   "extends": [
     "plugin:shopify/typescript",
     "plugin:shopify/react",
+    "plugin:shopify/jest",
+    "plugin:shopify/node",
     "plugin:shopify/prettier"
-  ]
+  ],
+  "rules": {
+    "no-console": "off"
+  }
 }

@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Shopify Icon",
+  "type": "object",
+  "required": ["author", "date_added", "description", "exclusive", "major", "tags"],
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "type": "string",
+      "description": "The slack-searchable name of the author of the icon"
+    },
+    "date_added": {
+      "type": "string",
+      "description": "The date the icon was added to the repository"
+    },
+    "description": {
+      "type": "string",
+      "description": "A short description of the icon, and its purpose"
+    },
+    "exclusive": {
+      "type": "boolean",
+      "description": "Whether the icon is for exclusive use in certain parts of the admin(e.g.: fraud)"
+    },
+    "major": {
+      "type": "boolean",
+      "description": "Whether this is a major icon or not"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Any tags that could be associated with the icon, to help with search"
+    }
+  }
+}
