@@ -1,10 +1,11 @@
 {
-  "name": "@shopify/polaris-icons-internal",
-  "version": "1.0.16",
+  "name": "@shopify/polaris-icons",
+  "version": "0.1",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE.md",
   "publishConfig": {
-    "access": "restricted"
+    "access": "public",
+    "@shopify:registry": "https://registry.npmjs.org"
   },
   "files": [
     "index.js",
@@ -13,7 +14,7 @@
   "types": "types/js/index.d.ts",
   "scripts": {
     "build": "yarn run rollup -c",
-    "prepublish": "yarn run build",
+    "prepublish": "yarn run build && echo 'N/A' > README.md",
     "lint": "yarn run eslint ."
   },
   "dependencies": {
