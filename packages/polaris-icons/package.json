@@ -1,0 +1,46 @@
+{
+  "name": "@shopify/polaris-icons",
+  "version": "1.0.0-beta.2",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "Shopify Inc.",
+  "main": "index.js",
+  "types": "types/js/index.d.ts",
+  "scripts": {
+    "build": "yarn run rollup -c",
+    "prepublish": "yarn run build && echo 'N/A' > README.md",
+    "lint": "yarn run eslint ."
+  },
+  "publishConfig": {
+    "access": "public",
+    "@shopify:registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "index.js",
+    "types/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shopify/polaris-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shopify/polaris-icons/issues"
+  },
+  "homepage": "https://github.com/Shopify/polaris-icons/blob/master/packages/polaris-icons/README.md",
+  "dependencies": {
+    "@shopify/images": "^1.1.5",
+    "svgo": "^1.1.1"
+  },
+  "devDependencies": {
+    "ajv": "^6.5.5",
+    "eslint": "^5.9.0",
+    "eslint-plugin-shopify": "^26.1.1",
+    "glob": "^7.1.3",
+    "js-yaml": "^3.12.0",
+    "prettier": "^1.15.2",
+    "rollup": "^0.66.5",
+    "rollup-pluginutils": "^2.3.3",
+    "rollup-plugin-svgo": "^1.0.1",
+    "rollup-plugin-typescript2": "^0.17.1",
+    "typescript": "^3.1.3"
+  }
+}

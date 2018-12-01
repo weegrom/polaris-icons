@@ -1,6 +1,6 @@
 // rollup.config.js
 import typescript from 'rollup-plugin-typescript2';
-import icon from './config/rollup/plugins/icon';
+import icon from '../../config/rollup/plugins/icon';
 
 const rollupConfig = {
   input: 'js/index.ts',
