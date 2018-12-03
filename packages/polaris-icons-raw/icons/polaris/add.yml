@@ -1,9 +1,10 @@
-author: "Andre Rocha"
+authors:
+  - adam.whitcoft <adam.whitcroft@shopify.com>
 date_added: 27-11-2018
 description: "A plus symbol used to indicate addition"
 exclusive: false
 major: false
-tags: 
+tags:
   - plus
   - addition
   - add
