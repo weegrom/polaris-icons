@@ -4,7 +4,7 @@ date_added: 27-11-2018
 description: "An abstract symbol used to represent exporting a resource"
 exclusive: false
 major: false
-tags: 
+keywords: 
   - export
   - take out
   - resource
