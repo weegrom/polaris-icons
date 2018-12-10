@@ -1,6 +1,9 @@
 # https://services.shopify.io/services/polaris-icons/testing
 org_line: 
 owners:
-- Shopify/polaris
+  - Shopify/polaris
 testing:
   classification: library
+slack_channels:
+  - polaris-icons
+  - polaris-icon-guild
