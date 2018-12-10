@@ -1,0 +1,29 @@
+{
+  "name": "polaris-icons-internal",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "amrocha <andre.rocha@shopify.com>",
+  "homepage": "https://github.com/shopify/polaris-icons/tree/master/packages/polaris-icons-internal#readme",
+  "license": "MIT",
+  "main": "lib/polaris-icons-internal.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shopify/polaris-icons.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/Shopify/polaris-icons/issues"
+  }
+}

@@ -1,5 +1,6 @@
 // rollup.config.js
 import typescript from 'rollup-plugin-typescript2';
+import resolve from 'rollup-plugin-node-resolve';
 import icon from '../../config/rollup/plugins/icon';
 
 const rollupConfig = {
@@ -13,10 +14,8 @@ const rollupConfig = {
       module: 'ESNext',
       useTsconfigDeclarationDir: true,
     }),
-    icon({
-      include: 'icons/polaris/*.svg',
-      exclude: 'node_modules/**',
-    }),
+    resolve(),
+    icon(),
   ],
 };
 
