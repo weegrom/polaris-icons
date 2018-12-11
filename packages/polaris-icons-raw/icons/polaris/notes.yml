@@ -1,7 +1,9 @@
 authors:
   - adam.whitcoft <adam.whitcroft@shopify.com>
-date_added: 27-11-2018
-description: "A document symbol used to represent notes"
+date_added: 2018-11-14
+date_modified: 2018-11-14
+description: >
+    "A document symbol used to represent notes"
 exclusive: false
 major: false
 keywords: 
