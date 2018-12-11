@@ -3,7 +3,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  A not permitted symbol used to represent disabled actions
+  A not permitted symbol used to represent disabled actions.
 exclusive_use:
 public: false
 set: minor
@@ -14,4 +14,3 @@ keywords:
   - stop
   - not permitted
   - not allowed
-  - no

@@ -3,7 +3,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  An ellipsis symbol used to represent an ellipsis menu
+  An ellipsis symbol used to represent an ellipsis menu.
 exclusive_use:
 public: false
 set: minor

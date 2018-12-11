@@ -3,7 +3,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  A question mark symbol used to represent help
+  A question mark symbol used to represent help.
 exclusive_use:
 public: false
 set: minor

@@ -3,7 +3,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  A printer symbol used to represent printing
+  A printer symbol used to represent printing.
 exclusive_use:
 public: false
 set: minor

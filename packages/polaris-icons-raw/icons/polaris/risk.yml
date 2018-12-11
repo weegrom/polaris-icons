@@ -3,7 +3,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  A warning symbol used to indicate risk
+  A warning symbol used to indicate risk.
 exclusive_use:
 public: false
 set: minor

@@ -3,7 +3,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  An abstract symbo used to represent embedding a web resource
+  Used to represent embedding a web resource.
 exclusive_use:
 public: false
 set: minor
