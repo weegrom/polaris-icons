@@ -3,7 +3,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    An abstract symbol used to represent duplicating
+  An abstract symbol used to represent duplicating
 exclusive_use:
 public: false
 set: minor
