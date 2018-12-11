@@ -8,7 +8,7 @@
   "main": "lib/polaris-icons-raw.js",
   "directories": {
     "lib": "lib",
-    "test": "__tests__"
+    "test": "tests"
   },
   "publishConfig": {
     "access": "restricted"
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/Shopify/polaris-icons.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "node ./tests/validate-metadata.js"
   },
   "bugs": {
     "url": "https://github.com/Shopify/polaris-icons/issues"
