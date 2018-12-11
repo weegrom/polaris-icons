@@ -10,7 +10,16 @@ shared:
     dependencies:
       - yarn
     run:
+      - yarn run test 
+  build: &build
+    label: "Build"
+    container: default
+    timeout: 5m
+    dependencies:
+      - yarn
+    run:
       - yarn run build 
 
 steps:
   - <<: *tests
+  - <<: *build
