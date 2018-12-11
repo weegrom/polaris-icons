@@ -6,7 +6,7 @@ description: >
     A profile symbol used to indicate a user's profile
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 keywords:

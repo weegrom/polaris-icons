@@ -6,7 +6,7 @@ description: >
     An exclamation symbol used to indicate attention
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 keywords:

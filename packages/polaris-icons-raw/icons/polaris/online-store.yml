@@ -6,7 +6,7 @@ description: >
     A shop stand symbol used to represent an online store
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 keywords:

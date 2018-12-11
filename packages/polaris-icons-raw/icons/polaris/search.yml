@@ -6,7 +6,7 @@ description: >
     A magnifying glass symbol used to indicate search
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 keywords:

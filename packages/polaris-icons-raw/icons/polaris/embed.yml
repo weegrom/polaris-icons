@@ -6,7 +6,7 @@ description: >
     An abstract symbo used to represent embedding a web resource
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 keywords:

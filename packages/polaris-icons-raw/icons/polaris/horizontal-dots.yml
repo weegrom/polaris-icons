@@ -6,7 +6,7 @@ description: >
     An ellipsis symbol used to represent an ellipsis menu
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 keywords:

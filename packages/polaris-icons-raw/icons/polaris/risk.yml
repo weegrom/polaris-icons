@@ -6,7 +6,7 @@ description: >
     A warning symbol used to indicate risk
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 keywords:

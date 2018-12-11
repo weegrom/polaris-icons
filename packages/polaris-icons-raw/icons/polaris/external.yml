@@ -6,7 +6,7 @@ description: >
     An abstract symbol used to represent an external resource
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 keywords:

@@ -6,7 +6,7 @@ description: >
     An arrow pointing right
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 keywords:

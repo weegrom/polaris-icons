@@ -6,7 +6,7 @@ description: >
     A hamburger menu symbol used to represent a menu
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 keywords:

@@ -6,7 +6,7 @@ description: >
     A chevron down
 exclusive_use:
 public: false
-set: Major
+set: minor
 monotone: true
 version: 1
 
