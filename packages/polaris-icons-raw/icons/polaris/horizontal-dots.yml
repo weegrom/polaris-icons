@@ -3,10 +3,13 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    "An ellipsis symbol used to represent an ellipsis menu"
-exclusive: false
-major: false
-keywords: 
+    An ellipsis symbol used to represent an ellipsis menu
+exclusive_use:
+public: false
+set: Major
+monotone: true
+version: 1
+keywords:
   - menu
   - ellipsis
   - three dots

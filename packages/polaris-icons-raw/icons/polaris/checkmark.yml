@@ -3,10 +3,13 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    "A checkmark symbol"
-exclusive: false
-major: false
-keywords: 
+    A checkmark symbol
+exclusive_use:
+public: false
+set: Major
+monotone: true
+version: 1
+keywords:
   - checkmark
   - yes
   - ok

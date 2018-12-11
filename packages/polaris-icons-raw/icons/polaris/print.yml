@@ -3,10 +3,13 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    "A printer symbol used to represent printing"
-exclusive: false
-major: false
-keywords: 
+    A printer symbol used to represent printing
+exclusive_use:
+public: false
+set: Major
+monotone: true
+version: 1
+keywords:
   - print
   - printing
   - printer

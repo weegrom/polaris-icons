@@ -3,10 +3,13 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    "An abstract symbol used to represent duplicating"
-exclusive: false
-major: false
-keywords: 
+    An abstract symbol used to represent duplicating
+exclusive_use:
+public: false
+set: Major
+monotone: true
+version: 1
+keywords:
   - duplicate
   - copy
   - make another one

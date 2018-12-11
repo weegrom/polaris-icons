@@ -3,10 +3,13 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    "A magnifying glass symbol used to indicate search"
-exclusive: false
-major: false
-keywords: 
+    A magnifying glass symbol used to indicate search
+exclusive_use:
+public: false
+set: Major
+monotone: true
+version: 1
+keywords:
   - search
   - find
   - glass

@@ -3,10 +3,13 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    "A home symbol used to represent a home page"
-exclusive: false
-major: false
-keywords: 
+    A home symbol used to represent a home page
+exclusive_use:
+public: false
+set: Major
+monotone: true
+version: 1
+keywords:
   - home page
   - home
   - base

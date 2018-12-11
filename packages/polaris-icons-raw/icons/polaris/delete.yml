@@ -3,10 +3,13 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    "A trash can symbol used to indicate deleting"
-exclusive: false
-major: false
-keywords: 
+    A trash can symbol used to indicate deleting
+exclusive_use:
+public: false
+set: Major
+monotone: true
+version: 1
+keywords:
   - delete
   - remove
   - trash

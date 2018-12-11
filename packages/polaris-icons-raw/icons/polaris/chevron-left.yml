@@ -3,9 +3,12 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    "A chevron left"
-exclusive: false
-major: false
-keywords: 
+    A chevron left
+exclusive_use:
+public: false
+set: Major
+monotone: true
+version: 1
+keywords:
   - chevron
   - left

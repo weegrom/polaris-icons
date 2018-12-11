@@ -3,10 +3,13 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    "A small X symbol used to represent cancelling"
-exclusive: false
-major: false
-keywords: 
+    A small Xsymbol used to represent cancelling
+exclusive_use:
+public: false
+set: Major
+monotone: true
+version: 1
+keywords:
   - cancel
   - stop
   - undo

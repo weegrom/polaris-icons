@@ -3,9 +3,12 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-    "Two arrows used to indicate refreshing a web resource"
-exclusive: false
-major: false
-keywords: 
+    Two arrows used to indicate refreshing a web resource
+exclusive_use:
+public: false
+set: Major
+monotone: true
+version: 1
+keywords:
   - refresh
   - reload
