@@ -1,6 +1,5 @@
 ci:
   require:
-    - continuous-integration/travis-ci/push
     - buildkite/polaris-icons
 dependencies:
   post:
