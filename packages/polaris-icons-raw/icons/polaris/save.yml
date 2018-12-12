@@ -7,7 +7,6 @@ description: >
 exclusive_use:
 public: false
 set: minor
-  
 version: 1
 keywords:
   - save
