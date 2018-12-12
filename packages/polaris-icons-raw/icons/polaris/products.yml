@@ -1,7 +1,7 @@
 authors:
   - Adam Whitcroft <adam.whitcroft@shopify.com>
-date_added: 2018-11-14
-date_modified: 2018-11-14
+date_added: "2018-11-14"
+date_modified: "2018-11-14"
 description: >
   A price tag symbol used to represent products.
 exclusive_use:
