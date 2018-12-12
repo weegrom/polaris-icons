@@ -1,0 +1,21 @@
+{
+  "name": "@shopify/polaris-icons-raw",
+  "version": "1.0.0",
+  "description": "Raw SVG files for all icons in the Shopify Polaris design system",
+  "author": "Shopify Inc.",
+  "homepage": "https://github.com/shopify/polaris-icons/tree/master/packages/polaris-icons-raw#readme",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shopify/polaris-icons.git"
+  },
+  "scripts": {
+    "test": "node ./tests/validate-metadata.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Shopify/polaris-icons/issues"
+  }
+}

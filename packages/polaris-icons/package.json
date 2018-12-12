@@ -1,0 +1,32 @@
+{
+  "name": "@shopify/polaris-icons",
+  "version": "1.0.0-beta.3",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "Shopify Inc.",
+  "main": "index.js",
+  "types": "types/js/index.d.ts",
+  "scripts": {
+    "build": "yarn run rollup -c",
+    "prepublish": "yarn run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "@shopify:registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "index.js",
+    "types/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shopify/polaris-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shopify/polaris-icons/issues"
+  },
+  "homepage": "https://github.com/Shopify/polaris-icons/blob/master/packages/polaris-icons/README.md",
+  "devDependencies": {
+    "@shopify/polaris-icons-raw": "^1.0.0",
+    "rollup": "^0.66.5"
+  }
+}
