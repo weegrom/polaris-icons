@@ -3,7 +3,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  A profile symbol used to indicate a user's profile.
+  A profile symbol used to indicate a user’s profile.
 exclusive_use:
 public: false
 set: minor
