@@ -2,14 +2,9 @@
   "name": "@shopify/polaris-icons-raw",
   "version": "1.0.0",
   "description": "Raw SVG files for all icons in the Shopify Polaris design system",
-  "author": "amrocha <andre.rocha@shopify.com>",
+  "author": "Shopify Inc.",
   "homepage": "https://github.com/shopify/polaris-icons/tree/master/packages/polaris-icons-raw#readme",
-  "license": "MIT",
-  "main": "lib/polaris-icons-raw.js",
-  "directories": {
-    "lib": "lib",
-    "test": "tests"
-  },
+  "license": "SEE LICENSE IN LICENSE.md",
   "publishConfig": {
     "access": "restricted"
   },
