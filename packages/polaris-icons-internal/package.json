@@ -7,8 +7,7 @@
   "types": "types/js/index.d.ts",
   "scripts": {
     "build": "yarn run rollup -c",
-    "prepublish": "yarn run build",
-    "check": "yarn run eslint ."
+    "prepublish": "yarn run build"
   },
   "publishConfig": {
     "access": "restricted"

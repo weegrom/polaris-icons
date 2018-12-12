@@ -11,6 +11,14 @@ shared:
       - yarn
     run:
       - yarn run test 
+  lint: &lint
+    label: "Lint"
+    container: default
+    timeout: 5m
+    dependencies:
+      - yarn
+    run:
+      - yarn run lint 
   build: &build
     label: "Build"
     container: default
@@ -21,5 +29,6 @@ shared:
       - yarn run build 
 
 steps:
+  - <<: *lint
   - <<: *tests
   - <<: *build

@@ -8,7 +8,6 @@
     "publish": "lerna publish",
     "build": "lerna run build",
     "lint": "yarn eslint '**/*.{ts,tsx}'",
-    "check": "lerna run check",
     "test": "lerna run test",
     "release": "lerna publish && git push --follow-tags"
   },
