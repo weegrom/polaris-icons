@@ -1,9 +1,14 @@
-author: "Andre Rocha"
-date_added: 27-11-2018
-description: "A magnifying glass symbol used to indicate search"
-exclusive: false
-major: false
-tags: 
+authors:
+  - Adam Whitcroft <adam.whitcroft@shopify.com>
+date_added: "2018-11-14"
+date_modified: "2018-11-14"
+description: >
+  A magnifying glass symbol used to indicate search.
+exclusive_use:
+public: false
+set: minor
+version: 1
+keywords:
   - search
   - find
   - glass
