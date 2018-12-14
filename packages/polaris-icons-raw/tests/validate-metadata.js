@@ -7,23 +7,45 @@ const glob = require('glob');
 
 const metadataSchema = require('./metadata-schema.json');
 
-const ajvInstance = new Ajv();
+const ajvInstance = new Ajv({allErrors: true});
 const validate = ajvInstance.compile(metadataSchema);
 
 const allIconMetadataFiles = glob.sync(
   path.resolve(__dirname, '../icons/polaris/*.yml'),
 );
 
-allIconMetadataFiles.forEach((iconMetadataFile) => {
-  console.log(`Validating ${iconMetadataFile}...`);
-  const metadata = yaml.safeLoad(fs.readFileSync(iconMetadataFile));
+console.log(`Validating ${allIconMetadataFiles.length} metadata files:`);
+const validationErrors = [];
+allIconMetadataFiles.forEach((iconMetadataFile, i) => {
+  const iconPath = path.relative('../..', iconMetadataFile);
+  const metadata = yaml.safeLoad(fs.readFileSync(iconMetadataFile), {
+    schema: yaml.JSON_SCHEMA,
+  });
   const valid = validate(metadata);
+
   if (!valid) {
-    console.log('Validation errors found!');
-    console.log(validate.errors);
-    process.exit(1);
+    validate.errors.forEach(({dataPath, message}) => {
+      validationErrors.push({
+        iconPath,
+        dataPath,
+        message,
+      });
+    });
   }
-  console.log('Valid!');
 });
 
-process.exit(0);
+if (validationErrors.length > 0) {
+  process.exitCode = 1;
+
+  console.log(' ');
+  console.log(`❌ ${validationErrors.length} error(s) found:`);
+  console.log(' ');
+
+  validationErrors.forEach(({iconPath, dataPath, message}) => {
+    console.log(`📝 ${iconPath}`);
+    console.log(`   ${dataPath} ${message}`);
+    console.log(' ');
+  });
+} else {
+  console.log('✅ No errors found. All files are valid 🎉');
+}
