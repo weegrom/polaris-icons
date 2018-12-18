@@ -1,6 +1,7 @@
 node_modules/
 .rpt2_cache/
 index.js
+metadata.json
 packages/**/types/
 packages/**/node_modules/
 lerna-debug.log

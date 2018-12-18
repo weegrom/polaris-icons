@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   A cross inside a circle outline used to represent cancelling.
 exclusive_use:
+name: circle cancel
 public: false
 set: minor
 version: 1

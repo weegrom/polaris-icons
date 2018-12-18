@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   A document symbol used to represent notes.
 exclusive_use:
+name: notes
 public: false
 set: minor
 version: 1

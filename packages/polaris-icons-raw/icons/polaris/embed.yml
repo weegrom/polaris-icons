@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   Used to represent embedding a web resource.
 exclusive_use:
+name: embed
 public: false
 set: minor
 version: 1

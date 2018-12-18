@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   A trash can symbol used to indicate deleting.
 exclusive_use:
+name: delete
 public: false
 set: minor
 version: 1

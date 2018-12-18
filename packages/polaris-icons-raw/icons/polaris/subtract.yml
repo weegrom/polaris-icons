@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   A minus sign used to indicate subtraction.
 exclusive_use:
+name: subtract
 public: false
 set: minor
 version: 1

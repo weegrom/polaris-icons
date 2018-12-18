@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Shopify Icon",
   "type": "object",
-  "required": ["authors", "date_added", "date_modified", "exclusive_use", "public", "description", "set", "keywords", "version"],
+  "required": ["authors", "date_added", "date_modified", "exclusive_use", "name", "public", "description", "set", "keywords", "version"],
   "additionalProperties": false,
   "properties": {
     "authors": {
@@ -26,6 +26,10 @@
     "exclusive_use": {
       "type": ["string", "null"],
       "description": "Whether the icon is for exclusive use in certain parts of the admin(e.g.: fraud)"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the icon. This should match the filename."
     },
     "keywords": {
       "type": "array",

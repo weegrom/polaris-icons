@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   A question mark symbol used to represent help.
 exclusive_use:
+name: help
 public: false
 set: minor
 version: 1

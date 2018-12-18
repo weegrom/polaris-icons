@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   Used to represent cancelling.
 exclusive_use:
+name: cancel small
 public: false
 set: minor
 version: 1

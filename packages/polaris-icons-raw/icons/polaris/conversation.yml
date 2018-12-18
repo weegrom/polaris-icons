@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   A speech bubble symbol used to represent a conversation.
 exclusive_use:
+name: conversation
 public: false
 set: minor
 version: 1

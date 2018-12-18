@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   An ellipsis symbol used to represent an ellipsis menu.
 exclusive_use:
+name: horizontal dots
 public: false
 set: minor
 version: 1

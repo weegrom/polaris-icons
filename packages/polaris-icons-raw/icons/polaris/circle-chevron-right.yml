@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   A chevron pointing right in a circle outline.
 exclusive_use:
+name: circle chevron right
 public: false
 set: minor
 version: 1

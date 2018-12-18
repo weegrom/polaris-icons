@@ -5,6 +5,7 @@ date_modified: 2018-11-14
 description: >
   An arrow pointing down.
 exclusive_use:
+name: arrow down
 public: false
 set: minor
 version: 1
