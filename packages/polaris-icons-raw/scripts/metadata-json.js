@@ -17,5 +17,6 @@ const metadata = allIconMetadataFiles.map((iconMetadataFile) =>
 
 fs.writeFileSync(FILEPATH, JSON.stringify(metadata, null, 2), 'utf8');
 
-console.log('📝 Metadata exported to', FILEPATH);
+console.log('📝 Metadata exported to:');
+console.log(`   ${FILEPATH}`);
 console.log('   Tip: cmd + click the filename to open.');
