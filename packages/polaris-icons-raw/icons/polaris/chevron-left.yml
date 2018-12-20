@@ -1,3 +1,4 @@
+name: chevron left
 authors:
   - Adam Whitcroft <adam.whitcroft@shopify.com>
 date_added: 2018-11-14
@@ -5,7 +6,6 @@ date_modified: 2018-11-14
 description: >
   A chevron pointing left.
 exclusive_use:
-name: chevron left
 public: false
 set: minor
 version: 1

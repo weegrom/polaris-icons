@@ -1,3 +1,4 @@
+name: view
 authors:
   - Adam Whitcroft <adam.whitcroft@shopify.com>
 date_added: 2018-11-14
@@ -5,7 +6,6 @@ date_modified: 2018-11-14
 description: >
   An eye symbol used to indicate viewing.
 exclusive_use:
-name: view
 public: false
 set: minor
 version: 1

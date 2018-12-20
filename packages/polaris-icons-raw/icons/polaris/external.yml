@@ -1,3 +1,4 @@
+name: external
 authors:
   - Adam Whitcroft <adam.whitcroft@shopify.com>
 date_added: 2018-11-14
@@ -5,7 +6,6 @@ date_modified: 2018-11-14
 description: >
   Used to represent an external resource.
 exclusive_use:
-name: external
 public: false
 set: minor
 version: 1

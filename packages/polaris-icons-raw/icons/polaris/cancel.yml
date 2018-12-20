@@ -1,3 +1,4 @@
+name: cancel
 authors:
   - Adam Whitcroft <adam.whitcroft@shopify.com>
 date_added: 2018-11-14
@@ -5,7 +6,6 @@ date_modified: 2018-11-14
 description: >
   Used to indicate cancelling.
 exclusive_use:
-name: cancel
 public: false
 set: minor
 version: 1
