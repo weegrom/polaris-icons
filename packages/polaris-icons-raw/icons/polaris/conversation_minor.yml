@@ -1,0 +1,17 @@
+name: conversation
+authors:
+  - Adam Whitcroft <adam.whitcroft@shopify.com>
+date_added: 2018-11-14
+date_modified: 2018-11-14
+description: >
+  Used to give merchants an indication of comments attached to an order.
+exclusive_use:
+public: false
+set: minor
+version: 1
+keywords:
+  - speech
+  - bubble
+  - conversation
+  - talk
+  - chat

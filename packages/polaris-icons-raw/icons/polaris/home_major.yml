@@ -1,0 +1,17 @@
+name: home
+authors:
+  - Adam Whitcroft <adam.whitcroft@shopify.com>
+date_added: 2018-11-14
+date_modified: 2018-11-14
+description: >
+  Used to help direct merchants back to the admin home page.
+exclusive_use:
+public: false
+set: major
+version: 1
+keywords:
+  - home page
+  - home
+  - base
+  - main page
+  - start

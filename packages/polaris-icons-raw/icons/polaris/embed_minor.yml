@@ -1,0 +1,16 @@
+name: embed
+authors:
+  - Adam Whitcroft <adam.whitcroft@shopify.com>
+date_added: 2018-11-14
+date_modified: 2018-11-14
+description: >
+  Used to represent an object embedded from a web resource.
+exclusive_use:
+public: false
+set: minor
+version: 1
+keywords:
+  - embed
+  - web resource
+  - web
+  - iframe

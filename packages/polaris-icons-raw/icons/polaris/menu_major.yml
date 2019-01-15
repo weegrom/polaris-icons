@@ -1,0 +1,14 @@
+name: menu
+authors:
+  - Adam Whitcroft <adam.whitcroft@shopify.com>
+date_added: 2018-11-14
+date_modified: 2018-11-14
+description: >
+  Used to help direct merchants to navigation on mobile.
+exclusive_use:
+public: false
+set: major
+version: 1
+keywords:
+  - hamburger
+  - menu

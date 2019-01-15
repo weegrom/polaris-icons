@@ -1,0 +1,15 @@
+name: arrow up down
+authors:
+  - Adam Whitcroft <adam.whitcroft@shopify.com>
+date_added: 2018-11-14
+date_modified: 2018-11-14
+description: >
+  Used to denote the action opening a select.
+exclusive_use:
+public: false
+set: minor
+version: 1
+keywords:
+  - carets
+  - up
+  - down

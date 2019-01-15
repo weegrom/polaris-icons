@@ -1,0 +1,17 @@
+name: delete
+authors:
+  - Adam Whitcroft <adam.whitcroft@shopify.com>
+date_added: 2018-11-14
+date_modified: 2018-11-14
+description: >
+  Used to denote a destructive action to delete an item.
+exclusive_use:
+public: false
+set: minor
+version: 1
+keywords:
+  - delete
+  - remove
+  - trash
+  - garbage
+  - get rid of

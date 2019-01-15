@@ -1,0 +1,15 @@
+name: print
+authors:
+  - Adam Whitcroft <adam.whitcroft@shopify.com>
+date_added: 2018-11-14
+date_modified: 2018-11-14
+description: >
+  Used to denote the action of printing.
+exclusive_use:
+public: false
+set: minor
+version: 1
+keywords:
+  - print
+  - printing
+  - printer
