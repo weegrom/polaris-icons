@@ -8,4 +8,4 @@ At the moment, it is consumed by `@shopify/polaris` and is not ready for consump
 
 ## Want to contribute?
 
-Check out our [Contributing Guide](./.github/CONTRIBUTING.md)
+Check out our [Contributing Guide](./CONTRIBUTING.md)
