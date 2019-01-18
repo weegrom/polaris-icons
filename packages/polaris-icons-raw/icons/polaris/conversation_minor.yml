@@ -6,7 +6,7 @@ date_modified: 2018-11-14
 description: >
   Used to give merchants an indication of comments attached to an order.
 exclusive_use:
-public: false
+public: true
 set: minor
 version: 1
 keywords:

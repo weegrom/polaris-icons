@@ -6,7 +6,7 @@ date_modified: 2018-11-14
 description: >
   Used to indicate that a expandable line item in an accordion is open.
 exclusive_use:
-public: false
+public: true
 set: minor
 version: 1
 keywords:

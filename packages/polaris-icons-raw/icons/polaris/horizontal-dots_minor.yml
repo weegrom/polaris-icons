@@ -6,7 +6,7 @@ date_modified: 2018-11-14
 description: >
   Used to represent additional actions in areas where three or more actions are used.
 exclusive_use:
-public: false
+public: true
 set: minor
 version: 1
 keywords:
