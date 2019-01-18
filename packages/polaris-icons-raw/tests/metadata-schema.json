@@ -35,7 +35,7 @@
       "type": "array",
       "items": {
         "type": "string"
-    },
+      },
       "description": "Any words that could be associated with the icon, to help with search."
     },
     "public": {
