@@ -1,0 +1,17 @@
+name: duplicate
+authors:
+  - Adam Whitcroft <adam.whitcroft@shopify.com>
+date_added: 2018-11-14
+date_modified: 2018-11-14
+description: >
+  Used to denote the action of duplicating an item.
+exclusive_use:
+public: true
+set: minor
+version: 1
+keywords:
+  - duplicate
+  - copy
+  - make another one
+  - two
+  - duo

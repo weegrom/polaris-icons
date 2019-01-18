@@ -1,0 +1,15 @@
+name: save
+authors:
+  - Adam Whitcroft <adam.whitcroft@shopify.com>
+date_added: 2018-11-14
+date_modified: 2018-11-14
+description: >
+  Used to denote the action of saving.
+exclusive_use:
+public: true
+set: minor
+version: 1
+keywords:
+  - save
+  - saving
+  - store
