@@ -8,7 +8,8 @@
   "types": "types/index.d.ts",
   "scripts": {
     "build": "yarn run rollup -c",
-    "prepublish": "yarn run build"
+    "prepublish": "yarn run build",
+    "clean": "rimraf build"
   },
   "publishConfig": {
     "access": "public",

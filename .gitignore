@@ -11,8 +11,8 @@ node_modules
 
 .DS_Store
 
-# Rollup cache
-.rpt2_cache
+# Build caches
+build
 
 # Built index files
 /packages/polaris-icons/index.*
