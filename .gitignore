@@ -15,7 +15,8 @@ node_modules
 .rpt2_cache
 
 # Built index files
-index.js
+/packages/polaris-icons/index.*
+/packages/polaris-icons-internal/index.*
 
 # Generated metadata
 metadata.json

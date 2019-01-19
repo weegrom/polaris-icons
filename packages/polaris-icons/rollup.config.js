@@ -5,10 +5,16 @@ import icon from '../../config/rollup/plugins/icon';
 
 const rollupConfig = {
   input: 'js/index.ts',
-  output: {
-    file: 'index.js',
-    format: 'cjs',
-  },
+  output: [
+    {
+      file: 'index.js',
+      format: 'cjs',
+    },
+    {
+      file: 'index.es.js',
+      format: 'esm',
+    },
+  ],
   plugins: [
     typescript({
       module: 'ESNext',

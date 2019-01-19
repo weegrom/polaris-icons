@@ -4,6 +4,7 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "author": "Shopify Inc.",
   "main": "index.js",
+  "module": "index.es.js",
   "types": "types/index.d.ts",
   "scripts": {
     "build": "yarn run rollup -c",
@@ -14,6 +15,7 @@
   },
   "files": [
     "index.js",
+    "index.es.js",
     "types/"
   ],
   "repository": {
