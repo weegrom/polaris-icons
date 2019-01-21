@@ -19,7 +19,7 @@ const rollupConfig = {
     typescript({
       module: 'ESNext',
       useTsconfigDeclarationDir: true,
-      cacheRoot: './build/cache/rts2'
+      cacheRoot: './build/cache/rts2',
     }),
     resolve(),
     icon(),
