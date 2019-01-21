@@ -1,0 +1,35 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "css.validate": false,
+  "editor.formatOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/node_modules": true,
+    "packages/*/build": true,
+    "packages/*/types": true,
+    "packages/polaris-icons{,-internal}/index{,.es}.js": true
+  },
+  "javascript.validate.enable": false,
+  "jest.autoEnable": false,
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "scss.validate": false,
+  "search.exclude": {
+    "**/bower_components": true,
+    "**/node_modules": true,
+    "packages/*/build": true,
+    "packages/*/types": true,
+    "packages/polaris-icons{,-internal}/index{,.es}.js": true
+  },
+  "stylelint.enable": true,
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}
