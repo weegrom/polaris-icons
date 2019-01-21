@@ -11,11 +11,12 @@ node_modules
 
 .DS_Store
 
-# Rollup cache
-.rpt2_cache
+# Build caches
+build
 
 # Built index files
-index.js
+/packages/polaris-icons/index.*
+/packages/polaris-icons-internal/index.*
 
 # Generated metadata
 metadata.json
