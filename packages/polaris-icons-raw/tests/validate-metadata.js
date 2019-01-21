@@ -16,7 +16,7 @@ const allIconMetadataFiles = glob.sync(
 
 console.log(`Validating ${allIconMetadataFiles.length} metadata files:`);
 const validationErrors = [];
-allIconMetadataFiles.forEach((iconMetadataFile, i) => {
+allIconMetadataFiles.forEach((iconMetadataFile) => {
   const iconPath = path.relative('../..', iconMetadataFile);
   const metadata = yaml.safeLoad(fs.readFileSync(iconMetadataFile), {
     schema: yaml.JSON_SCHEMA,

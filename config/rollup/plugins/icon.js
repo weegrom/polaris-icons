@@ -34,7 +34,6 @@ export default function icon(options = {}) {
           body: finalSource.replace(SVG_REGEX, ''),
         });
 
-
         return {
           map: {mappings: ''},
           code: `export default ${svgExport};`,

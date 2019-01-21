@@ -1,2 +1,7 @@
-/index.js
+**/node_modules/*
 **/types/*
+**/build/*
+/packages/polaris-icons/index.*
+/packages/polaris-icons-internal/index.*
+
+/app

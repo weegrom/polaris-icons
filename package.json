@@ -7,7 +7,7 @@
     "bootstrap": "lerna bootstrap",
     "publish": "lerna publish",
     "build": "lerna run build",
-    "lint": "yarn eslint '**/*.{ts,tsx}'",
+    "lint": "yarn eslint '**/*.{js,ts,tsx}'",
     "test": "lerna run test",
     "release": "lerna publish && git push --follow-tags",
     "deploy:app": "cd app && yarn run deploy",

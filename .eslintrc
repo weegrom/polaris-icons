@@ -8,5 +8,14 @@
   ],
   "rules": {
     "no-console": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/rollup.config.js", "**/tests/*.js", "**/scripts/*.js"],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "node/no-extraneous-require": "off"
+      }
+    }
+  ]
 }
