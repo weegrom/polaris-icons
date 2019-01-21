@@ -9,7 +9,7 @@
   "scripts": {
     "build": "yarn run rollup -c",
     "prepublish": "yarn run build",
-    "clean": "rimraf build"
+    "clean": "rimraf build types index.js index.es.js"
   },
   "publishConfig": {
     "access": "public",

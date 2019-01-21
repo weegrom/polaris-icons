@@ -17,7 +17,7 @@ const rollupConfig = {
   ],
   plugins: [
     typescript({
-      module: 'ESNext',
+      tsconfig: 'tsconfig.build.json',
       useTsconfigDeclarationDir: true,
       cacheRoot: './build/cache/rts2',
     }),
