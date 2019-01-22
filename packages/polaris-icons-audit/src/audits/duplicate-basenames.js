@@ -1,7 +1,13 @@
 const path = require('path');
+const polarisIcons = require('@shopify/polaris-icons');
 
 function audit({filenames}) {
   const iconSuffixRegex = /-(major|minor|spot)$/;
+
+  const polarisIconsFilenames = Object.keys(polarisIcons).map((importKey) => {
+    return `@shopify/polaris-icons/${importKey}.svg`;
+  });
+  filenames.unshift(...polarisIconsFilenames);
 
   const dependentsByBasename = filenames.reduce((memo, filename) => {
     const baseFilename = path
