@@ -1,7 +1,7 @@
 const {readFileSync} = require('fs');
 const audits = require('../audits');
 
-function handler(options) {
+async function handler(options) {
   const {inFile, reports = ''} = options;
   const onlyShowReports = reports.length > 0 ? reports.split(',') : [];
   const showAllReports = onlyShowReports.length === 0;
@@ -10,7 +10,7 @@ function handler(options) {
 
   const dependents = depdendsTree(tree, (file) => file.endsWith('.svg'));
 
-  const auditResults = audits
+  const auditPromises = audits
     .filter((auditFn) => {
       return showAllReports || onlyShowReports.includes(auditFn.auditName);
     })
@@ -27,17 +27,20 @@ function handler(options) {
         }, {});
       }
 
-      return {
-        name: auditFn.auditName,
-        type: auditFn.type,
-        result: auditFn({
+      return Promise.resolve(
+        auditFn({
           baseDir,
           filenames: Object.keys(filteredDependents),
           dependentsByFile: filteredDependents,
         }),
-      };
+      ).then((result) => ({
+        name: auditFn.auditName,
+        type: auditFn.type,
+        result,
+      }));
     });
 
+  const auditResults = await Promise.all(auditPromises);
   const output = auditResults.map(outputResult).join('\n\n\n');
   console.log(output);
 }

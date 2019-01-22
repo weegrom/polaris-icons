@@ -1,10 +1,36 @@
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
+const SVGO = require('svgo');
+const {svgOptions} = require('@shopify/images/optimize');
+const polarisIcons = require('@shopify/polaris-icons');
 
-function audit({filenames, baseDir}) {
-  const dependentsByHash = filenames.reduce((memo, filename) => {
-    const contentHash = md5File(path.join(baseDir, filename));
+const svgo = new SVGO(svgOptions());
+
+const VIEWBOX_REGEX = /viewBox="([^"]*)"/;
+const SVG_REGEX = /(<svg[^>]*>|<\/svg>)/g;
+const FILL_REGEX = /fill="[^"]*"/g;
+
+async function audit({filenames, baseDir}) {
+  const polarisIconsContentsPerFilename = Object.keys(polarisIcons).reduce(
+    (memo, importKey) => {
+      memo[`@shopify/polaris-icons/${importKey}.svg`] = polarisIcons[importKey];
+      return memo;
+    },
+    {},
+  );
+  filenames.unshift(...Object.keys(polarisIconsContentsPerFilename));
+
+  const contentsPerFilenamePromises = filenames.map((filename) => {
+    return filename.startsWith('@shopify/polaris-icons')
+      ? Promise.resolve(polarisIconsContentsPerFilename[filename])
+      : optimizedSvgFile(path.join(baseDir, filename));
+  });
+  const contentsPerFilename = await Promise.all(contentsPerFilenamePromises);
+
+  const dependentsByHash = filenames.reduce((memo, filename, i) => {
+    const fileContents = contentsPerFilename[i];
+    const contentHash = md5String(JSON.stringify(fileContents));
 
     if (!(contentHash in memo)) {
       memo[contentHash] = [];
@@ -43,25 +69,27 @@ function audit({filenames, baseDir}) {
   };
 }
 
-const BUFFER_SIZE = 8192;
+function md5String(string) {
+  return crypto
+    .createHash('md5')
+    .update(string)
+    .digest('hex');
+}
 
-function md5File(filename) {
-  const fd = fs.openSync(filename, 'r');
-  const hash = crypto.createHash('md5');
-  const buffer = Buffer.alloc(BUFFER_SIZE);
+async function optimizedSvgFile(filename) {
+  const source = fs.readFileSync(filename, 'utf8');
+  const result = await svgo.optimize(source);
 
-  try {
-    let bytesRead;
+  const finalSource = result.data.replace(FILL_REGEX, (fill) => {
+    return fill.includes('#FFF') ? 'fill="currentColor"' : '';
+  });
 
-    do {
-      bytesRead = fs.readSync(fd, buffer, 0, BUFFER_SIZE);
-      hash.update(buffer.slice(0, bytesRead));
-    } while (bytesRead === BUFFER_SIZE);
-  } finally {
-    fs.closeSync(fd);
-  }
-
-  return hash.digest('hex');
+  const vb = VIEWBOX_REGEX.exec(finalSource);
+  const viewBox = vb ? vb[1] : '';
+  return {
+    viewBox,
+    body: finalSource.replace(SVG_REGEX, ''),
+  };
 }
 
 audit.auditName = 'duplicate-content';
