@@ -7,7 +7,7 @@
     "bootstrap": "lerna bootstrap",
     "publish": "lerna publish",
     "build": "lerna run build",
-    "start": "lerna run --scope app-icon-explorer start",
+    "start": "yarn --cwd packages/app-icon-explorer start",
     "lint": "yarn eslint '**/*.{js,ts,tsx}'",
     "test": "lerna run test",
     "release": "lerna publish && git push --follow-tags"

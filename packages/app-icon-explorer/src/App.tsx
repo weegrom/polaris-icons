@@ -4,7 +4,8 @@ import {AppProvider, Page, Icon} from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 
 function App() {
-  const iconList = Object.keys(icons);
+  const iconList = Object.keys(icons) as (keyof typeof icons)[];
+
   return (
     <AppProvider>
       <Page title="Polaris Icons">
@@ -14,7 +15,7 @@ function App() {
   );
 }
 
-function PreviewIcon(iconName) {
+function PreviewIcon(iconName: keyof typeof icons) {
   return (
     <div>
       {iconName}{' '}
