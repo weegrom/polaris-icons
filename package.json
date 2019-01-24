@@ -7,11 +7,10 @@
     "bootstrap": "lerna bootstrap",
     "publish": "lerna publish",
     "build": "lerna run build",
+    "start": "yarn --cwd packages/app-icon-explorer start",
     "lint": "yarn eslint '**/*.{js,ts,tsx}'",
     "test": "lerna run test",
-    "release": "lerna publish && git push --follow-tags",
-    "deploy:app": "cd app && yarn run deploy",
-    "dev": "cd app && yarn run start"
+    "release": "lerna publish && git push --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,7 @@
   "devDependencies": {
     "@shopify/images": "^1.1.5",
     "ajv": "^6.5.5",
-    "eslint": "^5.9.0",
+    "eslint": "5.6.0",
     "eslint-plugin-shopify": "^26.1.1",
     "glob": "^7.1.3",
     "js-yaml": "^3.12.0",
