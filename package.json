@@ -9,9 +9,7 @@
     "build": "lerna run build",
     "lint": "yarn eslint '**/*.{js,ts,tsx}'",
     "test": "lerna run test",
-    "release": "lerna publish && git push --follow-tags",
-    "deploy:app": "cd app && yarn run deploy",
-    "dev": "cd app && yarn run start"
+    "release": "lerna publish && git push --follow-tags"
   },
   "repository": {
     "type": "git",
