@@ -4,7 +4,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import icon from '../../config/rollup/plugins/icon';
 
 const rollupConfig = {
-  input: 'js/index.ts',
+  input: 'src/index.ts',
   output: [
     {
       file: 'index.js',
