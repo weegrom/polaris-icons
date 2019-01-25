@@ -13,6 +13,8 @@ node_modules
 
 # Build caches
 build
+packages/app-icon-explorer/.cache
+packages/app-icon-explorer/public
 
 # Built index files
 /packages/polaris-icons/index.*

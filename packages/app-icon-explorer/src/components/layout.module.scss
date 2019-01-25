@@ -1,0 +1,6 @@
+@import '~@shopify/polaris-tokens/dist/colors';
+
+.Container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}

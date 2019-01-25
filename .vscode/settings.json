@@ -16,6 +16,7 @@
     "**/node_modules": true,
     "packages/*/build": true,
     "packages/*/types": true,
+    "packages/app-icon-explorer/{.cache,public}": true,
     "packages/polaris-icons{,-internal}/index{,.es}.js": true
   },
   "javascript.validate.enable": false,
@@ -28,6 +29,7 @@
     "**/node_modules": true,
     "packages/*/build": true,
     "packages/*/types": true,
+    "packages/app-icon-explorer/{.cache,public}": true,
     "packages/polaris-icons{,-internal}/index{,.es}.js": true
   },
   "stylelint.enable": true,
