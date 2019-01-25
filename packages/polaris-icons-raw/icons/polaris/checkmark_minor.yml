@@ -11,7 +11,7 @@ set: minor
 version: 1
 keywords:
   - checkmark
-  - yes
+  - 'yes'
   - ok
   - good
   - passed
