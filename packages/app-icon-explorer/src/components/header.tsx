@@ -6,12 +6,12 @@ interface Props {
   siteTitle: string;
 }
 
-const Header = ({siteTitle = ''}: Props) => (
-  <div>
-    <h1>
-      <Link to="/">{siteTitle}</Link>
-    </h1>
-  </div>
-);
-
-export default Header;
+export default function Header({siteTitle = ''}: Props) {
+  return (
+    <div>
+      <h1>
+        <Link to="/">{siteTitle}</Link>
+      </h1>
+    </div>
+  );
+}

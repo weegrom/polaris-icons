@@ -22,7 +22,7 @@ const detailsQuery = graphql`
   }
 `;
 
-function Seo(props: Props) {
+export default function Seo(props: Props) {
   const {
     title,
     description = '',
@@ -93,5 +93,3 @@ function Seo(props: Props) {
     />
   );
 }
-
-export default Seo;

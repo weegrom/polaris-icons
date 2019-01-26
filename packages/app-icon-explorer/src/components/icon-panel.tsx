@@ -8,8 +8,9 @@ interface Props {
   icon: IconInterface;
 }
 
-const IconPanel = ({icon}: Props) => {
+export default function IconPanel({icon}: Props) {
   const status = icon.public ? 'public' : 'private';
+
   return (
     <div>
       <Icon source={<div dangerouslySetInnerHTML={{__html: icon.svg}} />} />
@@ -35,6 +36,4 @@ const IconPanel = ({icon}: Props) => {
       </ul>
     </div>
   );
-};
-
-export default IconPanel;
+}

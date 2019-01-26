@@ -9,25 +9,28 @@ interface Props {
   children: any;
 }
 
-const Layout = ({children}: Props) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
+const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
       }
-    `}
-    // eslint-disable-next-line react/jsx-no-bind
-    render={(data) => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div className={styles.Container}>{children}</div>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+    }
+  }
+`;
+
+export default function Layout({children}: Props) {
+  return (
+    <StaticQuery
+      query={query}
+      // eslint-disable-next-line react/jsx-no-bind
+      render={(data) => (
+        <>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <div className={styles.Container}>{children}</div>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
               if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
                   if (!user) {
@@ -38,11 +41,10 @@ const Layout = ({children}: Props) => (
                 });
               }
             `,
-          }}
-        />
-      </>
-    )}
-  />
-);
-
-export default Layout;
+            }}
+          />
+        </>
+      )}
+    />
+  );
+}
