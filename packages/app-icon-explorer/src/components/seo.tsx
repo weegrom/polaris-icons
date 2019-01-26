@@ -1,7 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import {StaticQuery, graphql} from 'gatsby';
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+  meta?: any[];
+  keywords?: string[];
+}
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
@@ -15,7 +22,14 @@ const detailsQuery = graphql`
   }
 `;
 
-function Seo({description, lang, meta, keywords, title}) {
+function Seo(props: Props) {
+  const {
+    title,
+    description = '',
+    lang = 'en',
+    meta = [],
+    keywords = [],
+  } = props;
   return (
     <StaticQuery
       query={detailsQuery}
@@ -79,20 +93,5 @@ function Seo({description, lang, meta, keywords, title}) {
     />
   );
 }
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
-};
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  // eslint-disable-next-line react/forbid-prop-types
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
-};
 
 export default Seo;

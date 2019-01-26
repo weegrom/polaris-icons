@@ -5,23 +5,40 @@ import {Icon, AppProvider} from '@shopify/polaris';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import IconPanel from '../components/icon-panel';
+import {Icon as IconInterface} from '../types';
 
 import styles from './index.module.scss';
 
-class IndexPage extends React.Component {
-  state = {
-    currentIcon: null,
+interface Props {
+  data: {
+    allPolarisYaml: {
+      edges: {
+        node: IconInterface;
+      }[];
+    };
+  };
+}
+
+interface State {
+  currentIcon?: IconInterface;
+}
+
+export default class IndexPage extends React.Component<Props, State> {
+  state: State = {
+    currentIcon: undefined,
   };
 
   render() {
-    // eslint-disable-next-line react/prop-types
     const {allPolarisYaml} = this.props.data;
-    const SideBar = () =>
-      this.state.currentIcon ? (
+
+    const SideBar = () => {
+      return this.state.currentIcon ? (
         <IconPanel icon={this.state.currentIcon} />
       ) : (
         <div>Choose an icon to begin</div>
       );
+    };
+
     return (
       <AppProvider>
         <Layout>
@@ -48,8 +65,6 @@ class IndexPage extends React.Component {
     );
   }
 }
-
-export default IndexPage;
 
 export const pageQuery = graphql`
   query {

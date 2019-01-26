@@ -1,12 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {StaticQuery, graphql} from 'gatsby';
 
 import Header from './header';
 import '@shopify/polaris/styles.scss';
 import styles from './layout.module.scss';
 
-const Layout = ({children}) => (
+interface Props {
+  children: any;
+}
+
+const Layout = ({children}: Props) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -41,9 +44,5 @@ const Layout = ({children}) => (
     )}
   />
 );
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Layout;

@@ -2,8 +2,13 @@ import React from 'react';
 import {Icon} from '@shopify/polaris';
 import {camelCase} from 'lodash';
 
-// eslint-disable-next-line react/prop-types
-const IconPanel = ({icon}) => {
+import {Icon as IconInterface} from '../types';
+
+interface Props {
+  icon: IconInterface;
+}
+
+const IconPanel = ({icon}: Props) => {
   const status = icon.public ? 'public' : 'private';
   return (
     <div>
