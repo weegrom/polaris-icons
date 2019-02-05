@@ -10,9 +10,9 @@ We recommend the following usage:
 
 `icons/index.js`
 ```js
-import POLARIS_ICONS from '@shopify/polaris-icons';
-
-export const exampleIcon = POLARIS_ICONS.exampleIcon;
+export {
+  exampleIcon
+} from '@shopify/polaris-icons';
 ```
 
 `other_page.js`
