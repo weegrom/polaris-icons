@@ -1,211 +1,211 @@
 export {
-  default as add,
+  default as addMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/add_minor.svg';
 
 export {
-  default as alert,
+  default as alertMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/alert_minor.svg';
 
 export {
-  default as arrowDown,
+  default as arrowDownMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/arrow-down_minor.svg';
 
 export {
-  default as arrowLeft,
+  default as arrowLeftMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/arrow-left_minor.svg';
 
 export {
-  default as arrowRight,
+  default as arrowRightMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/arrow-right_minor.svg';
 
 export {
-  default as arrowUpDown,
+  default as arrowUpDownMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/arrow-up-down_minor.svg';
 
 export {
-  default as arrowUp,
+  default as arrowUpMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/arrow-up_minor.svg';
 
 export {
-  default as calendar,
+  default as calendarMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/calendar_minor.svg';
 
 export {
-  default as cancelSmall,
+  default as cancelSmallMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/cancel-small_minor.svg';
 
 export {
-  default as cancel,
+  default as cancelMajor,
 } from '@shopify/polaris-icons-raw/icons/polaris/cancel_major.svg';
 
 export {
-  default as caretDown,
+  default as caretDownMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/caret-down_minor.svg';
 
 export {
-  default as caretUp,
+  default as caretUpMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/caret-up_minor.svg';
 
 export {
-  default as checkmark,
+  default as checkmarkMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/checkmark_minor.svg';
 
 export {
-  default as chevronDown,
+  default as chevronDownMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/chevron-down_minor.svg';
 
 export {
-  default as chevronLeft,
+  default as chevronLeftMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/chevron-left_minor.svg';
 
 export {
-  default as chevronRight,
+  default as chevronRightMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/chevron-right_minor.svg';
 
 export {
-  default as chevronUp,
+  default as chevronUpMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/chevron-up_minor.svg';
 
 export {
-  default as circleCancel,
+  default as circleCancelMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-cancel_minor.svg';
 
 export {
-  default as circleChevronDown,
+  default as circleChevronDownMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-chevron-down_minor.svg';
 
 export {
-  default as circleChevronLeft,
+  default as circleChevronLeftMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-chevron-left_minor.svg';
 
 export {
-  default as circleChevronRight,
+  default as circleChevronRightMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-chevron-right_minor.svg';
 
 export {
-  default as circleChevronUp,
+  default as circleChevronUpMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-chevron-up_minor.svg';
 
 export {
-  default as circleInformation,
+  default as circleInformationMajor,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-information_major.svg';
 
 export {
-  default as circlePlus,
+  default as circlePlusMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-plus_minor.svg';
 
 export {
-  default as circlePlusOutline,
+  default as circlePlusOutlineMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-plus-outline_minor.svg';
 
 export {
-  default as conversation,
+  default as conversationMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/conversation_minor.svg';
 
 export {
-  default as deleteIcon,
+  default as deleteMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/delete_minor.svg';
 
 export {
-  default as disable,
+  default as disableMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/disable_minor.svg';
 
 export {
-  default as dispute,
+  default as disputeMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/dispute_minor.svg';
 
 export {
-  default as duplicate,
+  default as duplicateMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/duplicate_minor.svg';
 
 export {
-  default as ellipsis,
+  default as ellipsisMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/ellipsis_minor.svg';
 
 export {
-  default as embed,
+  default as embedMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/embed_minor.svg';
 
 export {
-  default as exportIcon,
+  default as exportMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/export_minor.svg';
 
 export {
-  default as external,
+  default as externalMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/external_minor.svg';
 
 export {
-  default as help,
+  default as helpMajor,
 } from '@shopify/polaris-icons-raw/icons/polaris/help_major.svg';
 
 export {
-  default as home,
+  default as homeMajor,
 } from '@shopify/polaris-icons-raw/icons/polaris/home_major.svg';
 
 export {
-  default as horizontalDots,
+  default as horizontalDotsMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/horizontal-dots_minor.svg';
 
 export {
-  default as importIcon,
+  default as importMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/import_minor.svg';
 
 export {
-  default as logOut,
+  default as logOutMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/log-out_minor.svg';
 
 export {
-  default as menu,
+  default as menuMajor,
 } from '@shopify/polaris-icons-raw/icons/polaris/menu_major.svg';
 
 export {
-  default as notes,
+  default as notesMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/notes_minor.svg';
 
 export {
-  default as notification,
+  default as notificationMajor,
 } from '@shopify/polaris-icons-raw/icons/polaris/notification_major.svg';
 
 export {
-  default as onlineStore,
+  default as onlineStoreMajor,
 } from '@shopify/polaris-icons-raw/icons/polaris/online-store_major.svg';
 
 export {
-  default as orders,
+  default as ordersMajor,
 } from '@shopify/polaris-icons-raw/icons/polaris/orders_major.svg';
 
 export {
-  default as print,
+  default as printMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/print_minor.svg';
 
 export {
-  default as products,
+  default as productsMajor,
 } from '@shopify/polaris-icons-raw/icons/polaris/products_major.svg';
 
 export {
-  default as profile,
+  default as profileMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/profile_minor.svg';
 
 export {
-  default as refresh,
+  default as refreshMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/refresh_minor.svg';
 
 export {
-  default as risk,
+  default as riskMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/risk_minor.svg';
 
 export {
-  default as save,
+  default as saveMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/save_minor.svg';
 
 export {
-  default as search,
+  default as searchMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/search_minor.svg';
 
 export {
-  default as subtract,
+  default as subtractMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/subtract_minor.svg';
 
 export {
-  default as view,
+  default as viewMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/view_minor.svg';
