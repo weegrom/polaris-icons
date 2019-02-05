@@ -1,0 +1,10 @@
+containers:
+  production:
+    environment: production
+
+env:
+  YARN_PRODUCTION: 'false'
+  IS_CLOUD_ENV: 'true'
+
+steps:
+  - build: production

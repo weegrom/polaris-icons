@@ -1,0 +1,6 @@
+ci:
+  require:
+    - buildkite/polaris-icons
+dependencies:
+  post:
+    - yarn run build
