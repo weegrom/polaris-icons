@@ -1,9 +1,13 @@
 # https://services.shopify.io/services/polaris-icons/testing
-org_line: 
+org_line: Shopify Core
 owners:
   - Shopify/polaris
-testing:
-  classification: library
+classification: tier4
+url: https://polaris-icons.shopify.com
+ci_url: https://buildkite.com/shopify/polaris-icons
 slack_channels:
   - polaris-icons
   - polaris-icon-guild
+security:
+  data_management:
+    contains_pii: false
