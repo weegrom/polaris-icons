@@ -5,3 +5,4 @@ ci:
   require:
     - buildkite/polaris-icons
     - buildkite/polaris-icons-production-builder
+    - buildkite/shopify-polaris-icons-k8s-template-validator
