@@ -66,6 +66,10 @@ ul.keywords li {
   white-space: pre-wrap;
 }
 
+.download {
+  cursor: pointer;
+}
+
 .download span {
   color: #637381;
 }
@@ -92,14 +96,23 @@ h3 {
   padding-bottom: 2rem;
 }
 
-.CodeExample > .syntaxIconTag {
+.CodeExample .syntaxIconTag {
   color: #00848e;
 }
 
-.CodeExample > .syntaxIconSource {
+.CodeExample .syntaxIconSource {
   color: #bf0711;
 }
 
-.CodeExample > .syntaxIconName {
+.CodeExample .syntaxIconName {
   color: #c05717;
+}
+
+.CodeExample span:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.iconDescription {
+  min-height: 40px;
 }

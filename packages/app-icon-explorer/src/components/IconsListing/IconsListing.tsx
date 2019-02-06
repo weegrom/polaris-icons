@@ -9,7 +9,11 @@ export default function IconsListing(props) {
   }
 
   const iconsMarkup = props.icons.map((icon) => (
-    <SingleIcon key={icon.id} icon={icon} />
+    <SingleIcon
+      key={icon.id}
+      icon={icon}
+      isActive={props.activeIconId === icon.id}
+    />
   ));
 
   const headingMarkup =

@@ -6,6 +6,7 @@ import {
   Subheading,
   Button,
   Stack,
+  Tooltip,
 } from '@shopify/polaris';
 import {camelCase, startCase} from 'lodash';
 import {Icon as IconInterface} from '../../types';
@@ -15,11 +16,32 @@ interface Props {
   icon?: IconInterface;
 }
 
-export default function IconPanel({icon}: Props) {
-  if (!icon) {
-    return <EmptyState />;
+interface State {
+  isClient: boolean;
+}
+
+export default class IconPanel extends React.Component<Props, State> {
+  state = {
+    isClient: false,
+  };
+
+  // Because Gatsby spits out a static page we want to initially render the
+  // empty state and then rerender immediatly. This ensures the server-provided
+  // content matches the initially rendered state after hydration.
+  componentDidMount() {
+    this.setState({isClient: true});
   }
 
+  render() {
+    if (!this.state.isClient || !this.props.icon) {
+      return <EmptyState />;
+    }
+
+    return <PopulatedState icon={this.props.icon} />;
+  }
+}
+
+function PopulatedState({icon}) {
   const status = icon.public ? 'Available' : 'Unavailable';
 
   return (
@@ -31,9 +53,12 @@ export default function IconPanel({icon}: Props) {
         <div className={styles.spacingBase}>
           <div className={styles.iconInfo}>
             <Heading>{startCase(icon.name)}</Heading>
-            <p>{startCase(icon.set)} icon - 20px</p>
+            <p>{startCase(icon.set)} icon</p>
           </div>
-          <div dangerouslySetInnerHTML={{__html: icon.descriptionHtml}} />
+          <div
+            className={styles.iconDescription}
+            dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
+          />
         </div>
         <div>
           <Subheading>Created by</Subheading>
@@ -54,13 +79,17 @@ export default function IconPanel({icon}: Props) {
         <div className={`${styles.download} ${styles.spacingBase}`}>
           <Subheading>Usage</Subheading>
           <div className={styles.CodeExample}>
-            <span className={styles.syntaxIconTag}>&lt;Icon</span>{' '}
-            <span className={styles.syntaxIconSource}>source</span>
-            <span className={styles.syntaxIconTag}>=</span>
-            <span className={styles.syntaxIconName}>{`"${camelCase(
-              icon.basename,
-            )}"`}</span>{' '}
-            <span className={styles.syntaxIconTag}>/&gt;</span>
+            <Tooltip content="Copy to clipboard">
+              <div className={styles.codeHighlight}>
+                <span className={styles.syntaxIconTag}>&lt;Icon</span>{' '}
+                <span className={styles.syntaxIconSource}>source</span>
+                <span className={styles.syntaxIconTag}>=</span>
+                <span className={styles.syntaxIconName}>{`"${camelCase(
+                  icon.basename,
+                )}"`}</span>{' '}
+                <span className={styles.syntaxIconTag}>/&gt;</span>
+              </div>
+            </Tooltip>
           </div>
           <span>
             Using{' '}

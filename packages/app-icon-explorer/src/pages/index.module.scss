@@ -60,7 +60,7 @@ $gridMaxWidth: 100%;
     --details-panel-justification: space-between;
     position: fixed;
     right: 1.6rem;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   // Once we hit the max width then we want to account for that rather than

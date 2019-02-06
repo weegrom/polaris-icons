@@ -8,18 +8,26 @@
   color: $color-ink-lighter;
   text-decoration: none;
 
-  &:focus {
-    box-shadow: 0 0 0 2px #5c6ac4;
-    outline: none;
-  }
+  // &:focus {
+  //   box-shadow: 0 0 0 2px #5c6ac4;
+  //   outline: none;
+  // }
+}
 
-  // how do i do this (below)?
-  &:active {
-    box-shadow: 0 0 0 2px #5c6ac4;
-    outline: none;
-  }
+.active {
+  box-shadow: 0 0 0 2px #5c6ac4;
+  outline: none;
 }
 
 .iconLabel {
   padding-bottom: 20px;
 }
+
+// .iconSvg {
+//   color: $color-ink;
+//   fill: currentColor;
+// }
+
+// path {
+//   fill: $color-ink;
+// }

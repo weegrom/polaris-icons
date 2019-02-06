@@ -6,6 +6,7 @@
     "@shopify/polaris": "^3.4.0",
     "@shopify/polaris-icons-raw": "^1.0.1",
     "@types/react-helmet": "^5.0.8",
+    "classnames": "^2.2.6",
     "gatsby": "^2.0.91",
     "gatsby-plugin-manifest": "^2.0.13",
     "gatsby-plugin-offline": "^2.0.21",
@@ -28,5 +29,8 @@
     "build": "gatsby build",
     "serve-production": "serve -l 8000 public",
     "start": "gatsby develop"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.7"
   }
 }

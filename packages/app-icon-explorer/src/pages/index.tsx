@@ -50,6 +50,7 @@ export default class IndexPage extends React.Component<Props, State> {
     const currentIcon = qs.icon
       ? icons.find((icon) => icon.name === qs.icon)
       : undefined;
+    const activeIconId = currentIcon ? currentIcon.id : undefined;
 
     const introHeaderMarkup = isFiltered ? null : <IntroHeader />;
 
@@ -59,16 +60,18 @@ export default class IndexPage extends React.Component<Props, State> {
           <IconsListing
             heading="Major Icons"
             icons={majorIcons}
+            activeIconId={activeIconId}
             showCount={isFiltered}
           />
           <IconsListing
             heading="Minor Icons"
             icons={minorIcons}
+            activeIconId={activeIconId}
             showCount={isFiltered}
           />
         </>
       ) : (
-        <div>No results found</div>
+        <EmptyState />
       );
 
     return (
@@ -92,6 +95,10 @@ export default class IndexPage extends React.Component<Props, State> {
   handleSearch(value) {
     this.setState({searchText: value});
   }
+}
+
+function EmptyState() {
+  return <div>No results found</div>;
 }
 
 function filterIcons(icons, searchText) {
