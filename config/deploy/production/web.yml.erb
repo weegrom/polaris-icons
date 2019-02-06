@@ -102,7 +102,7 @@ spec:
           name: http-alt
         readinessProbe:
           httpGet:
-            path: "/services/ping"
+            path: "/index.html"
             port: 8000
           initialDelaySeconds: 20
           timeoutSeconds: 3
