@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+## v2.0.0 - 2019-02-06
+
 ### Breaking Changes
 
 - Export icons individually in order to enable tree shaking.
