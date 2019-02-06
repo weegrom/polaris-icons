@@ -8,7 +8,9 @@
     "publish": "lerna publish",
     "build": "lerna run build",
     "start": "yarn --cwd packages/app-icon-explorer start",
-    "lint": "yarn eslint '**/*.{js,ts,tsx}'",
+    "lint": "yarn run lint:js && yarn run lint:css",
+    "lint:js": "yarn run eslint '**/*.{js,ts,tsx}'",
+    "lint:css": "yarn run stylelint '**/*.{scss}'",
     "test": "jest",
     "release": "lerna publish && git push --follow-tags"
   },
@@ -40,7 +42,62 @@
     "rollup-plugin-svgo": "^1.0.1",
     "rollup-plugin-typescript2": "^0.17.1",
     "rollup-pluginutils": "^2.3.3",
+    "stylelint": "^9.10.1",
+    "stylelint-config-shopify": "^7.1.0",
     "svgo": "^1.1.1",
     "typescript": "^3.1.3"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:shopify/typescript",
+      "plugin:shopify/react",
+      "plugin:shopify/jest",
+      "plugin:shopify/node",
+      "plugin:shopify/prettier"
+    ],
+    "settings": {
+      "react": {
+        "version": "16.7"
+      }
+    },
+    "rules": {
+      "no-console": "off",
+      "node/exports-style": "off",
+      "react/prop-types": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/rollup.config.js",
+          "**/tests/*.js",
+          "**/scripts/*.js"
+        ],
+        "rules": {
+          "import/no-extraneous-dependencies": "off",
+          "node/no-extraneous-require": "off"
+        }
+      }
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-shopify/prettier"
+    ],
+    "rules": {
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ]
+    }
   }
 }

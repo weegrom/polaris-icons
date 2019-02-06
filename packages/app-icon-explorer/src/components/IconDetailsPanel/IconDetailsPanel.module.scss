@@ -1,0 +1,105 @@
+.empty {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  > * {
+    flex: 1 0 auto;
+    text-align: center;
+  }
+}
+
+.iconDetailsPanel {
+  display: flex;
+  flex-direction: column;
+  // The justification of this changes based on if we're in the fixed-panel layout
+  // or not. Reading this value from a custom property that gets set when the
+  // fixed layout kicks in is very eyebrow-raising, but it helps keep
+  // "things that change based on media queries" together in the base module.
+  justify-content: var(--details-panel-justification, normal);
+}
+
+.icon {
+  display: inline-block;
+  margin: 0;
+}
+
+.iconInfo p {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.createdBy,
+.keywords {
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.createdBy {
+  margin-top: 0;
+}
+
+ul.keywords li {
+  margin: 4px 4px 0 0;
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  min-height: 2.8rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-top: 0;
+  background-color: #dfe3e8;
+  border-radius: 3px;
+  color: #212b36;
+}
+
+@import '~@shopify/polaris-tokens/dist/typography';
+
+.CodeExample {
+  font-family: unquote($font-stack-monospace);
+  font-size: 14px;
+  border-radius: 0.6rem;
+  background-color: #f9fafb;
+  padding: 2rem;
+  margin-bottom: 4px;
+  white-space: pre-wrap;
+}
+
+.download span {
+  color: #637381;
+}
+
+.download a {
+  text-decoration: none;
+  color: #007ace;
+}
+
+h3 {
+  padding-bottom: 8px;
+}
+
+.spacingBase {
+  margin-bottom: 20px;
+}
+
+.spacingMedium {
+  margin-bottom: 8px;
+}
+
+.iconActions {
+  display: block;
+  padding-bottom: 2rem;
+}
+
+.CodeExample > .syntaxIconTag {
+  color: #00848e;
+}
+
+.CodeExample > .syntaxIconSource {
+  color: #bf0711;
+}
+
+.CodeExample > .syntaxIconName {
+  color: #c05717;
+}
