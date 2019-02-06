@@ -12,7 +12,8 @@
     "lint:js": "yarn run eslint '**/*.{js,ts,tsx}'",
     "lint:css": "yarn run stylelint '**/*.{scss}'",
     "test": "jest",
-    "release": "lerna publish && git push --follow-tags"
+    "release": "lerna publish && git push --follow-tags",
+    "heroku-postbuild": "yarn --cwd packages/app-icon-explorer run build"
   },
   "repository": {
     "type": "git",
