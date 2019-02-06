@@ -1,6 +1,6 @@
 {
   "name": "@shopify/polaris-icons-internal",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "license": "SEE LICENSE IN LICENSE.md",
   "author": "Shopify Inc.",
   "main": "index.js",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/shopify/polaris-icons/tree/master/packages/polaris-icons-internal#readme",
   "devDependencies": {
-    "@shopify/polaris-icons-raw": "^1.0.1",
+    "@shopify/polaris-icons-raw": "^1.0.2",
     "rollup": "^0.66.5"
   }
 }
