@@ -1,0 +1,7 @@
+kubernetes:
+  namespace: polaris-icons-production
+  context: tier4-us-east1-2
+ci:
+  require:
+    - buildkite/polaris-icons
+    - buildkite/polaris-icons-production-builder
