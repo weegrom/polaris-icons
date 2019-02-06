@@ -119,10 +119,6 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/duplicate_minor.svg';
 
 export {
-  default as ellipsisMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/ellipsis_minor.svg';
-
-export {
   default as embedMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/embed_minor.svg';
 
