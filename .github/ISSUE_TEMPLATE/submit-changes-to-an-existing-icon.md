@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 <!--
-  Please follow this template to modify an existing icon.
+  Please follow this template to change an existing icon.
   You should already understand the impact of this change
   where the icon is used, etc.
 
