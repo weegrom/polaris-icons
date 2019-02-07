@@ -4,7 +4,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  Used to help direct merchants to add a new sales channel.
+  Used to denote the action of adding new content, like adding a new variant option name in the mobile app.
 exclusive_use:
 public: true
 set: minor

@@ -4,7 +4,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  Used to denote the action of duplicating an item.
+  Used to denote the action of duplicating orders, to save as (reports), and to copy content to clipboard like an address.
 exclusive_use:
 public: true
 set: minor

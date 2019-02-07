@@ -4,7 +4,7 @@ authors:
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  N/A
+  Used to denote the action of expanding a section to reveal more content.
 exclusive_use:
 public: true
 set: minor
