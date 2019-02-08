@@ -102,7 +102,8 @@ function EmptyState() {
 }
 
 function filterIcons(icons, searchText) {
-  const containsText = (string) => string.includes(searchText);
+  const containsText = (string) =>
+    string.toUpperCase().includes(searchText.toUpperCase());
 
   return icons.filter((icon) => {
     return containsText(icon.name) || icon.keywords.some(containsText);
