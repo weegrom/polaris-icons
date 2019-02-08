@@ -7,8 +7,9 @@ import {
   Button,
   Stack,
   Tooltip,
+  TextStyle,
 } from '@shopify/polaris';
-import {camelCase, startCase} from 'lodash';
+import {camelCase, startCase, upperFirst} from 'lodash';
 import {Icon as IconInterface} from '../../types';
 import styles from './IconDetailsPanel.module.scss';
 
@@ -26,7 +27,7 @@ export default class IconPanel extends React.Component<Props, State> {
   };
 
   // Because Gatsby spits out a static page we want to initially render the
-  // empty state and then rerender immediatly. This ensures the server-provided
+  // empty state and then rerender immediately. This ensures the server-provided
   // content matches the initially rendered state after hydration.
   componentDidMount() {
     this.setState({isClient: true});
@@ -72,7 +73,7 @@ function PopulatedState({icon}) {
           </ul>
         </div>
         <div className={styles.spacingBase}>
-          <Subheading>Third party use</Subheading>
+          <Subheading>Partner use</Subheading>
           <p>{status}</p>
         </div>
         <div className={styles.spacingBase}>
@@ -95,14 +96,14 @@ function PopulatedState({icon}) {
             </Tooltip>
           </div>
           <span>
-            Using{' '}
+            See the{' '}
             <a href="https://polaris.shopify.com/components/images-and-icons/icon">
               Polaris icon component
             </a>
             {''}.
           </span>
         </div>
-        <ul className={styles.keywords}>
+        <ul className={`${styles.keywords} ${styles.spacingLoose}`}>
           <Subheading>Keywords</Subheading>
           {icon.keywords.map((keyword) => (
             <li key={icon.id + keyword}>
@@ -112,10 +113,25 @@ function PopulatedState({icon}) {
         </ul>
       </TextContainer>
       <div className={styles.iconActions}>
-        <Stack vertical>
-          <Button plain>Request changes</Button>
-          <Button plain>Submit a new version</Button>
-        </Stack>
+        <Subheading>Actions</Subheading>
+        <a
+          href={`https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=request-changes-to-an-existing-icon.md&title=%5BRequest%5D%20${icon.name.replace(
+            /\s+/g,
+            '-',
+          )}_${icon.set} changes`}
+          className={styles.link}
+        >
+          Request to change this icon
+        </a>
+        <a
+          href={`https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=submit-changes-to-an-existing-icon.md&title=%5BSubmission%5D%20${icon.name.replace(
+            /\s+/g,
+            '-',
+          )}_${icon.set} changes`}
+          className={styles.link}
+        >
+          Submit a new version of this icon
+        </a>
       </div>
     </div>
   );
@@ -124,7 +140,9 @@ function PopulatedState({icon}) {
 function EmptyState() {
   return (
     <div className={styles.empty}>
-      <div>Choose an icon to begin</div>
+      <div>
+        <TextStyle variation="subdued">Choose an icon to begin</TextStyle>
+      </div>
     </div>
   );
 }

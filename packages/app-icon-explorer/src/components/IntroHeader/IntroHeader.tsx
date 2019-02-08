@@ -24,7 +24,7 @@ export default function IntroHeader() {
           >
             icon usage guidelines
           </a>
-          {''}. If you have any questions or feedback find us in&nbsp;
+          {''}. If you have any questions or feedback, find us in&nbsp;
           <a
             className={styles.link}
             href="https://shopify.slack.com/messages/CCNUS0FML"

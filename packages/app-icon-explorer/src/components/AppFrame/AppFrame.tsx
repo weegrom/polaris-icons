@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   AppProvider,
-  Frame,
-  TopBar,
   Button,
   ButtonGroup,
+  Frame,
+  TopBar,
 } from '@shopify/polaris';
 import '@shopify/polaris/styles.scss';
 import styles from './AppFrame.module.scss';
@@ -13,7 +13,7 @@ const theme = {
   colors: {
     topBar: {
       background: '#ffffff',
-      backgroundDarker: '#ffffff',
+      backgroundDarker: '#fff',
       backgroundLighter: '#F4F6F8',
       color: '#919EAB',
     },
@@ -30,7 +30,11 @@ interface Props {
   onSearch: (value: string) => void;
 }
 
-export default class AppFrame extends React.Component<Props> {
+interface State {
+  searchText: string;
+}
+
+export default class AppFrame extends React.Component<Props, State> {
   state = {
     searchText: '',
   };
@@ -47,11 +51,11 @@ export default class AppFrame extends React.Component<Props> {
     const userMenuMarkup = (
       <div className={styles.moreActions}>
         <ButtonGroup>
-          <Button url="https://github.com/shopify/polaris-icons">
-            Submit icon
-          </Button>
-          <Button primary url="https://github.com/shopify/polaris-icons">
+          <Button url="https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=request-a-new-icon.md&title=%5BRequest%5Dhttps://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=request-a-new-icon.md&title=%5BRequest%5D">
             Request icon
+          </Button>
+          <Button url="https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=submit-a-new-icon.md&title=%5BSubmission%5D">
+            Submit icon
           </Button>
         </ButtonGroup>
       </div>

@@ -26,8 +26,8 @@
 }
 
 .iconInfo p {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 .createdBy,
@@ -62,7 +62,7 @@ ul.keywords li {
   border-radius: 0.6rem;
   background-color: #f9fafb;
   padding: 2rem;
-  margin-bottom: 4px;
+  margin-bottom: 0.4rem;
   white-space: pre-wrap;
 }
 
@@ -80,15 +80,19 @@ ul.keywords li {
 }
 
 h3 {
-  padding-bottom: 8px;
+  padding-bottom: 0.8rem;
 }
 
 .spacingBase {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+
+.spacingLoose {
+  margin-bottom: 2.4rem;
 }
 
 .spacingMedium {
-  margin-bottom: 8px;
+  margin-bottom: 0.8rem;
 }
 
 .iconActions {
@@ -114,5 +118,12 @@ h3 {
 }
 
 .iconDescription {
-  min-height: 40px;
+  min-height: 4rem;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: #007ace;
+  padding-bottom: 0.8rem;
 }
