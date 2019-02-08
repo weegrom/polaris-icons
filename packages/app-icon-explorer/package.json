@@ -27,6 +27,7 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "clean": "rimraf public",
     "serve-production": "serve -l 8000 public",
     "start": "gatsby develop"
   },
