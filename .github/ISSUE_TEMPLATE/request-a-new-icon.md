@@ -1,7 +1,7 @@
 ---
 name: Request a new icon
 about: For requesting new icons for Polaris Icons
-title: "[Request]"
+title: "[Request] Icon name"
 labels: New
 assignees: ''
 
