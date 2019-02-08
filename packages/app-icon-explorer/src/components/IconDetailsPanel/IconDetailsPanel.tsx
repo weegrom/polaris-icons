@@ -42,7 +42,7 @@ export default class IconPanel extends React.Component<Props, State> {
 }
 
 function PopulatedState({icon}) {
-  const status = icon.public ? 'Available' : 'Unavailable';
+  const status = icon.public ? 'Allowed' : 'Not allowed';
   const camelCaseBasename = camelCase(icon.basename);
 
   return (
