@@ -14,6 +14,7 @@ async function onCreateNode({
   loadNodeContent,
   createNodeId,
   createContentDigest,
+  getNodes,
 }) {
   if (node.internal.mediaType !== `text/yaml`) {
     return;
@@ -24,21 +25,27 @@ async function onCreateNode({
 
   function transformObject(obj, id, type) {
     const basename = path.basename(node.base, '.yml');
+
+    const pathToSvg = node.absolutePath.replace(/\.yml$/, '.svg');
+    const svgFileNode = getNodes().find(
+      (fileNode) => fileNode.absolutePath === pathToSvg,
+    );
+
     const yamlNode = Object.assign(obj, {
       basename,
       id,
       children: [],
       parent: node.id,
-      svg: fs.readFileSync(
-        `${path.dirname(node.absolutePath)}/${basename}.svg`,
-        'utf8',
-      ),
+      svgContent: fs.readFileSync(pathToSvg, 'utf8'),
+      // eslint-disable-next-line camelcase
+      svgFile___NODE: svgFileNode.id,
       descriptionHtml: marked(obj.description),
       internal: {
         contentDigest: createContentDigest(obj),
         type,
       },
     });
+
     createNode(yamlNode);
     createParentChildLink({parent: node, child: yamlNode});
   }

@@ -43,12 +43,15 @@ export default class IconPanel extends React.Component<Props, State> {
 
 function PopulatedState({icon}) {
   const status = icon.public ? 'Available' : 'Unavailable';
+  const camelCaseBasename = camelCase(icon.basename);
 
   return (
     <div className={styles.iconDetailsPanel}>
       <TextContainer>
         <div className={styles.icon}>
-          <Icon source={<div dangerouslySetInnerHTML={{__html: icon.svg}} />} />
+          <Icon
+            source={<div dangerouslySetInnerHTML={{__html: icon.svgContent}} />}
+          />
         </div>
         <div className={styles.spacingBase}>
           <div className={styles.iconInfo}>
@@ -74,7 +77,7 @@ function PopulatedState({icon}) {
         </div>
         <div className={styles.spacingBase}>
           <Subheading>Design</Subheading>
-          <Button>Download SVG</Button>
+          <Button url={icon.svgFile.publicURL}>Download SVG</Button>
         </div>
         <div className={`${styles.download} ${styles.spacingBase}`}>
           <Subheading>Usage</Subheading>
@@ -84,9 +87,9 @@ function PopulatedState({icon}) {
                 <span className={styles.syntaxIconTag}>&lt;Icon</span>{' '}
                 <span className={styles.syntaxIconSource}>source</span>
                 <span className={styles.syntaxIconTag}>=</span>
-                <span className={styles.syntaxIconName}>{`"${camelCase(
-                  icon.basename,
-                )}"`}</span>{' '}
+                <span
+                  className={styles.syntaxIconName}
+                >{`"${camelCaseBasename}"`}</span>{' '}
                 <span className={styles.syntaxIconTag}>/&gt;</span>
               </div>
             </Tooltip>

@@ -139,7 +139,10 @@ export const pageQuery = graphql`
           public
           keywords
           authors
-          svg
+          svgContent
+          svgFile {
+            publicURL
+          }
         }
       }
     }

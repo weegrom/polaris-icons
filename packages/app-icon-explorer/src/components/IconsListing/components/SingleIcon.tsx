@@ -18,7 +18,7 @@ export default function SingleIcon({icon, isActive = false}) {
         source={
           <div
             className={styles.iconSvg}
-            dangerouslySetInnerHTML={{__html: icon.svg}}
+            dangerouslySetInnerHTML={{__html: icon.svgContent}}
           />
         }
       />

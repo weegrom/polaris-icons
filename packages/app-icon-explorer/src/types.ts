@@ -4,7 +4,10 @@ export interface Icon {
   public: boolean;
   authors: string[];
   keywords: string[];
-  svg: string;
+  svgContent: string;
+  svgFile: {
+    publicURL: string;
+  };
   // eslint-disable-next-line camelcase
   date_added: any;
   // eslint-disable-next-line camelcase
