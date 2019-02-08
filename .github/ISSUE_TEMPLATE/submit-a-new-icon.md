@@ -9,7 +9,8 @@ assignees: ''
 
 <!--
   Please follow this template to submit a new icon. First check
-  Abstract or http://polaris-icons.shopifycloud.com.
+  Abstract or http://polaris-icons.shopifycloud.com to see if the icon 
+  you need already exists.
 
   Any questions? https://vault.shopify.com/Polaris-icon-creation-guidelines
   or #polaris-icons on Slack
