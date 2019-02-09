@@ -32,7 +32,7 @@ async function audit({filenames, baseDir}) {
     const fileContents = contentsPerFilename[i];
     const contentHash = md5String(JSON.stringify(fileContents));
 
-    if (!(contentHash in memo)) {
+    if (!memo.hasOwnProperty(contentHash)) {
       memo[contentHash] = [];
     }
     memo[contentHash].push(filename);

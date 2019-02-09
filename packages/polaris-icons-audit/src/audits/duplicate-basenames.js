@@ -14,7 +14,7 @@ function audit({filenames}) {
       .basename(filename, path.extname(filename))
       .replace(iconSuffixRegex, '');
 
-    if (!(baseFilename in memo)) {
+    if (!memo.hasOwnProperty(baseFilename)) {
       memo[baseFilename] = [];
     }
     memo[baseFilename].push(filename);

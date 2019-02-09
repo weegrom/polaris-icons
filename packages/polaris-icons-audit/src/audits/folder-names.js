@@ -1,7 +1,9 @@
 function audit({filenames}) {
   const folderNames = filenames.reduce((memo, filename) => {
     const foldername = filename.split('/').slice(-2)[0];
-    memo[foldername] = foldername in memo ? memo[foldername] + 1 : 1;
+    memo[foldername] = memo.hasOwnProperty(foldername)
+      ? memo[foldername] + 1
+      : 1;
     return memo;
   }, {});
 

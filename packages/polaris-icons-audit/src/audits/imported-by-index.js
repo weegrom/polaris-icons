@@ -16,7 +16,7 @@ function audit({filenames, dependentsByFile}) {
           path.basename(dependent, path.extname(dependent)) === 'index';
 
         const bucket = isImportedIntoIndex ? 0 : 1;
-        if (!(filename in memo[bucket])) {
+        if (!memo[bucket].hasOwnProperty(filename)) {
           memo[bucket][filename] = [];
         }
         memo[bucket][filename].push(dependent);
