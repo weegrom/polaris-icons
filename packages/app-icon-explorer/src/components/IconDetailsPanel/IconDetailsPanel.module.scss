@@ -17,17 +17,12 @@
   // or not. Reading this value from a custom property that gets set when the
   // fixed layout kicks in is very eyebrow-raising, but it helps keep
   // "things that change based on media queries" together in the base module.
-  justify-content: var(--details-panel-justification, normal);
+  // justify-content: var(--details-panel-justification, normal);
 }
 
 .icon {
   display: inline-block;
   margin: 0;
-}
-
-.iconInfo p {
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
 }
 
 .createdBy,
@@ -91,13 +86,18 @@ h3 {
   margin-bottom: 2.4rem;
 }
 
-.spacingMedium {
+.spacingTight {
   margin-bottom: 0.8rem;
 }
 
+.spacingExtraTight {
+  padding-bottom: 0.8rem;
+}
+
 .iconActions {
+  border-top: 1px solid #e5e6ea;
   display: block;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
 }
 
 .CodeExample .syntaxIconTag {

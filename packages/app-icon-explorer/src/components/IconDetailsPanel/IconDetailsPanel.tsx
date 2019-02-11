@@ -55,26 +55,13 @@ function PopulatedState({icon}) {
           />
         </div>
         <div className={styles.spacingBase}>
-          <div className={styles.iconInfo}>
-            <Heading>{startCase(icon.name)}</Heading>
-            <p>{startCase(icon.set)} icon</p>
+          <div className={styles.spacingTight}>
+            <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
           </div>
           <div
             className={styles.iconDescription}
             dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
           />
-        </div>
-        <div>
-          <Subheading>Created by</Subheading>
-          <ul className={`${styles.createdBy} ${styles.spacingBase}`}>
-            {icon.authors.map((author) => (
-              <li key={icon.id + author}>{author}</li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.spacingBase}>
-          <Subheading>Partner use</Subheading>
-          <p>{status}</p>
         </div>
         <div className={styles.spacingBase}>
           <Subheading>Design</Subheading>
@@ -102,6 +89,18 @@ function PopulatedState({icon}) {
             </a>
             {''}.
           </span>
+        </div>
+        <div>
+          <Subheading>Created by</Subheading>
+          <ul className={`${styles.createdBy} ${styles.spacingBase}`}>
+            {icon.authors.map((author) => (
+              <li key={icon.id + author}>{author}</li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.spacingBase}>
+          <Subheading>Partner use</Subheading>
+          <p>{status}</p>
         </div>
         <ul className={`${styles.keywords} ${styles.spacingLoose}`}>
           <Subheading>Keywords</Subheading>
