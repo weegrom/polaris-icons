@@ -5,11 +5,10 @@ import {
   Heading,
   Subheading,
   Button,
-  Stack,
   Tooltip,
   TextStyle,
 } from '@shopify/polaris';
-import {camelCase, startCase, upperFirst} from 'lodash';
+import {camelCase, startCase} from 'lodash';
 import {Icon as IconInterface} from '../../types';
 import styles from './IconDetailsPanel.module.scss';
 
@@ -55,7 +54,7 @@ function PopulatedState({icon}) {
           />
         </div>
         <div className={styles.spacingBase}>
-          <div className={styles.spacingTight}>
+          <div className={styles.spacingExtraTight}>
             <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
           </div>
           <div
@@ -113,24 +112,26 @@ function PopulatedState({icon}) {
       </TextContainer>
       <div className={styles.iconActions}>
         <Subheading>Actions</Subheading>
-        <a
-          href={`https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=request-changes-to-an-existing-icon.md&title=%5BRequest%5D%20${icon.name.replace(
-            /\s+/g,
-            '-',
-          )}_${icon.set} changes`}
-          className={styles.link}
-        >
-          Request to change this icon
-        </a>
-        <a
-          href={`https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=submit-changes-to-an-existing-icon.md&title=%5BSubmission%5D%20${icon.name.replace(
-            /\s+/g,
-            '-',
-          )}_${icon.set} changes`}
-          className={styles.link}
-        >
-          Submit a new version of this icon
-        </a>
+        <div className={styles.spacingTight}>
+          <a
+            href={`https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=request-changes-to-an-existing-icon.md&title=%5BRequest%5D%20${icon.name.replace(
+              /\s+/g,
+              '-',
+            )}_${icon.set} changes`}
+            className={styles.link}
+          >
+            Request to change this icon
+          </a>
+          <a
+            href={`https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=submit-changes-to-an-existing-icon.md&title=%5BSubmission%5D%20${icon.name.replace(
+              /\s+/g,
+              '-',
+            )}_${icon.set} changes`}
+            className={styles.link}
+          >
+            Submit a new version of this icon
+          </a>
+        </div>
       </div>
     </div>
   );

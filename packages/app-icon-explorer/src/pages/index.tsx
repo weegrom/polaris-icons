@@ -3,6 +3,7 @@ import {graphql} from 'gatsby';
 import {parse as qsParse} from 'query-string';
 import {
   AppFrame,
+  EmptyState,
   Seo,
   IconsListing,
   IconDetailsPanel,
@@ -71,7 +72,7 @@ export default class IndexPage extends React.Component<Props, State> {
           />
         </>
       ) : (
-        <EmptyState />
+        EmptyStateMarkup()
       );
 
     return (
@@ -97,8 +98,8 @@ export default class IndexPage extends React.Component<Props, State> {
   }
 }
 
-function EmptyState() {
-  return <div>No results found</div>;
+function EmptyStateMarkup() {
+  return <EmptyState />;
 }
 
 function filterIcons(icons, searchText) {
