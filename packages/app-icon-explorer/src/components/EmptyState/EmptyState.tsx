@@ -7,7 +7,7 @@ export default function EmptyState() {
     <div className={styles.wrapper}>
       <div>
         <div className={styles.content}>
-          <img src="http://placehold.it/230" />
+          <img src="http://placehold.it/230" alt="Placeholder illustration" />
           <Heading>No icons found</Heading>
           <p>
             <TextStyle variation="subdued">
