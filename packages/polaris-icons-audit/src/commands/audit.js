@@ -1,37 +1,25 @@
-const {readFileSync} = require('fs');
+const glob = require('glob');
 const audits = require('../audits');
 
 async function handler(options) {
-  const {inFile, reports = ''} = options;
+  const {baseDir, reports = ''} = options;
   const onlyShowReports = reports.length > 0 ? reports.split(',') : [];
   const showAllReports = onlyShowReports.length === 0;
 
-  const {baseDir, tree} = JSON.parse(readFileSync(inFile, 'utf-8'));
-
-  const dependents = depdendsTree(tree, (file) => file.endsWith('.svg'));
+  const dependents = glob.sync('**/*.svg', {cwd: baseDir});
 
   const auditPromises = audits
     .filter((auditFn) => {
       return showAllReports || onlyShowReports.includes(auditFn.auditName);
     })
     .map((auditFn) => {
-      let filteredDependents = dependents;
-
-      if (auditFn.filter) {
-        filteredDependents = Object.keys(dependents).reduce((memo, name) => {
-          if (auditFn.filter(name)) {
-            memo[name] = dependents[name];
-          }
-
-          return memo;
-        }, {});
-      }
+      const filterFn = auditFn.filter ? auditFn.filter : () => true;
+      const filenames = dependents.filter(filterFn);
 
       return Promise.resolve(
         auditFn({
           baseDir,
-          filenames: Object.keys(filteredDependents),
-          dependentsByFile: filteredDependents,
+          filenames,
         }),
       ).then((result) => ({
         name: auditFn.auditName,
@@ -69,8 +57,8 @@ function outputResult({name, type, result}) {
 }
 
 module.exports = {
-  command: 'audit <inFile>',
-  describe: 'audit info gathered by collect command',
+  command: 'audit <baseDir>',
+  describe: 'audit svgs in a given folder',
   builder: {
     reports: {
       type: 'string',
