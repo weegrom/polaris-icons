@@ -1,5 +1,8 @@
 const path = require('path');
-const polarisIcons = require('@shopify/polaris-icons');
+const tryRequire = require('try-require');
+
+// If @shopify/polaris-icons is available to be required, check them too
+const polarisIcons = tryRequire('@shopify/polaris-icons') || {};
 
 function audit({filenames}) {
   const iconSuffixRegex = /-(major|minor|spot)$/;

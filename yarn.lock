@@ -13137,6 +13137,11 @@ trough@^1.0.0:
   dependencies:
     glob "^7.1.2"
 
+try-require@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/try-require/-/try-require-1.2.1.tgz#34489a2cac0c09c1cc10ed91ba011594d4333be2"
+  integrity sha1-NEiaLKwMCcHMEO2RugEVlNQzO+I=
+
 tsconfig-paths@^3.6.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.7.0.tgz#02ae978db447b22e09dafcd4198be95c4885ceb2"

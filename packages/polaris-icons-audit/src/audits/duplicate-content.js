@@ -2,8 +2,11 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const SVGO = require('svgo');
+const tryRequire = require('try-require');
 const {svgOptions} = require('@shopify/images/optimize');
-const polarisIcons = require('@shopify/polaris-icons');
+
+// If @shopify/polaris-icons is available to be required, check them too
+const polarisIcons = tryRequire('@shopify/polaris-icons') || {};
 
 const svgo = new SVGO(svgOptions());
 
