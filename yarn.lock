@@ -797,10 +797,10 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
-"@shopify/app-bridge@^0.7.3":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@shopify/app-bridge/-/app-bridge-0.7.3.tgz#abadfa2ef6293f630764bc5ddca31750caf00f1c"
-  integrity sha512-xDkYvVvN8Gxy3JZduoT4Ohrl6fAuW+wEfhfL+qPzysu0LuJZ7CKgVCdEazPmtcI+V4GQPQLYLzcbCn3mWFU8dg==
+"@shopify/app-bridge@^1.0.3":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@shopify/app-bridge/-/app-bridge-1.0.7.tgz#d4a61d2672c496af357c86c321c6fa70e92b0377"
+  integrity sha512-/g9PXDvQK3YqzWfyXeQwxVOQaqarZukHWn8EUx0rAj8UjVRBeu2+FoZW8t9TrZAfeUUH2I4l1uWxSgLFdNQQiw==
 
 "@shopify/images@^1.1.0", "@shopify/images@^1.1.5":
   version "1.1.5"
@@ -817,29 +817,23 @@
     lodash "^4.17.4"
     lodash-decorators "^4.3.5"
 
-"@shopify/polaris-icons@1.0.0-beta.5":
-  version "1.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-1.0.0-beta.5.tgz#61e691aebd4234ff1daacf1a60936c55a584c0f9"
-  integrity sha512-wpmTryRRITTTmM7axBQnWMbdzxQl9hVcMOKqSDWiPV42OHCYyjCf7zpE2FiK/fuok9YDDHJVoTxf2DganjhvTw==
-
 "@shopify/polaris-tokens@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@shopify/polaris-tokens/-/polaris-tokens-2.1.1.tgz#cd36eed2cfcd8c940a19487e41d8818ce2503828"
   integrity sha512-YS4g7naOOgOvGKDCgu4WomVlTtHXlTW9LxCOINKHRmYh4hJ+BtfPA/aO72p/dlpkVG3BTO8CAiSYUNjxpVNxvw==
 
-"@shopify/polaris@^3.4.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-3.5.0.tgz#a868f6e4b958d5eadd44b9d901f77300e5c5e90d"
-  integrity sha512-XD5EaPPJVH2Oa3i/6/D4bvsT0vrKFlWhi3DTbs722i6gT/KHISbXKD7Ha2HAcuY1P4tCkEf8rQ65CAeJMUcEaw==
+"@shopify/polaris@^3.7.1":
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-3.7.1.tgz#7bfef9549da674c0f762a23a240ce02957704dd7"
+  integrity sha512-rZENtasdM3JWOTLU5YaiH4BGmKPyzifBVnmwp21dWMS5fdTwuhOlxiAiaQWieoU8IQ2ctQ5va6ADmdDcBffdog==
   dependencies:
     "@babel/runtime" "^7.1.6"
-    "@shopify/app-bridge" "^0.7.3"
+    "@shopify/app-bridge" "^1.0.3"
     "@shopify/images" "^1.1.0"
     "@shopify/javascript-utilities" "^2.2.1"
-    "@shopify/polaris-icons" "1.0.0-beta.5"
+    "@shopify/polaris-icons" "^2.0.0"
     "@shopify/polaris-tokens" "^2.1.1"
     "@shopify/react-compose" "^0.1.6"
-    "@shopify/react-html" "^3.0.3"
     "@shopify/react-utilities" "^2.0.3"
     "@types/prop-types" "^15.5.5"
     "@types/react" "^16.4.7"
@@ -861,22 +855,6 @@
     hoist-non-react-statics "^3.0.1"
     tslib "^1.9.3"
 
-"@shopify/react-html@^3.0.3":
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/@shopify/react-html/-/react-html-3.0.6.tgz#49d8ba0d582eefdda027c19b49297649c24a948c"
-  integrity sha512-wFIcDYLCHDWRQ7l9CrK7IV3qXA7vzufh4dRg1bAsOmvat4d9zVHzodQ3jz5JlhEKPpbdUf0PARFBPkgezjmb5A==
-  dependencies:
-    "@shopify/react-serialize" "^1.0.8"
-    react-helmet "^5.2.0"
-
-"@shopify/react-serialize@^1.0.8":
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/@shopify/react-serialize/-/react-serialize-1.0.12.tgz#67967e1bcd049f85ac01291a5e80fc74f1492b06"
-  integrity sha512-5/8YNjfTXK4pSMa0pe4f5dad+aIXmtj7vp5Bwsy+EuXD3r7je0uzXMUxBpyE9RQHzSCOhJolm8dUSqr0EIn01w==
-  dependencies:
-    serialize-javascript "^1.5.0"
-    tslib "^1.9.3"
-
 "@shopify/react-utilities@^2.0.3":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@shopify/react-utilities/-/react-utilities-2.0.3.tgz#424421e7202b402ec7934c137b5b7e035fbeb33c"
@@ -890,7 +868,7 @@
     classnames "^2.2.5"
     core-js "^2.5.6"
 
-"@types/classnames@^2.2.3":
+"@types/classnames@^2.2.3", "@types/classnames@^2.2.7":
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.7.tgz#fb68cc9be8487e6ea5b13700e759bfbab7e0fefd"
   integrity sha512-rzOhiQ55WzAiFgXRtitP/ZUT8iVNyllEpylJ5zHzR4vArUvMB39GTk+Zon/uAM0JxEFAWnwsxC2gH8s+tZ3Myg==
@@ -2968,7 +2946,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -11831,7 +11809,7 @@ send@0.16.2:
     range-parser "~1.2.0"
     statuses "~1.4.0"
 
-serialize-javascript@^1.4.0, serialize-javascript@^1.5.0:
+serialize-javascript@^1.4.0:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-1.6.1.tgz#4d1f697ec49429a847ca6f442a2a755126c4d879"
   integrity sha512-A5MOagrPFga4YaKQSWHryl7AXvbQkEqpw4NNYMTNYUNV51bA8ABHgYFpqKx+YFFrw59xMV1qGH1R4AgoNIVgCw==

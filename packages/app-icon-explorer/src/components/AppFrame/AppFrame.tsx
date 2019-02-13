@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppProvider, Frame, TopBar} from '@shopify/polaris';
 import '@shopify/polaris/styles.scss';
-import styles from './AppFrame.module.scss';
+import './polaris-overrides.scss';
 
 const theme = {
   colors: {
@@ -42,13 +42,10 @@ export default class AppFrame extends React.Component<Props, State> {
       />
     );
 
-    const userMenuMarkup = <div className={styles.moreActions} />;
-
     const topBarMarkup = (
       <TopBar
         showNavigationToggle
         searchField={searchFieldMarkup}
-        userMenu={userMenuMarkup}
         onSearchResultsDismiss={this.handleSearchResultsDismiss}
       />
     );
