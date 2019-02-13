@@ -1,31 +1,34 @@
 containers:
   default:
-    docker: circleci/ruby:2.5.1-node-browsers
+    docker: circleci/node:10.13.0
 
+# sudo chown stuff is here because `yarn install` tries to symlink the binaries
+# defined in packages into node_modules/.bin and then fails if the files
+# aren't owned by the current user
 shared:
   tests: &tests
     label: '🎩 Tests'
     container: default
     timeout: 5m
-    dependencies:
-      - yarn
     run:
+      - sudo chown -R circleci:circleci node_modules packages/*/bin
+      - yarn: ~
       - yarn run test
   lint: &lint
     label: 'Lint'
     container: default
     timeout: 5m
-    dependencies:
-      - yarn
     run:
+      - sudo chown -R circleci:circleci node_modules packages/*/bin
+      - yarn: ~
       - yarn run lint
   build: &build
     label: 'Build'
     container: default
     timeout: 5m
-    dependencies:
-      - yarn
     run:
+      - sudo chown -R circleci:circleci node_modules packages/*/bin
+      - yarn: ~
       - yarn run build
 
 steps:
