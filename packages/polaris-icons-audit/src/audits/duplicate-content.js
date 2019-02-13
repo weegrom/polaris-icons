@@ -55,6 +55,7 @@ async function audit({filenames, baseDir}) {
 
   return {
     summary: `Found ${duplicatedHashesCount} content hashes that are shared by multiple files`,
+    status: duplicatedHashesCount > 0 ? 'error' : 'pass',
     info: duplicatedHashes
       .map((hash) => {
         const count = duplicatedDependentsByHash[hash].length;
@@ -93,5 +94,4 @@ async function optimizedSvgFile(filename) {
 }
 
 audit.auditName = 'duplicate-content';
-audit.type = 'info';
 module.exports = audit;

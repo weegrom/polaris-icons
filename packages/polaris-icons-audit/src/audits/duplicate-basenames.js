@@ -36,6 +36,7 @@ function audit({filenames}) {
 
   return {
     summary: `Found ${duplicatedBasenamesCount} basenames that are shared by multiple files`,
+    status: duplicatedBasenamesCount > 0 ? 'warning' : 'pass',
     info: duplicatedBasenames
       .map((basename) => {
         const count = duplicatedDependentsByBasename[basename].length;
@@ -51,5 +52,4 @@ function audit({filenames}) {
 }
 
 audit.auditName = 'duplicate-basenames';
-audit.type = 'info';
 module.exports = audit;

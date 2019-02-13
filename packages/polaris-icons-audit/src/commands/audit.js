@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const glob = require('glob');
 const audits = require('../audits');
 
@@ -23,25 +24,41 @@ async function handler(options) {
         }),
       ).then((result) => ({
         name: auditFn.auditName,
-        type: auditFn.type,
         result,
       }));
     });
 
   const auditResults = await Promise.all(auditPromises);
   const output = auditResults.map(outputResult).join('\n\n\n');
+
+  process.exitCode = auditResults.some(auditHasError) ? 1 : 0;
   console.log(output);
 }
 
+function auditHasError({result}) {
+  return result.status === 'error';
+}
 
-function outputResult({name, type, result}) {
-  let rtn = `[${type}] ${name}: ${result.summary}`;
+function outputResult({name, result}) {
+  const statusCol = statusColor(result.status);
+  let rtn = chalk`{${statusCol} [${result.status}] ${name}}: ${result.summary}`;
 
   if (result.info && result.info.length) {
     rtn += `\n${result.info}`;
   }
 
   return rtn;
+}
+
+function statusColor(status) {
+  const lookup = {
+    pass: 'green',
+    warning: 'yellow',
+    error: 'red',
+    info: 'blue',
+  };
+
+  return lookup.hasOwnProperty(status) ? lookup[status] : 'red';
 }
 
 module.exports = {

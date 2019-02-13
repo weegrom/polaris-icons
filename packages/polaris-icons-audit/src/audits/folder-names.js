@@ -13,6 +13,7 @@ function audit({filenames}) {
 
   return {
     summary: `Found ${filenamesCount} svgs, placed into ${distinctFolderCount} folders`,
+    status: 'info',
     info: distinctFolderNames
       .map((folderName) => {
         return `  ${
@@ -24,5 +25,4 @@ function audit({filenames}) {
 }
 
 audit.auditName = 'folder-names';
-audit.type = 'info';
 module.exports = audit;
