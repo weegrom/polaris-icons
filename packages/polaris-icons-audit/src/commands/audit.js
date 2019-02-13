@@ -33,18 +33,6 @@ async function handler(options) {
   console.log(output);
 }
 
-function depends(tree, id) {
-  return Object.keys(tree).filter((dep) => tree[dep].includes(id));
-}
-
-function depdendsTree(tree, filter = () => true) {
-  return Object.keys(tree)
-    .filter(filter)
-    .reduce((memo, id) => {
-      memo[id] = depends(tree, id);
-      return memo;
-    }, {});
-}
 
 function outputResult({name, type, result}) {
   let rtn = `[${type}] ${name}: ${result.summary}`;
