@@ -42,18 +42,7 @@ export default class AppFrame extends React.Component<Props, State> {
       />
     );
 
-    const userMenuMarkup = (
-      <div className={styles.moreActions}>
-        {/* <ButtonGroup>
-          <Button url="https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=request-a-new-icon.md&title=%5BRequest%5Dhttps://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=request-a-new-icon.md&title=%5BRequest%5D">
-            Request icon
-          </Button>
-          <Button url="https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=submit-a-new-icon.md&title=%5BSubmission%5D">
-            Submit icon
-          </Button>
-        </ButtonGroup> */}
-      </div>
-    );
+    const userMenuMarkup = <div className={styles.moreActions} />;
 
     const topBarMarkup = (
       <TopBar

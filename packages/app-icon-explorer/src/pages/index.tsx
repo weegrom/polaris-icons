@@ -72,7 +72,7 @@ export default class IndexPage extends React.Component<Props, State> {
           />
         </>
       ) : (
-        EmptyStateMarkup()
+        <EmptyState />
       );
 
     return (
@@ -96,10 +96,6 @@ export default class IndexPage extends React.Component<Props, State> {
   handleSearch(value) {
     this.setState({searchText: value});
   }
-}
-
-function EmptyStateMarkup() {
-  return <EmptyState />;
 }
 
 function filterIcons(icons, searchText) {

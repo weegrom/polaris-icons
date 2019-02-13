@@ -10,16 +10,6 @@
   }
 }
 
-.iconDetailsPanel {
-  display: flex;
-  flex-direction: column;
-  // The justification of this changes based on if we're in the fixed-panel layout
-  // or not. Reading this value from a custom property that gets set when the
-  // fixed layout kicks in is very eyebrow-raising, but it helps keep
-  // "things that change based on media queries" together in the base module.
-  // justify-content: var(--details-panel-justification, normal);
-}
-
 .icon {
   display: inline-block;
   margin: 0;
@@ -91,13 +81,14 @@ h3 {
 }
 
 .spacingExtraTight {
-  padding-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
 .iconActions {
   border-top: 1px solid #e5e6ea;
   display: block;
-  padding: 2rem 0;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .iconActions div {

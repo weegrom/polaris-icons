@@ -9,9 +9,7 @@
 :global {
   .Polaris-TopBar-SearchField__Input {
     ~ .Polaris-TopBar-SearchField__Backdrop {
-      //background-color: #ffff00;
       border: 1px solid #dfe3e8;
-      min-width: 30rem;
       min-width: 30rem;
     }
   }
@@ -27,7 +25,6 @@
   }
 
   .Polaris-TopBar__LogoContainer {
-    display: flex;
     flex: 0 0 31.2rem;
   }
 }

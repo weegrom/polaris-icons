@@ -17,10 +17,10 @@ export default function EmptyState() {
         </div>
         <div className={styles.buttons}>
           <ButtonGroup>
-            <Button url="https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=request-a-new-icon.md&title=%5BRequest%5Dhttps://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=request-a-new-icon.md&title=%5BRequest%5D">
+            <Button url={ghNewIssueUrl('request-a-new-icon.md', '[Request]')}>
               Request icon
             </Button>
-            <Button url="https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=submit-a-new-icon.md&title=%5BSubmission%5D">
+            <Button url={ghNewIssueUrl('submit-a-new-icon.md', '[Submission]')}>
               Submit icon
             </Button>
           </ButtonGroup>
@@ -28,4 +28,11 @@ export default function EmptyState() {
       </div>
     </div>
   );
+}
+
+function ghNewIssueUrl(template, title) {
+  const encodedTemplate = encodeURIComponent(template);
+  const encodedTitle = encodeURIComponent(title);
+
+  return `https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=${encodedTemplate}&title=${encodedTitle}`;
 }
