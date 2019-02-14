@@ -4,29 +4,29 @@ containers:
 
 shared:
   tests: &tests
-    label: "🎩 Tests"
+    label: '🎩 Tests'
     container: default
     timeout: 5m
     dependencies:
       - yarn
     run:
-      - yarn run test 
+      - yarn run test
   lint: &lint
-    label: "Lint"
+    label: 'Lint'
     container: default
     timeout: 5m
     dependencies:
       - yarn
     run:
-      - yarn run lint 
+      - yarn run lint
   build: &build
-    label: "Build"
+    label: 'Build'
     container: default
     timeout: 5m
     dependencies:
       - yarn
     run:
-      - yarn run build 
+      - yarn run build
 
 steps:
   - <<: *lint
