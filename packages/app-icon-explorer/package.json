@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@shopify/polaris": "^3.4.0",
+    "@shopify/polaris": "^3.7.1",
     "@shopify/polaris-icons-raw": "^1.0.2",
     "@types/react-helmet": "^5.0.8",
     "classnames": "^2.2.6",
@@ -26,7 +26,7 @@
     "serve": "^10.1.1"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build-web": "gatsby build",
     "clean": "rimraf public",
     "serve-production": "serve -l 8000 public",
     "start": "gatsby develop"

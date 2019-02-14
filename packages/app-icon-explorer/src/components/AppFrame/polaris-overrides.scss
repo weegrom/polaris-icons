@@ -1,0 +1,17 @@
+// This is naughty and fragile but we're unable to customize this using theming
+.Polaris-TopBar-SearchField__Input {
+  ~ .Polaris-TopBar-SearchField__Backdrop {
+    border: 1px solid #dfe3e8;
+    min-width: 30rem;
+  }
+}
+
+.Polaris-TopBar-SearchField__Input--focused
+  .Polaris-TopBar-SearchField__Input,
+.Polaris-TopBar-SearchField__Input:focus {
+  color: #637381;
+
+  ~ .Polaris-TopBar-SearchField__Backdrop {
+    border: solid 2px #5c6ac4;
+  }
+}

@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  padding-bottom: 1.6rem;
+  text-align: center;
+}
+
+.content p {
+  margin-top: 0.8rem;
+  text-align: center;
+  color: #637381;
+}
+
+.content img {
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  justify-content: center;
+  display: flex;
+}

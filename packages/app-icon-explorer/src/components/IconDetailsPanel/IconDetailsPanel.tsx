@@ -5,11 +5,10 @@ import {
   Heading,
   Subheading,
   Button,
-  Stack,
   Tooltip,
   TextStyle,
 } from '@shopify/polaris';
-import {camelCase, startCase, upperFirst} from 'lodash';
+import {startCase} from 'lodash';
 import {Icon as IconInterface} from '../../types';
 import styles from './IconDetailsPanel.module.scss';
 
@@ -44,10 +43,10 @@ export default class IconPanel extends React.Component<Props, State> {
 
 function PopulatedState({icon}) {
   const status = icon.public ? 'Allowed' : 'Not allowed';
-  const camelCaseBasename = camelCase(icon.basename);
+  const basename = icon.basename;
 
   return (
-    <div className={styles.iconDetailsPanel}>
+    <div>
       <TextContainer>
         <div className={styles.icon}>
           <Icon
@@ -55,26 +54,13 @@ function PopulatedState({icon}) {
           />
         </div>
         <div className={styles.spacingBase}>
-          <div className={styles.iconInfo}>
-            <Heading>{startCase(icon.name)}</Heading>
-            <p>{startCase(icon.set)} icon</p>
+          <div className={styles.spacingExtraTight}>
+            <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
           </div>
           <div
             className={styles.iconDescription}
             dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
           />
-        </div>
-        <div>
-          <Subheading>Created by</Subheading>
-          <ul className={`${styles.createdBy} ${styles.spacingBase}`}>
-            {icon.authors.map((author) => (
-              <li key={icon.id + author}>{author}</li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.spacingBase}>
-          <Subheading>Partner use</Subheading>
-          <p>{status}</p>
         </div>
         <div className={styles.spacingBase}>
           <Subheading>Design</Subheading>
@@ -90,7 +76,7 @@ function PopulatedState({icon}) {
                 <span className={styles.syntaxIconTag}>=</span>
                 <span
                   className={styles.syntaxIconName}
-                >{`"${camelCaseBasename}"`}</span>{' '}
+                >{`"${basename}"`}</span>{' '}
                 <span className={styles.syntaxIconTag}>/&gt;</span>
               </div>
             </Tooltip>
@@ -103,6 +89,18 @@ function PopulatedState({icon}) {
             {''}.
           </span>
         </div>
+        <div>
+          <Subheading>Created by</Subheading>
+          <ul className={`${styles.createdBy} ${styles.spacingBase}`}>
+            {icon.authors.map((author) => (
+              <li key={icon.id + author}>{author}</li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.spacingBase}>
+          <Subheading>Partner use</Subheading>
+          <p>{status}</p>
+        </div>
         <ul className={`${styles.keywords} ${styles.spacingLoose}`}>
           <Subheading>Keywords</Subheading>
           {icon.keywords.map((keyword) => (
@@ -114,27 +112,36 @@ function PopulatedState({icon}) {
       </TextContainer>
       <div className={styles.iconActions}>
         <Subheading>Actions</Subheading>
-        <a
-          href={`https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=request-changes-to-an-existing-icon.md&title=%5BRequest%5D%20${icon.name.replace(
-            /\s+/g,
-            '-',
-          )}_${icon.set} changes`}
-          className={styles.link}
-        >
-          Request to change this icon
-        </a>
-        <a
-          href={`https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=submit-changes-to-an-existing-icon.md&title=%5BSubmission%5D%20${icon.name.replace(
-            /\s+/g,
-            '-',
-          )}_${icon.set} changes`}
-          className={styles.link}
-        >
-          Submit a new version of this icon
-        </a>
+        <div className={styles.spacingTight}>
+          <a
+            href={ghNewIssueUrl(
+              'request-changes-to-an-existing-icon.md',
+              `[Request] ${icon.basename} changes`,
+            )}
+            className={styles.link}
+          >
+            Request to change this icon
+          </a>
+          <a
+            href={ghNewIssueUrl(
+              'submit-changes-to-an-existing-icon.md',
+              `[Submission] ${icon.basename} changes`,
+            )}
+            className={styles.link}
+          >
+            Submit a new version of this icon
+          </a>
+        </div>
       </div>
     </div>
   );
+}
+
+function ghNewIssueUrl(template, title) {
+  const encodedTemplate = encodeURIComponent(template);
+  const encodedTitle = encodeURIComponent(title);
+
+  return `https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=${encodedTemplate}&title=${encodedTitle}`;
 }
 
 function EmptyState() {

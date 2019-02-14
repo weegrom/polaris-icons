@@ -13,7 +13,7 @@
     "lint:css": "yarn run stylelint '**/*.{scss}'",
     "test": "jest",
     "release": "lerna publish && git push --follow-tags",
-    "heroku-postbuild": "yarn --cwd packages/app-icon-explorer run build"
+    "heroku-postbuild": "yarn run lerna run build && yarn --cwd packages/app-icon-explorer run build-web"
   },
   "repository": {
     "type": "git",

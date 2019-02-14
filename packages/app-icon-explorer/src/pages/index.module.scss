@@ -2,7 +2,7 @@ $borderColor: #e5e6eb;
 $pagePadding: 32px;
 $gridColumnMinWidth: 320px;
 $gridGap: 32px;
-$gridMinWidth: ($gridColumnMinWidth * 2) + ($pagePadding * 2);
+$gridMinWidth: 769px; // Same point at which the icon in the TopBar disappears
 $gridMaxWidth: 100%;
 :global {
   body {
@@ -23,6 +23,7 @@ $gridMaxWidth: 100%;
 .page::before {
   content: '';
   position: fixed;
+  z-index: 1;
   top: 5.6rem;
   right: 0;
   left: 0;
@@ -57,7 +58,6 @@ $gridMaxWidth: 100%;
   padding: 60px 16px 0;
 
   @media (min-width: $gridMinWidth) {
-    --details-panel-justification: space-between;
     position: fixed;
     right: 1.6rem;
     overflow-y: auto;

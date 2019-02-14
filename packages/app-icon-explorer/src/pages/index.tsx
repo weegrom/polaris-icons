@@ -3,6 +3,7 @@ import {graphql} from 'gatsby';
 import {parse as qsParse} from 'query-string';
 import {
   AppFrame,
+  EmptyState,
   Seo,
   IconsListing,
   IconDetailsPanel,
@@ -95,10 +96,6 @@ export default class IndexPage extends React.Component<Props, State> {
   handleSearch(value) {
     this.setState({searchText: value});
   }
-}
-
-function EmptyState() {
-  return <div>No results found</div>;
 }
 
 function filterIcons(icons, searchText) {

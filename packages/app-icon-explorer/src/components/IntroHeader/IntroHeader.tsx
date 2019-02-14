@@ -9,7 +9,7 @@ import styles from './IntroHeader.module.scss';
 
 export default function IntroHeader() {
   return (
-    <div className={styles.container}>
+    <div>
       <TextContainer>
         <DisplayText size="extraLarge">Polaris icons</DisplayText>
         <p>
