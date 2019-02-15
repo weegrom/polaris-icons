@@ -5,7 +5,7 @@ const tryRequire = require('try-require');
 const polarisIcons = tryRequire('@shopify/polaris-icons') || {};
 
 function audit({filenames}) {
-  const iconSuffixRegex = /-(major|minor|spot)$/;
+  const iconSuffixRegex = /(-major|-minor|-spot|Major|Minor|Spot)$/;
 
   const polarisIconsFilenames = Object.keys(polarisIcons).map((importKey) => {
     return `@shopify/polaris-icons/${importKey}.svg`;
@@ -15,7 +15,8 @@ function audit({filenames}) {
   const dependentsByBasename = filenames.reduce((memo, filename) => {
     const baseFilename = path
       .basename(filename, path.extname(filename))
-      .replace(iconSuffixRegex, '');
+      .replace(iconSuffixRegex, '')
+      .toLowerCase();
 
     if (!memo.hasOwnProperty(baseFilename)) {
       memo[baseFilename] = [];
@@ -38,7 +39,7 @@ function audit({filenames}) {
   const duplicatedBasenamesCount = duplicatedBasenames.length;
 
   return {
-    summary: `Found ${duplicatedBasenamesCount} basenames that are shared by multiple files`,
+    summary: `Found ${duplicatedBasenamesCount} basenames shared by multiple files`,
     status: duplicatedBasenamesCount > 0 ? 'warning' : 'pass',
     info: duplicatedBasenames
       .map((basename) => {
