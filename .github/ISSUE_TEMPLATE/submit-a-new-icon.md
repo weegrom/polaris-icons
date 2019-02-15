@@ -28,6 +28,12 @@ Team - Project
   creating this icon, and any additional context.
 -->
 
+#### Link your branch from Abstract
+<!-- 
+  Make sure you've created a branch with your new icon
+  inside of Abstract (Polaris - Icons project) and link it here
+-->
+
 #### Icon SVG
 <!-- 
   Where can we find the icon (SVG)? Hint: Upload it to GDrive
