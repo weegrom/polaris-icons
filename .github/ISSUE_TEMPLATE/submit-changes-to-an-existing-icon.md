@@ -31,6 +31,12 @@ DD/MM/YYYY
   modifying this icon, and any additional context.
 -->
 
+#### Link your branch from Abstract
+<!-- 
+  Make sure you've created a branch with your modified icon
+  inside of Abstract (Polaris - Icons project) and link it here
+-->
+
 #### Modified icon SVG
 <!-- 
   Where can we find the icon (SVG)? Hint: Upload it to GDrive
