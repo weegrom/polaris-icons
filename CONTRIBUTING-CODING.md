@@ -37,6 +37,6 @@ yarn release
 
 **Note** The packages adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-4. Log in to [Shipit](https://shipit.shopify.io/shopify/polaris-icons/testing)
+4. Log in to [Shipit](https://shipit.shopify.io/shopify/polaris-icons/libraries)
 
 5. When CI is 🍏 on the tag commit, press `Deploy` to update packages on npm.
