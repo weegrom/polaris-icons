@@ -1,6 +1,6 @@
 {
   "name": "@shopify/polaris-icons-internal",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "license": "SEE LICENSE IN LICENSE.md",
   "author": "Shopify Inc.",
   "main": "index.js",
