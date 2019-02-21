@@ -5,7 +5,7 @@
   "author": "Shopify Inc.",
   "main": "index.js",
   "module": "index.es.js",
-  "types": "types/index.d.ts",
+  "types": "index.d.ts",
   "scripts": {
     "build": "yarn run rollup -c",
     "prepublish": "yarn run build",
@@ -18,7 +18,7 @@
   "files": [
     "index.js",
     "index.es.js",
-    "types/"
+    "index.d.ts"
   ],
   "repository": {
     "type": "git",
@@ -30,6 +30,6 @@
   "homepage": "https://github.com/Shopify/polaris-icons/blob/master/packages/polaris-icons/README.md",
   "devDependencies": {
     "@shopify/polaris-icons-raw": "^1.0.2",
-    "rollup": "^0.66.5"
+    "rollup": "^1.2.2"
   }
 }

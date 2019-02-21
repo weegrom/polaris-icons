@@ -15,9 +15,8 @@
     "**/.svn": true,
     "**/node_modules": true,
     "packages/*/build": true,
-    "packages/*/types": true,
     "packages/app-icon-explorer/{.cache,public}": true,
-    "packages/polaris-icons{,-internal}/index{,.es}.js": true
+    "packages/polaris-icons{,-internal}/index{.js,.es.js,.d.ts}": true
   },
   "javascript.validate.enable": false,
   "jest.autoEnable": false,
@@ -28,9 +27,8 @@
     "**/bower_components": true,
     "**/node_modules": true,
     "packages/*/build": true,
-    "packages/*/types": true,
     "packages/app-icon-explorer/{.cache,public}": true,
-    "packages/polaris-icons{,-internal}/index{,.es}.js": true
+    "packages/polaris-icons{,-internal}/index{.js,.es.js,.d.ts}": true
   },
   "stylelint.enable": true,
   "typescript.tsdk": "./node_modules/typescript/lib"

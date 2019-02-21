@@ -1,7 +1,5 @@
 **/node_modules/*
-**/types/*
 **/build/*
 /packages/app-icon-explorer/public/*
 /packages/polaris-icons/index.*
 /packages/polaris-icons-internal/index.*
-

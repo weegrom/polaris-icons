@@ -1,7 +1,9 @@
 // rollup.config.js
-import typescript from 'rollup-plugin-typescript2';
 import resolve from 'rollup-plugin-node-resolve';
-import icon from '../../config/rollup/plugins/icon';
+import babel from 'rollup-plugin-babel';
+import svgr from '@svgr/rollup';
+import {svgOptions} from '@shopify/images/optimize';
+import customTypes from '../../config/rollup/plugins/customTypes';
 
 const rollupConfig = {
   input: 'src/index.ts',
@@ -15,14 +17,31 @@ const rollupConfig = {
       format: 'esm',
     },
   ],
+  external: ['react'],
   plugins: [
-    typescript({
-      tsconfig: 'tsconfig.build.json',
-      useTsconfigDeclarationDir: true,
-      cacheRoot: './build/cache/rts2',
+    svgr({
+      include: '../polaris-icons-raw/**/*.svg',
+      exclude: 'node_modules/**',
+      svgoConfig: svgOptions(),
+      replaceAttrValues: {
+        '#FFF': 'currentColor',
+        '#fff': 'currentColor',
+        '#212B36': '{undefined}',
+        '#212b36': '{undefined}',
+      },
+      babel: false,
     }),
-    resolve(),
-    icon(),
+    babel({
+      exclude: 'node_modules/**',
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.svg'],
+      envName: 'production',
+    }),
+    resolve({
+      only: ['@shopify/polaris-icons-raw'],
+    }),
+    customTypes({
+      include: 'src/index.ts',
+    }),
   ],
 };
 

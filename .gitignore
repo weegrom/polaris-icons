@@ -22,6 +22,3 @@ packages/app-icon-explorer/public
 
 # Generated metadata
 metadata.json
-
-# TypeScript type definitions
-packages/**/types/
