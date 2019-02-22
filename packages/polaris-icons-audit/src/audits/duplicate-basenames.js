@@ -5,7 +5,7 @@ const tryRequire = require('try-require');
 const polarisIcons = tryRequire('@shopify/polaris-icons') || {};
 
 function audit({filenames}) {
-  const iconSuffixRegex = /(-major|-minor|-spot|Major|Minor|Spot)$/;
+  const iconSuffixRegex = /([-_]major|[-_]minor|[-_]spot|Major|Minor|Spot)$/;
 
   const polarisIconsFilenames = Object.keys(polarisIcons).map((importKey) => {
     return `@shopify/polaris-icons/${importKey}.svg`;
