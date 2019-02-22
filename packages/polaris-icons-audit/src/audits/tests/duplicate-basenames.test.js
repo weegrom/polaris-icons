@@ -55,20 +55,26 @@ describe('duplicate-basenames audit', () => {
       'bar/icons/icon1Major.svg',
       'bar/icons/icon1Minor.svg',
       'bar/icons/icon1Spot.svg',
-      'baz/icons/icon2.svg',
+      'baz/icons/icon1_major.svg',
+      'baz/icons/icon1_minor.svg',
+      'baz/icons/icon1_spot.svg',
+      'qux/icons/icon2.svg',
     ];
 
     expect(duplicateBasenames({filenames})).toEqual({
       summary: 'Found 1 basenames shared by multiple files',
       status: 'warning',
-      info: `  icon1 is used in 7 files:
+      info: `  icon1 is used in 10 files:
     foo/icons/icon1.svg
     foo/icons/icon1-major.svg
     foo/icons/icon1-minor.svg
     foo/icons/icon1-spot.svg
     bar/icons/icon1Major.svg
     bar/icons/icon1Minor.svg
-    bar/icons/icon1Spot.svg`,
+    bar/icons/icon1Spot.svg
+    baz/icons/icon1_major.svg
+    baz/icons/icon1_minor.svg
+    baz/icons/icon1_spot.svg`,
     });
   });
 
