@@ -1,35 +1,33 @@
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
-const SVGO = require('svgo');
 const tryRequire = require('try-require');
+// We need to have React in scope as it is used when we eval the svgr output
+// eslint-disable-next-line no-unused-vars
+const React = require('react');
+const {renderToStaticMarkup} = require('react-dom/server');
+const {default: convert} = require('@svgr/core');
 const {svgOptions} = require('@shopify/images/optimize');
 
 // If @shopify/polaris-icons is available to be required, check them too
 const polarisIcons = tryRequire('@shopify/polaris-icons') || {};
 
-const svgo = new SVGO(svgOptions());
-
-const VIEWBOX_REGEX = /viewBox="([^"]*)"/;
-const SVG_REGEX = /(<svg[^>]*>|<\/svg>)/g;
-const FILL_REGEX = /fill="[^"]*"/g;
-
-async function audit({filenames, baseDir}) {
-  const polarisIconsContentsPerFilename = Object.keys(polarisIcons).reduce(
+function audit({filenames, baseDir}) {
+  const polarisIconsComponentsPerFilename = Object.keys(polarisIcons).reduce(
     (memo, importKey) => {
       memo[`@shopify/polaris-icons/${importKey}.svg`] = polarisIcons[importKey];
       return memo;
     },
     {},
   );
-  filenames.unshift(...Object.keys(polarisIconsContentsPerFilename));
+  filenames.unshift(...Object.keys(polarisIconsComponentsPerFilename));
 
-  const contentsPerFilenamePromises = filenames.map((filename) => {
-    return filename.startsWith('@shopify/polaris-icons')
-      ? Promise.resolve(polarisIconsContentsPerFilename[filename])
-      : optimizedSvgFile(path.join(baseDir, filename));
+  const contentsPerFilename = filenames.map((filename) => {
+    const reactComponent = filename.startsWith('@shopify/polaris-icons')
+      ? polarisIconsComponentsPerFilename[filename]
+      : componentFromSvgFile(path.join(baseDir, filename));
+    return renderToStaticMarkup(reactComponent());
   });
-  const contentsPerFilename = await Promise.all(contentsPerFilenamePromises);
 
   const dependentsByHash = filenames.reduce((memo, filename, i) => {
     const fileContents = contentsPerFilename[i];
@@ -57,7 +55,7 @@ async function audit({filenames, baseDir}) {
   const duplicatedHashesCount = duplicatedHashes.length;
 
   return {
-    summary: `Found ${duplicatedHashesCount} content hashes that are shared by multiple files`,
+    summary: `Found ${duplicatedHashesCount} content hashes shared by multiple files`,
     status: duplicatedHashesCount > 0 ? 'error' : 'pass',
     info: duplicatedHashes
       .map((hash) => {
@@ -80,20 +78,34 @@ function md5String(string) {
     .digest('hex');
 }
 
-async function optimizedSvgFile(filename) {
+function componentFromSvgFile(filename) {
   const source = fs.readFileSync(filename, 'utf8');
-  const result = await svgo.optimize(source);
 
-  const finalSource = result.data.replace(FILL_REGEX, (fill) => {
-    return fill.includes('#FFF') ? 'fill="currentColor"' : '';
-  });
+  const svgrOutput = convert.sync(
+    source,
+    {
+      plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
+      svgoConfig: svgOptions(),
+      replaceAttrValues: {
+        '#FFF': 'currentColor',
+        '#fff': 'currentColor',
+        '#212B36': '{undefined}',
+        '#212b36': '{undefined}',
+      },
+      template: ({template}, opts, {jsx}) => template.ast`(props) => ${jsx}`,
+      jsx: {
+        babelConfig: {
+          plugins: [['@babel/plugin-transform-react-jsx']],
+        },
+      },
+    },
+    {
+      filePath: filename,
+    },
+  );
 
-  const vb = VIEWBOX_REGEX.exec(finalSource);
-  const viewBox = vb ? vb[1] : '';
-  return {
-    viewBox,
-    body: finalSource.replace(SVG_REGEX, ''),
-  };
+  // eslint-disable-next-line no-eval
+  return eval(svgrOutput);
 }
 
 audit.auditName = 'duplicate-content';
