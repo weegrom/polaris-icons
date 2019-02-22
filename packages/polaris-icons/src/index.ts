@@ -7,6 +7,10 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/alert_minor.svg';
 
 export {
+  default as AlertCircleMajor,
+} from '@shopify/polaris-icons-raw/icons/polaris/alert-circle_major.svg';
+
+export {
   default as ArrowDownMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/arrow-down_minor.svg';
 
@@ -67,8 +71,20 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/chevron-up_minor.svg';
 
 export {
+  default as CircleAlertMajor,
+} from '@shopify/polaris-icons-raw/icons/polaris/circle-alert_major.svg';
+
+export {
+  default as CircleBarredMajor,
+} from '@shopify/polaris-icons-raw/icons/polaris/circle-barred_major.svg';
+
+export {
   default as CircleCancelMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-cancel_minor.svg';
+
+export {
+  default as CircleCheckMarkMajor,
+} from '@shopify/polaris-icons-raw/icons/polaris/circle-check-mark_major.svg';
 
 export {
   default as CircleChevronDownMinor,
@@ -115,6 +131,10 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/dispute_minor.svg';
 
 export {
+  default as DragDropMajor,
+} from '@shopify/polaris-icons-raw/icons/polaris/drag-drop_major.svg';
+
+export {
   default as DuplicateMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/duplicate_minor.svg';
 
@@ -123,12 +143,20 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/embed_minor.svg';
 
 export {
+  default as EnableSelectionMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/enable-selection_minor.svg';
+
+export {
   default as ExportMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/export_minor.svg';
 
 export {
   default as ExternalMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/external_minor.svg';
+
+export {
+  default as FlagMajor,
+} from '@shopify/polaris-icons-raw/icons/polaris/flag_major.svg';
 
 export {
   default as HelpMajor,

@@ -1,0 +1,13 @@
+name: flag
+authors:
+  - Adam Whitcroft
+date_added: 2019-02-21
+date_modified: 2019-02-21
+description: >
+  N/A
+exclusive_use:
+public: true
+set: major
+version: 1
+keywords:
+  - flag
