@@ -10,20 +10,21 @@ const metadataSchema = require('./metadata-schema.json');
 const ajvInstance = new Ajv({allErrors: true});
 const validate = ajvInstance.compile(metadataSchema);
 
-const allIconMetadataFiles = glob.sync(
-  path.resolve(__dirname, '../icons/polaris/*.yml'),
-);
-
-describe('metadata', () => {
-  allIconMetadataFiles.forEach((iconMetadataFile) => {
-    const iconPath = path.relative(`${__dirname}/../..`, iconMetadataFile);
-
-    it(`${iconPath} is valid`, () => {
-      const metadata = yaml.safeLoad(fs.readFileSync(iconMetadataFile), {
+const allIconMetadataFiles = glob
+  .sync(path.resolve(__dirname, '../icons/polaris/*.yml'))
+  .map((absoluteIconPath) => {
+    return {
+      iconPath: path.relative(`${__dirname}/../..`, absoluteIconPath),
+      iconMetadata: yaml.safeLoad(fs.readFileSync(absoluteIconPath), {
         schema: yaml.JSON_SCHEMA,
-      });
-      validate(metadata);
+      }),
+    };
+  }, []);
 
+allIconMetadataFiles.forEach(({iconPath, iconMetadata}) => {
+  describe(`Metadata: ${iconPath}`, () => {
+    it(`has a valid schemea`, () => {
+      validate(iconMetadata);
       expect(validate.errors).toBeNull();
     });
   });
