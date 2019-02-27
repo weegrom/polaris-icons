@@ -1,6 +1,10 @@
+@import '~@shopify/polaris-tokens/dist/colors';
+@import '~@shopify/polaris-tokens/dist/typography';
+
 .empty {
   display: flex;
   width: 100%;
+  height: calc(100% - 56px);
   justify-content: space-between;
   align-items: center;
 
@@ -13,6 +17,8 @@
 .icon {
   display: inline-block;
   margin: 0;
+  height: 20px;
+  width: 20px;
 }
 
 .createdBy,
@@ -21,11 +27,11 @@
   list-style-type: none;
 }
 
-ul.createdBy {
+.createdBy {
   margin-top: 0;
 }
 
-ul.keywords li {
+.keywordsItem {
   margin: 4px 4px 0 0;
   display: inline-flex;
   max-width: 100%;
@@ -34,34 +40,28 @@ ul.keywords li {
   padding-left: 0.8rem;
   padding-right: 0.8rem;
   padding-top: 0;
-  background-color: #dfe3e8;
+  background-color: $color-sky;
   border-radius: 3px;
-  color: #212b36;
+  color: $color-ink;
 }
-
-@import '~@shopify/polaris-tokens/dist/typography';
 
 .CodeExample {
   font-family: unquote($font-stack-monospace);
   font-size: 14px;
   border-radius: 0.6rem;
-  background-color: #f9fafb;
+  background-color: $color-sky-lighter;
   padding: 2rem;
   margin-bottom: 0.4rem;
   white-space: pre-wrap;
 }
 
-.download {
-  cursor: pointer;
+.usage span {
+  color: $color-ink-lighter;
 }
 
-.download span {
-  color: #637381;
-}
-
-.download a {
+.usage a {
   text-decoration: none;
-  color: #007ace;
+  color: $color-blue;
 }
 
 h3 {
@@ -95,23 +95,6 @@ h3 {
   padding-top: 0.4rem;
 }
 
-.CodeExample .syntaxIconTag {
-  color: #00848e;
-}
-
-.CodeExample .syntaxIconSource {
-  color: #bf0711;
-}
-
-.CodeExample .syntaxIconName {
-  color: #c05717;
-}
-
-.CodeExample span:focus {
-  text-decoration: none;
-  outline: none;
-}
-
 .iconDescription {
   min-height: 4rem;
 }
@@ -119,6 +102,6 @@ h3 {
 .link {
   display: block;
   text-decoration: none;
-  color: #007ace;
+  color: $color-blue;
   padding-bottom: 0.8rem;
 }

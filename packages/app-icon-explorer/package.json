@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "private": true,
   "dependencies": {
-    "@shopify/polaris": "^3.7.1",
+    "@shopify/polaris": "^3.9.0",
     "@shopify/polaris-icons-raw": "^1.2.0",
     "@types/react-helmet": "^5.0.8",
     "classnames": "^2.2.6",

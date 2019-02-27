@@ -1,0 +1,26 @@
+@import '~@shopify/polaris-tokens/dist/colors';
+
+.codeHighlight {
+  outline: none;
+}
+
+.codeHighlight .syntaxIconTag {
+  color: $color-teal-dark;
+}
+
+.codeHighlight .syntaxIconSource {
+  color: $color-red-dark;
+}
+
+.codeHighlight .syntaxIconName {
+  color: $color-orange-dark;
+}
+
+.codeHighlight .syntaxIconComponent {
+  color: $color-yellow-dark;
+}
+
+.codeHighlight span:focus {
+  text-decoration: none;
+  outline: none;
+}

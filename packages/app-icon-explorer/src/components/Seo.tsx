@@ -15,6 +15,7 @@ const detailsQuery = graphql`
     site {
       siteMetadata {
         title
+        titleTemplate
         description
         author
       }
@@ -43,7 +44,7 @@ export default function Seo(props: Props) {
               lang,
             }}
             title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            titleTemplate={data.site.siteMetadata.titleTemplate}
             meta={[
               {
                 name: `description`,

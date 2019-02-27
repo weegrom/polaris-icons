@@ -16,4 +16,5 @@ export interface Icon {
   set: string;
   basename: string;
   status: string;
+  reactname: string;
 }

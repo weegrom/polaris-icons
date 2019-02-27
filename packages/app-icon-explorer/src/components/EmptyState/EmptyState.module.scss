@@ -1,7 +1,10 @@
+@import '~@shopify/polaris-tokens/dist/colors';
+
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: calc(100% - 106px);
 }
 
 .content {
@@ -9,10 +12,17 @@
   text-align: center;
 }
 
+.content svg {
+  height: 41px;
+  width: 41px;
+  fill: #919eab;
+  margin-bottom: 1.6rem;
+}
+
 .content p {
   margin-top: 0.8rem;
   text-align: center;
-  color: #637381;
+  color: $color-ink-lighter;
 }
 
 .content img {
@@ -22,4 +32,8 @@
 .buttons {
   justify-content: center;
   display: flex;
+}
+
+.DisplayText p {
+  color: $color-ink;
 }

@@ -1,6 +1,8 @@
+@import '~@shopify/polaris-tokens/dist/colors';
+
 .link {
   text-decoration: none;
-  color: #007ace;
+  color: $color-blue;
 }
 
 .buttons {

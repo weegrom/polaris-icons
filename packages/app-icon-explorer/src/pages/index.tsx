@@ -130,10 +130,11 @@ export const pageQuery = graphql`
           date_added
           date_modified
           name
+          reactname
+          basename
           id
           set
           descriptionHtml
-          basename
           public
           keywords
           authors

@@ -30,9 +30,11 @@ async function onCreateNode({
     const svgFileNode = getNodes().find(
       (fileNode) => fileNode.absolutePath === pathToSvg,
     );
+    const reactname = _.upperFirst(_.camelCase(basename));
 
     const yamlNode = Object.assign(obj, {
       basename,
+      reactname,
       id,
       children: [],
       parent: node.id,
@@ -50,21 +52,11 @@ async function onCreateNode({
     createParentChildLink({parent: node, child: yamlNode});
   }
 
-  if (_.isArray(parsedContent)) {
-    parsedContent.forEach((obj, i) => {
-      transformObject(
-        obj,
-        obj.id ? obj.id : createNodeId(`${node.id} [${i}] >>> YAML`),
-        _.upperFirst(_.camelCase(`${node.name} Yaml`)),
-      );
-    });
-  } else if (_.isPlainObject(parsedContent)) {
-    transformObject(
-      parsedContent,
-      parsedContent.id ? parsedContent.id : createNodeId(`${node.id} >>> YAML`),
-      _.upperFirst(_.camelCase(`${path.basename(node.dir)} Yaml`)),
-    );
-  }
+  transformObject(
+    parsedContent,
+    parsedContent.id ? parsedContent.id : createNodeId(`${node.id} >>> YAML`),
+    _.upperFirst(_.camelCase(`${path.basename(node.dir)} Yaml`)),
+  );
 }
 
 module.exports.onCreateNode = onCreateNode;
