@@ -1,3 +1,4 @@
+/* eslint-disable shopify/images-no-direct-imports */
 export {
   default as AddMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/add_minor.svg';
