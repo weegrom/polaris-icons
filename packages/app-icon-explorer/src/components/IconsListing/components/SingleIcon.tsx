@@ -21,6 +21,8 @@ export default function SingleIcon({icon, isActive = false}) {
         if ((window as any).gtag) {
           (window as any).gtag('event', 'select_icon', {
             /* eslint-disable-next-line camelcase */
+            event_category: 'icons',
+            /* eslint-disable-next-line camelcase */
             event_label: icon.reactname,
           });
         }

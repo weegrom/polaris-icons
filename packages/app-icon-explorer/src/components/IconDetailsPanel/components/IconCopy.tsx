@@ -37,6 +37,8 @@ export default class IconCopy extends React.Component<Props, State> {
     if ((window as any).gtag) {
       (window as any).gtag('event', 'copy_snippet', {
         /* eslint-disable-next-line camelcase */
+        event_category: 'icons',
+        /* eslint-disable-next-line camelcase */
         event_label: this.props.reactname,
       });
     }
