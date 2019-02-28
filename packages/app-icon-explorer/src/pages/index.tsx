@@ -49,7 +49,7 @@ export default class IndexPage extends React.Component<Props, State> {
 
     const qs = qsParse(this.props.location.search);
     const currentIcon = qs.icon
-      ? icons.find((icon) => icon.name === qs.icon)
+      ? icons.find((icon) => icon.reactname === qs.icon)
       : undefined;
     const activeIconId = currentIcon ? currentIcon.id : undefined;
 

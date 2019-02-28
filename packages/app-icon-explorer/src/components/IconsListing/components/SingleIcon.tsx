@@ -15,7 +15,7 @@ export default function SingleIcon({icon, isActive = false}) {
   /* eslint-disable react/jsx-no-bind */
   return (
     <Link
-      to={`/?icon=${icon.name}`}
+      to={`/?icon=${icon.reactname}`}
       className={className}
       onClick={() => {
         if ((window as any).gtag) {
