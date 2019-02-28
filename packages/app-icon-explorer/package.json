@@ -29,7 +29,8 @@
   },
   "scripts": {
     "build-web": "gatsby build",
-    "clean": "rimraf public",
-    "start": "gatsby develop"
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "start": "gatsby serve"
   }
 }

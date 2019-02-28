@@ -7,13 +7,16 @@
     "bootstrap": "lerna bootstrap",
     "publish": "lerna publish",
     "build": "lerna run build",
-    "start": "yarn --cwd packages/app-icon-explorer run start",
+    "clean": "lerna run clean",
+    "start": "yarn workspace app-icon-explorer run start",
+    "develop": "yarn workspace app-icon-explorer run develop",
+    "dev": "yarn run develop",
     "lint": "yarn run lint:js && yarn run lint:css",
     "lint:js": "yarn run eslint '**/*.{js,ts,tsx}'",
     "lint:css": "yarn run stylelint '**/*.{scss}'",
     "test": "jest",
     "release": "lerna publish && git push --follow-tags",
-    "heroku-postbuild": "yarn run lerna run build && yarn --cwd packages/app-icon-explorer run build-web"
+    "heroku-postbuild": "yarn run lerna run build && yarn workspace app-icon-explorer run build-web"
   },
   "repository": {
     "type": "git",
