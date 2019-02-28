@@ -1,5 +1,7 @@
 @import '~@shopify/polaris-tokens/dist/colors';
+@import '~@shopify/polaris-tokens/dist/spacing';
 @import '~@shopify/polaris-tokens/dist/typography';
+$borderColor: $color-sky-light;
 
 .empty {
   display: flex;
@@ -50,9 +52,8 @@
   font-size: 14px;
   border-radius: 0.6rem;
   background-color: $color-sky-lighter;
-  padding: 2rem;
-  margin-bottom: 0.4rem;
-  white-space: pre-wrap;
+  padding: $spacing-loose;
+  word-break: break-word;
 }
 
 .usage span {

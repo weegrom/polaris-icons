@@ -41,18 +41,20 @@ export default class IconPanel extends React.Component<Props, State> {
   }
 }
 
-function PopulatedState({icon}) {
+function PopulatedState({icon}: {icon: IconInterface}) {
   const status = icon.public ? 'Allowed' : 'Not allowed';
 
   return (
-    <div>
+    <div className={styles.iconDetailsPanel}>
       <TextContainer>
         <div className={styles.icon}>
           <img src={icon.svgFile.publicURL} alt="" />
         </div>
         <div className={styles.spacingBase}>
           <div className={styles.spacingExtraTight}>
-            <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
+            <Heading>{`${startCase(icon.name)} (${icon.set}${
+              icon.style ? `, ${icon.style}` : ''
+            })`}</Heading>
           </div>
           <div
             className={styles.iconDescription}
@@ -126,7 +128,7 @@ function PopulatedState({icon}) {
   );
 }
 
-function ghNewIssueUrl(template, title) {
+function ghNewIssueUrl(template: string, title: string) {
   const encodedTemplate = encodeURIComponent(template);
   const encodedTitle = encodeURIComponent(title);
 

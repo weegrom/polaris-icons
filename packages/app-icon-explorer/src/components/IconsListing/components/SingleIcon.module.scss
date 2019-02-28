@@ -8,11 +8,6 @@
   text-align: center;
   color: $color-ink-lighter;
   text-decoration: none;
-
-  // &:focus {
-  //   box-shadow: 0 0 0 2px #5c6ac4;
-  //   outline: none;
-  // }
 }
 
 .active {
@@ -21,13 +16,15 @@
 }
 
 .iconLabel {
-  padding-bottom: 20px;
+  min-height: 48px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-// .iconSvg {
-//   color: $color-ink;
-//   fill: currentColor;
-// }
+.iconSvgWrapper {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
 
 // path {
 //   fill: $color-ink;

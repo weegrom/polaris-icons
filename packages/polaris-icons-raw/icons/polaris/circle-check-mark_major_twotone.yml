@@ -1,0 +1,18 @@
+name: circle check mark
+authors:
+  - Adam Whitcroft
+date_added: 2019-02-21
+date_modified: 2019-02-21
+description: >
+  Used to indicate a positive result or action.
+exclusive_use:
+public: true
+set: major
+style: twotone
+version: 1
+keywords:
+  - good
+  - positive
+  - checkmark
+  - circle
+  - round

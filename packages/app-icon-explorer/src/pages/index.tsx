@@ -79,9 +79,11 @@ export default class IndexPage extends React.Component<Props, State> {
       <AppFrame onSearch={this.handleSearch}>
         <Seo title="Home" />
         <div className={styles.page}>
-          <div className={styles.listing}>
-            {introHeaderMarkup}
-            {resultsMarkup}
+          <div>
+            <div className={styles.listing}>
+              {introHeaderMarkup}
+              {resultsMarkup}
+            </div>
           </div>
           <div className={styles.panel}>
             <div className={styles.panelFixed}>
@@ -142,6 +144,7 @@ export const pageQuery = graphql`
           basename
           id
           set
+          style
           descriptionHtml
           public
           keywords

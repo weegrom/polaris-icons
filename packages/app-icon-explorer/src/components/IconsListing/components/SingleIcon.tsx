@@ -10,6 +10,13 @@ interface Props {
   isActive: boolean;
 }
 
+const StyleText = ({iconStyle}) =>
+  iconStyle === 'twotone' ? (
+    <>
+      <br /> (twotone)
+    </>
+  ) : null;
+
 // eslint-disable-next-line jsx-a11y/click-events-have-key-events
 export default function SingleIcon({icon, isActive = false}: Props) {
   const className = classNames({
@@ -33,16 +40,16 @@ export default function SingleIcon({icon, isActive = false}: Props) {
         }
       }}
     >
-      <Icon
-        source={
-          <div
-            className={styles.iconSvg}
-            dangerouslySetInnerHTML={{__html: icon.svgContent}}
-          />
-        }
-      />
+      <div className={styles.iconSvgWrapper}>
+        <Icon
+          source={<span dangerouslySetInnerHTML={{__html: icon.svgContent}} />}
+        />
+      </div>
       <div className={styles.iconLabel}>
-        <Caption>{icon.name}</Caption>
+        <Caption>
+          {icon.name}
+          <StyleText iconStyle={icon.style} />
+        </Caption>
       </div>
     </Link>
   );

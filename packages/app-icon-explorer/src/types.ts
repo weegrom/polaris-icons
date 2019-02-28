@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export interface Icon {
   id: string;
   name: string;
@@ -8,13 +9,12 @@ export interface Icon {
   svgFile: {
     publicURL: string;
   };
-  // eslint-disable-next-line camelcase
   date_added: any;
-  // eslint-disable-next-line camelcase
   date_modified: any;
   descriptionHtml: string;
-  set: string;
+  set: 'minor' | 'major' | 'spot';
   basename: string;
   status: string;
   reactname: string;
+  style?: 'monotone' | 'twotone';
 }
