@@ -1,9 +1,10 @@
 ---
 name: Submit a new icon
 about: For adding new icons to Polaris Icons
-title: '[Submission] Icon name'
+title: "[Submission] Icon name"
 labels: New
 assignees: ''
+
 ---
 
 <!--
