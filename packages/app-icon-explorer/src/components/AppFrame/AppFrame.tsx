@@ -21,7 +21,7 @@ const theme = {
 };
 
 interface Props {
-  onSearch: (value: string) => void;
+  onSearch?: (value: string) => void;
 }
 
 interface State {
@@ -59,11 +59,17 @@ export default class AppFrame extends React.Component<Props, State> {
 
   handleSearchResultsDismiss = () => {
     this.setState({searchText: ''});
-    this.props.onSearch('');
+
+    if (this.props.onSearch) {
+      this.props.onSearch('');
+    }
   };
 
   handleSearchChange = (value: string) => {
     this.setState({searchText: value});
-    this.props.onSearch(value);
+
+    if (this.props.onSearch) {
+      this.props.onSearch(value);
+    }
   };
 }
