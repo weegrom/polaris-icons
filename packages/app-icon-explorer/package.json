@@ -31,6 +31,6 @@
     "build-web": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "start": "gatsby serve"
+    "start": "gatsby serve --host 0.0.0.0"
   }
 }
