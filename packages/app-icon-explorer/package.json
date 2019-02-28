@@ -31,6 +31,6 @@
     "build-web": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "start": "gatsby serve"
+    "start": "gatsby serve --port 8000"
   }
 }

@@ -56,7 +56,7 @@ spec:
   ports:
     - port: 80
       name: http
-      targetPort: 9000
+      targetPort: 8000
   selector:
     name: web
     app: 'polaris-icons'
@@ -97,12 +97,12 @@ spec:
           args:
             - web
           ports:
-            - containerPort: 9000
+            - containerPort: 8000
               name: http-alt
           readinessProbe:
             httpGet:
               path: '/ping/'
-              port: 9000
+              port: 8000
             initialDelaySeconds: 20
             timeoutSeconds: 3
           env:
@@ -125,7 +125,7 @@ spec:
             - name: STATSD_IMPLEMENTATION
               value: datadog
             - name: PORT
-              value: '9000'
+              value: '8000'
             - name: IDENTITY_CLIENT_ID
               valueFrom:
                 secretKeyRef:
