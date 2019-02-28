@@ -34,6 +34,12 @@ export default class IconCopy extends React.Component<Props, State> {
       this.copyParent.current.focus();
     }
     this.setState({toolTipText: 'Copied to clipboard'});
+    if ((window as any).gtag) {
+      (window as any).gtag('event', 'copy_snippet', {
+        /* eslint-disable-next-line camelcase */
+        event_label: this.props.reactname,
+      });
+    }
 
     setTimeout(() => {
       this.setState({toolTipText: 'Copy to clipboard'});

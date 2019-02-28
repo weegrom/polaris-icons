@@ -12,8 +12,20 @@ export default function SingleIcon({icon, isActive = false}) {
     [styles.active]: isActive,
   });
 
+  /* eslint-disable react/jsx-no-bind */
   return (
-    <Link to={`/?icon=${icon.name}`} className={className}>
+    <Link
+      to={`/?icon=${icon.name}`}
+      className={className}
+      onClick={() => {
+        if ((window as any).gtag) {
+          (window as any).gtag('event', 'select_icon', {
+            /* eslint-disable-next-line camelcase */
+            event_label: icon.reactname,
+          });
+        }
+      }}
+    >
       <Icon
         source={
           <div

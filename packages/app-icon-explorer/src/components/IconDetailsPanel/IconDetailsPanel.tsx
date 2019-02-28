@@ -6,6 +6,7 @@ import {
   Button,
   TextStyle,
 } from '@shopify/polaris';
+import {OutboundLink} from 'gatsby-plugin-gtag';
 import {startCase} from 'lodash';
 import {Icon as IconInterface} from '../../types';
 import styles from './IconDetailsPanel.module.scss';
@@ -71,9 +72,9 @@ function PopulatedState({icon}) {
           </div>
           <span>
             See the{' '}
-            <a href="https://polaris.shopify.com/components/images-and-icons/icon">
+            <OutboundLink href="https://polaris.shopify.com/components/images-and-icons/icon">
               Polaris icon component
-            </a>
+            </OutboundLink>
             {''}.
           </span>
         </div>
@@ -101,7 +102,7 @@ function PopulatedState({icon}) {
       <div className={styles.iconActions}>
         <Subheading>Actions</Subheading>
         <div className={styles.spacingTight}>
-          <a
+          <OutboundLink
             href={ghNewIssueUrl(
               'request-changes-to-an-existing-icon.md',
               `[Request] ${icon.basename} changes`,
@@ -109,8 +110,8 @@ function PopulatedState({icon}) {
             className={styles.link}
           >
             Request to change this icon
-          </a>
-          <a
+          </OutboundLink>
+          <OutboundLink
             href={ghNewIssueUrl(
               'submit-changes-to-an-existing-icon.md',
               `[Submission] ${icon.basename} changes`,
@@ -118,7 +119,7 @@ function PopulatedState({icon}) {
             className={styles.link}
           >
             Submit a new version of this icon
-          </a>
+          </OutboundLink>
         </div>
       </div>
     </div>

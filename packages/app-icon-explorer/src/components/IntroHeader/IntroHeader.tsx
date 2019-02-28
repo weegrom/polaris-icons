@@ -5,6 +5,8 @@ import {
   Button,
   ButtonGroup,
 } from '@shopify/polaris';
+import {OutboundLink} from 'gatsby-plugin-gtag';
+
 import styles from './IntroHeader.module.scss';
 
 export default function IntroHeader() {
@@ -18,19 +20,19 @@ export default function IntroHeader() {
           distillation, in taking a metaphor and representing its most basic
           form. All icons are available through Abstract and GitHub. Learn how
           to use our icons in our{' '}
-          <a
+          <OutboundLink
             className={styles.link}
             href="https://polaris.shopify.com/design/icons"
           >
             icon usage guidelines
-          </a>
+          </OutboundLink>
           {''}. If you have any questions or feedback, find us in&nbsp;
-          <a
+          <OutboundLink
             className={styles.link}
             href="https://shopify.slack.com/messages/CCNUS0FML"
           >
             #polaris-tooling
-          </a>{' '}
+          </OutboundLink>{' '}
           on Slack.
         </p>
       </TextContainer>

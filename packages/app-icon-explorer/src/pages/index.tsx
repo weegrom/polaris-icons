@@ -95,6 +95,12 @@ export default class IndexPage extends React.Component<Props, State> {
 
   handleSearch(value) {
     this.setState({searchText: value});
+    if ((window as any).gtag) {
+      (window as any).gtag('event', 'search', {
+        /* eslint-disable-next-line camelcase */
+        search_term: value,
+      });
+    }
   }
 }
 
