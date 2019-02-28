@@ -5,6 +5,8 @@
   "dependencies": {
     "@shopify/polaris": "^3.9.0",
     "@shopify/polaris-icons-raw": "^1.2.0",
+    "@types/classnames": "^2.2.7",
+    "@types/query-string": "^6.2.0",
     "@types/react-helmet": "^5.0.8",
     "classnames": "^2.2.6",
     "gatsby": "^2.0.91",
@@ -31,8 +33,5 @@
     "clean": "rimraf public",
     "serve-production": "serve -l 8000 public",
     "start": "gatsby develop"
-  },
-  "devDependencies": {
-    "@types/classnames": "^2.2.7"
   }
 }

@@ -2,11 +2,16 @@ import React from 'react';
 import {Link} from 'gatsby';
 import classNames from 'classnames';
 import {Icon, Caption} from '@shopify/polaris';
-
+import {Icon as IconInterface} from '../../../types';
 import styles from './SingleIcon.module.scss';
 
+interface Props {
+  icon: IconInterface;
+  isActive: boolean;
+}
+
 // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-export default function SingleIcon({icon, isActive = false}) {
+export default function SingleIcon({icon, isActive = false}: Props) {
   const className = classNames({
     [styles.IconGridItem]: true,
     [styles.active]: isActive,

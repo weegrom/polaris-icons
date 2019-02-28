@@ -1,14 +1,22 @@
 import React from 'react';
 import {Heading} from '@shopify/polaris';
+import {Icon as IconInterface} from '../../types';
 import SingleIcon from './components/SingleIcon';
 import styles from './IconsListing.module.scss';
 
-export default function IconsListing(props) {
+interface Props {
+  icons: IconInterface[];
+  heading: string;
+  showCount: boolean;
+  activeIconId?: string;
+}
+
+export default function IconsListing(props: Props) {
   if (!props.icons.length) {
     return null;
   }
 
-  const iconsMarkup = props.icons.map((icon) => (
+  const iconsMarkup = props.icons.map((icon: IconInterface) => (
     <SingleIcon
       key={icon.id}
       icon={icon}

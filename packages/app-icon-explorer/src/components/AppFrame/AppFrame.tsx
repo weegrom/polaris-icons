@@ -62,7 +62,7 @@ export default class AppFrame extends React.Component<Props, State> {
     this.props.onSearch('');
   };
 
-  handleSearchChange = (value) => {
+  handleSearchChange = (value: string) => {
     this.setState({searchText: value});
     this.props.onSearch(value);
   };

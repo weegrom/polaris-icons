@@ -34,7 +34,7 @@ export default class IndexPage extends React.Component<Props, State> {
     searchText: '',
   };
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.handleSearch = this.handleSearch.bind(this);
   }
@@ -93,7 +93,7 @@ export default class IndexPage extends React.Component<Props, State> {
     );
   }
 
-  handleSearch(value) {
+  handleSearch(value: string) {
     this.setState({searchText: value});
     if ((window as any).gtag) {
       (window as any).gtag('event', 'search', {
@@ -106,8 +106,8 @@ export default class IndexPage extends React.Component<Props, State> {
   }
 }
 
-function filterIcons(icons, searchText) {
-  const containsText = (string) =>
+function filterIcons(icons: IconInterface[], searchText: string) {
+  const containsText = (string: string) =>
     string.toUpperCase().includes(searchText.toUpperCase());
 
   return icons.filter((icon) => {
@@ -115,7 +115,7 @@ function filterIcons(icons, searchText) {
   });
 }
 
-function buildIconSets(icons) {
+function buildIconSets(icons: IconInterface[]) {
   return icons.reduce(
     (memo, icon) => {
       if (icon.set === 'major') {
