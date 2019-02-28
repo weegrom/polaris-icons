@@ -25,13 +25,11 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-helmet": "^5.2.0",
-    "resolve": "^1.10.0",
-    "serve": "^10.1.2"
+    "resolve": "^1.10.0"
   },
   "scripts": {
     "build-web": "gatsby build",
     "clean": "rimraf public",
-    "serve-production": "serve -l 8000 public",
     "start": "gatsby develop"
   }
 }

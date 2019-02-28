@@ -1,1 +1,1 @@
-web: yarn --cwd packages/app-icon-explorer run serve-production
+web: yarn workspace app-icon-explorer run gatsby serve
