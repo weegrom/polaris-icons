@@ -31,6 +31,6 @@
     "build-web": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "start": "gatsby serve --host 0.0.0.0"
+    "start": "gatsby serve --host 0.0.0.0 --port \"$PORT\""
   }
 }
