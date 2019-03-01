@@ -1,16 +1,17 @@
 {
-  "addons": [
+  "addons": [],
 
-  ],
   "buildpacks": [
-
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
   ],
-  "env": {
-  },
-  "formation": {
-  },
+  "env": {},
+  "formation": {},
   "name": "polaris-icons",
-  "scripts": {
-  },
+  "scripts": {},
   "stack": "heroku-18"
 }
