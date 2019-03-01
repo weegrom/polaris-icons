@@ -1,0 +1,8 @@
+{
+  "root": "packages/app-icon-explorer/public/",
+  "headers": {
+    "/**.js": {
+      "Cache-Control": "public, max-age=0, must-revalidate"
+    }
+  }
+}
