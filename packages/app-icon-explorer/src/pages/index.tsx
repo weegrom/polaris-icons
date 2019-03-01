@@ -77,7 +77,7 @@ export default class IndexPage extends React.Component<Props, State> {
 
     return (
       <AppFrame onSearch={this.handleSearch}>
-        <Seo title="Home" />
+        <Seo title="Polaris Icons" />
         <div className={styles.page}>
           <div className={styles.listingWrapper}>
             <div className={styles.listing}>
