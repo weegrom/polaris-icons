@@ -92,10 +92,7 @@ $borderColor: $color-sky-light;
   border-top: 1px solid $color-sky-light;
   display: block;
   padding-top: 2rem;
-}
-
-.iconActions div {
-  padding-top: 0.4rem;
+  padding-bottom: $spacing-base-tight;
 }
 
 .iconDescription {
