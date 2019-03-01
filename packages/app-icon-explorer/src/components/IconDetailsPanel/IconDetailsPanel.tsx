@@ -153,7 +153,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
 
 function ghEditIconMetadataUrl(basename: string) {
   const encodedMessage = encodeURIComponent(`Fix metadata for ${basename}`);
-  return `https://github.com/Shopify/polaris-icons/edit/master/packages/polaris-icons-raw/icons/polaris/${basename}.yml?message=${encodedMessage}`;
+  return `https://github.com/Shopify/polaris-icons/edit/master/packages/polaris-icons-raw/icons/polaris/${basename}.yml?message=${encodedMessage}&target_branch=fix-${basename}`;
 }
 function ghNewIssueUrl(template: string, title: string) {
   const encodedTemplate = encodeURIComponent(template);
