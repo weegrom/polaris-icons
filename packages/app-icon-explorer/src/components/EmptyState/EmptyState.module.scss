@@ -15,7 +15,7 @@
 .content svg {
   height: 41px;
   width: 41px;
-  fill: #919eab;
+  fill: $color-ink-lightest;
   margin-bottom: 1.6rem;
 }
 
@@ -32,10 +32,4 @@
 .buttons {
   justify-content: center;
   display: flex;
-}
-
-a {
-  text-decoration: none;
-  color: $color-blue;
-  padding-bottom: 0.8rem;
 }

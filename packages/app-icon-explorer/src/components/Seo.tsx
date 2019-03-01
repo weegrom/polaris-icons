@@ -45,7 +45,19 @@ export default function Seo(props: Props) {
             }}
             title={title}
             titleTemplate={data.site.siteMetadata.titleTemplate}
+            link={[
+              {
+                rel: 'icon',
+                type: 'image/png',
+                href: require('../../static/images/shopify-favicon.png'),
+              },
+            ]}
             meta={[
+              {
+                name: 'viewport',
+                content:
+                  'width=960px,initial-scale=1,shrink-to-fit=no,viewport-fit=cover',
+              },
               {
                 name: `description`,
                 content: metaDescription,

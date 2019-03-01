@@ -15,7 +15,10 @@ export default function EmptyState() {
           <p>
             <TextStyle variation="subdued">
               Submit a new icon or see our{' '}
-              <OutboundLink href="https://vault.shopify.com/Polaris-icon-creation-guidelines">
+              <OutboundLink
+                className="contentLink"
+                href="https://vault.shopify.com/Polaris-icon-creation-guidelines"
+              >
                 <span>icon creation guidelines</span>
               </OutboundLink>
               .

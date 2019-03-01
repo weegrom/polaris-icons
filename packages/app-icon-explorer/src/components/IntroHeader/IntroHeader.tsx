@@ -21,14 +21,14 @@ export default function IntroHeader() {
           form. All icons are available through Abstract and GitHub. Learn how
           to use our icons in our{' '}
           <OutboundLink
-            className={styles.link}
+            className="contentLink"
             href="https://polaris.shopify.com/design/icons"
           >
             icon usage guidelines
           </OutboundLink>
           {''}. If you have any questions or feedback, find us in&nbsp;
           <OutboundLink
-            className={styles.link}
+            className="contentLink"
             href="https://shopify.slack.com/messages/CCNUS0FML"
           >
             #polaris-tooling

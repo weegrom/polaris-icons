@@ -1,6 +1,7 @@
 @import '~@shopify/polaris-tokens/dist/colors';
 
 .codeHighlight {
+  cursor: pointer;
   outline: none;
 }
 
@@ -18,9 +19,4 @@
 
 .codeHighlight .syntaxIconComponent {
   color: $color-yellow-dark;
-}
-
-.codeHighlight span:focus {
-  text-decoration: none;
-  outline: none;
 }

@@ -11,6 +11,16 @@ $listingMaxWidth: 960px;
   body {
     min-width: $gridMinWidth;
   }
+
+  .contentLink {
+    text-decoration: none;
+    color: $color-blue;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
 }
 
 .page {
@@ -42,6 +52,7 @@ $listingMaxWidth: 960px;
   padding-right: $gridGap;
   max-width: $listingMaxWidth;
   margin: 0 auto;
+  flex: 1 1 0;
 }
 
 .listing > :not(:first-child) {
@@ -72,4 +83,8 @@ $listingMaxWidth: 960px;
   @media (min-width: $gridMaxWidth) {
     right: calc(50vw - #{$gridMaxWidth / 2} + 1.6rem);
   }
+}
+
+.listingWrapper {
+  display: flex;
 }

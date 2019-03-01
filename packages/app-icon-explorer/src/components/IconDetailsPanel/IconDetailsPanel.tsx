@@ -1,10 +1,12 @@
 import React from 'react';
+import * as PropTypes from 'prop-types';
 import {
   TextContainer,
   Heading,
   Subheading,
   Button,
   TextStyle,
+  Banner,
 } from '@shopify/polaris';
 import {OutboundLink} from 'gatsby-plugin-gtag';
 import {startCase} from 'lodash';
@@ -20,10 +22,27 @@ interface State {
   isClient: boolean;
 }
 
+const showBanner = (icon) =>
+  Object.values(icon).some(
+    (value) => typeof value === 'string' && /N\/A/.test(value),
+  ) ||
+  icon.keywords.includes('N/A') ||
+  icon.authors.includes('N/A');
+
 export default class IconPanel extends React.Component<Props, State> {
+  static childContextTypes = {
+    withinContentContainer: PropTypes.bool,
+  };
+
   state = {
     isClient: false,
   };
+
+  getChildContext() {
+    return {
+      withinContentContainer: true,
+    };
+  }
 
   // Because Gatsby spits out a static page we want to initially render the
   // empty state and then rerender immediately. This ensures the server-provided
@@ -73,7 +92,10 @@ function PopulatedState({icon}: {icon: IconInterface}) {
           </div>
           <span>
             See the{' '}
-            <OutboundLink href="https://polaris.shopify.com/components/images-and-icons/icon">
+            <OutboundLink
+              className="contentLink"
+              href="https://polaris.shopify.com/components/images-and-icons/icon"
+            >
               Polaris icon component
             </OutboundLink>
             {''}.
@@ -106,15 +128,33 @@ function PopulatedState({icon}: {icon: IconInterface}) {
             'submit-changes-to-an-existing-icon.md',
             `[Submission] ${icon.basename} changes`,
           )}
-          className={styles.link}
+          className={`${styles.link} contentLink`}
         >
           Submit a new version of this icon
         </OutboundLink>
       </div>
+      {showBanner(icon) && (
+        <Banner>
+          <p>
+            This icon is missing information. Please take a moment to{' '}
+            <OutboundLink
+              className="contentLink"
+              href={ghEditIconMetadataUrl(icon.basename)}
+            >
+              improve its metadata
+            </OutboundLink>
+            .
+          </p>
+        </Banner>
+      )}
     </div>
   );
 }
 
+function ghEditIconMetadataUrl(basename: string) {
+  const encodedMessage = encodeURIComponent(`Fix metadata for ${basename}`);
+  return `https://github.com/Shopify/polaris-icons/edit/master/packages/polaris-icons-raw/icons/polaris/${basename}.yml?message=${encodedMessage}`;
+}
 function ghNewIssueUrl(template: string, title: string) {
   const encodedTemplate = encodeURIComponent(template);
   const encodedTitle = encodeURIComponent(title);

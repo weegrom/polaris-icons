@@ -60,12 +60,7 @@ $borderColor: $color-sky-light;
   color: $color-ink-lighter;
 }
 
-.usage a {
-  text-decoration: none;
-  color: $color-blue;
-}
-
-h3 {
+.usage h3 {
   padding-bottom: 0.4rem;
 }
 
@@ -94,7 +89,7 @@ h3 {
 }
 
 .iconActions {
-  border-top: 1px solid #e5e6ea;
+  border-top: 1px solid $color-sky-light;
   display: block;
   padding-top: 2rem;
 }
@@ -109,7 +104,5 @@ h3 {
 
 .link {
   display: block;
-  text-decoration: none;
-  color: $color-blue;
   padding-bottom: 0.8rem;
 }

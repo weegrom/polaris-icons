@@ -30,9 +30,9 @@ export default class IconCopy extends React.Component<Props, State> {
     document.body.removeChild(textarea);
 
     if (this.copyParent && this.copyParent.current) {
-      this.copyParent.current.setAttribute('tabIndex', '0');
       this.copyParent.current.focus();
     }
+
     this.setState({toolTipText: 'Copied to clipboard'});
     if ((window as any).gtag) {
       (window as any).gtag('event', 'copy_snippet', {
@@ -45,9 +45,6 @@ export default class IconCopy extends React.Component<Props, State> {
 
     setTimeout(() => {
       this.setState({toolTipText: 'Copy to clipboard'});
-      if (this.copyParent && this.copyParent.current) {
-        this.copyParent.current.removeAttribute('tabIndex');
-      }
     }, 1500);
   };
 
@@ -56,11 +53,12 @@ export default class IconCopy extends React.Component<Props, State> {
 
     return (
       <Tooltip content={this.state.toolTipText}>
-        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+        {/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-tabindex */}
         <div
           className={styles.codeHighlight}
           onClick={this.copyToClipboard}
           ref={this.copyParent}
+          tabIndex={0}
         >
           <span className={styles.syntaxIconName}>import</span>
           <span className={styles.syntaxIconComponent}>

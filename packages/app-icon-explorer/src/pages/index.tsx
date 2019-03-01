@@ -79,7 +79,7 @@ export default class IndexPage extends React.Component<Props, State> {
       <AppFrame onSearch={this.handleSearch}>
         <Seo title="Home" />
         <div className={styles.page}>
-          <div>
+          <div className={styles.listingWrapper}>
             <div className={styles.listing}>
               {introHeaderMarkup}
               {resultsMarkup}
