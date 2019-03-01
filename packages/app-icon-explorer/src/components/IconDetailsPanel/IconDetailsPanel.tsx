@@ -50,7 +50,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
         <div className={styles.icon}>
           <img src={icon.svgFile.publicURL} alt="" />
         </div>
-        <div className={styles.spacingBase}>
+        <div className={`${styles.spacingBase}${styles.spacingTop}`}>
           <div className={styles.spacingExtraTight}>
             <Heading>{`${startCase(icon.name)} (${icon.set}${
               icon.style ? `, ${icon.style}` : ''
@@ -61,8 +61,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
             dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
           />
         </div>
-        <div className={styles.spacingBase}>
-          <Subheading>Design</Subheading>
+        <div className={`${styles.spacingBase} ${styles.spacingButton}`}>
           <Button url={icon.svgFile.publicURL} download>
             Download SVG
           </Button>
@@ -88,7 +87,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
             ))}
           </ul>
         </div>
-        <div className={styles.spacingBase}>
+        <div className={styles.spacingLoose}>
           <Subheading>Partner use</Subheading>
           <p>{status}</p>
         </div>
@@ -102,27 +101,15 @@ function PopulatedState({icon}: {icon: IconInterface}) {
         </ul>
       </TextContainer>
       <div className={styles.iconActions}>
-        <Subheading>Actions</Subheading>
-        <div className={styles.spacingTight}>
-          <OutboundLink
-            href={ghNewIssueUrl(
-              'request-changes-to-an-existing-icon.md',
-              `[Request] ${icon.basename} changes`,
-            )}
-            className={styles.link}
-          >
-            Request to change this icon
-          </OutboundLink>
-          <OutboundLink
-            href={ghNewIssueUrl(
-              'submit-changes-to-an-existing-icon.md',
-              `[Submission] ${icon.basename} changes`,
-            )}
-            className={styles.link}
-          >
-            Submit a new version of this icon
-          </OutboundLink>
-        </div>
+        <OutboundLink
+          href={ghNewIssueUrl(
+            'submit-changes-to-an-existing-icon.md',
+            `[Submission] ${icon.basename} changes`,
+          )}
+          className={styles.link}
+        >
+          Submit a new version of this icon
+        </OutboundLink>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import {OutboundLink} from 'gatsby-plugin-gtag';
 import {Button, ButtonGroup, DisplayText, TextStyle} from '@shopify/polaris';
 import styles from './EmptyState.module.scss';
 
@@ -13,15 +14,16 @@ export default function EmptyState() {
           <DisplayText size="small">No icons found</DisplayText>
           <p>
             <TextStyle variation="subdued">
-              Try searching for something else, or use one of the actions below.
+              Submit a new icon or see our{' '}
+              <OutboundLink href="https://vault.shopify.com/Polaris-icon-creation-guidelines">
+                <span>icon creation guidelines</span>
+              </OutboundLink>
+              .
             </TextStyle>
           </p>
         </div>
         <div className={styles.buttons}>
           <ButtonGroup>
-            <Button url={ghNewIssueUrl('request-a-new-icon.md', '[Request]')}>
-              Request icon
-            </Button>
             <Button url={ghNewIssueUrl('submit-a-new-icon.md', '[Submission]')}>
               Submit icon
             </Button>
