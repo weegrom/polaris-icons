@@ -96,7 +96,10 @@ $borderColor: $color-sky-light;
   border-top: 1px solid $color-sky-light;
   display: block;
   padding-top: 2rem;
-  padding-bottom: $spacing-base-tight;
+}
+
+.bannerWrapper {
+  margin-top: $spacing-loose;
 }
 
 .iconDescription {
@@ -105,5 +108,5 @@ $borderColor: $color-sky-light;
 
 .link {
   display: block;
-  padding-bottom: 0.8rem;
+  margin-bottom: $spacing-tight;
 }

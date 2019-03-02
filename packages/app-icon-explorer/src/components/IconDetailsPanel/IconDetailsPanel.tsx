@@ -62,6 +62,7 @@ export default class IconDetailsPanel extends React.Component<Props, State> {
 
 function PopulatedState({icon}: {icon: IconInterface}) {
   const status = icon.public ? 'Allowed' : 'Not allowed';
+  const linkToMetadataEditForm = ghIconMetadataEditUrl(icon.basename);
 
   return (
     <div>
@@ -133,27 +134,38 @@ function PopulatedState({icon}: {icon: IconInterface}) {
           >
             Submit a new version of this icon
           </OutboundLink>
+
+          {/* eslint-disable-next-line shopify/jsx-no-complex-expressions */}
+          {showBanner(icon) ? (
+            <div className={styles.bannerWrapper}>
+              <Banner>
+                <p>
+                  This icon is missing information. Please take a moment to{' '}
+                  <OutboundLink
+                    className="contentLink"
+                    href={linkToMetadataEditForm}
+                  >
+                    improve its metadata
+                  </OutboundLink>
+                  .
+                </p>
+              </Banner>
+            </div>
+          ) : (
+            <OutboundLink
+              className={`${styles.link} contentLink`}
+              href={linkToMetadataEditForm}
+            >
+              Edit icon metadata
+            </OutboundLink>
+          )}
         </div>
-        {showBanner(icon) && (
-          <Banner>
-            <p>
-              This icon is missing information. Please take a moment to{' '}
-              <OutboundLink
-                className="contentLink"
-                href={ghEditIconMetadataUrl(icon.basename)}
-              >
-                improve its metadata
-              </OutboundLink>
-              .
-            </p>
-          </Banner>
-        )}
       </div>
     </div>
   );
 }
 
-function ghEditIconMetadataUrl(basename: string) {
+function ghIconMetadataEditUrl(basename: string) {
   const encodedMessage = encodeURIComponent(`Fix metadata for ${basename}`);
   return `https://github.com/Shopify/polaris-icons/edit/master/packages/polaris-icons-raw/icons/polaris/${basename}.yml?message=${encodedMessage}&target_branch=fix-${basename}`;
 }
