@@ -29,7 +29,7 @@ const showBanner = (icon) =>
   icon.keywords.includes('N/A') ||
   icon.authors.includes('N/A');
 
-export default class IconPanel extends React.Component<Props, State> {
+export default class IconDetailsPanel extends React.Component<Props, State> {
   static childContextTypes = {
     withinContentContainer: PropTypes.bool,
   };
@@ -64,89 +64,91 @@ function PopulatedState({icon}: {icon: IconInterface}) {
   const status = icon.public ? 'Allowed' : 'Not allowed';
 
   return (
-    <div className={styles.iconDetailsPanel}>
-      <TextContainer>
-        <div className={styles.icon}>
-          <img src={icon.svgFile.publicURL} alt="" />
-        </div>
-        <div className={`${styles.spacingBase}${styles.spacingTop}`}>
-          <div className={styles.spacingExtraTight}>
-            <Heading>{`${startCase(icon.name)} (${icon.set}${
-              icon.style ? `, ${icon.style}` : ''
-            })`}</Heading>
+    <div>
+      <div className={styles.iconDetailsPanelInner}>
+        <TextContainer>
+          <div className={styles.icon}>
+            <img src={icon.svgFile.publicURL} alt="" />
           </div>
-          <div
-            className={styles.iconDescription}
-            dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
-          />
-        </div>
-        <div className={`${styles.spacingBase} ${styles.spacingButton}`}>
-          <Button url={icon.svgFile.publicURL} download>
-            Download SVG
-          </Button>
-        </div>
-        <div className={`${styles.usage} ${styles.spacingBase}`}>
-          <Subheading>Usage</Subheading>
-          <div className={styles.CodeExample}>
-            <IconCopy reactname={icon.reactname} />
+          <div className={`${styles.spacingBase}${styles.spacingTop}`}>
+            <div className={styles.spacingExtraTight}>
+              <Heading>{`${startCase(icon.name)} (${icon.set}${
+                icon.style ? `, ${icon.style}` : ''
+              })`}</Heading>
+            </div>
+            <div
+              className={styles.iconDescription}
+              dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
+            />
           </div>
-          <span>
-            See the{' '}
-            <OutboundLink
-              className="contentLink"
-              href="https://polaris.shopify.com/components/images-and-icons/icon"
-            >
-              Polaris icon component
-            </OutboundLink>
-            {''}.
-          </span>
-        </div>
-        <div>
-          <Subheading>Created by</Subheading>
-          <ul className={`${styles.createdBy} ${styles.spacingBase}`}>
-            {icon.authors.map((author) => (
-              <li key={icon.id + author}>{author}</li>
+          <div className={`${styles.spacingBase} ${styles.spacingButton}`}>
+            <Button url={icon.svgFile.publicURL} download>
+              Download SVG
+            </Button>
+          </div>
+          <div className={`${styles.usage} ${styles.spacingBase}`}>
+            <Subheading>Usage</Subheading>
+            <div className={styles.CodeExample}>
+              <IconCopy reactname={icon.reactname} />
+            </div>
+            <span>
+              See the{' '}
+              <OutboundLink
+                className="contentLink"
+                href="https://polaris.shopify.com/components/images-and-icons/icon"
+              >
+                Polaris icon component
+              </OutboundLink>
+              {''}.
+            </span>
+          </div>
+          <div>
+            <Subheading>Created by</Subheading>
+            <ul className={`${styles.createdBy} ${styles.spacingBase}`}>
+              {icon.authors.map((author) => (
+                <li key={icon.id + author}>{author}</li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.spacingLoose}>
+            <Subheading>Partner use</Subheading>
+            <p>{status}</p>
+          </div>
+          <ul className={`${styles.keywords} ${styles.spacingLoose}`}>
+            <Subheading>Keywords</Subheading>
+            {icon.keywords.map((keyword) => (
+              <li key={icon.id + keyword} className={styles.keywordsItem}>
+                <div className={styles.Tag}>{keyword}</div>
+              </li>
             ))}
           </ul>
+        </TextContainer>
+        <div className={styles.iconActions}>
+          <OutboundLink
+            href={ghNewIssueUrl(
+              'submit-changes-to-an-existing-icon.md',
+              `[Submission] ${icon.basename} changes`,
+            )}
+            className={`${styles.link} contentLink`}
+          >
+            Submit a new version of this icon
+          </OutboundLink>
         </div>
-        <div className={styles.spacingLoose}>
-          <Subheading>Partner use</Subheading>
-          <p>{status}</p>
-        </div>
-        <ul className={`${styles.keywords} ${styles.spacingLoose}`}>
-          <Subheading>Keywords</Subheading>
-          {icon.keywords.map((keyword) => (
-            <li key={icon.id + keyword} className={styles.keywordsItem}>
-              <div className={styles.Tag}>{keyword}</div>
-            </li>
-          ))}
-        </ul>
-      </TextContainer>
-      <div className={styles.iconActions}>
-        <OutboundLink
-          href={ghNewIssueUrl(
-            'submit-changes-to-an-existing-icon.md',
-            `[Submission] ${icon.basename} changes`,
-          )}
-          className={`${styles.link} contentLink`}
-        >
-          Submit a new version of this icon
-        </OutboundLink>
+        {showBanner(icon) && (
+          <Banner>
+            <p>
+              This icon is missing information. Please take a moment to{' '}
+              <OutboundLink
+                className="contentLink"
+                href={ghEditIconMetadataUrl(icon.basename)}
+              >
+                improve its metadata
+              </OutboundLink>
+              .
+            </p>
+          </Banner>
+        )}
       </div>
-      {showBanner(icon) && (
-        <Banner>
-          <p>
-            This icon is missing information. Please take a moment to{' '}
-            <OutboundLink
-              className="contentLink"
-              href={ghEditIconMetadataUrl(icon.basename)}
-            >
-              improve its metadata
-            </OutboundLink>
-            .
-          </p>
-        </Banner>
-      )}
     </div>
   );
 }

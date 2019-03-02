@@ -3,6 +3,10 @@
 @import '~@shopify/polaris-tokens/dist/typography';
 $borderColor: $color-sky-light;
 
+.iconDetailsPanelInner {
+  padding-bottom: $spacing-extra-loose;
+}
+
 .empty {
   display: flex;
   width: 100%;
