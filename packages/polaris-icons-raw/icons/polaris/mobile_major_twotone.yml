@@ -1,4 +1,4 @@
-name: phone
+name: mobile
 authors:
   - N/A
 date_added: 2019-02-25
@@ -11,7 +11,7 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - mobile
+  - phone
   - smartphone
   - handheld
   - cellphone
