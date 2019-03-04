@@ -11,6 +11,8 @@ set: minor
 version: 1
 keywords:
   - cancel
+  - delete
   - stop
   - remove
   - undo
+  - x
