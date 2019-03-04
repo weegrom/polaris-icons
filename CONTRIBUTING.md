@@ -2,7 +2,7 @@
 
 This repository is the place to contribute any changes to icons.
 
-If you're looking to request a new icon, or suggest a change to an existing icon, check out [this Guide](./CONTRIBUTING-DESIGN.md)
+If you're looking to create an icon, or suggest a change to an existing icon, check out [this Guide](./CONTRIBUTING-DESIGN.md)
 
 If you're looking to add an icon to our public/private packages, make a code change, or release a new version of the packages, check out [this Guide](./CONTRIBUTING-CODING.md)
 
