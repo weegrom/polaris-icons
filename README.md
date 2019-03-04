@@ -1,6 +1,6 @@
 # Polaris icons
 
-The single source of truth for Polaris icons across web, Android, iOS, Sketch…
+Soon to be the single source of truth for Polaris icons across web, Android, iOS, Sketch…
 
 ⚠️ **This project in development**
 
