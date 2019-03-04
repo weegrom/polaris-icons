@@ -273,7 +273,7 @@ export {
 
 export {
   default as NotificationMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/notification_major_Monotone.svg';
+} from '@shopify/polaris-icons-raw/icons/polaris/notification_major_monotone.svg';
 
 export {
   default as OnlineStoreMajorTwotone,
@@ -334,10 +334,6 @@ export {
 export {
   default as SettingsMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/settings_major_twotone.svg';
-
-export {
-  default as ShopifyLogoMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/shopify-logo_major_monotone.svg';
 
 export {
   default as SidebarMajorMonotone,
