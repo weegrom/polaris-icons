@@ -1,6 +1,6 @@
 ---
 name: Feedback for Polaris Icons UI
-about: For suggestions or issues related to http://polaris-icons.shopifycloud.com
+about: For suggestions or issues related to https://polaris-icons.shopifycloud.com
 title: "[Feedback] "
 labels: ''
 assignees: HYPD
