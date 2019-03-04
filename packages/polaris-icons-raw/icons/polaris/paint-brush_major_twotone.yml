@@ -1,4 +1,4 @@
-name: template editor
+name: paint brush
 authors:
   - N/A
 date_added: 2019-02-25
@@ -11,4 +11,4 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - N/A
+  - template editor
