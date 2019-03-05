@@ -14,7 +14,7 @@ const theme = {
   },
   logo: {
     width: 104,
-    topBarSource: '/images/shopify-logo.svg',
+    topBarSource: require('../../../static/images/shopify-logo.svg'),
     url: '/',
     accessibilityLabel: 'Polaris Icons',
   },
