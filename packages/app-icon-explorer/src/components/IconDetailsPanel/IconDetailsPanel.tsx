@@ -172,11 +172,16 @@ function ghIconMetadataEditUrl(basename: string) {
   const encodedMessage = encodeURIComponent(`Fix metadata for ${basename}`);
   return `https://github.com/Shopify/polaris-icons/edit/master/packages/polaris-icons-raw/icons/polaris/${basename}.yml?message=${encodedMessage}&target_branch=fix-${basename}`;
 }
-function ghNewIssueUrl(template: string, title: string) {
+export function ghNewIssueUrl(
+  template: string,
+  title: string,
+  assignees: string[],
+) {
   const encodedTemplate = encodeURIComponent(template);
   const encodedTitle = encodeURIComponent(title);
+  const stringifiedAssignees = assignees.join(',');
 
-  return `https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=${encodedTemplate}&title=${encodedTitle}`;
+  return `https://github.com/Shopify/polaris-icons/issues/new?assignees=${stringifiedAssignees}&labels=Update&template=${encodedTemplate}&title=${encodedTitle}`;
 }
 
 function EmptyState() {

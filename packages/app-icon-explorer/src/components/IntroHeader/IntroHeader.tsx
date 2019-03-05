@@ -7,6 +7,7 @@ import {
 } from '@shopify/polaris';
 import {StaticQuery, graphql} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-gtag';
+import {ghNewIssueUrl} from '../IconDetailsPanel';
 
 import styles from './IntroHeader.module.scss';
 
@@ -43,7 +44,18 @@ export default function IntroHeader() {
               >
                 icon usage guidelines
               </OutboundLink>
-              {''}. If you have any questions or feedback, find us in&nbsp;
+              . If you have any questions or feedback,{' '}
+              <OutboundLink
+                className="contentLink"
+                href={ghNewIssueUrl(
+                  'feedback-for-polaris-icons-ui.md',
+                  '[feedback] ',
+                  ['HYPD'],
+                )}
+              >
+                open an issue
+              </OutboundLink>{' '}
+              or find us in{' '}
               <OutboundLink
                 className="contentLink"
                 href="https://shopify.slack.com/messages/CCNUS0FML"
@@ -60,9 +72,9 @@ export default function IntroHeader() {
               </Button>
               <Button
                 plain
-                url="https://github.com/Shopify/polaris-icons/blob/master/LICENSE.md"
+                url="https://github.com/Shopify/polaris-icons/blob/master/FREQUENTLY_ASKED_QUESTIONS.md"
               >
-                Usage license
+                Frequently asked questions
               </Button>
             </ButtonGroup>
           </div>

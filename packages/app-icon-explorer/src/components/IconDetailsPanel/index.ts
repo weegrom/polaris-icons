@@ -1,1 +1,1 @@
-export {default} from './IconDetailsPanel';
+export {default, ghNewIssueUrl} from './IconDetailsPanel';
