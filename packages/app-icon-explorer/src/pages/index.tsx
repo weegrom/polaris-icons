@@ -21,6 +21,11 @@ interface Props {
         node: IconInterface;
       }[];
     };
+    site: {
+      siteMetadata: {
+        title: string;
+      };
+    };
   };
 }
 
@@ -77,7 +82,7 @@ export default class IndexPage extends React.Component<Props, State> {
 
     return (
       <AppFrame onSearch={this.handleSearch}>
-        <Seo title="Polaris Icons" />
+        <Seo title={this.props.data.site.siteMetadata.title} />
         <div className={styles.page}>
           <div className={styles.listingWrapper}>
             <div className={styles.listing}>
@@ -134,6 +139,11 @@ function buildIconSets(icons: IconInterface[]) {
 
 export const pageQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allPolarisYaml {
       edges {
         node {
