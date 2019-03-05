@@ -200,10 +200,6 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/external_minor.svg';
 
 export {
-  default as ExternalLinkMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/external-link_major_monotone.svg';
-
-export {
   default as FaviconMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/favicon_major_monotone.svg';
 
