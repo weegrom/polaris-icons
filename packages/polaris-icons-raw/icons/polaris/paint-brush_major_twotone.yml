@@ -17,4 +17,7 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - template editor
+  - template
+  - editor
+  - paint
+  - brush

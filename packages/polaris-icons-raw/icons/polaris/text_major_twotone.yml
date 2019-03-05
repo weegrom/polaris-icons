@@ -17,4 +17,8 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - N/A
+  - text
+  - section
+  - rectangle
+  - content
+  - writing

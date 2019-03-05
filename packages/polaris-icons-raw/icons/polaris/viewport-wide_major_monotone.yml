@@ -17,4 +17,9 @@ set: major
 style: monotone
 version: 1
 keywords:
-  - N/A
+  - viewport
+  - wide
+  - arrows
+  - horizontal
+  - left
+  - right

@@ -17,4 +17,9 @@ set: major
 style: monotone
 version: 1
 keywords:
-  - N/A
+  - footer
+  - layout
+  - rectangle
+  - dashed
+  - bottom
+  - section

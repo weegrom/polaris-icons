@@ -17,4 +17,8 @@ set: major
 style: monotone
 version: 1
 keywords:
-  - N/A
+  - sidebar
+  - layout
+  - section
+  - dashed
+  - rectangle

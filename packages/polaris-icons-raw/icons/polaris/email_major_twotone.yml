@@ -17,4 +17,8 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - N/A
+  - email
+  - message
+  - envelope
+  - letter
+  - postage
