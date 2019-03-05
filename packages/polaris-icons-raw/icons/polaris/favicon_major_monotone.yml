@@ -11,7 +11,7 @@ description: >
     (you can delete this comment)
   -->
   N/A
-exclusive_use:adasdasdasd
+exclusive_use:
 public: true
 set: major
 style: monotone
