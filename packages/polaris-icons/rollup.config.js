@@ -18,6 +18,17 @@ const rollupConfig = {
     },
   ],
   external: ['react'],
+  onwarn: (warning, warn) => {
+    // Unresolved imports means Rollup couldn't find an import, possibly because
+    // we made a typo in the file name. Fail the build in that case so we know
+    // when the library is no longer self-contained or we have bad imports
+    if (warning.code === 'UNRESOLVED_IMPORT') {
+      throw new Error(warning.message);
+    }
+
+    // Use default for everything else
+    warn(warning);
+  },
   plugins: [
     svgr({
       include: '../polaris-icons-raw/**/*.svg',
