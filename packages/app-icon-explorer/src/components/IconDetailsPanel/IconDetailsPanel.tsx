@@ -83,7 +83,10 @@ function PopulatedState({icon}: {icon: IconInterface}) {
             />
           </div>
           <div className={`${styles.spacingBase} ${styles.spacingButton}`}>
-            <Button url={icon.svgFile.publicURL} download>
+            <Button
+              url={icon.svgFile.publicURL}
+              download={`${icon.basename}.svg`}
+            >
               Download SVG
             </Button>
           </div>
