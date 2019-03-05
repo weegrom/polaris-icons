@@ -260,12 +260,16 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/menu_major_monotone.svg';
 
 export {
+  default as MobileMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/mobile_major_twotone.svg';
+
+export {
   default as NoColorMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/no-color_minor.svg';
 
 export {
-  default as NotesMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/notes_minor.svg';
+  default as NoteMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/note_minor.svg';
 
 export {
   default as NotificationMajorMonotone,
@@ -284,8 +288,8 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/page_major_twotone.svg';
 
 export {
-  default as PhoneMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/phone_major_twotone.svg';
+  default as PaintBrushMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/paint-brush_major_twotone.svg';
 
 export {
   default as PictureMajorTwotone,
@@ -346,10 +350,6 @@ export {
 export {
   default as SubtractMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/subtract_minor.svg';
-
-export {
-  default as TemplateEditorMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/template-editor_major_twotone.svg';
 
 export {
   default as TestimonialsMajorMonotone,
