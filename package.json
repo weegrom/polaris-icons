@@ -110,5 +110,11 @@
         }
       ]
     }
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      ".cache"
+    ]
   }
 }
