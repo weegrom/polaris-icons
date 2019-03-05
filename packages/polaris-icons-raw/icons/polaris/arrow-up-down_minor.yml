@@ -10,6 +10,7 @@ public: true
 set: minor
 version: 1
 keywords:
-  - carets
+  - caret
+  - arrow
   - up
   - down
