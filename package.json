@@ -15,6 +15,7 @@
     "lint:js": "yarn run eslint '**/*.{js,ts,tsx}'",
     "lint:css": "yarn run stylelint '**/*.{scss}'",
     "test": "jest",
+    "type-check": "tsc",
     "release": "lerna publish && git push --follow-tags",
     "heroku-postbuild": "yarn run lerna run build && yarn workspace app-icon-explorer run build-web"
   },

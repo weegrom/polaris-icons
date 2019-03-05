@@ -133,7 +133,7 @@ function buildIconSets(icons: IconInterface[]) {
 
       return memo;
     },
-    [[], []],
+    [[], []] as IconInterface[][],
   );
 }
 

@@ -22,7 +22,7 @@ interface State {
   isClient: boolean;
 }
 
-const showBanner = (icon) =>
+const showBanner = (icon: IconInterface) =>
   Object.values(icon).some(
     (value) => typeof value === 'string' && /N\/A/.test(value),
   ) ||

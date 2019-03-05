@@ -10,7 +10,7 @@ interface Props {
   isActive: boolean;
 }
 
-const StyleText = ({iconStyle}) =>
+const StyleText = ({iconStyle}: {iconStyle?: string}) =>
   iconStyle === 'twotone' ? (
     <>
       <br /> (twotone)
