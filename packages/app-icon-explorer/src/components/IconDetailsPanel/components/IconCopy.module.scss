@@ -7,8 +7,9 @@
   font-size: 14px;
   border-radius: 0.6rem;
   background-color: $color-sky-lighter;
-  padding: $spacing-loose;
-  word-break: break-word;
+  margin: 0 (-$spacing-base-tight);
+  padding: $spacing-base-tight;
+  white-space: pre-wrap;
   cursor: pointer;
   outline: none;
 }
