@@ -348,6 +348,14 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/social_major_monotone.svg';
 
 export {
+  default as StarFilledMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/star-filled_minor.svg';
+
+export {
+  default as StarOutlineMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/star-outline_minor.svg';
+
+export {
   default as SubtractMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/subtract_minor.svg';
 
