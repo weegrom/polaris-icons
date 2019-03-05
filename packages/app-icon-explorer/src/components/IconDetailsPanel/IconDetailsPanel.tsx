@@ -132,6 +132,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
             href={ghNewIssueUrl(
               'submit-changes-to-an-existing-icon.md',
               `[Submission] ${icon.basename} changes`,
+              ['Update'],
             )}
             className={`${styles.link} contentLink`}
           >
@@ -175,13 +176,15 @@ function ghIconMetadataEditUrl(basename: string) {
 export function ghNewIssueUrl(
   template: string,
   title: string,
-  assignees: string[],
+  labels: string[] = [],
+  assignees: string[] = [],
 ) {
   const encodedTemplate = encodeURIComponent(template);
   const encodedTitle = encodeURIComponent(title);
+  const stringifiedLabels = labels.join(',');
   const stringifiedAssignees = assignees.join(',');
 
-  return `https://github.com/Shopify/polaris-icons/issues/new?assignees=${stringifiedAssignees}&labels=Update&template=${encodedTemplate}&title=${encodedTitle}`;
+  return `https://github.com/Shopify/polaris-icons/issues/new?assignees=${stringifiedAssignees}&labels=${stringifiedLabels}&template=${encodedTemplate}&title=${encodedTitle}`;
 }
 
 function EmptyState() {
