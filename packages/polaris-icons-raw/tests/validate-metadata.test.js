@@ -40,6 +40,22 @@ allIconMetadataFiles.forEach(({iconPath, iconMetadata}) => {
       expect(path.basename(iconPath)).toEqual(`${expectedName}.yml`);
     });
 
+    // Skip icons missing a description untill we know every icon has one
+    const skipIfIncomplete = iconMetadata.description === 'N/A' ? it.skip : it;
+    skipIfIncomplete(`has a description and at least one valid keyword`, () => {
+      const validDescription = iconMetadata.description
+        .replace(/n\/a/i, '')
+        .trim();
+
+      expect(validDescription).not.toEqual('');
+
+      const validKeywords = iconMetadata.keywords.filter(
+        (keyword) => keyword.trim().toLowerCase() !== 'n/a',
+      );
+
+      expect(validKeywords.length).toBeGreaterThan(0);
+    });
+
     (iconMetadata.deprecated_aliases || []).forEach((alias) => {
       it(`deprecated alias ${alias} does not conflict with other icon names`, () => {
         const otherNames = allIconMetadataFiles.reduce((memo, fileData) => {
