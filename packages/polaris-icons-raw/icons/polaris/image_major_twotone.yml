@@ -1,4 +1,4 @@
-name: collection
+name: image
 authors:
   - N/A
 date_added: 2019-02-25
@@ -17,7 +17,10 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - collection
-  - tag
-  - tags
-  - swing
+  - picture
+  - image
+  - drawing
+  - sketch
+  - canvas
+  - photograph
+  - snap

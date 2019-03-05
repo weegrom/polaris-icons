@@ -1,4 +1,4 @@
-name: circle check mark
+name: circle tick
 authors:
   - Adam Whitcroft
 date_added: 2019-02-21
@@ -13,6 +13,8 @@ version: 1
 keywords:
   - good
   - positive
+  - check
   - checkmark
   - circle
   - round
+  - tick

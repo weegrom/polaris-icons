@@ -1,4 +1,4 @@
-name: menu
+name: mobile hamburger
 authors:
   - Adam Whitcroft
 date_added: 2018-11-14
@@ -13,3 +13,4 @@ version: 1
 keywords:
   - hamburger
   - menu
+  - burger

@@ -1,4 +1,4 @@
-name: testimonials
+name: featured collection
 authors:
   - N/A
 date_added: 2019-02-25
@@ -17,10 +17,9 @@ set: major
 style: monotone
 version: 1
 keywords:
-  - testimonials
-  - quote
-  - speech
-  - text
-  - sections
-  - writing
-  - content
+  - code
+  - syntax
+  - slash
+  - block
+  - layout
+  - section

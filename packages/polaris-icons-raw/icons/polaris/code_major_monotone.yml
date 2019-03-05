@@ -1,4 +1,4 @@
-name: content featured
+name: code
 authors:
   - N/A
 date_added: 2019-02-25
@@ -17,9 +17,6 @@ set: major
 style: monotone
 version: 1
 keywords:
-  - paper
-  - page
-  - heart
-  - content
-  - featured
-  - section
+  - code
+  - block
+  - liquid

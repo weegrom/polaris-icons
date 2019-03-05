@@ -1,4 +1,4 @@
-name: social
+name: column with text
 authors:
   - N/A
 date_added: 2019-02-25
@@ -17,8 +17,15 @@ set: major
 style: monotone
 version: 1
 keywords:
-  - social
-  - thumb
-  - 'thumbs up'
-  - hand
-  - like
+  - paper
+  - page
+  - content
+  - featured
+  - section
+  - columns
+  - text
+  - image
+  - photo
+  - picture
+  - writing
+  - copy

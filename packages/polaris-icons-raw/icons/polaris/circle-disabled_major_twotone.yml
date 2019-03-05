@@ -1,4 +1,4 @@
-name: circle barred
+name: circle disabled
 authors:
   - Adam Whitcroft
 date_added: 2019-02-21
@@ -16,3 +16,5 @@ keywords:
   - 'no'
   - circle
   - round
+  - disabled
+  - barred

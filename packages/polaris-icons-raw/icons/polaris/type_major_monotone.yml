@@ -1,4 +1,4 @@
-name: collection featured
+name: type
 authors:
   - N/A
 date_added: 2019-02-25
@@ -17,7 +17,9 @@ set: major
 style: monotone
 version: 1
 keywords:
-  - collection
-  - tag
-  - swing
-  - heart
+  - typography
+  - font
+  - typeface
+  - type
+  - letter
+  - text

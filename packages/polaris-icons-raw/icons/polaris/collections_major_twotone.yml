@@ -1,4 +1,4 @@
-name: text column with images
+name: collections
 authors:
   - N/A
 date_added: 2019-02-25
@@ -14,13 +14,10 @@ description: >
 exclusive_use:
 public: true
 set: major
-style: monotone
+style: twotone
 version: 1
 keywords:
-  - columns
-  - text
-  - image
-  - photo
-  - picture
-  - content
-  - writing
+  - collection
+  - tag
+  - tags
+  - swing

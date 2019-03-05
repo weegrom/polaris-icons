@@ -1,4 +1,4 @@
-name: code block
+name: replace
 authors:
   - N/A
 date_added: 2019-02-25
@@ -17,9 +17,12 @@ set: major
 style: monotone
 version: 1
 keywords:
-  - code
-  - syntax
-  - slash
-  - block
-  - layout
-  - section
+  - replace
+  - image
+  - picture
+  - photo
+  - switch
+  - swap
+  - arrow
+  - arrows
+  - square

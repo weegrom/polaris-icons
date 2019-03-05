@@ -1,4 +1,4 @@
-name: picture
+name: play circle
 authors:
   - N/A
 date_added: 2019-02-25
@@ -14,12 +14,14 @@ description: >
 exclusive_use:
 public: true
 set: major
-style: twotone
+style: monotone
 version: 1
 keywords:
-  - image
-  - drawing
-  - sketch
-  - canvas
-  - photograph
-  - snap
+  - video
+  - control
+  - media
+  - play
+  - motion
+  - animation
+  - film
+  - circle

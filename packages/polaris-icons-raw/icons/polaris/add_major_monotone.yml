@@ -1,4 +1,4 @@
-name: typography
+name: add
 authors:
   - N/A
 date_added: 2019-02-25
@@ -17,8 +17,6 @@ set: major
 style: monotone
 version: 1
 keywords:
-  - typography
-  - font
-  - typeface
-  - type
-  - letter
+  - add
+  - new
+  - block
