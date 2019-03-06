@@ -1,6 +1,6 @@
 # Polaris Icons: frequently asked questions
 
-## Some icons are in Sketch/Abstract, but not on https://polaris-icons.shopifycloud.com, why?
+## Some icons are in Sketch/Abstract, but not on https://polaris-icons.shopify.com, why?
 
 We’re currently working on making all icons that are available in Sketch / Abstract to also be available in the `@shopify/polaris-icons` npm package, starting with icons that are currently being used in production codebases, such as Shopify/web, Shopify/online-store-web.
 

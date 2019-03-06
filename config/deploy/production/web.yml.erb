@@ -5,6 +5,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: 'false'
+    ingress.kubernetes.io/configuration-snippet: |
+      if ($host != 'polaris-icons.shopify.com') {
+        return 301 https://polaris-icons.shopify.com$request_uri;
+      }
     ingress.shopify.io/tls-secretbuddy: 'false'
   labels:
     name: web
@@ -14,9 +18,16 @@ spec:
   tls:
     - hosts:
         - 'polaris-icons.shopifycloud.com'
+        - 'polaris-icons.shopify.com'
       secretName: polaris-icons-shopifycloud-com
   rules:
     - host: 'polaris-icons.shopifycloud.com'
+      http:
+        paths:
+          - backend:
+              serviceName: web
+              servicePort: 80
+    - host: 'polaris-icons.shopify.com'
       http:
         paths:
           - backend:

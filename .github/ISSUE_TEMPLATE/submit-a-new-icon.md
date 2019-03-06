@@ -1,15 +1,14 @@
 ---
 name: Submit a new icon
 about: For adding new icons to Polaris Icons
-title: "[Submission] Icon name"
+title: '[Submission] Icon name'
 labels: New
 assignees: ''
-
 ---
 
 <!--
   Please follow this template to submit a new icon. First check
-  Abstract or https://polaris-icons.shopifycloud.com to see if the icon
+  Abstract or https://polaris-icons.shopify.com to see if the icon
   you need already exists.
 
   Any questions? https://vault.shopify.com/Polaris-icon-creation-guidelines
