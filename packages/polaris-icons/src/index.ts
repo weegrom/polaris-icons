@@ -1,4 +1,3 @@
-/* eslint-disable shopify/images-no-direct-imports */
 export {
   default as AddMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/add_major_monotone.svg';
