@@ -118,7 +118,11 @@ function filterIcons(icons: IconInterface[], searchText: string) {
     string.toUpperCase().includes(searchText.toUpperCase());
 
   return icons.filter((icon) => {
-    return containsText(icon.name) || icon.keywords.some(containsText);
+    return (
+      containsText(icon.name) ||
+      icon.keywords.some(containsText) ||
+      containsText(icon.reactname)
+    );
   });
 }
 
