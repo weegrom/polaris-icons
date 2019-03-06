@@ -10,6 +10,7 @@
   margin: 0 (-$spacing-base-tight);
   padding: $spacing-base-tight;
   white-space: pre-wrap;
+  word-break: break-all;
   cursor: pointer;
   outline: none;
 }
