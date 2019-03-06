@@ -33,9 +33,9 @@ export default function IntroHeader() {
               {data.site.siteMetadata.title}
             </DisplayText>
             <p>
-             A cohesive collection of simple and informative icons 
-              that we use across the Shopify platform. Our icons draw on the visual
-              language of the Polaris design system. Each icon is an exercise in
+              A cohesive collection of simple and informative icons that we use
+              across the Shopify platform. Our icons draw on the visual language
+              of the Polaris design system. Each icon is an exercise in
               distillation, in taking a metaphor and representing its most basic
               form. All icons are available through Abstract and GitHub. Learn
               how to use our icons in our{' '}
