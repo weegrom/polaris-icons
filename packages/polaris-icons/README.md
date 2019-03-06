@@ -6,19 +6,21 @@ This is a public package. Although it is possible to use it directly, we recomme
 
 Make changes to this package to add, remove, or rename public icons.
 
+Make sure your app is using `@shopify/polaris` version [`3.10.0`](https://github.com/Shopify/polaris-react/releases/tag/v3.10.0) or higher.
+
 We recommend the following usage:
 
 `icons/index.js`
+
 ```js
-export {
-  exampleIcon
-} from '@shopify/polaris-icons';
+export {ExampleIcon} from '@shopify/polaris-icons';
 ```
 
 `other_page.js`
+
 ```js
 import {Icon} from '@shopify/polaris';
-import {exampleIcon} from 'icons/index.js';
+import {ExampleIcon} from './icons';
 
-<Icon source={exampleIcon} />
+<Icon source={ExampleIcon} />;
 ```
