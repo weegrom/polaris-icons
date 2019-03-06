@@ -92,9 +92,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
           </div>
           <div className={`${styles.usage} ${styles.spacingBase}`}>
             <Subheading>Usage</Subheading>
-            <div className={styles.CodeExample}>
-              <IconCopy reactname={icon.reactname} />
-            </div>
+            <IconCopy reactname={icon.reactname} />
             <span>
               See the{' '}
               <OutboundLink

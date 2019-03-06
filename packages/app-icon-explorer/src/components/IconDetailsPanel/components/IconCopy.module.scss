@@ -1,6 +1,14 @@
+@import '~@shopify/polaris-tokens/dist/spacing';
+@import '~@shopify/polaris-tokens/dist/typography';
 @import '~@shopify/polaris-tokens/dist/colors';
 
 .codeHighlight {
+  font-family: unquote($font-stack-monospace);
+  font-size: 14px;
+  border-radius: 0.6rem;
+  background-color: $color-sky-lighter;
+  padding: $spacing-loose;
+  word-break: break-word;
   cursor: pointer;
   outline: none;
 }

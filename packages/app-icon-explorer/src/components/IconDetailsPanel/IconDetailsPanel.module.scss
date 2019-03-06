@@ -51,15 +51,6 @@ $borderColor: $color-sky-light;
   color: $color-ink;
 }
 
-.CodeExample {
-  font-family: unquote($font-stack-monospace);
-  font-size: 14px;
-  border-radius: 0.6rem;
-  background-color: $color-sky-lighter;
-  padding: $spacing-loose;
-  word-break: break-word;
-}
-
 .usage span {
   color: $color-ink-lighter;
 }
