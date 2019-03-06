@@ -23,12 +23,12 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/arrow-right_minor.svg';
 
 export {
-  default as ArrowUpDownMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/arrow-up-down_minor.svg';
-
-export {
   default as ArrowUpMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/arrow-up_minor.svg';
+
+export {
+  default as ArrowUpDownMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/arrow-up-down_minor.svg';
 
 export {
   default as BlockquoteMajorMonotone,
@@ -247,12 +247,16 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/location_major_twotone.svg';
 
 export {
+  default as LogOutMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/log-out_minor.svg';
+
+export {
   default as LogoBlockMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/logo-block_major_monotone.svg';
 
 export {
-  default as LogOutMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/log-out_minor.svg';
+  default as MobileMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/mobile_major_twotone.svg';
 
 export {
   default as MobileCancelMajorMonotone,
@@ -261,10 +265,6 @@ export {
 export {
   default as MobileHamburgerMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/mobile-hamburger_major_monotone.svg';
-
-export {
-  default as MobileMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/mobile_major_twotone.svg';
 
 export {
   default as NoColorMinor,
@@ -335,12 +335,12 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/search_minor.svg';
 
 export {
-  default as SectionHideMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/section-hide_minor.svg';
-
-export {
   default as SectionMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/section_major_twotone.svg';
+
+export {
+  default as SectionHideMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/section-hide_minor.svg';
 
 export {
   default as SettingsMajorTwotone,
@@ -365,6 +365,10 @@ export {
 export {
   default as SubtractMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/subtract_minor.svg';
+
+export {
+  default as TextBlockMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/text-block_major_twotone.svg';
 
 export {
   default as ThumbsUpMajorMonotone,
