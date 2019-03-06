@@ -33,7 +33,8 @@ export default function IntroHeader() {
               {data.site.siteMetadata.title}
             </DisplayText>
             <p>
-              Polaris icons are simple and informative. They build on the visual
+             A cohesive collection of simple and informative icons 
+              that we use across the Shopify platform. Our icons draw on the visual
               language of the Polaris design system. Each icon is an exercise in
               distillation, in taking a metaphor and representing its most basic
               form. All icons are available through Abstract and GitHub. Learn

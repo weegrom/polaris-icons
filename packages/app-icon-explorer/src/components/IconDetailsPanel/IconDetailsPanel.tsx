@@ -134,7 +134,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
             )}
             className={`${styles.link} contentLink`}
           >
-            Submit a new version of this icon
+            Create a new version of this icon
           </OutboundLink>
 
           {/* eslint-disable-next-line shopify/jsx-no-complex-expressions */}
@@ -142,12 +142,12 @@ function PopulatedState({icon}: {icon: IconInterface}) {
             <div className={styles.bannerWrapper}>
               <Banner>
                 <p>
-                  This icon is missing information. Please take a moment to{' '}
+                  This icon is missing information.{' '}
                   <OutboundLink
                     className="contentLink"
                     href={linkToMetadataEditForm}
                   >
-                    improve its metadata
+                    Update the metadata for this icon
                   </OutboundLink>
                   .
                 </p>

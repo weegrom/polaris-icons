@@ -64,13 +64,13 @@ export default class IndexPage extends React.Component<Props, State> {
       majorIcons.length || minorIcons.length ? (
         <>
           <IconsListing
-            heading="Major Icons"
+            heading="Major icons"
             icons={majorIcons}
             activeIconId={activeIconId}
             showCount={isFiltered}
           />
           <IconsListing
-            heading="Minor Icons"
+            heading="Minor icons"
             icons={minorIcons}
             activeIconId={activeIconId}
             showCount={isFiltered}
