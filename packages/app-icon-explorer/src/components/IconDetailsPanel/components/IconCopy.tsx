@@ -62,11 +62,13 @@ export default class IconCopy extends React.Component<Props, State> {
         >
           <span className={styles.syntaxIconName}>import</span>
           <span className={styles.syntaxIconComponent}>
-            {' '}
-            {`{${reactname}}`}
+            {' {'}
+            <br />
+            {`  ${reactname}`}
+            <br />
+            {'} '}
           </span>
           <span className={styles.syntaxIconName}>
-            {' '}
             from {`'@shopify/polaris-icons'`};
           </span>
           <br />
