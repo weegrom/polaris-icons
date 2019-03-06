@@ -56,7 +56,7 @@ export default function Seo(props: Props) {
               {
                 name: 'viewport',
                 content:
-                  'width=960px,initial-scale=1,shrink-to-fit=no,viewport-fit=cover',
+                  'width=960,initial-scale=1,shrink-to-fit=no,viewport-fit=cover',
               },
               {
                 name: `description`,
