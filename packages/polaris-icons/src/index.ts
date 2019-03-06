@@ -243,16 +243,16 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/legal_major_monotone.svg';
 
 export {
+  default as LocationMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/location_major_twotone.svg';
+
+export {
   default as LogoBlockMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/logo-block_major_monotone.svg';
 
 export {
   default as LogOutMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/log-out_minor.svg';
-
-export {
-  default as MapMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/map_major_twotone.svg';
 
 export {
   default as MobileCancelMajorMonotone,
