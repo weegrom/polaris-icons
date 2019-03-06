@@ -14,13 +14,17 @@ const indexFilePath = path.resolve(
   '../packages/polaris-icons/src/index.ts',
 );
 
+const preamble = `// DO NOT MANUALLY EDIT THIS FILE
+// This file was automatically generated
+// Run 'yarn run generate-icon-packages' from the root of the monorepo to generate a new version`;
+
 const allSvgExportsString = glob
   .sync('*.svg', {cwd: iconBasePath})
   .filter(isFileExcluded)
   .map(filenameToExport)
   .join('\n\n');
 
-fs.writeFileSync(indexFilePath, `${allSvgExportsString}\n`);
+fs.writeFileSync(indexFilePath, `${preamble}\n\n${allSvgExportsString}\n`);
 
 function isFileExcluded(filename) {
   const blocklist = new Set(['ellipsis_minor.svg']);
@@ -36,7 +40,7 @@ function filenameToExport(filename) {
 }
 
 /**
- * Capitalises the first letter and any letter following a hyphen or underscore
+ * Capitalizes the first letter and any letter following a hyphen or underscore
  * and removes hyphens and underscores
  *
  * E.g. viewport-wide_major_monotone becomes ViewportWideMajorMonotone,

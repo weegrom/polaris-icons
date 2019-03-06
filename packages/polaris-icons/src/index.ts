@@ -1,3 +1,7 @@
+// DO NOT MANUALLY EDIT THIS FILE
+// This file was automatically generated
+// Run 'yarn run generate-icon-packages' from the root of the monorepo to generate a new version
+
 export {
   default as AddMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/add_major_monotone.svg';
