@@ -3,7 +3,9 @@ const {dirname} = require('path');
 const resolve = require('resolve');
 
 const iconsPath = dirname(
-  resolve.sync('@shopify/polaris-icons-raw/icons/polaris/add_minor.yml'),
+  resolve.sync(
+    '@shopify/polaris-icons-raw/icons/polaris/add_major_monotone.yml',
+  ),
 );
 
 module.exports = {

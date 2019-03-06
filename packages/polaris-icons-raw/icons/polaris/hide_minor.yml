@@ -1,4 +1,4 @@
-name: no color
+name: hide
 authors:
   - N/A
 date_added: 2019-02-25
@@ -16,11 +16,8 @@ public: true
 set: minor
 version: 1
 keywords:
-  - color
-  - drop
-  - droplet
-  - water
-  - strike
-  - line
-  - 'no'
-  - crossed
+  - section
+  - conceal
+  - eye
+  - see
+  - show

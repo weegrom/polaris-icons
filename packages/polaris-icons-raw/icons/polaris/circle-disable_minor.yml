@@ -1,4 +1,4 @@
-name: disable
+name: circle disable
 authors:
   - Adam Whitcroft
 date_added: 2018-11-14
@@ -10,7 +10,13 @@ public: true
 set: minor
 version: 1
 keywords:
-  - disabled
   - stop
   - not permitted
   - not allowed
+  - circle
+  - error
+  - 'no'
+  - circle
+  - round
+  - disabled
+  - barred

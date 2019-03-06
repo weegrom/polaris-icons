@@ -20,16 +20,10 @@ const preamble = `// DO NOT MANUALLY EDIT THIS FILE
 
 const allSvgExportsString = glob
   .sync('*.svg', {cwd: iconBasePath})
-  .filter(isFileExcluded)
   .map(filenameToExport)
   .join('\n\n');
 
 fs.writeFileSync(indexFilePath, `${preamble}\n\n${allSvgExportsString}\n`);
-
-function isFileExcluded(filename) {
-  const blocklist = new Set(['ellipsis_minor.svg']);
-  return !blocklist.has(filename);
-}
 
 function filenameToExport(filename) {
   const basename = path.basename(filename, path.extname(filename));

@@ -1,17 +1,16 @@
-name: checkmark
+name: plus
 authors:
   - Adam Whitcroft
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
-  Used to denote the action of checking a Polaris checkbox.
+  Used to denote the action of adding an item and zooming into a map.
 exclusive_use:
 public: true
 set: minor
 version: 1
 keywords:
-  - checkmark
-  - 'yes'
-  - ok
-  - good
-  - passed
+  - plus
+  - addition
+  - add
+  - math

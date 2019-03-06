@@ -11,8 +11,11 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - error
   - stop
+  - not permitted
+  - not allowed
+  - circle
+  - error
   - 'no'
   - circle
   - round

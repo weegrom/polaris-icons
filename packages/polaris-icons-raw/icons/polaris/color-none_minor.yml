@@ -1,4 +1,4 @@
-name: section hide
+name: color none
 authors:
   - N/A
 date_added: 2019-02-25
@@ -16,4 +16,11 @@ public: true
 set: minor
 version: 1
 keywords:
-  - N/A
+  - color
+  - drop
+  - droplet
+  - water
+  - strike
+  - line
+  - 'no'
+  - crossed
