@@ -46,7 +46,7 @@ describe('duplicate-basenames audit', () => {
     });
   });
 
-  it('ignores off the  -major, -minor and -spot suffixes when comparing', () => {
+  it('ignores the  -major, -minor and -spot suffixes when comparing', () => {
     const filenames = [
       'foo/icons/icon1.svg',
       'foo/icons/icon1-major.svg',
@@ -58,13 +58,15 @@ describe('duplicate-basenames audit', () => {
       'baz/icons/icon1_major.svg',
       'baz/icons/icon1_minor.svg',
       'baz/icons/icon1_spot.svg',
-      'qux/icons/icon2.svg',
+      'qux/icons/icon1MajorMonotone.svg',
+      'qux/icons/icon1MajorTwotone.svg',
+      'zug/icons/icon2.svg',
     ];
 
     expect(duplicateBasenames({filenames})).toEqual({
       summary: 'Found 1 basenames shared by multiple files',
       status: 'warning',
-      info: `  icon1 is used in 10 files:
+      info: `  icon1 is used in 12 files:
     foo/icons/icon1.svg
     foo/icons/icon1-major.svg
     foo/icons/icon1-minor.svg
@@ -74,7 +76,9 @@ describe('duplicate-basenames audit', () => {
     bar/icons/icon1Spot.svg
     baz/icons/icon1_major.svg
     baz/icons/icon1_minor.svg
-    baz/icons/icon1_spot.svg`,
+    baz/icons/icon1_spot.svg
+    qux/icons/icon1MajorMonotone.svg
+    qux/icons/icon1MajorTwotone.svg`,
     });
   });
 
