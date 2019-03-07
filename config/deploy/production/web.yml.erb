@@ -48,12 +48,14 @@ spec:
     kind: ClusterIssuer
   dnsNames:
     - polaris-icons.shopifycloud.com
+    - polaris-icons.shopify.com
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
           - polaris-icons.shopifycloud.com
+          - polaris-icons.shopify.com
 ---
 apiVersion: v1
 kind: Service
