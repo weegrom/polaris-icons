@@ -10,7 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shopify/polaris-icons.git"
+    "url": "git+https://github.com/Shopify/polaris-icons.git",
+    "directory": "packages/polaris-icons-raw"
   },
   "scripts": {
     "metadata": "node ./scripts/metadata-json.js"

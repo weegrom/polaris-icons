@@ -21,7 +21,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shopify/polaris-icons.git"
+    "url": "git+https://github.com/Shopify/polaris-icons.git",
+    "directory": "packages/polaris-icons-internal"
   },
   "bugs": {
     "url": "https://github.com/Shopify/polaris-icons/issues"
