@@ -1,3 +1,4 @@
+const fs = require('fs');
 const chalk = require('chalk');
 const glob = require('glob');
 const audits = require('../audits');
@@ -9,6 +10,12 @@ async function handler(options) {
 
   const dependents = glob.sync('**/*.svg', {cwd: baseDir});
 
+  const contentPerDependent = dependents.reduce((memo, filename) => {
+    return Object.assign(memo, {
+      [filename]: fs.readFileSync(`${baseDir}/${filename}`, 'utf8'),
+    });
+  }, {});
+
   const auditPromises = audits
     .filter((auditFn) => {
       return showAllReports || onlyShowReports.includes(auditFn.auditName);
@@ -16,11 +23,15 @@ async function handler(options) {
     .map((auditFn) => {
       const filterFn = auditFn.filter ? auditFn.filter : () => true;
       const filenames = dependents.filter(filterFn);
+      const contentPerFilename = filenames.reduce((memo, filename) => {
+        return Object.assign(memo, {[filename]: contentPerDependent[filename]});
+      }, {});
 
       return Promise.resolve(
         auditFn({
           baseDir,
           filenames,
+          contentPerFilename,
         }),
       ).then((result) => ({
         name: auditFn.auditName,

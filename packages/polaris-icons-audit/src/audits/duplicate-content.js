@@ -1,6 +1,4 @@
 const crypto = require('crypto');
-const fs = require('fs');
-const path = require('path');
 const tryRequire = require('try-require');
 // We need to have React in scope as it is used when we eval the svgr output
 // eslint-disable-next-line no-unused-vars
@@ -12,7 +10,7 @@ const {svgOptions} = require('@shopify/images/optimize');
 // If @shopify/polaris-icons is available to be required, check them too
 const polarisIcons = tryRequire('@shopify/polaris-icons') || {};
 
-function audit({filenames, baseDir}) {
+function audit({filenames, contentPerFilename}) {
   const polarisIconsComponentsPerFilename = Object.keys(polarisIcons).reduce(
     (memo, importKey) => {
       memo[`@shopify/polaris-icons/${importKey}.svg`] = polarisIcons[importKey];
@@ -25,7 +23,7 @@ function audit({filenames, baseDir}) {
   const contentsPerFilename = filenames.map((filename) => {
     const reactComponent = filename.startsWith('@shopify/polaris-icons')
       ? polarisIconsComponentsPerFilename[filename]
-      : componentFromSvgFile(path.join(baseDir, filename));
+      : componentFromSvgFile(filename, contentPerFilename);
     return renderToStaticMarkup(reactComponent());
   });
 
@@ -78,8 +76,8 @@ function md5String(string) {
     .digest('hex');
 }
 
-function componentFromSvgFile(filename) {
-  const source = fs.readFileSync(filename, 'utf8');
+function componentFromSvgFile(filename, contentPerFilename) {
+  const source = contentPerFilename[filename];
 
   const svgrOutput = convert.sync(
     source,
