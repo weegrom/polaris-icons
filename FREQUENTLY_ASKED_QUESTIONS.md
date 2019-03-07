@@ -1,16 +1,24 @@
 # Polaris Icons: frequently asked questions
 
-## Some icons are in Sketch/Abstract, but not on https://polaris-icons.shopify.com, why?
+## Search
 
-We’re currently working on making all icons that are available in Sketch / Abstract to also be available in the `@shopify/polaris-icons` npm package, starting with icons that are currently being used in production codebases, such as Shopify/web, Shopify/online-store-web.
+### Some icons are in Sketch/Abstract, but not on https://polaris-icons.shopify.com, why?
+
+We’re currently working on making all icons that are available in Sketch / Abstract be also available on https://polaris-icons.shopify.com and in the [`@shopify/polaris-icons` npm package](https://npmjs.com/package/@shopify/polaris-icons).
 
 Thank you for your patience!
 
-## Can I use `@shopify/polaris-icons` if I’m not using React?
+If you want to help adding missing icons from Abstract into the polaris-icons project, get in touch in [#polaris-tooling](https://shopify.slack.com/messages/CCNUS0FML) on Slack.
+
+---
+
+## Development
+
+### Can I use `@shopify/polaris-icons` if I’m not using React?
 
 Not yet. Support for other use cases than React, such as vanilla JS, Android, and iOS, are on the roadmap: watch this space!
 
-## How to use `@shopify/polaris-icons` with the `@shopify/polaris` `Icon` component?
+### How to use `@shopify/polaris-icons` with the `@shopify/polaris` `Icon` component?
 
 You can use `@shopify/polaris`’s [`Icon` component](https://polaris.shopify.com/components/images-and-icons/icon) like so:
 
