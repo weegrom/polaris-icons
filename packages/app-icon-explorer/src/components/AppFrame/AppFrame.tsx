@@ -1,5 +1,6 @@
 import React from 'react';
 import {AppProvider, Frame, TopBar} from '@shopify/polaris';
+import {ShortcutProvider, Shortcut} from '@shopify/react-shortcuts';
 import '@shopify/polaris/styles.scss';
 import './polaris-overrides.scss';
 
@@ -26,17 +27,21 @@ interface Props {
 
 interface State {
   searchText: string;
+  searchIsFocused: boolean;
 }
 
 export default class AppFrame extends React.Component<Props, State> {
   state = {
     searchText: '',
+    searchIsFocused: false,
   };
 
   render() {
     const searchFieldMarkup = (
       <TopBar.SearchField
+        focused={this.state.searchIsFocused}
         onChange={this.handleSearchChange}
+        onBlur={this.handleSearchBlur}
         value={this.state.searchText}
         placeholder="Search"
       />
@@ -52,7 +57,10 @@ export default class AppFrame extends React.Component<Props, State> {
 
     return (
       <AppProvider theme={theme}>
-        <Frame topBar={topBarMarkup}>{this.props.children}</Frame>
+        <ShortcutProvider>
+          <Shortcut ordered={['s']} onMatch={this.triggerSearchFocus} />
+          <Frame topBar={topBarMarkup}>{this.props.children}</Frame>
+        </ShortcutProvider>
       </AppProvider>
     );
   }
@@ -71,5 +79,13 @@ export default class AppFrame extends React.Component<Props, State> {
     if (this.props.onSearch) {
       this.props.onSearch(value);
     }
+  };
+
+  handleSearchBlur = () => {
+    this.setState({searchIsFocused: false});
+  };
+
+  triggerSearchFocus = () => {
+    this.setState({searchIsFocused: true});
   };
 }

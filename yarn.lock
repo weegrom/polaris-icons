@@ -1066,6 +1066,14 @@
     hoist-non-react-statics "^3.0.1"
     tslib "^1.9.3"
 
+"@shopify/react-shortcuts@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@shopify/react-shortcuts/-/react-shortcuts-2.2.1.tgz#2ad66d3d7179fa2b57626a1c7d43110d98306098"
+  integrity sha512-fuld0Oj0whGZxWt8FCfAYpByAFqGty25O8e47b4CxBHQsuNTBxar7KPtLQQ6ddiC36UH8ErLGbRWLpmBUNy5sw==
+  dependencies:
+    prop-types "^15.6.2"
+    tslib "^1.9.3"
+
 "@shopify/react-utilities@^2.0.3":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@shopify/react-utilities/-/react-utilities-2.0.3.tgz#424421e7202b402ec7934c137b5b7e035fbeb33c"
