@@ -1,13 +1,27 @@
-# https://services.shopify.io/services/polaris-icons/testing
+# Polaris-icons has two environments in servicesDB
+#
+# https://services.shopify.io/services/polaris-icons/production
+# is the environment for the app deployed at https://polaris-icons.shopify.com.
+# The code for this lives in packages/app-icon-explorer
+#
+# https://services.shopify.io/services/polaris-icons/libraries
+# is the environment for the library packages that are deployed to npm using
+# lerna. The code for this lives in the other packages/* folders
+
 org_line: Shopify Core
 owners:
   - Shopify/polaris
-classification: tier4
+classification: tier3
 url: https://polaris-icons.shopify.com
 ci_url: https://buildkite.com/shopify/polaris-icons
 slack_channels:
   - polaris-icons
   - polaris-icon-guild
+oncall_url: https://shopify.pagerduty.com/services/PQNFXB1
 security:
   data_management:
     contains_pii: false
+
+# The libraries environment deploys libraries
+libraries:
+  classification: library
