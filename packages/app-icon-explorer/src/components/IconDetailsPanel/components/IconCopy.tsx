@@ -73,8 +73,9 @@ export default class IconCopy extends React.Component<Props, State> {
           </span>
           <br />
           <br />
-          <span className={styles.syntaxIconTag}>&lt;Icon</span>{' '}
-          <span className={styles.syntaxIconSource}>source</span>
+          <span className={styles.syntaxIconTag}>&lt;Icon</span>
+          <br />
+          <span className={styles.syntaxIconSource}>{'  '}source</span>
           <span className={styles.syntaxIconTag}>=</span>
           <span className={styles.syntaxIconName}>{`{${reactname}}`}</span>
           <span className={styles.syntaxIconTag}> /&gt;</span>
