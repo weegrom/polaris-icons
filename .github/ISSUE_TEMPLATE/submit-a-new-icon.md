@@ -1,9 +1,10 @@
 ---
 name: Submit a new icon
 about: For adding new icons to Polaris Icons
-title: '[Submission] Icon name'
+title: "[Submission] Icon name"
 labels: New
 assignees: ''
+
 ---
 
 <!--
@@ -90,5 +91,5 @@ Keywords:
 
 <!--
   Multiple words that could be associated with this icon when
-  searching (Eg, arrow, down, etc).
+  searching. Think shape, use, name, etc. (Eg, arrow, up, expand).
 -->
