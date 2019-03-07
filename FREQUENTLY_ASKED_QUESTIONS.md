@@ -42,6 +42,10 @@ You can use `@shopify/polaris`’s [`Icon` component](https://polaris.shopify.co
    <Icon source={CircleInformationMajorTwotone} />
    ```
 
+## What’s the difference between major and minor icons?
+
+Minor icons are designed within a 16px square but are always given a 20 × 20px bounding box. Minor icons mainly use solid shapes and have a single color variant. Major icons are designed within a 20px square. They mainly use strokes and have a 2-tone variant that includes white highlights. Both major and minor icons are always displayed within a 20px square bounding box and should not be used at any other size.
+
 ---
 
 If you have any other questions or feedback, [open an issue](https://github.com/Shopify/polaris-icons/issues/new?assignees=HYPD&labels=&template=feedback-for-polaris-icons-ui.md&title=%5BFeedback%5D+) or find us in [#polaris-tooling](https://shopify.slack.com/messages/CCNUS0FML) on Slack.
