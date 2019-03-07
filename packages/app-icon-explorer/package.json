@@ -5,6 +5,7 @@
   "dependencies": {
     "@shopify/polaris": "^3.9.0",
     "@shopify/polaris-icons-raw": "^1.4.0",
+    "@shopify/react-shortcuts": "^2.2.1",
     "@types/classnames": "^2.2.7",
     "@types/query-string": "^6.2.0",
     "@types/react-helmet": "^5.0.8",
