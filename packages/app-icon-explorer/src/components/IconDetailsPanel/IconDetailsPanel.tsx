@@ -112,7 +112,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
               ))}
             </ul>
           </div>
-          <div className={styles.spacingLoose}>
+          <div className={styles.spacingBase}>
             <Subheading>Partner use</Subheading>
             <p>{status}</p>
           </div>
