@@ -11,9 +11,9 @@ const {svgOptions} = require('@shopify/images/optimize');
 const polarisIcons = tryRequire('@shopify/polaris-icons') || {};
 
 function audit({filenames, contentPerFilename}) {
-  const polarisIconsComponentsPerFilename = Object.keys(polarisIcons).reduce(
-    (memo, importKey) => {
-      memo[`@shopify/polaris-icons/${importKey}.svg`] = polarisIcons[importKey];
+  const polarisIconsComponentsPerFilename = Object.entries(polarisIcons).reduce(
+    (memo, [importKey, component]) => {
+      memo[`@shopify/polaris-icons/${importKey}.svg`] = component;
       return memo;
     },
     {},
@@ -39,27 +39,26 @@ function audit({filenames, contentPerFilename}) {
     return memo;
   }, {});
 
-  const duplicatedDependentsByHash = Object.keys(dependentsByHash).reduce(
-    (memo, filename) => {
-      if (dependentsByHash[filename].length > 1) {
-        memo[filename] = dependentsByHash[filename];
+  const duplicatedDependentsByHash = Object.entries(dependentsByHash).reduce(
+    (memo, [filename, dependents]) => {
+      if (dependents.length > 1) {
+        memo[filename] = dependents;
       }
       return memo;
     },
     {},
   );
 
-  const duplicatedHashes = Object.keys(duplicatedDependentsByHash);
-  const duplicatedHashesCount = duplicatedHashes.length;
+  const duplicatedHashesCount = Object.keys(duplicatedDependentsByHash).length;
 
   return {
     summary: `Found ${duplicatedHashesCount} content hashes shared by multiple files`,
     status: duplicatedHashesCount > 0 ? 'error' : 'pass',
-    info: duplicatedHashes
-      .map((hash) => {
-        const count = duplicatedDependentsByHash[hash].length;
+    info: Object.entries(duplicatedDependentsByHash)
+      .map(([hash, duplicatedDependents]) => {
+        const count = duplicatedDependents.length;
 
-        const filesStr = duplicatedDependentsByHash[hash]
+        const filesStr = duplicatedDependents
           .map((file) => `    ${file}`)
           .join('\n');
 

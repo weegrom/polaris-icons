@@ -7,9 +7,9 @@ const polarisIcons = tryRequire('@shopify/polaris-icons') || {};
 function audit({filenames}) {
   const iconSuffixRegex = /[-_]?(major|minor|spot)(?:[-_]?(monotone|twotone))?$/i;
 
-  const polarisIconsFilenames = Object.keys(polarisIcons).map((importKey) => {
-    return `@shopify/polaris-icons/${importKey}.svg`;
-  });
+  const polarisIconsFilenames = Object.keys(polarisIcons).map(
+    (importKey) => `@shopify/polaris-icons/${importKey}.svg`,
+  );
   filenames.unshift(...polarisIconsFilenames);
 
   const dependentsByBasename = filenames.reduce((memo, filename) => {
@@ -26,26 +26,26 @@ function audit({filenames}) {
     return memo;
   }, {});
 
-  const duplicatedDependentsByBasename = Object.keys(
+  const duplicatedDependentsByBasename = Object.entries(
     dependentsByBasename,
-  ).reduce((memo, filename) => {
-    if (dependentsByBasename[filename].length > 1) {
-      memo[filename] = dependentsByBasename[filename];
+  ).reduce((memo, [basename, dependents]) => {
+    if (dependents.length > 1) {
+      memo[basename] = dependents;
     }
     return memo;
   }, {});
 
-  const duplicatedBasenames = Object.keys(duplicatedDependentsByBasename);
-  const duplicatedBasenamesCount = duplicatedBasenames.length;
+  const duplicatedBasenamesCount = Object.keys(duplicatedDependentsByBasename)
+    .length;
 
   return {
     summary: `Found ${duplicatedBasenamesCount} basenames shared by multiple files`,
     status: duplicatedBasenamesCount > 0 ? 'warning' : 'pass',
-    info: duplicatedBasenames
-      .map((basename) => {
-        const count = duplicatedDependentsByBasename[basename].length;
+    info: Object.entries(duplicatedDependentsByBasename)
+      .map(([basename, duplicatedDependents]) => {
+        const count = duplicatedDependents.length;
 
-        const filesStr = duplicatedDependentsByBasename[basename]
+        const filesStr = duplicatedDependents
           .map((file) => `    ${file}`)
           .join('\n');
 
