@@ -1,17 +1,35 @@
 ---
 name: Feedback for Polaris Icons UI
 about: For suggestions or issues related to https://polaris-icons.shopify.com
-title: "[Feedback]"
+title: '[Feedback]'
 labels: ''
 assignees: HYPD
-
 ---
 
-**Description**
-A clear and concise description of what the bug is.
+# Issue summary
 
-**Steps to reproduce**
-Steps to reproduce the behavior:
+<!--
+Write a short description of the issue here ↓
+-->
 
-**Screenshots and additional context**
+## Steps to reproduce
+
+1.
+1.
+1.
+
+## Expected behavior
+
+<!--
+What do you think should happen?
+-->
+
+## Actual behavior
+
+<!--
+What actually happens?
+-->
+
+## Screenshots and additional context
+
 Add any other context about the problem here.

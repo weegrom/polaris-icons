@@ -1,86 +1,81 @@
 ---
 name: Submit changes to an existing icon
 about: For modifications of existing icons already in Polaris Icons
-title: "[Submission]"
+title: '[Submission]'
 labels: Update
 assignees: ''
-
 ---
 
 <!--
-  Please follow this template to change an existing icon.
-  You should already understand the impact of this change
-  where the icon is used, etc.
+Follow this template to change an existing icon.
 
-  Any questions? https://vault.shopify.com/Polaris-icon-creation-guidelines
-  or #polaris-icons on Slack
+You should already understand the impact of this change,
+where the icon is used, etc.
+
+Any questions?
+- https://vault.shopify.com/Polaris-icon-creation-guidelines
+- #polaris-icons on Slack
 -->
 
-#### Slack handle
+### Slack handle
+
 @yourslackhandle
 
-#### Original icon name
-Arrow Down - Minor
+### Original icon name
 
-#### When would you like it by?
+arrow down (minor)
+
+### When would you like it by?
+
 DD/MM/YYYY
 
-#### How will this icon be used?
-<!-- 
-  Please include any relevant images, the reason you are 
-  modifying this icon, and any additional context.
--->
+### How will this icon be used?
 
-#### Link your branch from Abstract
-<!-- 
-  Make sure you've created a branch with your modified icon
-  inside of Abstract (Polaris - Icons project) and link it here
--->
-
-#### Modified icon SVG
-<!-- 
-  Where can we find the icon (SVG)? Hint: Upload it to GDrive
--->
-
-#### Icon Metadata
-<!-- 
-  If you're adding a new icon, the following metadata needs
-  to be completed before we can accept this contribution.
-
-  You can find example metadata files in any `.yml` file
-  here: https://github.com/Shopify/polaris-icons/tree/master/packages/polaris-icons-raw/icons/polaris
--->
-
-name: 
-<!-- 
-  Eg. Arrow down. 
--->
-
-authors: 
 <!--
-  One or more contributors with slack handle
-  (Eg. Casey Smith @caseysmith).
+Please include any relevant images, the reason you are
+creating this icon, and any additional context.
 -->
 
-description: 
-<!-- 
-  Please use this guide to create descriptions: 
-  https://bit.ly/2GdMpmg).
+### Link to Abstract branch
+
+<!--
+Make sure you’ve created a branch with your new icon
+inside of Abstract (Polaris - Icons project) and link it here
 -->
 
-exclusive_use: 
-<!-- 
-  Only fill this if the icon should only be used in a specific
-  areas of the admin (Eg. Orders).
+### Updated icon SVG
+
+<!--
+Link to the SVG file (you can host it in Google Drive)
+or paste the SVG code below:
 -->
 
-set: 
-<!-- 
-  Choose major, minor or spot.
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" ...
+```
+
+### Icon metadata (optional)
+
+<!--
+If the icon metadata needs to be updated,
+copy and paste it from the appropriate `.yml` file, located in:
+https://github.com/Shopify/polaris-icons/tree/master/packages/polaris-icons-raw/icons/polaris
+then apply the changes below.
 -->
 
-Keywords: 
-<!-- 
-  Multiple words that could be associated with this icon when
-  searching (Eg, arrow, down, etc).
--->
+```yml
+name: arrow down
+authors:
+  - Sasha Dupont
+description: >
+  Follow these guidelines to create a description: https://bit.ly/2GdMpmg
+set: major or minor
+keywords:
+  - synonym
+  - another synonym
+  - related shape or symbol
+  - ...
+# Optional: fill exclusive_use if the icon should *only* be used
+# in specific areas of the admin (such as “Orders”):
+exclusive_use:
+```
