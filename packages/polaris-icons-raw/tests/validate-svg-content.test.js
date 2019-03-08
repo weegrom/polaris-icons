@@ -39,15 +39,15 @@ allIconFiles.forEach(
         expect(viewBox).toEqual(expectedViewbox);
       });
 
-      it('has no group nodes (<g>)', () => {
-        const groupNodes = selectAll('g', iconAst);
+      it('has no groups (<g>) or masks (<mask>)', () => {
+        const groupNodes = selectAll('g, mask', iconAst);
 
         expect(nodeSources(groupNodes, iconSource)).toEqual([]);
       });
 
-      it('only has <path>s and <circle>s with an explict fill color', () => {
+      it('only has <path>s, <polygon>s and <circle>s with an explict fill color', () => {
         const nodesWithUndefinedFill = selectAll(
-          'path:not([fill]), circle:not([fill])',
+          'path:not([fill]), circle:not([fill]), polygon:not([fill])',
           iconAst,
         );
 
@@ -63,6 +63,22 @@ allIconFiles.forEach(
             return Object.keys(node.properties).some(propIsAllowed);
           },
         );
+
+        expect(nodeSources(nodesWithDisallowedAttributes, iconSource)).toEqual(
+          [],
+        );
+      });
+
+      it('only has <polygon>s that only use the [fill, points] attributes', () => {
+        const allowedAttributes = ['fill', 'points'];
+
+        const nodesWithDisallowedAttributes = selectAll(
+          'polygon',
+          iconAst,
+        ).filter((node) => {
+          const propIsAllowed = (prop) => !allowedAttributes.includes(prop);
+          return Object.keys(node.properties).some(propIsAllowed);
+        });
 
         expect(nodeSources(nodesWithDisallowedAttributes, iconSource)).toEqual(
           [],
