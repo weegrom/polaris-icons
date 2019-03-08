@@ -14,6 +14,7 @@
     "**/.hg": true,
     "**/.svn": true,
     "**/node_modules": true,
+    ".{dev,shadowenv.d}": true,
     "packages/*/build": true,
     "packages/app-icon-explorer/{.cache,public}": true,
     "packages/polaris-icons{,-internal}/index{.js,.es.js,.d.ts}": true
@@ -27,6 +28,7 @@
     "**/bower_components": true,
     "**/node_modules": true,
     "packages/*/build": true,
+    ".{dev,shadowenv.d}": true,
     "packages/app-icon-explorer/{.cache,public}": true,
     "packages/polaris-icons{,-internal}/index{.js,.es.js,.d.ts}": true
   },
