@@ -8,17 +8,14 @@ function audit({filenames}) {
   }, {});
 
   const filenamesCount = filenames.length;
-  const distinctFolderNames = Object.keys(folderNames);
-  const distinctFolderCount = distinctFolderNames.length;
+  const distinctFolderCount = Object.keys(folderNames).length;
 
   return {
     summary: `Found ${filenamesCount} svgs, placed into ${distinctFolderCount} folders`,
     status: 'info',
-    info: distinctFolderNames
-      .map((folderName) => {
-        return `  ${
-          folderNames[folderName]
-        } svgs found within a "${folderName}" folder`;
+    info: Object.entries(folderNames)
+      .map(([folderName, count]) => {
+        return `  ${count} svgs found within a "${folderName}" folder`;
       })
       .join('\n'),
   };

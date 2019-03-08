@@ -1,6 +1,4 @@
 const crypto = require('crypto');
-const fs = require('fs');
-const path = require('path');
 const tryRequire = require('try-require');
 // We need to have React in scope as it is used when we eval the svgr output
 // eslint-disable-next-line no-unused-vars
@@ -12,10 +10,10 @@ const {svgOptions} = require('@shopify/images/optimize');
 // If @shopify/polaris-icons is available to be required, check them too
 const polarisIcons = tryRequire('@shopify/polaris-icons') || {};
 
-function audit({filenames, baseDir}) {
-  const polarisIconsComponentsPerFilename = Object.keys(polarisIcons).reduce(
-    (memo, importKey) => {
-      memo[`@shopify/polaris-icons/${importKey}.svg`] = polarisIcons[importKey];
+function audit({filenames, contentPerFilename}) {
+  const polarisIconsComponentsPerFilename = Object.entries(polarisIcons).reduce(
+    (memo, [importKey, component]) => {
+      memo[`@shopify/polaris-icons/${importKey}.svg`] = component;
       return memo;
     },
     {},
@@ -25,7 +23,7 @@ function audit({filenames, baseDir}) {
   const contentsPerFilename = filenames.map((filename) => {
     const reactComponent = filename.startsWith('@shopify/polaris-icons')
       ? polarisIconsComponentsPerFilename[filename]
-      : componentFromSvgFile(path.join(baseDir, filename));
+      : componentFromSvgFile(filename, contentPerFilename);
     return renderToStaticMarkup(reactComponent());
   });
 
@@ -41,27 +39,26 @@ function audit({filenames, baseDir}) {
     return memo;
   }, {});
 
-  const duplicatedDependentsByHash = Object.keys(dependentsByHash).reduce(
-    (memo, filename) => {
-      if (dependentsByHash[filename].length > 1) {
-        memo[filename] = dependentsByHash[filename];
+  const duplicatedDependentsByHash = Object.entries(dependentsByHash).reduce(
+    (memo, [filename, dependents]) => {
+      if (dependents.length > 1) {
+        memo[filename] = dependents;
       }
       return memo;
     },
     {},
   );
 
-  const duplicatedHashes = Object.keys(duplicatedDependentsByHash);
-  const duplicatedHashesCount = duplicatedHashes.length;
+  const duplicatedHashesCount = Object.keys(duplicatedDependentsByHash).length;
 
   return {
     summary: `Found ${duplicatedHashesCount} content hashes shared by multiple files`,
     status: duplicatedHashesCount > 0 ? 'error' : 'pass',
-    info: duplicatedHashes
-      .map((hash) => {
-        const count = duplicatedDependentsByHash[hash].length;
+    info: Object.entries(duplicatedDependentsByHash)
+      .map(([hash, duplicatedDependents]) => {
+        const count = duplicatedDependents.length;
 
-        const filesStr = duplicatedDependentsByHash[hash]
+        const filesStr = duplicatedDependents
           .map((file) => `    ${file}`)
           .join('\n');
 
@@ -78,8 +75,8 @@ function md5String(string) {
     .digest('hex');
 }
 
-function componentFromSvgFile(filename) {
-  const source = fs.readFileSync(filename, 'utf8');
+function componentFromSvgFile(filename, contentPerFilename) {
+  const source = contentPerFilename[filename];
 
   const svgrOutput = convert.sync(
     source,

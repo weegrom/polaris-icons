@@ -1,10 +1,21 @@
+const fs = require('fs');
 const React = require('react');
 const polarisIcons = require('@shopify/polaris-icons');
 const duplicateBasenames = require('../duplicate-content');
 
 jest.mock('@shopify/polaris-icons', () => ({}));
 
-const fixtureDir = `${__dirname}/../../../tests/fixtures/duplicate-content`;
+function auditArgs(filenames) {
+  const fixtureDir = `${__dirname}/../../../tests/fixtures/duplicate-content`;
+
+  const contentPerFilename = filenames.reduce((memo, filename) => {
+    return Object.assign(memo, {
+      [filename]: fs.readFileSync(`${fixtureDir}/${filename}`, 'utf8'),
+    });
+  }, {});
+
+  return {filenames, contentPerFilename};
+}
 
 describe('duplicate-content audit', () => {
   beforeAll(() => {
@@ -16,9 +27,7 @@ describe('duplicate-content audit', () => {
   });
 
   it('sets a pass status when there are no warnings', () => {
-    const filenames = ['icon1.svg', 'icon2.svg'];
-
-    expect(duplicateBasenames({filenames, baseDir: fixtureDir})).toEqual({
+    expect(duplicateBasenames(auditArgs(['icon1.svg', 'icon2.svg']))).toEqual({
       summary: 'Found 0 content hashes shared by multiple files',
       status: 'pass',
       info: '',
@@ -28,7 +37,7 @@ describe('duplicate-content audit', () => {
   it('warns when there is duplicate content', () => {
     const filenames = ['icon1.svg', 'icon2.svg', 'icon3.svg', 'icon4.svg'];
 
-    expect(duplicateBasenames({filenames, baseDir: fixtureDir})).toEqual({
+    expect(duplicateBasenames(auditArgs(filenames))).toEqual({
       summary: 'Found 2 content hashes shared by multiple files',
       status: 'error',
       info: `  842c10e94df137b85999d5e25816fdd1 matches content used in 2 files:
@@ -55,8 +64,7 @@ describe('duplicate-content audit', () => {
     });
 
     it('compares against polaris-icon content', () => {
-      const filenames = ['icon1.svg'];
-      expect(duplicateBasenames({filenames, baseDir: fixtureDir})).toEqual({
+      expect(duplicateBasenames(auditArgs(['icon1.svg']))).toEqual({
         summary: 'Found 1 content hashes shared by multiple files',
         status: 'error',
         info: `  842c10e94df137b85999d5e25816fdd1 matches content used in 2 files:
