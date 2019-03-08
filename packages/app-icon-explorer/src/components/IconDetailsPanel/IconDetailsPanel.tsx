@@ -112,10 +112,6 @@ function PopulatedState({icon}: {icon: IconInterface}) {
               ))}
             </ul>
           </div>
-          <div className={styles.spacingBase}>
-            <Subheading>Partner use</Subheading>
-            <p>{status}</p>
-          </div>
           <ul className={`${styles.keywords} ${styles.spacingLoose}`}>
             <Subheading>Keywords</Subheading>
             {icon.keywords.map((keyword) => (
