@@ -36,12 +36,12 @@ describe('folder-names audit', () => {
     });
   });
 
-  it('warns about icons that have no xml namespace', () => {
+  it('warns about icons that have an invalid xml namespace', () => {
     expect(iconContent(auditArgs(['invalid-xmlns.svg']))).toEqual({
       summary: 'Found 1 icon svgs with unexpected content',
       status: 'warn',
       info: `  invalid-xmlns.svg has 1 issues:
-    Has no xmlns attribute on the <svg> element`,
+    Has xmlns of "undefined" on the <svg> element but expected "http://www.w3.org/2000/svg"`,
     });
   });
 
@@ -77,7 +77,7 @@ describe('folder-names audit', () => {
       summary: 'Found 4 icon svgs with unexpected content',
       status: 'warn',
       info: `  invalid-xmlns.svg has 1 issues:
-    Has no xmlns attribute on the <svg> element
+    Has xmlns of "undefined" on the <svg> element but expected "http://www.w3.org/2000/svg"
   invalid-viewbox.svg has 1 issues:
     Has a viewbox of "0 0 32 32" but expected "0 0 20 20" or "0 0 41 41"
   invalid-fill.svg has 1 issues:
@@ -85,7 +85,7 @@ describe('folder-names audit', () => {
       <path fill="#BADA55" d="M4 7l-3 3 9 9 3-3z" />
       <path fill="#BEEF99" d="M4 7l-3 3 9 9 3-3z" />
   invalid-everything.svg has 3 issues:
-    Has no xmlns attribute on the <svg> element
+    Has xmlns of "undefined" on the <svg> element but expected "http://www.w3.org/2000/svg"
     Has a viewbox of "undefined" but expected "0 0 20 20" or "0 0 41 41"
     Has elements that use a fill that is not "#212B36" or "#FFF":
       <path fill="#BADA55" d="M4 7l-3 3 9 9 3-3z" />

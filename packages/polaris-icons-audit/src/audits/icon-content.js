@@ -44,7 +44,9 @@ function testHasNamespace({iconAst}) {
   const xmlns = select(':root', iconAst).properties.xmlns;
   const isProblem = xmlns !== 'http://www.w3.org/2000/svg';
 
-  return isProblem ? 'Has no xmlns attribute on the <svg> element' : '';
+  return isProblem
+    ? `Has xmlns of "${xmlns}" on the <svg> element but expected "http://www.w3.org/2000/svg"`
+    : '';
 }
 
 function testHasExpectedViewbox({iconAst}) {

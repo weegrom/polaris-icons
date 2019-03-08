@@ -46,7 +46,7 @@ describe('duplicate-basenames audit', () => {
     });
   });
 
-  it('ignores the  -major, -minor and -spot suffixes when comparing', () => {
+  it('ignores the  -major-monotone, major-twotone, -minor and -spot suffixes when comparing', () => {
     const filenames = [
       'foo/icons/icon1.svg',
       'foo/icons/icon1-major.svg',
