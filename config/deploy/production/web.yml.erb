@@ -112,6 +112,24 @@ spec:
           ports:
             - containerPort: 9000
               name: http-alt
+          securityContext:
+            privileged: false
+            capabilities:
+              drop:
+              - AUDIT_WRITE
+              - CHOWN
+              - DAC_OVERRIDE
+              - FOWNER
+              - FSETID
+              - KILL
+              - MKNOD
+              - NET_BIND_SERVICE
+              - NET_RAW
+              - SETFCAP
+              - SETGID
+              - SETUID
+              - SETPCAP
+              - SYS_CHROOT
           readinessProbe:
             httpGet:
               path: '/ping/'
