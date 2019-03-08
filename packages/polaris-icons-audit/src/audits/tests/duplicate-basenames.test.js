@@ -83,11 +83,9 @@ describe('duplicate-basenames audit', () => {
   });
 
   describe('when @shopify/polaris-icons has content', () => {
-    beforeAll(() => {
-      setPolarisIconsMockData({Icon1: () => ({})});
-    });
-
     it('compares against polaris-icons names', () => {
+      setPolarisIconsMockData({Icon1: () => ({})});
+
       const filenames = ['foo/icons/icon1.svg'];
 
       expect(duplicateBasenames({filenames})).toEqual({
@@ -96,6 +94,21 @@ describe('duplicate-basenames audit', () => {
         info: `  icon1 is used in 2 files:
     @shopify/polaris-icons/Icon1.svg
     foo/icons/icon1.svg`,
+      });
+    });
+
+    it("doesn't count duplicates within polaris", () => {
+      setPolarisIconsMockData({
+        Icon1MajorMonotone: () => ({}),
+        Icon1MajorTwotone: () => ({}),
+      });
+
+      const filenames = ['foo/icons/icon2.svg'];
+
+      expect(duplicateBasenames({filenames})).toEqual({
+        summary: 'Found 0 basenames shared by multiple files',
+        status: 'pass',
+        info: ``,
       });
     });
   });

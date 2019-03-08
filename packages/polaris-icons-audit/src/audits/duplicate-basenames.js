@@ -29,7 +29,11 @@ function audit({filenames}) {
   const duplicatedDependentsByBasename = Object.entries(
     dependentsByBasename,
   ).reduce((memo, [basename, dependents]) => {
-    if (dependents.length > 1) {
+    const onlyContainsPolarisIcons = !dependents.some((dependent) => {
+      return !dependent.startsWith('@shopify/polaris-icons/');
+    });
+
+    if (!onlyContainsPolarisIcons && dependents.length > 1) {
       memo[basename] = dependents;
     }
     return memo;
