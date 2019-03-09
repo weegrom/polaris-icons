@@ -53,12 +53,11 @@ export default class IconCopy extends React.Component<Props, State> {
 
     return (
       <Tooltip content={this.state.toolTipText}>
-        {/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-tabindex */}
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
         <div
           className={styles.codeHighlight}
           onClick={this.copyToClipboard}
           ref={this.copyParent}
-          tabIndex={0}
         >
           <span className={styles.syntaxIconName}>import</span>
           <span className={styles.syntaxIconComponent}>

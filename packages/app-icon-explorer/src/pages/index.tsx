@@ -33,7 +33,6 @@ interface State {
   searchText: string;
 }
 
-// eslint-disable-next-line
 export default class IndexPage extends React.Component<Props, State> {
   state = {
     searchText: '',

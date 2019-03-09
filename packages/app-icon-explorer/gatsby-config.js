@@ -1,4 +1,4 @@
-/* eslint-disable line-comment-position, camelcase */
+/* eslint-disable camelcase */
 const {dirname} = require('path');
 const resolve = require('resolve');
 
@@ -35,7 +35,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/images/shopify-favicon.png`, // This path is relative to the root of the site.
+        // This path is relative to the root of the site.
+        icon: `static/images/shopify-favicon.png`,
       },
     },
     {
