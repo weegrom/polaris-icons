@@ -5,6 +5,7 @@ import {
   Heading,
   Subheading,
   Button,
+  Icon,
   TextStyle,
   Banner,
 } from '@shopify/polaris';
@@ -69,7 +70,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
       <div className={styles.iconDetailsPanelInner}>
         <TextContainer>
           <div className={styles.icon}>
-            <img src={icon.svgFile.publicURL} alt="" />
+            <Icon source={encodeURIComponent(icon.svgContent)} />
           </div>
           <div className={`${styles.spacingBase}${styles.spacingTop}`}>
             <div className={styles.spacingExtraTight}>

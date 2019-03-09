@@ -41,9 +41,7 @@ export default function SingleIcon({icon, isActive = false}: Props) {
       onClick={trackLink}
     >
       <div className={styles.iconSvgWrapper}>
-        <Icon
-          source={<span dangerouslySetInnerHTML={{__html: icon.svgContent}} />}
-        />
+        <Icon source={encodeURIComponent(icon.svgContent)} />
       </div>
       <div className={styles.iconLabel}>
         <Caption>
