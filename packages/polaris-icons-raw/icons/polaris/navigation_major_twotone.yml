@@ -1,6 +1,6 @@
-name: star outline
+name: navigation
 authors:
-  - Sara Hill
+  - N/A
 date_added: 2019-03-01
 date_modified: 2019-03-01
 description: >
@@ -13,7 +13,8 @@ description: >
   N/A
 exclusive_use:
 public: true
-set: minor
+set: major
+style: twotone
 version: 1
 keywords:
-  - favorite
+  - N/A

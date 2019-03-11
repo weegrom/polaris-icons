@@ -1,6 +1,6 @@
-name: star outline
+name: currency convert
 authors:
-  - Sara Hill
+  - N/A
 date_added: 2019-03-01
 date_modified: 2019-03-01
 description: >
@@ -16,4 +16,4 @@ public: true
 set: minor
 version: 1
 keywords:
-  - favorite
+  - N/A

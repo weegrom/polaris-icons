@@ -4,6 +4,41 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+### New icons
+
+These icons were transferred from Shopify/web’s `app/icons` directory:
+
+- `AnalyticsMajorTwotone`
+- `AppsMajorMonotone`
+- `AppsMajorTwotone`
+- `CalendarMajorTwotone`
+- `CartMajorTwotone`
+- `CashDollarMajorMonotone`
+- `CircleTickMajorMonotone`
+- `ClockMinor`
+- `CurrencyConvertMinor`
+- `CustomersMajorTwotone`
+- `DiscountsMajorTwotone`
+- `DomainsMajorMonotone`
+- `EditMinor`
+- `GiftCardMajorTwotone`
+- `HeaderMajorTwotone`
+- `HintMajorMonotone`
+- `HomeMajorTwotone`
+- `ImageAltMajorMonotone`
+- `LinkMinor`
+- `LocationsMinor`
+- `MarketingMajorMonotone`
+- `NavigationMajorTwotone`
+- `PackageMajorTwotone`
+- `PaymentsMajorTwotone`
+- `ProfileMajorTwotone`
+- `ShipmentMajorMonotone`
+- `SocialAdMajorMonotone`
+- `SoftPackMajorMonotone`
+- `VocabularyMajorMonotone`
+- `WholesaleMajorTwotone`
+
 ## v3.0.0 - 2019-03-06
 
 ### Breaking Changes
