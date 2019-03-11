@@ -40,7 +40,8 @@ export default class IndexPage extends React.Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    this.handleSearch = this.handleSearch.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleSearchCancel = this.handleSearchCancel.bind(this);
   }
 
   render() {
@@ -80,7 +81,11 @@ export default class IndexPage extends React.Component<Props, State> {
       );
 
     return (
-      <AppFrame onSearch={this.handleSearch}>
+      <AppFrame
+        searchText={this.state.searchText}
+        onSearchChange={this.handleSearchChange}
+        onSearchCancel={this.handleSearchCancel}
+      >
         <Seo title={this.props.data.site.siteMetadata.title} />
         <div className={styles.page}>
           <div className={styles.listingWrapper}>
@@ -99,7 +104,7 @@ export default class IndexPage extends React.Component<Props, State> {
     );
   }
 
-  handleSearch(value: string) {
+  handleSearchChange(value: string) {
     this.setState({searchText: value});
     if ((window as any).gtag) {
       (window as any).gtag('event', 'search', {
@@ -109,6 +114,10 @@ export default class IndexPage extends React.Component<Props, State> {
         search_term: value,
       });
     }
+  }
+
+  handleSearchCancel() {
+    this.setState({searchText: ''});
   }
 }
 
