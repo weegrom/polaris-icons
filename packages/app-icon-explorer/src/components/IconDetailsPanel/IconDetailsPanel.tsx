@@ -105,7 +105,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
               {''}.
             </span>
           </div>
-          <div>
+          <div className={styles.createdBy}>
             <Subheading>Created by</Subheading>
             <ul className={`${styles.createdBy} ${styles.spacingBase}`}>
               {icon.authors.map((author) => (
