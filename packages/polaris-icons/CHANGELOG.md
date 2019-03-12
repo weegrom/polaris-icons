@@ -2,7 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+<!-- ## Unreleased -->
+
+## v3.1.0 - 2019-03-11
 
 ### New icons
 
