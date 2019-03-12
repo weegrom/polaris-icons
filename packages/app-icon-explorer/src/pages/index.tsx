@@ -1,6 +1,6 @@
 import React from 'react';
-import {graphql} from 'gatsby';
-import {parse as qsParse} from 'query-string';
+import {graphql, navigate} from 'gatsby';
+import {parse as qsParse, stringify as qsStringify} from 'query-string';
 import {
   AppFrame,
   EmptyState,
@@ -30,17 +30,42 @@ interface Props {
 }
 
 interface State {
+  persistentSearchText: string;
   searchText: string;
 }
 
 export default class IndexPage extends React.Component<Props, State> {
+  static getDerivedStateFromProps(props: Props, state: State) {
+    // Here be dragons. We have two types of search queries:
+    // - Searches from the URL query params (via props.location, which is
+    //    provided by react-router's context)
+    // - The "Live" search that updates as you type into the search box (via
+    //    props.searchText)
+    //
+    // If we see that the url has changed since last render then we want to use
+    // that as the searchText, otherwise don't adjust anything
+    const query = qsParse(props.location.search).q;
+    const newSearchText = Array.isArray(query) ? query[0] : query || '';
+
+    if (newSearchText !== state.persistentSearchText) {
+      return {
+        searchText: newSearchText,
+        persistentSearchText: newSearchText,
+      };
+    }
+
+    return null;
+  }
+
   state = {
+    persistentSearchText: '',
     searchText: '',
   };
 
   constructor(props: Props) {
     super(props);
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleSearchBlur = this.handleSearchBlur.bind(this);
     this.handleSearchCancel = this.handleSearchCancel.bind(this);
   }
 
@@ -82,8 +107,10 @@ export default class IndexPage extends React.Component<Props, State> {
 
     return (
       <AppFrame
+        queryParams={qs}
         searchText={this.state.searchText}
         onSearchChange={this.handleSearchChange}
+        onSearchBlur={this.handleSearchBlur}
         onSearchCancel={this.handleSearchCancel}
       >
         <Seo title={this.props.data.site.siteMetadata.title} />
@@ -106,18 +133,36 @@ export default class IndexPage extends React.Component<Props, State> {
 
   handleSearchChange(value: string) {
     this.setState({searchText: value});
-    if ((window as any).gtag) {
-      (window as any).gtag('event', 'search', {
-        /* eslint-disable-next-line camelcase */
-        event_category: 'icons',
-        /* eslint-disable-next-line camelcase */
-        search_term: value,
-      });
+  }
+
+  handleSearchBlur() {
+    if (this.state.persistentSearchText !== this.state.searchText) {
+      this.persistSearchText(this.state.searchText);
     }
   }
 
   handleSearchCancel() {
-    this.setState({searchText: ''});
+    if (this.state.persistentSearchText !== '') {
+      this.persistSearchText('');
+    }
+  }
+
+  private persistSearchText(dirtySearchText: string) {
+    if (dirtySearchText !== '' && (window as any).gtag) {
+      (window as any).gtag('event', 'search', {
+        /* eslint-disable-next-line camelcase */
+        event_category: 'icons',
+        /* eslint-disable-next-line camelcase */
+        search_term: dirtySearchText,
+      });
+    }
+
+    const newQueryString = qsStringify({
+      ...qsParse(this.props.location.search),
+      ...{q: dirtySearchText === '' ? undefined : dirtySearchText},
+    });
+
+    navigate(`?${newQueryString}`);
   }
 }
 

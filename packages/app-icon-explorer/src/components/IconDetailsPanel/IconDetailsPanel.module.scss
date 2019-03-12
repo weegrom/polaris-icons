@@ -40,15 +40,14 @@ $borderColor: $color-sky-light;
 .keywordsItem {
   margin: 4px 4px 0 0;
   display: inline-flex;
-  max-width: 100%;
   align-items: center;
-  min-height: 2.8rem;
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
-  padding-top: 0;
   background-color: $color-sky;
   border-radius: 3px;
-  color: $color-ink;
+
+  a {
+    padding: 0.4rem 0.8rem;
+    color: $color-ink;
+  }
 }
 
 .usage span {

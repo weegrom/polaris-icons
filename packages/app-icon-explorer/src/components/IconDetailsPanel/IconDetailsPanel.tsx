@@ -9,6 +9,7 @@ import {
   TextStyle,
   Banner,
 } from '@shopify/polaris';
+import {Link} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-gtag';
 import {startCase} from 'lodash';
 import {Icon as IconInterface} from '../../types';
@@ -117,7 +118,12 @@ function PopulatedState({icon}: {icon: IconInterface}) {
             <Subheading>Keywords</Subheading>
             {icon.keywords.map((keyword) => (
               <li key={icon.id + keyword} className={styles.keywordsItem}>
-                <div className={styles.Tag}>{keyword}</div>
+                <Link
+                  to={`/?icon=${icon.reactname}&q=${keyword}`}
+                  className={styles.Tag}
+                >
+                  {keyword}
+                </Link>
               </li>
             ))}
           </ul>

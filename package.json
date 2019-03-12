@@ -104,6 +104,29 @@
         "rules": {
           "shopify/images-no-direct-imports": "off"
         }
+      },
+      {
+        "files": [
+          "packages/app-icon-explorer/**/*"
+        ],
+        "rules": {
+          "id-length": [
+            "error",
+            {
+              "min": 2,
+              "exceptions": [
+                "x",
+                "y",
+                "i",
+                "j",
+                "t",
+                "_",
+                "$",
+                "q"
+              ]
+            }
+          ]
+        }
       }
     ]
   },

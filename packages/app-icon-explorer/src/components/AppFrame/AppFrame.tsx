@@ -1,6 +1,7 @@
 import React from 'react';
 import {AppProvider, Frame, TopBar} from '@shopify/polaris';
 import {ShortcutProvider, Shortcut} from '@shopify/react-shortcuts';
+import {QueryParamsContext, IQueryParamsContext} from './context';
 import '@shopify/polaris/styles.scss';
 import './polaris-overrides.scss';
 
@@ -22,6 +23,7 @@ const theme = {
 };
 
 interface Props {
+  queryParams: IQueryParamsContext;
   searchText: string;
   onSearchChange: (value: string) => void;
   onSearchBlur?: () => void;
@@ -52,12 +54,14 @@ export default class AppFrame extends React.Component<Props, State> {
     const topBarMarkup = <TopBar searchField={searchFieldMarkup} />;
 
     return (
-      <AppProvider theme={theme}>
-        <ShortcutProvider>
-          <Shortcut ordered={['s']} onMatch={this.triggerSearchFocus} />
-          <Frame topBar={topBarMarkup}>{this.props.children}</Frame>
-        </ShortcutProvider>
-      </AppProvider>
+      <QueryParamsContext.Provider value={this.props.queryParams}>
+        <AppProvider theme={theme}>
+          <ShortcutProvider>
+            <Shortcut ordered={['s']} onMatch={this.triggerSearchFocus} />
+            <Frame topBar={topBarMarkup}>{this.props.children}</Frame>
+          </ShortcutProvider>
+        </AppProvider>
+      </QueryParamsContext.Provider>
     );
   }
 
@@ -73,7 +77,6 @@ export default class AppFrame extends React.Component<Props, State> {
   };
 
   handleSearchCancel = () => {
-    this.setState({searchIsFocused: false});
     if (this.props.onSearchCancel) {
       this.props.onSearchCancel();
     }
