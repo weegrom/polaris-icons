@@ -72,6 +72,7 @@
       "plugin:shopify/react",
       "plugin:shopify/jest",
       "plugin:shopify/node",
+      "plugin:shopify/eslint-comments",
       "plugin:shopify/prettier"
     ],
     "settings": {

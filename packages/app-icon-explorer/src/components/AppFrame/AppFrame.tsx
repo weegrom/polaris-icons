@@ -22,17 +22,18 @@ const theme = {
 };
 
 interface Props {
-  onSearch?: (value: string) => void;
+  searchText: string;
+  onSearchChange: (value: string) => void;
+  onSearchBlur?: () => void;
+  onSearchCancel?: () => void;
 }
 
 interface State {
-  searchText: string;
   searchIsFocused: boolean;
 }
 
 export default class AppFrame extends React.Component<Props, State> {
   state = {
-    searchText: '',
     searchIsFocused: false,
   };
 
@@ -42,18 +43,13 @@ export default class AppFrame extends React.Component<Props, State> {
         focused={this.state.searchIsFocused}
         onChange={this.handleSearchChange}
         onBlur={this.handleSearchBlur}
-        value={this.state.searchText}
+        onCancel={this.handleSearchCancel}
+        value={this.props.searchText}
         placeholder="Search"
       />
     );
 
-    const topBarMarkup = (
-      <TopBar
-        showNavigationToggle
-        searchField={searchFieldMarkup}
-        onSearchResultsDismiss={this.handleSearchResultsDismiss}
-      />
-    );
+    const topBarMarkup = <TopBar searchField={searchFieldMarkup} />;
 
     return (
       <AppProvider theme={theme}>
@@ -65,24 +61,22 @@ export default class AppFrame extends React.Component<Props, State> {
     );
   }
 
-  handleSearchResultsDismiss = () => {
-    this.setState({searchText: ''});
-
-    if (this.props.onSearch) {
-      this.props.onSearch('');
-    }
-  };
-
   handleSearchChange = (value: string) => {
-    this.setState({searchText: value});
-
-    if (this.props.onSearch) {
-      this.props.onSearch(value);
-    }
+    this.props.onSearchChange(value);
   };
 
   handleSearchBlur = () => {
     this.setState({searchIsFocused: false});
+    if (this.props.onSearchBlur) {
+      this.props.onSearchBlur();
+    }
+  };
+
+  handleSearchCancel = () => {
+    this.setState({searchIsFocused: false});
+    if (this.props.onSearchCancel) {
+      this.props.onSearchCancel();
+    }
   };
 
   triggerSearchFocus = () => {
