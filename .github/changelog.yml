@@ -1,0 +1,7 @@
+filename: packages/polaris-icons/CHANGELOG.md
+include:
+  - /^packages\/polaris-icons-raw\/icons\//
+  - /^packages\/polaris-icons\//
+inProgressMessage: missing an entry in packages/polaris-icons/CHANGELOG.md
+skipLabel: skip changelog
+detailsUrl: https://github.com/Shopify/polaris-icons/blob/master/packages/polaris-icons/CHANGELOG.md
