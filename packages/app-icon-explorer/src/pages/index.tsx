@@ -30,8 +30,12 @@ interface Props {
 }
 
 interface State {
-  persistentSearchText: string;
+  isClient: boolean;
   searchText: string;
+  queryParams: {
+    icon?: string;
+    q?: string;
+  };
 }
 
 export default class IndexPage extends React.Component<Props, State> {
@@ -44,21 +48,28 @@ export default class IndexPage extends React.Component<Props, State> {
     //
     // If we see that the url has changed since last render then we want to use
     // that as the searchText, otherwise don't adjust anything
-    const query = qsParse(props.location.search).q;
-    const newSearchText = Array.isArray(query) ? query[0] : query || '';
+    const query = qsParse(props.location.search);
+    const newQueryParams = {
+      q: Array.isArray(query.q) ? query.q[0] : query.q,
+      icon: query.icon,
+    };
 
-    if (newSearchText !== state.persistentSearchText) {
+    if (
+      newQueryParams.q !== state.queryParams.q ||
+      newQueryParams.icon !== state.queryParams.icon
+    ) {
       return {
-        searchText: newSearchText,
-        persistentSearchText: newSearchText,
+        searchText: newQueryParams.q || '',
+        queryParams: newQueryParams,
       };
     }
 
     return null;
   }
 
-  state = {
-    persistentSearchText: '',
+  state: State = {
+    isClient: false,
+    queryParams: {},
     searchText: '',
   };
 
@@ -69,18 +80,28 @@ export default class IndexPage extends React.Component<Props, State> {
     this.handleSearchCancel = this.handleSearchCancel.bind(this);
   }
 
+  // Because Gatsby spits out a static page we want to initially render the
+  // unfiltered state with no icon selected and then rerender immediately. This
+  // ensures the server-provided content matches the initially rendered
+  // state after hydration.
+  componentDidMount() {
+    this.setState({isClient: true});
+  }
+
   render() {
+    const searchText = this.state.isClient ? this.state.searchText : '';
+
     const icons = this.props.data.allPolarisYaml.edges.map((edge) => edge.node);
     const [majorIcons, minorIcons] = buildIconSets(
-      filterIcons(icons, this.state.searchText),
+      filterIcons(icons, searchText),
     );
 
-    const isFiltered = this.state.searchText !== '';
+    const isFiltered = searchText !== '';
 
-    const qs = qsParse(this.props.location.search);
-    const currentIcon = qs.icon
-      ? icons.find((icon) => icon.reactname === qs.icon)
-      : undefined;
+    const currentIcon =
+      this.state.isClient && this.state.queryParams.icon
+        ? icons.find((icon) => icon.reactname === this.state.queryParams.icon)
+        : undefined;
     const activeIconId = currentIcon ? currentIcon.id : undefined;
 
     const introHeaderMarkup = isFiltered ? null : <IntroHeader />;
@@ -107,8 +128,8 @@ export default class IndexPage extends React.Component<Props, State> {
 
     return (
       <AppFrame
-        queryParams={qs}
-        searchText={this.state.searchText}
+        queryParams={this.state.queryParams}
+        searchText={searchText}
         onSearchChange={this.handleSearchChange}
         onSearchBlur={this.handleSearchBlur}
         onSearchCancel={this.handleSearchCancel}
@@ -136,13 +157,13 @@ export default class IndexPage extends React.Component<Props, State> {
   }
 
   handleSearchBlur() {
-    if (this.state.persistentSearchText !== this.state.searchText) {
+    if (this.state.queryParams.q !== this.state.searchText) {
       this.persistSearchText(this.state.searchText);
     }
   }
 
   handleSearchCancel() {
-    if (this.state.persistentSearchText !== '') {
+    if (this.state.queryParams.q !== '') {
       this.persistSearchText('');
     }
   }
@@ -158,7 +179,7 @@ export default class IndexPage extends React.Component<Props, State> {
     }
 
     const newQueryString = qsStringify({
-      ...qsParse(this.props.location.search),
+      ...this.state.queryParams,
       ...{q: dirtySearchText === '' ? undefined : dirtySearchText},
     });
 
