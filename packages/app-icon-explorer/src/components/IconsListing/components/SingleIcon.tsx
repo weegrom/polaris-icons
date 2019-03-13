@@ -25,22 +25,11 @@ export default function SingleIcon({icon, isActive = false}: Props) {
     [styles.active]: isActive,
   });
 
-  const trackLink = () => {
-    if ((window as any).gtag) {
-      (window as any).gtag('event', 'select_icon', {
-        /* eslint-disable-next-line camelcase */
-        event_category: 'icons',
-        /* eslint-disable-next-line camelcase */
-        event_label: icon.reactname,
-      });
-    }
-  };
-
   const queryParams = useContext(QueryParamsContext);
   const linkTo = `/?${qsStringify({icon: icon.reactname, q: queryParams.q})}`;
 
   return (
-    <Link to={linkTo} className={className} onClick={trackLink}>
+    <Link to={linkTo} className={className}>
       <div className={styles.iconSvgWrapper}>
         <Icon source={encodeURIComponent(icon.svgContent)} />
       </div>

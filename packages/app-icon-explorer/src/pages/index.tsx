@@ -169,15 +169,6 @@ export default class IndexPage extends React.Component<Props, State> {
   }
 
   private persistSearchText(dirtySearchText: string) {
-    if (dirtySearchText !== '' && (window as any).gtag) {
-      (window as any).gtag('event', 'search', {
-        /* eslint-disable-next-line camelcase */
-        event_category: 'icons',
-        /* eslint-disable-next-line camelcase */
-        search_term: dirtySearchText,
-      });
-    }
-
     const newQueryString = qsStringify({
       ...this.state.queryParams,
       ...{q: dirtySearchText === '' ? undefined : dirtySearchText},
