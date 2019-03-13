@@ -188,8 +188,14 @@ export default class IndexPage extends React.Component<Props, State> {
 }
 
 function filterIcons(icons: IconInterface[], searchText: string) {
-  const containsText = (string: string) =>
-    string.toUpperCase().includes(searchText.toUpperCase());
+  const containsText = (string: string) => {
+    // If the search text starts with a # then do an exact match
+    if (searchText.startsWith('#')) {
+      return string.toUpperCase() === searchText.slice(1).toUpperCase();
+    }
+    // Otherwise check for it anywhere in the string
+    return string.toUpperCase().includes(searchText.toUpperCase());
+  };
 
   return icons.filter((icon) => {
     return (
