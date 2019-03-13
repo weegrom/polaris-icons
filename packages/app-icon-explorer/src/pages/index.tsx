@@ -73,13 +73,6 @@ export default class IndexPage extends React.Component<Props, State> {
     searchText: '',
   };
 
-  constructor(props: Props) {
-    super(props);
-    this.handleSearchChange = this.handleSearchChange.bind(this);
-    this.handleSearchBlur = this.handleSearchBlur.bind(this);
-    this.handleSearchCancel = this.handleSearchCancel.bind(this);
-  }
-
   // Because Gatsby spits out a static page we want to initially render the
   // unfiltered state with no icon selected and then rerender immediately. This
   // ensures the server-provided content matches the initially rendered
@@ -152,21 +145,21 @@ export default class IndexPage extends React.Component<Props, State> {
     );
   }
 
-  handleSearchChange(value: string) {
+  handleSearchChange = (value: string) => {
     this.setState({searchText: value});
-  }
+  };
 
-  handleSearchBlur() {
+  handleSearchBlur = () => {
     if (this.state.queryParams.q !== this.state.searchText) {
       this.persistSearchText(this.state.searchText);
     }
-  }
+  };
 
-  handleSearchCancel() {
+  handleSearchCancel = () => {
     if (this.state.queryParams.q !== '') {
       this.persistSearchText('');
     }
-  }
+  };
 
   private persistSearchText(dirtySearchText: string) {
     if (dirtySearchText !== '' && (window as any).gtag) {
