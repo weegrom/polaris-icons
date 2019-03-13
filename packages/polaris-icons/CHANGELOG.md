@@ -2,7 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-<!-- ## Unreleased -->
+## Unreleased
+
+Added 5 new icons from Shopify/online-store-web:
+
+- `CirclePlusMajorMonotone`
+- `RedoMajorMonotone`
+- `ThemeStoreMajorMonotone`
+- `ThemesMajorMonotone`
+- `UndoMajorMonotone`
 
 ## v3.1.0 - 2019-03-11
 

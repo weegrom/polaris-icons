@@ -1,0 +1,16 @@
+name: themes
+authors:
+  - N/A
+date_added: 2019-03-11
+date_modified: 2019-03-11
+description: >
+  Used to indicate free themes in the Shopify theme store.
+exclusive_use: 'Shopify themes'
+public: true
+set: major
+style: monotone
+version: 1
+keywords:
+  - theme
+  - free
+  - customize
