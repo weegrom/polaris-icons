@@ -1,6 +1,6 @@
 {
   "name": "@shopify/polaris-icons-audit",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "index.js",
   "license": "MIT",
   "bin": {
@@ -32,6 +32,6 @@
     "react-dom": "^16.3.1"
   },
   "devDependencies": {
-    "@shopify/polaris-icons": "^3.1.0"
+    "@shopify/polaris-icons": "^3.2.0"
   }
 }
