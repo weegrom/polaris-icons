@@ -9,6 +9,8 @@ import {
   TextStyle,
   Banner,
 } from '@shopify/polaris';
+import {stringify as qsStringify} from 'query-string';
+import {Link} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-gtag';
 import {startCase} from 'lodash';
 import {Icon as IconInterface} from '../../types';
@@ -19,10 +21,6 @@ interface Props {
   icon?: IconInterface;
 }
 
-interface State {
-  isClient: boolean;
-}
-
 const showBanner = (icon: IconInterface) =>
   Object.values(icon).some(
     (value) => typeof value === 'string' && /N\/A/.test(value),
@@ -30,13 +28,9 @@ const showBanner = (icon: IconInterface) =>
   icon.keywords.includes('N/A') ||
   icon.authors.includes('N/A');
 
-export default class IconDetailsPanel extends React.Component<Props, State> {
+export default class IconDetailsPanel extends React.Component<Props> {
   static childContextTypes = {
     withinContentContainer: PropTypes.bool,
-  };
-
-  state = {
-    isClient: false,
   };
 
   getChildContext() {
@@ -45,15 +39,8 @@ export default class IconDetailsPanel extends React.Component<Props, State> {
     };
   }
 
-  // Because Gatsby spits out a static page we want to initially render the
-  // empty state and then rerender immediately. This ensures the server-provided
-  // content matches the initially rendered state after hydration.
-  componentDidMount() {
-    this.setState({isClient: true});
-  }
-
   render() {
-    if (!this.state.isClient || !this.props.icon) {
+    if (!this.props.icon) {
       return <EmptyState />;
     }
 
@@ -117,7 +104,15 @@ function PopulatedState({icon}: {icon: IconInterface}) {
             <Subheading>Keywords</Subheading>
             {icon.keywords.map((keyword) => (
               <li key={icon.id + keyword} className={styles.keywordsItem}>
-                <div className={styles.Tag}>{keyword}</div>
+                <Link
+                  to={`/?${qsStringify({
+                    icon: icon.reactname,
+                    q: `#${keyword}`,
+                  })}`}
+                  className={styles.Tag}
+                >
+                  {keyword}
+                </Link>
               </li>
             ))}
           </ul>

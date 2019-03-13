@@ -1,6 +1,6 @@
 import React from 'react';
-import {graphql} from 'gatsby';
-import {parse as qsParse} from 'query-string';
+import {graphql, navigate} from 'gatsby';
+import {parse as qsParse, stringify as qsStringify} from 'query-string';
 import {
   AppFrame,
   EmptyState,
@@ -30,32 +30,78 @@ interface Props {
 }
 
 interface State {
+  isClient: boolean;
   searchText: string;
+  queryParams: {
+    icon?: string;
+    q?: string;
+  };
 }
 
 export default class IndexPage extends React.Component<Props, State> {
-  state = {
+  static getDerivedStateFromProps(props: Props, state: State) {
+    // Here be dragons. We have two types of search queries:
+    // - Searches from the URL query params (via props.location, which is
+    //    provided by react-router's context)
+    // - The "Live" search that updates as you type into the search box (via
+    //    props.searchText)
+    //
+    // If we see that the url has changed since last render then we want to use
+    // that as the searchText, otherwise don't adjust anything
+    const query = qsParse(props.location.search);
+    const newQueryParams = {
+      q: Array.isArray(query.q) ? query.q[0] : query.q,
+      icon: query.icon,
+    };
+
+    if (
+      newQueryParams.q !== state.queryParams.q ||
+      newQueryParams.icon !== state.queryParams.icon
+    ) {
+      return {
+        searchText: newQueryParams.q || '',
+        queryParams: newQueryParams,
+      };
+    }
+
+    return null;
+  }
+
+  state: State = {
+    isClient: false,
+    queryParams: {},
     searchText: '',
   };
 
   constructor(props: Props) {
     super(props);
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleSearchBlur = this.handleSearchBlur.bind(this);
     this.handleSearchCancel = this.handleSearchCancel.bind(this);
   }
 
+  // Because Gatsby spits out a static page we want to initially render the
+  // unfiltered state with no icon selected and then rerender immediately. This
+  // ensures the server-provided content matches the initially rendered
+  // state after hydration.
+  componentDidMount() {
+    this.setState({isClient: true});
+  }
+
   render() {
+    const searchText = this.state.isClient ? this.state.searchText : '';
+
     const icons = this.props.data.allPolarisYaml.edges.map((edge) => edge.node);
     const [majorIcons, minorIcons] = buildIconSets(
-      filterIcons(icons, this.state.searchText),
+      filterIcons(icons, searchText),
     );
 
-    const isFiltered = this.state.searchText !== '';
+    const isFiltered = searchText !== '';
 
-    const qs = qsParse(this.props.location.search);
-    const currentIcon = qs.icon
-      ? icons.find((icon) => icon.reactname === qs.icon)
-      : undefined;
+    const currentIcon =
+      this.state.isClient && this.state.queryParams.icon
+        ? icons.find((icon) => icon.reactname === this.state.queryParams.icon)
+        : undefined;
     const activeIconId = currentIcon ? currentIcon.id : undefined;
 
     const introHeaderMarkup = isFiltered ? null : <IntroHeader />;
@@ -82,8 +128,10 @@ export default class IndexPage extends React.Component<Props, State> {
 
     return (
       <AppFrame
-        searchText={this.state.searchText}
+        queryParams={this.state.queryParams}
+        searchText={searchText}
         onSearchChange={this.handleSearchChange}
+        onSearchBlur={this.handleSearchBlur}
         onSearchCancel={this.handleSearchCancel}
       >
         <Seo title={this.props.data.site.siteMetadata.title} />
@@ -106,24 +154,48 @@ export default class IndexPage extends React.Component<Props, State> {
 
   handleSearchChange(value: string) {
     this.setState({searchText: value});
-    if ((window as any).gtag) {
-      (window as any).gtag('event', 'search', {
-        /* eslint-disable-next-line camelcase */
-        event_category: 'icons',
-        /* eslint-disable-next-line camelcase */
-        search_term: value,
-      });
+  }
+
+  handleSearchBlur() {
+    if (this.state.queryParams.q !== this.state.searchText) {
+      this.persistSearchText(this.state.searchText);
     }
   }
 
   handleSearchCancel() {
-    this.setState({searchText: ''});
+    if (this.state.queryParams.q !== '') {
+      this.persistSearchText('');
+    }
+  }
+
+  private persistSearchText(dirtySearchText: string) {
+    if (dirtySearchText !== '' && (window as any).gtag) {
+      (window as any).gtag('event', 'search', {
+        /* eslint-disable-next-line camelcase */
+        event_category: 'icons',
+        /* eslint-disable-next-line camelcase */
+        search_term: dirtySearchText,
+      });
+    }
+
+    const newQueryString = qsStringify({
+      ...this.state.queryParams,
+      ...{q: dirtySearchText === '' ? undefined : dirtySearchText},
+    });
+
+    navigate(`?${newQueryString}`);
   }
 }
 
 function filterIcons(icons: IconInterface[], searchText: string) {
-  const containsText = (string: string) =>
-    string.toUpperCase().includes(searchText.toUpperCase());
+  const containsText = (string: string) => {
+    // If the search text starts with a # then do an exact match
+    if (searchText.startsWith('#')) {
+      return string.toUpperCase() === searchText.slice(1).toUpperCase();
+    }
+    // Otherwise check for it anywhere in the string
+    return string.toUpperCase().includes(searchText.toUpperCase());
+  };
 
   return icons.filter((icon) => {
     return (
