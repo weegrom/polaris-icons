@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-<!-- ## Unreleased -->
+## Unreleased
+
+### New icons
+
+- `BehaviorMajorMonotone`
+- `BehaviorMajorTwotone`
 
 ## 3.2.0 - 2019-03-14
 
