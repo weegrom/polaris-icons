@@ -1,4 +1,4 @@
-# Polaris icons: coding contributor's guide 
+# Polaris icons: coding contributor's guide
 
 This guide is made for people who want to contribute code to the repository. If you're not comfortable doing that, there's other ways you can help.
 
@@ -23,20 +23,34 @@ The release process currently involves some manual steps to complete. Please pin
 
 1. Ensure you have the latest `master` branch including all tags:
 
-```
-git checkout master && git pull
-```
+   ```
+   git checkout master && git pull
+   ```
 
-2. Begin the release process:
+1. Update the changelog in [`./packages/polaris-icons/CHANGELOG.md`](https://github.com/Shopify/polaris-icons/blob/master/packages/polaris-icons/CHANGELOG.md):
 
-```
-yarn release
-```
+   ```diff
+   - ## Unreleased
+   + <!-- ## Unreleased -->
+   +
+   + ## 1.2.3 - YYYY-MM-DD
+   ```
 
-3. Follow the prompts to choose a version for each package.
+1. Commit changes made to the changelog:
 
-**Note** The packages adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+   ```
+   git commit -am "Update CHANGELOG"
+   ```
 
-4. Log in to [Shipit](https://shipit.shopify.io/shopify/polaris-icons/libraries)
+1. Begin the release process:
 
-5. When CI is 🍏 on the tag commit, press `Deploy` to update packages on npm.
+   ```
+   yarn release
+   ```
+
+1. Follow the prompts to choose a version for each package.
+
+   **Note** The packages adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+1. Log in to [Shipit](https://shipit.shopify.io/shopify/polaris-icons/libraries)
+1. When CI is 🍏 on the tag commit, press `Deploy` to update packages on npm.

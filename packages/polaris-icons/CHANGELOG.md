@@ -2,7 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+<!-- ## Unreleased -->
+
+## 3.2.0 - 2019-03-14
 
 Added 5 new icons from Shopify/online-store-web:
 
