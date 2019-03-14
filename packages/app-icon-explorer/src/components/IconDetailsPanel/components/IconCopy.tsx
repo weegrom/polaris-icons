@@ -1,26 +1,18 @@
+import React, {useState} from 'react';
 import {Tooltip} from '@shopify/polaris';
-import React from 'react';
 import styles from './IconCopy.module.scss';
 
 interface Props {
   reactname: string;
 }
 
-interface State {
-  toolTipText: string;
-}
+export default function IconCopy({reactname}: Props) {
+  const [toolTipText, setToolTipText] = useState('Copy to clipboard');
 
-export default class IconCopy extends React.Component<Props, State> {
-  state = {
-    toolTipText: 'Copy to clipboard',
-  };
+  const copyParent = React.createRef<HTMLDivElement>();
 
-  private copyParent = React.createRef<HTMLDivElement>();
-
-  copyToClipboard = () => {
-    const copyContent = this.copyParent.current
-      ? this.copyParent.current.innerText
-      : '';
+  function copyToClipboard() {
+    const copyContent = copyParent.current ? copyParent.current.innerText : '';
 
     const textarea = document.createElement('textarea');
     textarea.innerHTML = copyContent;
@@ -29,59 +21,55 @@ export default class IconCopy extends React.Component<Props, State> {
     document.execCommand('copy');
     document.body.removeChild(textarea);
 
-    if (this.copyParent && this.copyParent.current) {
-      this.copyParent.current.focus();
+    if (copyParent && copyParent.current) {
+      copyParent.current.focus();
     }
 
-    this.setState({toolTipText: 'Copied to clipboard'});
+    setToolTipText('Copied to clipboard');
     if ((window as any).gtag) {
       (window as any).gtag('event', 'copy_snippet', {
         /* eslint-disable-next-line camelcase */
         event_category: 'icons',
         /* eslint-disable-next-line camelcase */
-        event_label: this.props.reactname,
+        event_label: reactname,
       });
     }
 
     setTimeout(() => {
-      this.setState({toolTipText: 'Copy to clipboard'});
+      setToolTipText('Copy to clipboard');
     }, 1500);
-  };
-
-  render() {
-    const {reactname} = this.props;
-
-    return (
-      <Tooltip content={this.state.toolTipText}>
-        {/* eslint-disable jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-tabindex */}
-        <div
-          className={styles.codeHighlight}
-          onClick={this.copyToClipboard}
-          ref={this.copyParent}
-          tabIndex={0}
-        >
-          {/* eslint-enable jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-tabindex */}
-          <span className={styles.syntaxIconName}>import</span>
-          <span className={styles.syntaxIconComponent}>
-            {' {'}
-            <br />
-            {`  ${reactname}`}
-            <br />
-            {'} '}
-          </span>
-          <span className={styles.syntaxIconName}>
-            from {`'@shopify/polaris-icons'`};
-          </span>
-          <br />
-          <br />
-          <span className={styles.syntaxIconTag}>&lt;Icon</span>
-          <br />
-          <span className={styles.syntaxIconSource}>{'  '}source</span>
-          <span className={styles.syntaxIconTag}>=</span>
-          <span className={styles.syntaxIconName}>{`{${reactname}}`}</span>
-          <span className={styles.syntaxIconTag}> /&gt;</span>
-        </div>
-      </Tooltip>
-    );
   }
+
+  return (
+    <Tooltip content={toolTipText}>
+      {/* eslint-disable jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-tabindex */}
+      <div
+        className={styles.codeHighlight}
+        onClick={copyToClipboard}
+        ref={copyParent}
+        tabIndex={0}
+      >
+        {/* eslint-enable jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-tabindex */}
+        <span className={styles.syntaxIconName}>import</span>
+        <span className={styles.syntaxIconComponent}>
+          {' {'}
+          <br />
+          {`  ${reactname}`}
+          <br />
+          {'} '}
+        </span>
+        <span className={styles.syntaxIconName}>
+          from {`'@shopify/polaris-icons'`};
+        </span>
+        <br />
+        <br />
+        <span className={styles.syntaxIconTag}>&lt;Icon</span>
+        <br />
+        <span className={styles.syntaxIconSource}>{'  '}source</span>
+        <span className={styles.syntaxIconTag}>=</span>
+        <span className={styles.syntaxIconName}>{`{${reactname}}`}</span>
+        <span className={styles.syntaxIconTag}> /&gt;</span>
+      </div>
+    </Tooltip>
+  );
 }
