@@ -23,9 +23,25 @@ const allIconMetadataFiles = glob
 
 allIconMetadataFiles.forEach(({iconPath, iconMetadata}) => {
   describe(`Metadata: ${iconPath}`, () => {
-    it(`has a valid schemea`, () => {
+    it(`has a valid schema`, () => {
       validate(iconMetadata);
       expect(validate.errors).toBeNull();
+    });
+
+    it(`has filename that matches the schema name, set and style`, () => {
+      const expectedNameSegments = [
+        iconMetadata.name,
+        iconMetadata.set,
+        iconMetadata.style,
+      ];
+
+      // Remove parentheses, replace spaces with hyphens
+      const expectedName = expectedNameSegments
+        .filter(Boolean)
+        .map((str) => str.replace(/[()]/g, '').replace(/ /g, '-'))
+        .join('_');
+
+      expect(path.basename(iconPath)).toEqual(`${expectedName}.yml`);
     });
   });
 });
