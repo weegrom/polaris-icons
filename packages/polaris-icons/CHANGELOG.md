@@ -6,6 +6,23 @@ All notable changes to this project will be documented in this file.
 
 ### New icons
 
+- `AbandonedCartMajorMonotone`
+- `CardReaderChipMajorMonotone`
+- `CardReaderChipMajorTwotone`
+- `CardReaderMajorMonotone`
+- `CardReaderMajorTwotone`
+- `CardReaderTapMajorMonotone`
+- `CardReaderTapMajorTwotone`
+- `CircleDownMajorMonotone`
+- `ClockMajorMonotone`
+- `DiscountsMajorMonotone`
+- `ImportStoreMajorMonotone`
+- `ImportStoreMajorTwotone`
+- `PhoneMajorMonotone`
+- `PhoneMajorTwotone`
+- `RefundMajorMonotone`
+- `ReportMinor`
+- `ViewMajorTwotone`
 - `BehaviorMajorMonotone`
 - `BehaviorMajorTwotone`
 
