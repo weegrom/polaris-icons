@@ -40,10 +40,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-49178120-32',
-        head: true,
+        trackingIds: ['UA-49178120-32'],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
