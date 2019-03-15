@@ -127,8 +127,8 @@ All notable changes to this project will be documented in this file.
 - `CodeMajorTwotone`
 - `CollectionMajorMonotone`
 - `CollectionMajorTwotone`
-- `ColoursMajorMonotone`
-- `ColoursMajorTwotone`
+- `ColorsMajorMonotone`
+- `ColorsMajorTwotone`
 - `ColumnImageWithTextMajorMonotone`
 - `ColumnImageWithTextMajorTwotone`
 - `ConfettiMajorMonotone`
