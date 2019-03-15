@@ -11,7 +11,7 @@ yarn
 yarn bootstrap
 ```
 
-## Releasing
+## Releasing the library
 
 The release process currently involves some manual steps to complete. Please ping one of the repo owners in the `#polaris-icons` Slack channel when you're ready to merge a new PR into `master`, and we will orchestrate a new release.
 
@@ -54,3 +54,7 @@ The release process currently involves some manual steps to complete. Please pin
 
 1. Log in to [Shipit](https://shipit.shopify.io/shopify/polaris-icons/libraries)
 1. When CI is 🍏 on the tag commit, press `Deploy` to update packages on npm.
+
+## Releasing the icon explorer website
+
+The icons explorer is currently automatically deployed by Shipit at [this stack](https://shipit.shopify.io/shopify/polaris-icons/production).
