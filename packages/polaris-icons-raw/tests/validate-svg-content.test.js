@@ -28,7 +28,7 @@ const allIconFiles = glob
 
 allIconFiles.forEach(
   ({iconPath, iconSource, iconAst, expectedViewbox, expectedFillColors}) => {
-    describe(`SVG Contents: ${iconPath}`, () => {
+    describe(`SVG Contents: packages/${iconPath}`, () => {
       it(`has an xml namespace`, () => {
         const xmlns = select(':root', iconAst).properties.xmlns;
         expect(xmlns).toEqual('http://www.w3.org/2000/svg');
