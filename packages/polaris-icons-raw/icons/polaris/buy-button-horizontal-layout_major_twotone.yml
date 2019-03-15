@@ -1,0 +1,19 @@
+name: buy button-horizontal-layout
+authors:
+  - N/A
+date_added: 2019-03-15
+date_modified: 2019-03-15
+description: >
+  <!--
+    This icon is missing a description.
+    Please take a moment to fill it in using these guidelines:
+    https://docs.google.com/document/d/1fhkxHuKhLhIysjyMs-LwXBgSNFhUYR9LKHHNVb-Zs4Q/edit
+    (you can delete this comment)
+  -->
+exclusive_use:
+public: true
+set: major
+style: twotone
+version: 1
+keywords:
+  - N/A 
