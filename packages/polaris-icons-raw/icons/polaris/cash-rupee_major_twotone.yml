@@ -1,4 +1,4 @@
-name: cash rupee
+name: cash (rupee)
 authors:
   - N/A
 date_added: 2019-03-15
@@ -16,4 +16,5 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - N/A 
+  - currency
+  - money

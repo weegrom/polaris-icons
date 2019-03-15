@@ -1,4 +1,4 @@
-name: billing statement-euro
+name: billing statement (euro)
 authors:
   - N/A
 date_added: 2019-03-15
@@ -16,4 +16,4 @@ set: major
 style: monotone
 version: 1
 keywords:
-  - N/A 
+  - N/A

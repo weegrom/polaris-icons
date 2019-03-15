@@ -1,4 +1,4 @@
-name: print desktop-label-printer
+name: print
 authors:
   - N/A
 date_added: 2019-03-15
@@ -16,4 +16,6 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - N/A 
+  - desktop
+  - label
+  - printer
