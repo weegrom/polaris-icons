@@ -1,5 +1,5 @@
 import React from 'react';
-import {OutboundLink} from 'gatsby-plugin-gtag';
+import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {Button, ButtonGroup, DisplayText, TextStyle} from '@shopify/polaris';
 import styles from './EmptyState.module.scss';
 

@@ -6,7 +6,7 @@ import {
   ButtonGroup,
 } from '@shopify/polaris';
 import {StaticQuery, graphql} from 'gatsby';
-import {OutboundLink} from 'gatsby-plugin-gtag';
+import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {ghNewIssueUrl} from '../IconDetailsPanel';
 
 import styles from './IntroHeader.module.scss';

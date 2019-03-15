@@ -11,7 +11,7 @@ import {
 } from '@shopify/polaris';
 import {stringify as qsStringify} from 'query-string';
 import {Link} from 'gatsby';
-import {OutboundLink} from 'gatsby-plugin-gtag';
+import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {startCase} from 'lodash';
 import {Icon as IconInterface} from '../../types';
 import styles from './IconDetailsPanel.module.scss';
