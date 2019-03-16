@@ -1,4 +1,4 @@
-name: column image-with-text
+name: column with text
 authors:
   - N/A
 date_added: 2019-03-15
@@ -16,4 +16,15 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - N/A 
+  - paper
+  - page
+  - content
+  - featured
+  - section
+  - columns
+  - text
+  - image
+  - photo
+  - picture
+  - writing
+  - copy
