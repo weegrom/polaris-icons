@@ -49,7 +49,6 @@ export default class IconDetailsPanel extends React.Component<Props> {
 }
 
 function PopulatedState({icon}: {icon: IconInterface}) {
-  const status = icon.public ? 'Allowed' : 'Not allowed';
   const linkToMetadataEditForm = ghIconMetadataEditUrl(icon.basename);
 
   return (
