@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+### Fixed
+
+- `ImportStoreMajorMonotone`
+
 ### New icons
 
 - `NoteMajorMonotone`
