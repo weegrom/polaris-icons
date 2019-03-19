@@ -1,11 +1,11 @@
-name: tick small
+name: checkmark
 authors:
   - Adam Whitcroft
 date_added: 2018-11-14
 date_modified: 2018-11-14
 description: >
   Used to denote the action of checking a Polaris checkbox.
-exclusive_use:
+exclusive_use: Checkbox
 public: true
 set: minor
 version: 1
