@@ -11,7 +11,7 @@ import {
 } from '@shopify/polaris';
 import {stringify as qsStringify} from 'query-string';
 import {Link} from 'gatsby';
-import {OutboundLink} from 'gatsby-plugin-gtag';
+import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {startCase} from 'lodash';
 import {Icon as IconInterface} from '../../types';
 import styles from './IconDetailsPanel.module.scss';
@@ -49,7 +49,6 @@ export default class IconDetailsPanel extends React.Component<Props> {
 }
 
 function PopulatedState({icon}: {icon: IconInterface}) {
-  const status = icon.public ? 'Allowed' : 'Not allowed';
   const linkToMetadataEditForm = ghIconMetadataEditUrl(icon.basename);
 
   return (

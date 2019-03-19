@@ -22,7 +22,7 @@ const allIconMetadataFiles = glob
   }, []);
 
 allIconMetadataFiles.forEach(({iconPath, iconMetadata}) => {
-  describe(`Metadata: ${iconPath}`, () => {
+  describe(`Metadata: packages/${iconPath}`, () => {
     it(`has a valid schema`, () => {
       validate(iconMetadata);
       expect(validate.errors).toBeNull();
