@@ -1,5 +1,6 @@
 import React from 'react';
 import {graphql, navigate} from 'gatsby';
+import {sortBy} from 'lodash';
 import {parse as qsParse, stringify as qsStringify} from 'query-string';
 import {
   AppFrame,
@@ -84,7 +85,10 @@ export default class IndexPage extends React.Component<Props, State> {
   render() {
     const searchText = this.state.isClient ? this.state.searchText : '';
 
-    const icons = this.props.data.allPolarisYaml.edges.map((edge) => edge.node);
+    const icons = sortBy(
+      this.props.data.allPolarisYaml.edges.map((edge) => edge.node),
+      ['name', 'style'],
+    );
     const [majorIcons, minorIcons] = buildIconSets(
       filterIcons(icons, searchText),
     );
