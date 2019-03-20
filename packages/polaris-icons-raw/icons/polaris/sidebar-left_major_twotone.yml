@@ -1,6 +1,6 @@
 name: sidebar left
 authors:
-  - N/A
+  - Adam Whitcroft
 date_added: 2019-03-15
 date_modified: 2019-03-15
 description: >
@@ -16,4 +16,8 @@ set: major
 style: twotone
 version: 1
 keywords:
-  - N/A 
+  - sidebar
+  - layout
+  - section
+  - dashed
+  - rectangle

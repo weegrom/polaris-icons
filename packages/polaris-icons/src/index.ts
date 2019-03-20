@@ -1867,10 +1867,6 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/shopcodes_major_twotone.svg';
 
 export {
-  default as SidebarMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/sidebar_major_monotone.svg';
-
-export {
   default as SidebarLeftMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/sidebar-left_major_monotone.svg';
 

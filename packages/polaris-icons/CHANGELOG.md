@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 - `TickSmallMinor` -> `CheckmarkMinor` (should only be used in checkboxes)
 - `ColorMajorMonotone` -> `ColorsMajorMonotone`
+- `SidebarMajorMonotone` -> `SidebarLeftMajorMonotone`
 
 ### Fixed
 
