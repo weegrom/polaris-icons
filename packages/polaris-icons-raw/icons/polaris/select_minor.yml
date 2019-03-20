@@ -1,8 +1,8 @@
-name: arrow up down
+name: select
 authors:
   - Adam Whitcroft
 date_added: 2018-11-14
-date_modified: 2018-11-14
+date_modified: 2018-03-15
 description: >
   Used to denote the action opening a select.
 exclusive_use:
@@ -14,3 +14,4 @@ keywords:
   - arrow
   - up
   - down
+  - select

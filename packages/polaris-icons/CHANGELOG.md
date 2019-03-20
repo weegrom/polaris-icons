@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Renamed
 
 - `TickSmallMinor` -> `CheckmarkMinor` (should only be used in checkboxes)
+- `ArrowUpDownMinor` -> `SelectMinor`
 - `ColorMajorMonotone` -> `ColorsMajorMonotone`
 - `SidebarMajorMonotone` -> `SidebarLeftMajorMonotone`
 
@@ -37,6 +38,7 @@ All notable changes to this project will be documented in this file.
 - `ViewMajorTwotone`
 - `BehaviorMajorMonotone`
 - `BehaviorMajorTwotone`
+
 - `AbandonedCartMajorTwotone`
 - `AccessibilityMajorMonotone`
 - `AccessibilityMajorTwotone`
@@ -468,6 +470,55 @@ All notable changes to this project will be documented in this file.
 - `WholesaleMajorMonotone`
 - `WifiMajorMonotone`
 - `WifiMajorTwotone`
+
+- `AppExtensionMinor`
+- `ArchiveMinor`
+- `CapturePaymentMinor`
+- `CircleMinusOutlineMinor`
+- `CircleMinusMinor`
+- `CircleTickOutlineMinor`
+- `ClipboardMinor`
+- `ConnectMinor`
+- `DragHandleMinor`
+- `DropdownMinor`
+- `ExternalSmallMinor`
+- `FraudProtectPendingMinor`
+- `FraudProtectUnprotectedMinor`
+- `FraudProtectMinor`
+- `GiftCardMinor`
+- `GlobeMinor`
+- `ImageAltMinor`
+- `InfoMinor`
+- `InstallMinor`
+- `InviteMinor`
+- `LanguageMinor`
+- `LockMinor`
+- `MarkFulfilledMinor`
+- `MarkPaidMinor`
+- `MaximizeMinor`
+- `MinimizeMinor`
+- `NotesMinor`
+- `OrderStatusMinor`
+- `PaginationEndMinor`
+- `PaginationStartMinor`
+- `PauseMinor`
+- `PinMinor`
+- `PlayMinor`
+- `PriceLookupMinor`
+- `PromoteMinor`
+- `QuestionMarkMinor`
+- `ReadTimeMinor`
+- `RefundMinor`
+- `ReplayMinor`
+- `ResetMinor`
+- `ReturnMinor`
+- `SettingsMinor`
+- `ShareIosMinor`
+- `ShareMinor`
+- `SortMinor`
+- `ThumbsDownMinor`
+- `ThumbsUpMinor`
+- `TickSmallMinor`
 
 ## 3.2.0 - 2019-03-14
 
