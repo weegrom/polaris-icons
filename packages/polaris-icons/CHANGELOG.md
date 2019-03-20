@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+### Renamed
+
+- `TickSmallMinor` -> `CheckmarkMinor` (should only be used in checkboxes)
+
+
+### Fixed
+
+- `ImportStoreMajorMonotone`
+
 ### New icons
 
 - `NoteMajorMonotone`

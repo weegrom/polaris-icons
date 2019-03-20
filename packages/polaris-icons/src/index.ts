@@ -3,6 +3,10 @@
 // Run 'yarn run generate-icon-packages' from the root of the monorepo to generate a new version
 
 export {
+  default as AbandonedCartMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/abandoned-cart_major_monotone.svg';
+
+export {
   default as AddMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/add_major_monotone.svg';
 
@@ -43,6 +47,14 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/arrow-up-down_minor.svg';
 
 export {
+  default as BehaviorMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/behavior_major_monotone.svg';
+
+export {
+  default as BehaviorMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/behavior_major_twotone.svg';
+
+export {
   default as BlockquoteMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/blockquote_major_monotone.svg';
 
@@ -63,6 +75,30 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/cancel-small_minor.svg';
 
 export {
+  default as CardReaderMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/card-reader_major_monotone.svg';
+
+export {
+  default as CardReaderMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/card-reader_major_twotone.svg';
+
+export {
+  default as CardReaderChipMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/card-reader-chip_major_monotone.svg';
+
+export {
+  default as CardReaderChipMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/card-reader-chip_major_twotone.svg';
+
+export {
+  default as CardReaderTapMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/card-reader-tap_major_monotone.svg';
+
+export {
+  default as CardReaderTapMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/card-reader-tap_major_twotone.svg';
+
+export {
   default as CaretDownMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/caret-down_minor.svg';
 
@@ -77,6 +113,10 @@ export {
 export {
   default as CashDollarMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/cash-dollar_major_monotone.svg';
+
+export {
+  default as CheckmarkMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/checkmark_minor.svg';
 
 export {
   default as CheckoutMajorTwotone,
@@ -135,6 +175,10 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-disabled_major_twotone.svg';
 
 export {
+  default as CircleDownMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/circle-down_major_monotone.svg';
+
+export {
   default as CircleInformationMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-information_major_twotone.svg';
 
@@ -157,6 +201,10 @@ export {
 export {
   default as CircleTickMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/circle-tick_major_twotone.svg';
+
+export {
+  default as ClockMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/clock_major_monotone.svg';
 
 export {
   default as ClockMinor,
@@ -201,6 +249,10 @@ export {
 export {
   default as DesktopMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/desktop_major_twotone.svg';
+
+export {
+  default as DiscountsMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/discounts_major_monotone.svg';
 
 export {
   default as DiscountsMajorTwotone,
@@ -319,6 +371,14 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/import_minor.svg';
 
 export {
+  default as ImportStoreMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/import-store_major_monotone.svg';
+
+export {
+  default as ImportStoreMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/import-store_major_twotone.svg';
+
+export {
   default as LegalMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/legal_major_monotone.svg';
 
@@ -367,6 +427,14 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/navigation_major_twotone.svg';
 
 export {
+  default as NoteMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/note_major_monotone.svg';
+
+export {
+  default as NoteMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/note_major_twotone.svg';
+
+export {
   default as NoteMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/note_minor.svg';
 
@@ -399,6 +467,14 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/payments_major_twotone.svg';
 
 export {
+  default as PhoneMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/phone_major_monotone.svg';
+
+export {
+  default as PhoneMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/phone_major_twotone.svg';
+
+export {
   default as PlayCircleMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/play-circle_major_monotone.svg';
 
@@ -413,6 +489,10 @@ export {
 export {
   default as ProductsMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/products_major_twotone.svg';
+
+export {
+  default as ProfileMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/profile_major_monotone.svg';
 
 export {
   default as ProfileMajorTwotone,
@@ -435,8 +515,16 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/refresh_minor.svg';
 
 export {
+  default as RefundMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/refund_major_monotone.svg';
+
+export {
   default as ReplaceMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/replace_major_monotone.svg';
+
+export {
+  default as ReportMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/report_minor.svg';
 
 export {
   default as RiskMinor,
@@ -503,10 +591,6 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/thumbs-up_major_monotone.svg';
 
 export {
-  default as TickSmallMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/tick-small_minor.svg';
-
-export {
   default as TypeMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/type_major_monotone.svg';
 
@@ -517,6 +601,10 @@ export {
 export {
   default as ViewMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/view_major_monotone.svg';
+
+export {
+  default as ViewMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/view_major_twotone.svg';
 
 export {
   default as ViewMinor,
