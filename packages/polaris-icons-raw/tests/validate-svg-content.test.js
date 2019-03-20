@@ -45,6 +45,19 @@ allIconFiles.forEach(
         expect(nodeSources(groupNodes, iconSource)).toEqual([]);
       });
 
+      it('tags are self-closing whenever possible', () => {
+        const allNodes = selectAll('*', iconAst);
+        const allNodeStrings = nodeSources(allNodes, iconSource);
+
+        allNodes.forEach((node, i) => {
+          if (node.children.length === 0) {
+            expect(allNodeStrings[i].includes(`</${node.tagName}>`)).toBe(
+              false,
+            );
+          }
+        });
+      });
+
       it('only has <path>s, <polygon>s and <circle>s with an explict fill color', () => {
         const nodesWithUndefinedFill = selectAll(
           'path:not([fill]), circle:not([fill]), polygon:not([fill])',
