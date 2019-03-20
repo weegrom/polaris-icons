@@ -398,8 +398,8 @@ All notable changes to this project will be documented in this file.
 - `StoreMajorTwotone`
 - `TabletMajorMonotone`
 - `TabletMajorTwotone`
-- `TapchipMajorMonotone`
-- `TapchipMajorTwotone`
+- `TapChipMajorMonotone`
+- `TapChipMajorTwotone`
 - `TaxMajorMonotone`
 - `TaxMajorTwotone`
 - `TeamMajorMonotone`

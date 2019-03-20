@@ -2007,12 +2007,12 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/tablet_major_twotone.svg';
 
 export {
-  default as TapchipMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/tapchip_major_monotone.svg';
+  default as TapChipMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/tap-chip_major_monotone.svg';
 
 export {
-  default as TapchipMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/tapchip_major_twotone.svg';
+  default as TapChipMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/tap-chip_major_twotone.svg';
 
 export {
   default as TaxMajorMonotone,
