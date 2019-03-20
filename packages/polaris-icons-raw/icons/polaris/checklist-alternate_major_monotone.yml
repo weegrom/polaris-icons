@@ -1,4 +1,4 @@
-name: checklist alternative
+name: checklist alternate
 authors:
   - N/A
 date_added: 2019-03-15
@@ -13,7 +13,7 @@ description: >
 exclusive_use:
 public: true
 set: major
-style: twotone
+style: monotone
 version: 1
 keywords:
-  - N/A 
+  - N/A

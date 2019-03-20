@@ -427,12 +427,12 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/checklist_major_twotone.svg';
 
 export {
-  default as ChecklistAlternativeMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/checklist-alternative_major_monotone.svg';
+  default as ChecklistAlternateMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/checklist-alternate_major_monotone.svg';
 
 export {
-  default as ChecklistAlternativeMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/checklist-alternative_major_twotone.svg';
+  default as ChecklistAlternateMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/checklist-alternate_major_twotone.svg';
 
 export {
   default as CheckmarkMinor,

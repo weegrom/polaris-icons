@@ -112,8 +112,8 @@ All notable changes to this project will be documented in this file.
 - `ChannelsMajorTwotone`
 - `ChatMajorMonotone`
 - `ChatMajorTwotone`
-- `ChecklistAlternativeMajorMonotone`
-- `ChecklistAlternativeMajorTwotone`
+- `ChecklistAlternateMajorMonotone`
+- `ChecklistAlternateMajorTwotone`
 - `ChecklistMajorMonotone`
 - `ChecklistMajorTwotone`
 - `CircleCancelMajorMonotone`
