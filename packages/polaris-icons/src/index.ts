@@ -859,6 +859,14 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/exchange_major_twotone.svg';
 
 export {
+  default as ExistingInventoryMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/existing-inventory_major_monotone.svg';
+
+export {
+  default as ExistingInventoryMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/existing-inventory_major_twotone.svg';
+
+export {
   default as ExportMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/export_minor.svg';
 

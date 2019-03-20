@@ -181,6 +181,8 @@ All notable changes to this project will be documented in this file.
 - `EnvelopeMajorTwotone`
 - `ExchangeMajorMonotone`
 - `ExchangeMajorTwotone`
+- `ExistingInventoryMajorMonotone`
+- `ExistingInventoryMajorTwotone`
 - `FaviconMajorTwotone`
 - `FavouriteMajorMonotone`
 - `FavouriteMajorTwotone`
