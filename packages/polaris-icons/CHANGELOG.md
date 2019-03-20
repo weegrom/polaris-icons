@@ -277,8 +277,8 @@ All notable changes to this project will be documented in this file.
 - `MinimizeMajorTwotone`
 - `MobileAcceptMajorMonotone`
 - `MobileAcceptMajorTwotone`
-- `MobileAddMajorMonotone`
-- `MobileAddMajorTwotone`
+- `MobilePlusMajorMonotone`
+- `MobilePlusMajorTwotone`
 - `MobileBackArrowMajorMonotone`
 - `MobileBackArrowMajorTwotone`
 - `MobileCancelMajorTwotone`

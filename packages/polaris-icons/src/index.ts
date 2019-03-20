@@ -1375,14 +1375,6 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/mobile-accept_major_twotone.svg';
 
 export {
-  default as MobileAddMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/mobile-add_major_monotone.svg';
-
-export {
-  default as MobileAddMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/mobile-add_major_twotone.svg';
-
-export {
   default as MobileBackArrowMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/mobile-back-arrow_major_monotone.svg';
 
@@ -1421,6 +1413,14 @@ export {
 export {
   default as MobileHorizontalDotsMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/mobile-horizontal-dots_major_twotone.svg';
+
+export {
+  default as MobilePlusMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/mobile-plus_major_monotone.svg';
+
+export {
+  default as MobilePlusMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/mobile-plus_major_twotone.svg';
 
 export {
   default as MobileVerticalDotsMajorMonotone,
