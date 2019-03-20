@@ -1,6 +1,6 @@
 name: collection
 authors:
-  - N/A
+  - Adam Whitcroft
 date_added: 2019-03-15
 date_modified: 2019-03-15
 description: >
@@ -13,7 +13,10 @@ description: >
 exclusive_use:
 public: true
 set: major
-style: twotone
+style: monotone
 version: 1
 keywords:
-  - N/A 
+  - collection
+  - tag
+  - tags
+  - swing

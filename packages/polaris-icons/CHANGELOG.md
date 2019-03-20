@@ -134,8 +134,7 @@ All notable changes to this project will be documented in this file.
 - `CircleUpMajorTwotone`
 - `ClockMajorTwotone`
 - `CodeMajorTwotone`
-- `CollectionMajorMonotone`
-- `CollectionMajorTwotone`
+- `CollectionsMajorMonotone`
 - `ColorsMajorMonotone`
 - `ColorsMajorTwotone`
 - `ColumnImageWithTextMajorMonotone`
