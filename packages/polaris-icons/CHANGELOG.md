@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Renamed
 
 - `TickSmallMinor` -> `CheckmarkMinor` (should only be used in checkboxes)
-
+- `ColorMajorMonotone` -> `ColorsMajorMonotone`
 
 ### Fixed
 
