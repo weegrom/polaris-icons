@@ -392,8 +392,8 @@ All notable changes to this project will be documented in this file.
 - `SortDescendingMajorTwotone`
 - `SoundMajorMonotone`
 - `SoundMajorTwotone`
-- `StoreStatsMajorMonotone`
-- `StoreStatsMajorTwotone`
+- `StoreStatusMajorMonotone`
+- `StoreStatusMajorTwotone`
 - `StoreMajorMonotone`
 - `StoreMajorTwotone`
 - `TabletMajorMonotone`

@@ -1991,12 +1991,12 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/store_major_twotone.svg';
 
 export {
-  default as StoreStatsMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/store-stats_major_monotone.svg';
+  default as StoreStatusMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/store-status_major_monotone.svg';
 
 export {
-  default as StoreStatsMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/store-stats_major_twotone.svg';
+  default as StoreStatusMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/store-status_major_twotone.svg';
 
 export {
   default as TabletMajorMonotone,
