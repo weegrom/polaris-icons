@@ -1059,42 +1059,6 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/forms_major_twotone.svg';
 
 export {
-  default as FraudProtectMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/fraud-protect_major_monotone.svg';
-
-export {
-  default as FraudProtectMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/fraud-protect_major_twotone.svg';
-
-export {
-  default as FraudProtectMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/fraud-protect_minor.svg';
-
-export {
-  default as FraudProtectPendingMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/fraud-protect-pending_major_monotone.svg';
-
-export {
-  default as FraudProtectPendingMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/fraud-protect-pending_major_twotone.svg';
-
-export {
-  default as FraudProtectPendingMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/fraud-protect-pending_minor.svg';
-
-export {
-  default as FraudProtectUnprotectedMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/fraud-protect-unprotected_major_monotone.svg';
-
-export {
-  default as FraudProtectUnprotectedMajorTwotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/fraud-protect-unprotected_major_twotone.svg';
-
-export {
-  default as FraudProtectUnprotectedMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/fraud-protect-unprotected_minor.svg';
-
-export {
   default as GamesConsoleMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/games-console_major_monotone.svg';
 
@@ -2517,3 +2481,18 @@ export {
 export {
   default as WifiMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/wifi_major_twotone.svg';
+
+/** @deprecated ArrowUpDownMinor will be removed in the next major verison. Use SelectMinor instead */
+export {
+  default as ArrowUpDownMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/select_minor.svg';
+
+/** @deprecated ColorMajorMonotone will be removed in the next major verison. Use ColorsMajorMonotone instead */
+export {
+  default as ColorMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/colors_major_monotone.svg';
+
+/** @deprecated SidebarMajorMonotone will be removed in the next major verison. Use SidebarLeftMajorMonotone instead */
+export {
+  default as SidebarMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/sidebar-left_major_monotone.svg';

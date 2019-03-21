@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
+const jsYaml = require('js-yaml');
 
 const iconBasePath = path.resolve(
   __dirname,
@@ -20,17 +21,18 @@ const preamble = `// DO NOT MANUALLY EDIT THIS FILE
 
 const allSvgExportsString = glob
   .sync('*.svg', {cwd: iconBasePath})
+  .filter(isPublicIcon)
   .map(filenameToExport)
+  .concat(aliasExports())
   .join('\n\n');
 
 fs.writeFileSync(indexFilePath, `${preamble}\n\n${allSvgExportsString}\n`);
 
 function filenameToExport(filename) {
-  const basename = path.basename(filename, path.extname(filename));
-
-  return `export {
-  default as ${exportName(basename)},
-} from '@shopify/polaris-icons-raw/icons/polaris/${filename}';`;
+  return exportString(
+    exportName(path.basename(filename, path.extname(filename))),
+    filename,
+  );
 }
 
 /**
@@ -42,5 +44,38 @@ function filenameToExport(filename) {
 function exportName(name) {
   return name.replace(/(?:^|[-_])([a-z])/g, (match, letter) => {
     return letter.toUpperCase();
+  });
+}
+
+function exportString(exportedName, filename) {
+  return `export {
+  default as ${exportedName},
+} from '@shopify/polaris-icons-raw/icons/polaris/${filename}';`;
+}
+
+function isPublicIcon(name) {
+  const metadata = jsYaml.safeLoad(
+    fs.readFileSync(
+      `${iconBasePath}/${path.basename(name, path.extname(name))}.yml`,
+      'utf8',
+    ),
+  );
+  return metadata.public;
+}
+
+function aliasExports() {
+  const aliases = [
+    ['ArrowUpDownMinor', 'select_minor.svg'],
+    ['ColorMajorMonotone', 'colors_major_monotone.svg'],
+    ['SidebarMajorMonotone', 'sidebar-left_major_monotone.svg'],
+  ];
+
+  return aliases.map(([exportedName, filename]) => {
+    const useInstead = exportName(
+      path.basename(filename, path.extname(filename)),
+    );
+    const deprecatedNotice = `/** @deprecated ${exportedName} will be removed in the next major verison. Use ${useInstead} instead */`;
+
+    return `${deprecatedNotice}\n${exportString(exportedName, filename)}`;
   });
 }
