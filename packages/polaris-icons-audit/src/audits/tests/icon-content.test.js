@@ -59,7 +59,7 @@ describe('folder-names audit', () => {
       summary: 'Found 1 icon svgs with unexpected content',
       status: 'warn',
       info: `  invalid-fill.svg has 1 issues:
-    Has elements that use a fill that is not "#212B36" or "#FFF":
+    Has elements that use a fill that is not "#212B36" or "#919EAB" or "#FFF":
       <path fill="#BADA55" d="M4 7l-3 3 9 9 3-3z" />
       <path fill="#BEEF99" d="M4 7l-3 3 9 9 3-3z" />`,
     });
@@ -81,13 +81,13 @@ describe('folder-names audit', () => {
   invalid-viewbox.svg has 1 issues:
     Has a viewbox of "0 0 32 32" but expected "0 0 20 20" or "0 0 41 41"
   invalid-fill.svg has 1 issues:
-    Has elements that use a fill that is not "#212B36" or "#FFF":
+    Has elements that use a fill that is not "#212B36" or "#919EAB" or "#FFF":
       <path fill="#BADA55" d="M4 7l-3 3 9 9 3-3z" />
       <path fill="#BEEF99" d="M4 7l-3 3 9 9 3-3z" />
   invalid-everything.svg has 3 issues:
     Has xmlns of "undefined" on the <svg> element but expected "http://www.w3.org/2000/svg"
     Has a viewbox of "undefined" but expected "0 0 20 20" or "0 0 41 41"
-    Has elements that use a fill that is not "#212B36" or "#FFF":
+    Has elements that use a fill that is not "#212B36" or "#919EAB" or "#FFF":
       <path fill="#BADA55" d="M4 7l-3 3 9 9 3-3z" />
       <path fill="#BEEF99" d="M4 7l-3 3 9 9 3-3z" />`,
     });

@@ -141,7 +141,7 @@ function expectedViewboxForSet(set) {
 function expectedFillsForStyle(style = 'monotone') {
   const fillsPerStyle = {
     monotone: ['#212B36', '#212b36'],
-    twotone: ['#212B36', '#212b36', '#FFF', '#fff'],
+    twotone: ['#919EAB', '#919eab', '#FFF', '#fff'],
   };
 
   return fillsPerStyle[style];

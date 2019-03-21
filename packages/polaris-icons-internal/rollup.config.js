@@ -39,6 +39,8 @@ const rollupConfig = {
         '#fff': 'currentColor',
         '#212B36': '{undefined}',
         '#212b36': '{undefined}',
+        '#919EAB': '{undefined}',
+        '#919eab': '{undefined}',
       },
       babel: false,
     }),

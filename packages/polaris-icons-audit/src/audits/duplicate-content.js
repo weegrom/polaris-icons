@@ -88,6 +88,8 @@ function componentFromSvgFile(filename, contentPerFilename) {
         '#fff': 'currentColor',
         '#212B36': '{undefined}',
         '#212b36': '{undefined}',
+        '#919EAB': '{undefined}',
+        '#919eab': '{undefined}',
       },
       template: ({template}, opts, {jsx}) => template.ast`(props) => ${jsx}`,
       jsx: {
