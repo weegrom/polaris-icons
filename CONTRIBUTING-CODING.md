@@ -13,6 +13,8 @@ yarn bootstrap
 
 ## Releasing the library
 
+**The npm packages and the gem need to be released at the same time.**
+
 The release process currently involves some manual steps to complete. Please ping one of the repo owners in the `#polaris-icons` Slack channel when you're ready to merge a new PR into `master`, and we will orchestrate a new release.
 
 **Note** Version numbers in `package.json` files should never be altered manually. This will be done via scripts as part of the release process.
@@ -20,6 +22,8 @@ The release process currently involves some manual steps to complete. Please pin
 ### For repo owners
 
 **Note** these steps require admin access to the `Shopify/polaris-icons` github repo.
+
+#### Release npm packages
 
 1. Ensure you have the latest `master` branch including all tags:
 
@@ -54,6 +58,16 @@ The release process currently involves some manual steps to complete. Please pin
 
 1. Log in to [Shipit](https://shipit.shopify.io/shopify/polaris-icons/libraries)
 1. When CI is 🍏 on the tag commit, press `Deploy` to update packages on npm.
+
+#### Release the ruby gem
+
+**NOTE:** This isn't implemented yet so there is no need to release the gem
+
+1. Update `$GEM_NAME/version.rb`
+1. Run `bundle install` to bump the `Gemfile.lock` version of the gem
+1. Open a PR, review and merge
+1. [Create release on GitHub](https://help.github.com/articles/creating-releases/) with a version number that matches `$GEM_NAME/version.rb`
+1. Deploy via Shipit and see your new version on https://gems.shopify.io/packages/
 
 ## Releasing the icon explorer website
 

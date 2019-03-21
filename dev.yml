@@ -1,5 +1,7 @@
 name: polaris-icons
 up:
+  - ruby:
+      version: 2.6.2
   - node:
       yarn: true
       version: v10.13.0 # to be kept in sync with .nvmrc, package.json, and .shopify-build/polaris-icons.yml

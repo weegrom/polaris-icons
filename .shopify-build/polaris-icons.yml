@@ -1,6 +1,8 @@
 containers:
   default:
     docker: circleci/node:10.13.0
+  ruby:
+    docker: circleci/ruby:2.5.1
 
 # sudo chown stuff is here because `yarn install` tries to symlink the binaries
 # defined in packages into node_modules/.bin and then fails if the files
@@ -24,6 +26,14 @@ shared:
       - sudo chown -R circleci:circleci node_modules packages/*/bin
       - yarn: ~
       - yarn run lint
+  build-gem: &build-gem
+    label: 'Build Gem'
+    container: ruby
+    timeout: 5m
+    run:
+      - bundle check || bundle install
+
 steps:
   - <<: *lint
   - <<: *build-and-tests
+  - <<: *build-gem
