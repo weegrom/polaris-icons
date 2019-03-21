@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
+const jsYaml = require('js-yaml');
 
 const iconBasePath = path.resolve(
   __dirname,
@@ -20,6 +21,7 @@ const preamble = `// DO NOT MANUALLY EDIT THIS FILE
 
 const allSvgExportsString = glob
   .sync('*.svg', {cwd: iconBasePath})
+  .filter(isPublicIcon)
   .map(filenameToExport)
   .join('\n\n');
 
@@ -43,4 +45,14 @@ function exportName(name) {
   return name.replace(/(?:^|[-_])([a-z])/g, (match, letter) => {
     return letter.toUpperCase();
   });
+}
+
+function isPublicIcon(name) {
+  const metadata = jsYaml.safeLoad(
+    fs.readFileSync(
+      `${iconBasePath}/${path.basename(name, path.extname(name))}.yml`,
+      'utf8',
+    ),
+  );
+  return metadata.public;
 }

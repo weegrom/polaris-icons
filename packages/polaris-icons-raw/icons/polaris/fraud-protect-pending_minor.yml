@@ -12,7 +12,7 @@ description: >
   -->
   N/A
 exclusive_use:
-public: true
+public: false
 set: minor
 version: 1
 keywords:

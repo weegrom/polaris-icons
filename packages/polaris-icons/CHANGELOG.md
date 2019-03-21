@@ -7,6 +7,9 @@ All notable changes to this project will be documented in this file.
 ### Renamed
 
 - `TickSmallMinor` -> `CheckmarkMinor` (should only be used in checkboxes)
+
+### Deprecated
+
 - `ArrowUpDownMinor` -> `SelectMinor`
 - `ColorMajorMonotone` -> `ColorsMajorMonotone`
 - `SidebarMajorMonotone` -> `SidebarLeftMajorMonotone`
@@ -216,12 +219,6 @@ All notable changes to this project will be documented in this file.
 - `FooterMajorTwotone`
 - `FormsMajorMonotone`
 - `FormsMajorTwotone`
-- `FraudProtectPendingMajorMonotone`
-- `FraudProtectPendingMajorTwotone`
-- `FraudProtectUnprotectedMajorMonotone`
-- `FraudProtectUnprotectedMajorTwotone`
-- `FraudProtectMajorMonotone`
-- `FraudProtectMajorTwotone`
 - `GamesConsoleMajorMonotone`
 - `GamesConsoleMajorTwotone`
 - `GiftCardMajorMonotone`
@@ -482,9 +479,6 @@ All notable changes to this project will be documented in this file.
 - `DragHandleMinor`
 - `DropdownMinor`
 - `ExternalSmallMinor`
-- `FraudProtectPendingMinor`
-- `FraudProtectUnprotectedMinor`
-- `FraudProtectMinor`
 - `GiftCardMinor`
 - `GlobeMinor`
 - `ImageAltMinor`

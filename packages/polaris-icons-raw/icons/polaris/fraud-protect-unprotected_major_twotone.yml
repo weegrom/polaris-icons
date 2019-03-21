@@ -12,7 +12,7 @@ description: >
   -->
   N/A
 exclusive_use:
-public: true
+public: false
 set: major
 style: twotone
 version: 1
