@@ -2481,3 +2481,18 @@ export {
 export {
   default as WifiMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/wifi_major_twotone.svg';
+
+/** @deprecated ArrowUpDownMinor will be removed in the next major verison. Use SelectMinor instead */
+export {
+  default as ArrowUpDownMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/select_minor.svg';
+
+/** @deprecated ColorMajorMonotone will be removed in the next major verison. Use ColorsMajorMonotone instead */
+export {
+  default as ColorMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/colors_major_monotone.svg';
+
+/** @deprecated SidebarMajorMonotone will be removed in the next major verison. Use SidebarLeftMajorMonotone instead */
+export {
+  default as SidebarMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/sidebar-left_major_monotone.svg';

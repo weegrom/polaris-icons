@@ -4,19 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
-### Renamed
-
-- `TickSmallMinor` -> `CheckmarkMinor` (should only be used in checkboxes)
-
 ### Deprecated
 
-- `ArrowUpDownMinor` -> `SelectMinor`
-- `ColorMajorMonotone` -> `ColorsMajorMonotone`
-- `SidebarMajorMonotone` -> `SidebarLeftMajorMonotone`
+- `ArrowUpDownMinor` has been renamed to `SelectMinor` to match the name used in Sketch. `ArrowUpDownMinor` will continue to exist as an alias until v4.0.0.
+- `ColorMajorMonotone` has been renamed to `ColorsMajorMonotone` to match the name used in Sketch. `ColorMajorMonotone` will continue to exist as an alias until v4.0.0.
+- `SidebarMajorMonotone` has been renamed to `SidebarLeftMajorMonotone` to match the name used in Sketch. `SidebarMajorMonotone` will continue to exist as an alias until v4.0.0.
 
 ### Fixed
 
 - `ImportStoreMajorMonotone`
+- `TickSmallMinor` - Updated so the tick is larger to match the icon found in Sketch. If you wish to use the smaller tick (as it was before this release) within checkboxes then use `CheckmarkMinor` instead
 
 ### New icons
 
