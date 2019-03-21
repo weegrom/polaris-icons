@@ -1,0 +1,13 @@
+ci:
+  require:
+    - buildkite/polaris-icons
+  hide:
+    - buildkite/polaris-icons-production-builder
+    - buildkite/shopify-polaris-icons-binary-authorization-validator
+    - buildkite/shopify-polaris-icons-k8s-template-validator
+dependencies:
+  post:
+    - yarn run build
+review:
+  checklist:
+    - Have you deployed or are you going to deploy the gem as well?

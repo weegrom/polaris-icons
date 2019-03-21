@@ -1,4 +1,4 @@
-# Polaris-icons has two environments in servicesDB
+# Polaris-icons has three environments in servicesDB
 #
 # https://services.shopify.io/services/polaris-icons/production
 # is the environment for the app deployed at https://polaris-icons.shopify.com.
@@ -7,6 +7,10 @@
 # https://services.shopify.io/services/polaris-icons/libraries
 # is the environment for the library packages that are deployed to npm using
 # lerna. The code for this lives in the other packages/* folders
+#
+# https://services.shopify.io/services/polaris-icons/gem
+# is the environment for the gem deployed to packagecloud.
+# The code for this lives in the lib/ folder
 
 org_line: Shopify Core
 owners:
@@ -22,6 +26,8 @@ security:
   data_management:
     contains_pii: false
 
-# The libraries environment deploys libraries
 libraries:
+  classification: library
+
+gem:
   classification: library

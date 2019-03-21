@@ -22,3 +22,13 @@ packages/app-icon-explorer/public
 
 # Generated metadata
 metadata.json
+
+# Bundler stuff
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/

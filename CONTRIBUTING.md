@@ -10,6 +10,10 @@ If you're looking to add an icon to our public/private packages, make a code cha
 
 This repo is structured as a monorepo. The packages are all related to each other, so a change to one might necessitate a change to another.
 
+~~Through scripts the repo also deploys a gem to Shopify's internal Package Cloud instance. This gem is a Rails engine and includes all the icons as PDFs.~~
+
+**NOTE:** This isn't implemented yet
+
 ### Package Index
 
 | package                                                      |                                                                                                                                                                                                     |

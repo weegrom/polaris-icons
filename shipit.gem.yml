@@ -5,6 +5,9 @@ ci:
     - buildkite/polaris-icons-production-builder
     - buildkite/shopify-polaris-icons-binary-authorization-validator
     - buildkite/shopify-polaris-icons-k8s-template-validator
-dependencies:
-  post:
-    - yarn run build
+deploy:
+  override:
+    - bundle exec rake build
+    - bundle exec package_cloud push shopify/gems pkg/*.gem
+  checklist:
+    - Have you deployed or are you going to deploy the JS packages as well?
