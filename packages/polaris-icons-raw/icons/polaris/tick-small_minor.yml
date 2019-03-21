@@ -1,19 +1,18 @@
 name: tick small
 authors:
-  - N/A
-date_added: 2019-03-15
-date_modified: 2019-03-15
+  - Adam Whitcroft
+date_added: 2018-11-14
+date_modified: 2018-11-14
 description: >
-  <!--
-    This icon is missing a description.
-    Please take a moment to fill it in using these guidelines:
-    https://docs.google.com/document/d/1fhkxHuKhLhIysjyMs-LwXBgSNFhUYR9LKHHNVb-Zs4Q/edit
-    (you can delete this comment)
-  -->
-  N/A
-exclusive_use:
+  Used to denote the action of checking a Polaris checkbox.
+exclusive_use: Checkbox
 public: true
 set: minor
 version: 1
 keywords:
-  - N/A
+  - checkmark
+  - 'yes'
+  - ok
+  - good
+  - passed
+  - tick

@@ -443,10 +443,6 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/checklist-alternate_major_twotone.svg';
 
 export {
-  default as CheckmarkMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/checkmark_minor.svg';
-
-export {
   default as CheckoutMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/checkout_major_twotone.svg';
 
@@ -2241,6 +2237,10 @@ export {
 export {
   default as ThumbsUpMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/thumbs-up_minor.svg';
+
+export {
+  default as TickMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/tick_minor.svg';
 
 export {
   default as TickSmallMinor,
