@@ -13,7 +13,6 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - `ImportStoreMajorMonotone`
-- `TickSmallMinor` - Updated so the tick is larger to match the icon found in Sketch. If you wish to use the smaller tick (as it was before this release) within checkboxes then use `CheckmarkMinor` instead
 
 ### New icons
 
@@ -509,7 +508,7 @@ All notable changes to this project will be documented in this file.
 - `SortMinor`
 - `ThumbsDownMinor`
 - `ThumbsUpMinor`
-- `TickSmallMinor`
+- `TickMinor`
 
 ## 3.2.0 - 2019-03-14
 
