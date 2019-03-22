@@ -9,7 +9,7 @@ const iconsPath = dirname(
 module.exports = {
   siteMetadata: {
     title: `Polaris icons (beta)`,
-    description: `A cohesive collection of icons that we use across the Shopify platform.`,
+    description: `The collection of icons that we use across the Shopify platform.`,
     author: `Shopify`,
     titleTemplate: `Polaris icons (beta)`,
   },
