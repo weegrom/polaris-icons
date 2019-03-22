@@ -38,14 +38,14 @@ export default function IntroHeader() {
               icon that you need, then contribute to the collection by{' '}
               <OutboundLink
                 className="contentLink"
-                href="https://polaris.shopify.com/design/icons"
+                href="https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=submit-changes-to-an-existing-icon.md&title=%5BSubmission%5D%20add-block_major_monotone%20changes"
               >
                 updating an existing icon
-              </OutboundLink> 
+              </OutboundLink>
               , or{' '}
               <OutboundLink
                 className="contentLink"
-                href="https://polaris.shopify.com/design/icons"
+                href="https://vault.shopify.com/Polaris-icon-creation-guidelines"
               >
                 creating a new one
               </OutboundLink>
