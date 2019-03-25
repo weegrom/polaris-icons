@@ -35,7 +35,7 @@ export default function IntroHeader() {
             <p>
               Use these icons in your projects to promote a consistent
               experience across the Shopify platform. If you can’t find the
-              icon that you need, then contribute to the collection by{' '}
+              icon you need, then contribute to the collection by{' '}
               <OutboundLink
                 className="contentLink"
                 href="https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=submit-changes-to-an-existing-icon.md&title=%5BSubmission%5D%20add-block_major_monotone%20changes"
