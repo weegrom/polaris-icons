@@ -59,11 +59,6 @@
       "enum": ["major", "minor", "spot"],
       "description": "Which set this icon belongs to (major, minor, spot)."
     },
-    "style": {
-      "type": "string",
-      "enum": ["monotone", "twotone"],
-      "description": "Style of the icon (monotone, twotone)."
-    },
     "version": {
       "type": "integer",
       "description": "The version of the icon."
