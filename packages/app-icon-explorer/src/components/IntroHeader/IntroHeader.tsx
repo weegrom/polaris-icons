@@ -35,21 +35,9 @@ export default function IntroHeader() {
             <p>
               Use these icons in your projects to promote a consistent
               experience across the Shopify platform. If you can’t find the
-              icon you need, then contribute to the collection by{' '}
-              <OutboundLink
-                className="contentLink"
-                href="https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=submit-changes-to-an-existing-icon.md&title=%5BSubmission%5D%20add-block_major_monotone%20changes"
-              >
-                updating an existing icon
-              </OutboundLink>
-              , or{' '}
-              <OutboundLink
-                className="contentLink"
-                href="https://vault.shopify.com/Polaris-icon-creation-guidelines"
-              >
-                creating a new one
-              </OutboundLink>
-              . If you have any questions or feedback,{' '}
+              icon you need, then contribute to the collection by updating an
+              existing icon or creating a new one. If you have any questions
+              or feedback,{' '}
               <OutboundLink
                 className="contentLink"
                 href={ghNewIssueUrl(
