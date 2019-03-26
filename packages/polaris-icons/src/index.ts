@@ -443,6 +443,10 @@ export {
 } from '@shopify/polaris-icons-raw/icons/polaris/checklist-alternate_major_twotone.svg';
 
 export {
+  default as CheckoutMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/checkout_major_monotone.svg';
+
+export {
   default as CheckoutMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/checkout_major_twotone.svg';
 

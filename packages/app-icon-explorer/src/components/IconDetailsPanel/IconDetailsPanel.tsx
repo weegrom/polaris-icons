@@ -49,7 +49,11 @@ export default class IconDetailsPanel extends React.Component<Props> {
 }
 
 function PopulatedState({icon}: {icon: IconInterface}) {
-  const linkToMetadataEditForm = ghIconMetadataEditUrl(icon.basename);
+  const linkToMetadataEditForm = ghIconMetadataEditUrl(
+    icon.set === 'major'
+      ? icon.basename.replace(/_(monotone|twotone)$/g, '')
+      : icon.basename,
+  );
 
   return (
     <div>
@@ -162,6 +166,7 @@ function ghIconMetadataEditUrl(basename: string) {
   const encodedMessage = encodeURIComponent(`Fix metadata for ${basename}`);
   return `https://github.com/Shopify/polaris-icons/edit/master/packages/polaris-icons-raw/icons/polaris/${basename}.yml?message=${encodedMessage}&target_branch=fix-${basename}`;
 }
+
 export function ghNewIssueUrl(
   template: string,
   title: string,

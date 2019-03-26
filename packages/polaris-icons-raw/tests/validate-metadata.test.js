@@ -28,12 +28,8 @@ allIconMetadataFiles.forEach(({iconPath, iconMetadata}) => {
       expect(validate.errors).toBeNull();
     });
 
-    it(`has filename that matches the schema name, set and style`, () => {
-      const expectedNameSegments = [
-        iconMetadata.name,
-        iconMetadata.set,
-        iconMetadata.style,
-      ];
+    it(`has filename that matches the schema name and set `, () => {
+      const expectedNameSegments = [iconMetadata.name, iconMetadata.set];
 
       // Remove parentheses, replace spaces with hyphens
       const expectedName = expectedNameSegments

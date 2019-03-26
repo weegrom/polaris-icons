@@ -54,11 +54,12 @@ function exportString(exportedName, filename) {
 }
 
 function isPublicIcon(name) {
+  const metadataBasename = path
+    .basename(name, path.extname(name))
+    .replace(/_(monotone|twotone)$/, '');
+
   const metadata = jsYaml.safeLoad(
-    fs.readFileSync(
-      `${iconBasePath}/${path.basename(name, path.extname(name))}.yml`,
-      'utf8',
-    ),
+    fs.readFileSync(`${iconBasePath}/${metadataBasename}.yml`, 'utf8'),
   );
   return metadata.public;
 }

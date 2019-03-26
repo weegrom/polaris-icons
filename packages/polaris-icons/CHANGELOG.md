@@ -464,6 +464,8 @@ All notable changes to this project will be documented in this file.
 - `WifiMajorMonotone`
 - `WifiMajorTwotone`
 
+- `CheckoutMajorMonotone`
+
 - `AppExtensionMinor`
 - `ArchiveMinor`
 - `CapturePaymentMinor`
