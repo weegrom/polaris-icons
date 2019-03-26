@@ -60,13 +60,13 @@ function PopulatedState({icon}: {icon: IconInterface}) {
       <div className={styles.iconDetailsPanelInner}>
         <TextContainer>
           <div className={styles.icon}>
-            <Icon source={encodeURIComponent(icon.svgContent)} />
+            <Icon
+              source={encodeURIComponent(icon.styles.monotone.svgContent)}
+            />
           </div>
           <div className={`${styles.spacingBase}${styles.spacingTop}`}>
             <div className={styles.spacingExtraTight}>
-              <Heading>{`${startCase(icon.name)} (${icon.set}${
-                icon.style ? `, ${icon.style}` : ''
-              })`}</Heading>
+              <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
             </div>
             <div
               className={styles.iconDescription}
@@ -75,7 +75,7 @@ function PopulatedState({icon}: {icon: IconInterface}) {
           </div>
           <div className={`${styles.spacingBase} ${styles.spacingButton}`}>
             <Button
-              url={icon.svgFile.publicURL}
+              url={icon.styles.monotone.svgFile.publicURL}
               download={`${icon.basename}.svg`}
             >
               Download SVG

@@ -12,13 +12,6 @@ interface Props {
   isActive: boolean;
 }
 
-const StyleText = ({iconStyle}: {iconStyle?: string}) =>
-  iconStyle === 'twotone' ? (
-    <>
-      <br /> (twotone)
-    </>
-  ) : null;
-
 export default function SingleIcon({icon, isActive = false}: Props) {
   const className = classNames({
     [styles.IconGridItem]: true,
@@ -42,13 +35,10 @@ export default function SingleIcon({icon, isActive = false}: Props) {
   return (
     <Link to={linkTo} className={className} onClick={trackLink}>
       <div className={styles.iconSvgWrapper}>
-        <Icon source={encodeURIComponent(icon.svgContent)} />
+        <Icon source={encodeURIComponent(icon.styles.monotone.svgContent)} />
       </div>
       <div className={styles.iconLabel}>
-        <Caption>
-          {icon.name}
-          <StyleText iconStyle={icon.style} />
-        </Caption>
+        <Caption>{icon.name}</Caption>
       </div>
     </Link>
   );

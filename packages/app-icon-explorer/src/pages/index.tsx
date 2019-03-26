@@ -87,7 +87,7 @@ export default class IndexPage extends React.Component<Props, State> {
 
     const icons = sortBy(
       this.props.data.allPolarisYaml.edges.map((edge) => edge.node),
-      ['name', 'style'],
+      ['name'],
     );
     const [majorIcons, minorIcons] = buildIconSets(
       filterIcons(icons, searchText),
@@ -235,14 +235,23 @@ export const pageQuery = graphql`
           basename
           id
           set
-          style
           descriptionHtml
           public
           keywords
           authors
-          svgContent
-          svgFile {
-            publicURL
+          styles {
+            monotone {
+              svgContent
+              svgFile {
+                publicURL
+              }
+            }
+            twotone {
+              svgContent
+              svgFile {
+                publicURL
+              }
+            }
           }
         }
       }
