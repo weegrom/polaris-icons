@@ -51,11 +51,13 @@ export default class IconDetailsPanel extends React.Component<Props> {
 }
 
 function PopulatedState({icon}: PopulatedStateProps) {
-  const [selectedStyle, setSelectedStyle] = useState('monotone');
+  const [selectedStyle, setSelectedStyle] = useState(
+    'monotone' as keyof IconInterface['styles'],
+  );
   const showMonotone = () => setSelectedStyle('monotone');
   const showTwotone = () => setSelectedStyle('twotone');
 
-  const activeStyle: StyleData = icon.styles[selectedStyle];
+  const activeStyle = icon.styles[selectedStyle] as StyleData;
 
   /* eslint-disable react/jsx-no-bind */
   const toggleContent =
