@@ -1,0 +1,165 @@
+@import '~@shopify/polaris/styles/foundation';
+@import '~@shopify/polaris/styles/shared';
+
+$min-height: control-height();
+$vertical-padding: ($min-height - line-height(body) - rem(2px)) / 2;
+$slim-min-height: rem(30px);
+$slim-vertical-padding: ($slim-min-height - line-height(body) - rem(2px)) / 2;
+$large-min-height: rem(44px);
+$large-vertical-padding: ($large-min-height - line-height(body) - rem(2px)) / 2;
+$spinner-size: rem(20px);
+
+.ToggleButton {
+  @include button-base;
+
+  &.disabled {
+    @include base-button-disabled;
+  }
+}
+
+.Content {
+  @include text-style-button;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+.Icon {
+  transition: color duration() easing();
+
+  &:first-child {
+    // This compensates for the typical icon used in buttons being
+    // inset within its bounding box.
+    margin-left: -(spacing(extra-tight));
+  }
+
+  + *:not(.Icon) {
+    margin-left: spacing(extra-tight);
+  }
+}
+
+.Spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -($spinner-size / 2);
+  margin-left: -($spinner-size / 2);
+}
+
+.pressed {
+  background: color(sky);
+  border-color: darken(color(sky, dark), 4%);
+  box-shadow: 0 0 0 0 transparent,
+    inset 0 1px 1px 0 rgba(color('ink', 'lighter'), 0.1),
+    inset 0 1px 4px 0 rgba(color('ink', 'lighter'), 0.1);
+
+  &:hover {
+    transition-duration: duration(fast);
+    background: darken(color(sky), 2%);
+    border-color: darken(color(sky, dark), 4%);
+    box-shadow: 0 0 0 0 transparent,
+      inset 0 1px 1px 0 rgba(color('ink', 'lighter'), 0.1),
+      inset 0 1px 4px 0 rgba(color('ink', 'lighter'), 0.1);
+  }
+
+  &:focus {
+    border-color: color('indigo');
+    box-shadow: 0 0 0 1px color('indigo'),
+      inset 0 1px 1px 0 rgba(color('ink', 'lighter'), 0.1),
+      inset 0 1px 4px 0 rgba(color('ink', 'lighter'), 0.1);
+  }
+
+  &:active {
+    background: darken(color(sky), 4%);
+    border-color: darken(color(sky, dark), 4%);
+    box-shadow: 0 0 0 0 transparent,
+      inset 0 1px 1px 0 rgba(color('ink', 'lighter'), 0.1),
+      inset 0 1px 4px 0 rgba(color('ink', 'lighter'), 0.2);
+  }
+
+  &.disabled {
+    background: lighten(color(sky), 4%);
+    color: color('ink', 'lightest');
+    border-color: color(sky, dark);
+    box-shadow: inset 0 1px 1px 0 rgba(color('ink', 'lighter'), 0.1);
+  }
+
+  @media (-ms-high-contrast: active) {
+    color: ms-high-contrast-color('button-text');
+    background: ms-high-contrast-color('button-text-background');
+  }
+}
+
+.primary {
+  @include button-filled(color('indigo'), color('indigo', 'dark'));
+  @include recolor-icon(color('white'));
+
+  &.disabled {
+    @include button-filled-disabled(color('indigo'));
+  }
+
+  &.pressed {
+    background: linear-gradient(
+      to bottom,
+      darken(color('indigo'), 10%),
+      darken(color('indigo'), 10%)
+    );
+    border-color: darken(color('indigo', 'dark'), 15%);
+    box-shadow: inset 0 0 0 0 transparent, shadow(faint),
+      0 0 1px 0 darken(color('indigo', 'dark'), 15%);
+  }
+}
+
+.outline {
+  @include button-outline(color('ink', 'lighter'));
+
+  &.disabled {
+    @include button-outline-disabled(color('ink', 'lighter'));
+  }
+}
+
+.disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+.fullWidth {
+  @include button-full-width;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  position: relative;
+  transition: border-color duration() easing();
+
+  &,
+  &:hover,
+  &.disabled {
+    color: transparent;
+  }
+}
+
+.iconOnly {
+  padding-left: rem(8px);
+  padding-right: rem(8px);
+
+  .Icon:first-child {
+    margin-left: 0;
+  }
+
+  .Icon:last-child {
+    margin-right: rem(-4px);
+  }
+
+  .Icon:only-child {
+    margin-right: 0;
+  }
+}

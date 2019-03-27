@@ -14,6 +14,7 @@ import {Link} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {startCase} from 'lodash';
 import {Icon as IconInterface, StyleData} from '../../types';
+import ToggleButton from '../ToggleButton';
 import styles from './IconDetailsPanel.module.scss';
 import IconCopy from './components/IconCopy';
 
@@ -61,10 +62,19 @@ function PopulatedState({icon}: PopulatedStateProps) {
     icon.set === 'major' ? (
       <div>
         <ButtonGroup fullWidth segmented>
-          <Button onClick={showMonotone}>Monotone</Button>
-          <Button onClick={showTwotone} disabled={!icon.styles.twotone}>
+          <ToggleButton
+            pressed={selectedStyle === 'monotone'}
+            onClick={showMonotone}
+          >
+            Monotone
+          </ToggleButton>
+          <ToggleButton
+            pressed={selectedStyle === 'twotone'}
+            onClick={showTwotone}
+            disabled={!icon.styles.twotone}
+          >
             Twotone
-          </Button>
+          </ToggleButton>
         </ButtonGroup>
       </div>
     ) : (
@@ -205,7 +215,7 @@ function EmptyState() {
   );
 }
 
-function IconKeyword({iconName, word}) {
+function IconKeyword({iconName, word}: {iconName: string; word: string}) {
   const linkTo = `/?${qsStringify({icon: iconName, q: `#${word}`})}`;
 
   return (
