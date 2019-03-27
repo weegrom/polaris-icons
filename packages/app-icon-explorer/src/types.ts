@@ -1,9 +1,10 @@
 /* eslint-disable camelcase */
 
-interface StyleData {
+export interface StyleData {
   svgContent: string;
   svgFile: {
     publicURL: string;
+    base: string;
   };
 }
 

@@ -244,12 +244,14 @@ export const pageQuery = graphql`
               svgContent
               svgFile {
                 publicURL
+                base
               }
             }
             twotone {
               svgContent
               svgFile {
                 publicURL
+                base
               }
             }
           }

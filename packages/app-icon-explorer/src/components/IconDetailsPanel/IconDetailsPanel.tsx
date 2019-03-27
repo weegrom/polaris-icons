@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as PropTypes from 'prop-types';
 import {
-  TextContainer,
   Heading,
   Subheading,
   Button,
+  ButtonGroup,
   Icon,
   TextStyle,
   Banner,
@@ -13,7 +13,7 @@ import {stringify as qsStringify} from 'query-string';
 import {Link} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {startCase} from 'lodash';
-import {Icon as IconInterface} from '../../types';
+import {Icon as IconInterface, StyleData} from '../../types';
 import styles from './IconDetailsPanel.module.scss';
 import IconCopy from './components/IconCopy';
 
@@ -21,12 +21,9 @@ interface Props {
   icon?: IconInterface;
 }
 
-const showBanner = (icon: IconInterface) =>
-  Object.values(icon).some(
-    (value) => typeof value === 'string' && /N\/A/.test(value),
-  ) ||
-  icon.keywords.includes('N/A') ||
-  icon.authors.includes('N/A');
+interface PopulatedStateProps {
+  icon: IconInterface;
+}
 
 export default class IconDetailsPanel extends React.Component<Props> {
   static childContextTypes = {
@@ -44,83 +41,113 @@ export default class IconDetailsPanel extends React.Component<Props> {
       return <EmptyState />;
     }
 
-    return <PopulatedState icon={this.props.icon} />;
+    // Set a key to create a new component instead of reusing the existing
+    // one and thus persisting selectedStyle state across different icons
+    return (
+      <PopulatedState key={this.props.icon.reactname} icon={this.props.icon} />
+    );
   }
 }
 
-function PopulatedState({icon}: {icon: IconInterface}) {
-  const linkToMetadataEditForm = ghIconMetadataEditUrl(
-    icon.set === 'major'
-      ? icon.basename.replace(/_(monotone|twotone)$/g, '')
-      : icon.basename,
+function PopulatedState({icon}: PopulatedStateProps) {
+  const [selectedStyle, setSelectedStyle] = useState('monotone');
+  const showMonotone = () => setSelectedStyle('monotone');
+  const showTwotone = () => setSelectedStyle('twotone');
+
+  const activeStyle: StyleData = icon.styles[selectedStyle];
+
+  /* eslint-disable react/jsx-no-bind */
+  const toggleContent =
+    icon.set === 'major' ? (
+      <div>
+        <ButtonGroup fullWidth segmented>
+          <Button onClick={showMonotone}>Monotone</Button>
+          <Button onClick={showTwotone} disabled={!icon.styles.twotone}>
+            Twotone
+          </Button>
+        </ButtonGroup>
+      </div>
+    ) : (
+      undefined
+    );
+  /* eslint-enable react/jsx-no-bind */
+
+  const editMetadataContent = showBanner(icon) ? (
+    <Banner>
+      <p>
+        This icon is missing information.{' '}
+        <OutboundLink
+          className="contentLink"
+          href={ghIconMetadataEditUrl(icon.basename)}
+        >
+          Update the metadata for this icon
+        </OutboundLink>
+        .
+      </p>
+    </Banner>
+  ) : (
+    <OutboundLink
+      className="contentLink"
+      href={ghIconMetadataEditUrl(icon.basename)}
+    >
+      Edit icon metadata
+    </OutboundLink>
   );
 
   return (
     <div>
       <div className={styles.iconDetailsPanelInner}>
-        <TextContainer>
-          <div className={styles.icon}>
-            <Icon
-              source={encodeURIComponent(icon.styles.monotone.svgContent)}
-            />
-          </div>
-          <div className={`${styles.spacingBase}${styles.spacingTop}`}>
-            <div className={styles.spacingExtraTight}>
-              <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
-            </div>
-            <div
-              className={styles.iconDescription}
-              dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
-            />
-          </div>
-          <div className={`${styles.spacingBase} ${styles.spacingButton}`}>
-            <Button
-              url={icon.styles.monotone.svgFile.publicURL}
-              download={`${icon.basename}.svg`}
+        <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
+
+        <div
+          className={styles.iconDescription}
+          dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
+        />
+
+        {toggleContent}
+
+        <div className={styles.icon}>
+          <Icon source={encodeURIComponent(activeStyle.svgContent)} />
+        </div>
+
+        <div>
+          <Button
+            url={activeStyle.svgFile.publicURL}
+            download={activeStyle.svgFile.base}
+          >
+            Download SVG
+          </Button>
+        </div>
+
+        <div className={styles.usage}>
+          <Subheading>Usage</Subheading>
+          <IconCopy reactname={icon.reactname} />
+          <span>
+            Using{' '}
+            <OutboundLink
+              className="contentLink"
+              href="https://polaris.shopify.com/components/images-and-icons/icon"
             >
-              Download SVG
-            </Button>
-          </div>
-          <div className={`${styles.usage} ${styles.spacingBase}`}>
-            <Subheading>Usage</Subheading>
-            <IconCopy reactname={icon.reactname} />
-            <span>
-              See the{' '}
-              <OutboundLink
-                className="contentLink"
-                href="https://polaris.shopify.com/components/images-and-icons/icon"
-              >
-                Polaris icon component
-              </OutboundLink>
-              {''}.
-            </span>
-          </div>
-          <div className={styles.createdBy}>
-            <Subheading>Created by</Subheading>
-            <ul className={`${styles.createdBy} ${styles.spacingBase}`}>
-              {icon.authors.map((author) => (
-                <li key={icon.id + author}>{author}</li>
-              ))}
-            </ul>
-          </div>
-          <ul className={`${styles.keywords} ${styles.spacingLoose}`}>
-            <Subheading>Keywords</Subheading>
+              Polaris icon component
+            </OutboundLink>
+            {''}.
+          </span>
+        </div>
+
+        <div className={styles.keywords}>
+          <Subheading>Keywords</Subheading>
+          <ul>
             {icon.keywords.map((keyword) => (
-              <li key={icon.id + keyword} className={styles.keywordsItem}>
-                <Link
-                  to={`/?${qsStringify({
-                    icon: icon.reactname,
-                    q: `#${keyword}`,
-                  })}`}
-                  className={styles.Tag}
-                >
-                  {keyword}
-                </Link>
-              </li>
+              <IconKeyword
+                key={keyword}
+                word={keyword}
+                iconName={icon.reactname}
+              />
             ))}
           </ul>
-        </TextContainer>
-        <div className={styles.iconActions}>
+        </div>
+
+        <div>
           <OutboundLink
             href={ghNewIssueUrl(
               'submit-changes-to-an-existing-icon.md',
@@ -132,33 +159,20 @@ function PopulatedState({icon}: {icon: IconInterface}) {
             Create a new version of this icon
           </OutboundLink>
 
-          {/* eslint-disable-next-line shopify/jsx-no-complex-expressions */}
-          {showBanner(icon) ? (
-            <div className={styles.bannerWrapper}>
-              <Banner>
-                <p>
-                  This icon is missing information.{' '}
-                  <OutboundLink
-                    className="contentLink"
-                    href={linkToMetadataEditForm}
-                  >
-                    Update the metadata for this icon
-                  </OutboundLink>
-                  .
-                </p>
-              </Banner>
-            </div>
-          ) : (
-            <OutboundLink
-              className={`${styles.link} contentLink`}
-              href={linkToMetadataEditForm}
-            >
-              Edit icon metadata
-            </OutboundLink>
-          )}
+          {editMetadataContent}
         </div>
       </div>
     </div>
+  );
+}
+
+function showBanner(icon: IconInterface) {
+  return (
+    Object.values(icon).some(
+      (value) => typeof value === 'string' && /N\/A/.test(value),
+    ) ||
+    icon.keywords.includes('N/A') ||
+    icon.authors.includes('N/A')
   );
 }
 
@@ -188,5 +202,17 @@ function EmptyState() {
         <TextStyle variation="subdued">Choose an icon to begin</TextStyle>
       </div>
     </div>
+  );
+}
+
+function IconKeyword({iconName, word}) {
+  const linkTo = `/?${qsStringify({icon: iconName, q: `#${word}`})}`;
+
+  return (
+    <li>
+      <Link to={linkTo} className={styles.Tag}>
+        {word}
+      </Link>
+    </li>
   );
 }
