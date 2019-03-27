@@ -13,10 +13,11 @@ import {stringify as qsStringify} from 'query-string';
 import {Link} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {startCase} from 'lodash';
+
 import {Icon as IconInterface, StyleData} from '../../types';
 import ToggleButton from '../ToggleButton';
+import CodeBlock from './components/CodeBlock';
 import styles from './IconDetailsPanel.module.scss';
-import IconCopy from './components/IconCopy';
 
 interface Props {
   icon?: IconInterface;
@@ -134,19 +135,59 @@ function PopulatedState({icon}: PopulatedStateProps) {
           </Button>
         </div>
 
-        <div className={styles.usage}>
-          <Subheading>Usage</Subheading>
-          <IconCopy reactname={activeStyle.importName} />
-          <span>
-            Using{' '}
-            <OutboundLink
-              className="contentLink"
-              href="https://polaris.shopify.com/components/images-and-icons/icon"
-            >
-              Polaris icon component
-            </OutboundLink>
-            {''}.
-          </span>
+        <div>
+          <CodeBlock
+            title="Import"
+            footer={
+              <div>
+                Learn how to use{' '}
+                <OutboundLink
+                  className="contentLink"
+                  href="https://polaris.shopify.com/components/images-and-icons/icon"
+                >
+                  Polaris icons
+                </OutboundLink>
+                .
+              </div>
+            }
+          >
+            <CodeBlock.Import>import</CodeBlock.Import>
+            <CodeBlock.ImportItems>
+              {' {'}
+              <br />
+              {`  ${activeStyle.importName}`}
+              <br />
+              {'} '}
+            </CodeBlock.ImportItems>
+            <CodeBlock.Import>
+              from {`'@shopify/polaris-icons'`};
+            </CodeBlock.Import>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <CodeBlock
+            title="Usage"
+            footer={
+              <div>
+                Using{' '}
+                <OutboundLink
+                  className="contentLink"
+                  href="https://polaris.shopify.com/components/images-and-icons/icon"
+                >
+                  Polaris icon component
+                </OutboundLink>
+                .
+              </div>
+            }
+          >
+            <CodeBlock.Tag>&lt;Icon</CodeBlock.Tag>
+            <br />
+            <CodeBlock.Attribute>{'  '}source</CodeBlock.Attribute>
+            <CodeBlock.Tag>=</CodeBlock.Tag>
+            <CodeBlock.Import>{`{${activeStyle.importName}}`}</CodeBlock.Import>
+            <CodeBlock.Tag> /&gt;</CodeBlock.Tag>
+          </CodeBlock>
         </div>
 
         <div className={styles.keywords}>
