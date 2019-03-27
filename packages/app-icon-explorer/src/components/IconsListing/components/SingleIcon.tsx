@@ -24,13 +24,13 @@ export default function SingleIcon({icon, isActive = false}: Props) {
         /* eslint-disable-next-line camelcase */
         event_category: 'icons',
         /* eslint-disable-next-line camelcase */
-        event_label: icon.reactname,
+        event_label: icon.metadataId,
       });
     }
   };
 
   const queryParams = useContext(QueryParamsContext);
-  const linkTo = `/?${qsStringify({icon: icon.reactname, q: queryParams.q})}`;
+  const linkTo = `/?${qsStringify({icon: icon.metadataId, q: queryParams.q})}`;
 
   return (
     <Link to={linkTo} className={className} onClick={trackLink}>

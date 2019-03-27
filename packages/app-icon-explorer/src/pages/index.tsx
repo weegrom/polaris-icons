@@ -10,7 +10,7 @@ import {
   IconDetailsPanel,
   IntroHeader,
 } from '../components';
-import {Icon as IconInterface} from '../types';
+import {Icon as IconInterface, StyleData} from '../types';
 
 import styles from './index.module.scss';
 
@@ -97,9 +97,9 @@ export default class IndexPage extends React.Component<Props, State> {
 
     const currentIcon =
       this.state.isClient && this.state.queryParams.icon
-        ? icons.find((icon) => icon.reactname === this.state.queryParams.icon)
+        ? icons.find((icon) => icon.metadataId === this.state.queryParams.icon)
         : undefined;
-    const activeIconId = currentIcon ? currentIcon.id : undefined;
+    const activeIconId = currentIcon ? currentIcon.metadataId : undefined;
 
     const introHeaderMarkup = isFiltered ? null : <IntroHeader />;
 
@@ -198,7 +198,9 @@ function filterIcons(icons: IconInterface[], searchText: string) {
     return (
       containsText(icon.name) ||
       icon.keywords.some(containsText) ||
-      containsText(icon.reactname)
+      (Object.values(icon.styles).filter(Boolean) as StyleData[])
+        .map((style) => style.importName)
+        .some(containsText)
     );
   });
 }
@@ -228,19 +230,16 @@ export const pageQuery = graphql`
     allPolarisYaml {
       edges {
         node {
-          date_added
-          date_modified
           name
-          reactname
-          basename
-          id
+          metadataId
+          metadataFilename
           set
           descriptionHtml
           public
           keywords
-          authors
           styles {
             monotone {
+              importName
               svgContent
               svgFile {
                 publicURL
@@ -248,6 +247,7 @@ export const pageQuery = graphql`
               }
             }
             twotone {
+              importName
               svgContent
               svgFile {
                 publicURL

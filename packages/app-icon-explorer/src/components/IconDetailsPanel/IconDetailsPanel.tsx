@@ -45,7 +45,10 @@ export default class IconDetailsPanel extends React.Component<Props> {
     // Set a key to create a new component instead of reusing the existing
     // one and thus persisting selectedStyle state across different icons
     return (
-      <PopulatedState key={this.props.icon.reactname} icon={this.props.icon} />
+      <PopulatedState
+        key={this.props.icon.metadataFilename}
+        icon={this.props.icon}
+      />
     );
   }
 }
@@ -90,7 +93,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
         This icon is missing information.{' '}
         <OutboundLink
           className="contentLink"
-          href={ghIconMetadataEditUrl(icon.basename)}
+          href={ghIconMetadataEditUrl(icon.metadataFilename)}
         >
           Update the metadata for this icon
         </OutboundLink>
@@ -100,7 +103,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
   ) : (
     <OutboundLink
       className="contentLink"
-      href={ghIconMetadataEditUrl(icon.basename)}
+      href={ghIconMetadataEditUrl(icon.metadataFilename)}
     >
       Edit icon metadata
     </OutboundLink>
@@ -133,7 +136,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
 
         <div className={styles.usage}>
           <Subheading>Usage</Subheading>
-          <IconCopy reactname={icon.reactname} />
+          <IconCopy reactname={activeStyle.importName} />
           <span>
             Using{' '}
             <OutboundLink
@@ -153,7 +156,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
               <IconKeyword
                 key={keyword}
                 word={keyword}
-                iconName={icon.reactname}
+                iconName={icon.metadataId}
               />
             ))}
           </ul>
@@ -163,7 +166,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
           <OutboundLink
             href={ghNewIssueUrl(
               'submit-changes-to-an-existing-icon.md',
-              `[Submission] ${icon.basename} changes`,
+              `[Submission] ${icon.metadataFilename} changes`,
               ['Update'],
             )}
             className={`${styles.link} contentLink`}
@@ -182,15 +185,13 @@ function showBanner(icon: IconInterface) {
   return (
     Object.values(icon).some(
       (value) => typeof value === 'string' && /N\/A/.test(value),
-    ) ||
-    icon.keywords.includes('N/A') ||
-    icon.authors.includes('N/A')
+    ) || icon.keywords.includes('N/A')
   );
 }
 
-function ghIconMetadataEditUrl(basename: string) {
-  const encodedMessage = encodeURIComponent(`Fix metadata for ${basename}`);
-  return `https://github.com/Shopify/polaris-icons/edit/master/packages/polaris-icons-raw/icons/polaris/${basename}.yml?message=${encodedMessage}&target_branch=fix-${basename}`;
+function ghIconMetadataEditUrl(filename: string) {
+  const encodedMessage = encodeURIComponent(`Fix metadata for ${filename}`);
+  return `https://github.com/Shopify/polaris-icons/edit/master/packages/polaris-icons-raw/icons/polaris/${filename}.yml?message=${encodedMessage}&target_branch=fix-${filename}`;
 }
 
 export function ghNewIssueUrl(

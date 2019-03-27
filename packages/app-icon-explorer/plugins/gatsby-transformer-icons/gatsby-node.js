@@ -25,7 +25,7 @@ async function onCreateNode({
   }
 
   const metadata = jsYaml.load(await loadNodeContent(node));
-  const basename = path.basename(node.base, '.yml');
+  const metadataFilename = path.basename(node.base, '.yml');
 
   const monotoneSvgPath = node.absolutePath.replace(
     /\.yml$/,
@@ -35,8 +35,8 @@ async function onCreateNode({
 
   const yamlNode = {
     ...metadata,
-    basename,
-    reactname: _.upperFirst(_.camelCase(basename)),
+    metadataFilename,
+    metadataId: pascalCase(metadataFilename),
     id: createNodeId(`${node.id} Icon Metadata`),
     children: [],
     parent: node.id,
@@ -65,10 +65,15 @@ function dataForSvg(getNodes, pathToSvg) {
   );
 
   return {
+    importName: pascalCase(path.basename(svgFileNode.base, svgFileNode.ext)),
     svgContent: fs.readFileSync(pathToSvg, 'utf8'),
     // eslint-disable-next-line camelcase
     svgFile___NODE: svgFileNode.id,
   };
+}
+
+function pascalCase(string) {
+  return _.upperFirst(_.camelCase(string));
 }
 
 module.exports.onCreateNode = onCreateNode;

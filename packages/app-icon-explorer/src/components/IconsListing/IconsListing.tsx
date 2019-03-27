@@ -18,9 +18,9 @@ export default function IconsListing(props: Props) {
 
   const iconsMarkup = props.icons.map((icon: IconInterface) => (
     <SingleIcon
-      key={icon.id}
+      key={icon.metadataId}
       icon={icon}
-      isActive={props.activeIconId === icon.id}
+      isActive={props.activeIconId === icon.metadataId}
     />
   ));
 
