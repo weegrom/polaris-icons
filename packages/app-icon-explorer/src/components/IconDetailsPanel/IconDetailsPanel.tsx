@@ -5,7 +5,6 @@ import {
   Subheading,
   Button,
   ButtonGroup,
-  Icon,
   TextStyle,
   Banner,
 } from '@shopify/polaris';
@@ -122,7 +121,12 @@ function PopulatedState({icon}: PopulatedStateProps) {
         {toggleContent}
 
         <div className={`${styles.spacingBase} ${styles.icon}`}>
-          <Icon source={encodeURIComponent(activeStyle.svgContent)} />
+          <img
+            src={`data:image/svg+xml;utf8,${encodeURIComponent(
+              activeStyle.svgContent,
+            )}`}
+            alt={`SVG for ${icon.name}`}
+          />
         </div>
 
         <div className={styles.spacingBase}>
