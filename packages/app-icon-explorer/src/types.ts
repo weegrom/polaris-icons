@@ -1,20 +1,22 @@
-/* eslint-disable camelcase */
-export interface Icon {
-  id: string;
-  name: string;
-  public: boolean;
-  authors: string[];
-  keywords: string[];
+export interface StyleData {
+  importName: string;
   svgContent: string;
   svgFile: {
     publicURL: string;
+    base: string;
   };
-  date_added: any;
-  date_modified: any;
+}
+
+export interface Icon {
+  name: string;
+  public: boolean;
+  keywords: string[];
+  styles: {
+    monotone: StyleData;
+    twotone?: StyleData;
+  };
   descriptionHtml: string;
   set: 'minor' | 'major' | 'spot';
-  basename: string;
-  status: string;
-  reactname: string;
-  style?: 'monotone' | 'twotone';
+  metadataFilename: string;
+  metadataId: string;
 }

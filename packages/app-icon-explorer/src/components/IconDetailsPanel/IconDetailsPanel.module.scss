@@ -1,10 +1,21 @@
 @import '~@shopify/polaris-tokens/dist/colors';
 @import '~@shopify/polaris-tokens/dist/spacing';
-@import '~@shopify/polaris-tokens/dist/typography';
-$borderColor: $color-sky-light;
 
 .iconDetailsPanelInner {
   padding-bottom: $spacing-extra-loose;
+
+  // stylelint-disable-next-line selector-max-combinators
+  > * + * {
+    margin-top: $spacing-loose;
+  }
+
+  > .spacingBase {
+    margin-top: $spacing-base;
+  }
+
+  > .spacingTight {
+    margin-top: $spacing-tight;
+  }
 }
 
 .empty {
@@ -21,28 +32,30 @@ $borderColor: $color-sky-light;
 }
 
 .icon {
-  display: inline-block;
-  margin: 0;
-  height: 20px;
-  width: 20px;
+  display: flex;
+  justify-content: space-between;
+  min-height: 88px;
+  background-color: $color-sky-lighter;
 }
 
-.createdBy,
 .keywords {
-  padding: 0;
-  list-style-type: none;
-}
+  h3 {
+    margin-bottom: 4px;
+  }
 
-.createdBy {
-  margin-top: 0;
-}
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
 
-.keywordsItem {
-  margin: 4px 4px 0 0;
-  display: inline-flex;
-  align-items: center;
-  background-color: $color-sky;
-  border-radius: 3px;
+  li {
+    margin: 4px 4px 0 0;
+    display: inline-flex;
+    align-items: center;
+    background-color: $color-sky;
+    border-radius: 3px;
+  }
 
   a {
     padding: 0.4rem 0.8rem;
@@ -53,43 +66,6 @@ $borderColor: $color-sky-light;
 
 .usage span {
   color: $color-ink-lighter;
-}
-
-.spacingBase {
-  margin-bottom: 1.6rem;
-}
-
-.spacingLoose {
-  margin-bottom: 2rem;
-}
-
-.spacingTight,
-.usage h3,
-.createdBy h3,
-.keywords h3 {
-  margin-bottom: 0.8rem;
-}
-
-.spacingExtraTight {
-  margin-bottom: 0.4rem;
-}
-
-.spacingTop {
-  padding-bottom: 0;
-}
-
-.spacingButton {
-  margin-top: 1rem;
-}
-
-.iconActions {
-  border-top: 1px solid $color-sky-light;
-  display: block;
-  padding-top: 2rem;
-}
-
-.bannerWrapper {
-  margin-top: $spacing-loose;
 }
 
 .iconDescription {

@@ -12,13 +12,6 @@ interface Props {
   isActive: boolean;
 }
 
-const StyleText = ({iconStyle}: {iconStyle?: string}) =>
-  iconStyle === 'twotone' ? (
-    <>
-      <br /> (twotone)
-    </>
-  ) : null;
-
 export default function SingleIcon({icon, isActive = false}: Props) {
   const className = classNames({
     [styles.IconGridItem]: true,
@@ -31,24 +24,21 @@ export default function SingleIcon({icon, isActive = false}: Props) {
         /* eslint-disable-next-line camelcase */
         event_category: 'icons',
         /* eslint-disable-next-line camelcase */
-        event_label: icon.reactname,
+        event_label: icon.metadataId,
       });
     }
   };
 
   const queryParams = useContext(QueryParamsContext);
-  const linkTo = `/?${qsStringify({icon: icon.reactname, q: queryParams.q})}`;
+  const linkTo = `/?${qsStringify({icon: icon.metadataId, q: queryParams.q})}`;
 
   return (
     <Link to={linkTo} className={className} onClick={trackLink}>
       <div className={styles.iconSvgWrapper}>
-        <Icon source={encodeURIComponent(icon.svgContent)} />
+        <Icon source={encodeURIComponent(icon.styles.monotone.svgContent)} />
       </div>
       <div className={styles.iconLabel}>
-        <Caption>
-          {icon.name}
-          <StyleText iconStyle={icon.style} />
-        </Caption>
+        <Caption>{icon.name}</Caption>
       </div>
     </Link>
   );
