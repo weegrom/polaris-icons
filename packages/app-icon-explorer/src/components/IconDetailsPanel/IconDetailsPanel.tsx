@@ -116,17 +116,17 @@ function PopulatedState({icon}: PopulatedStateProps) {
         <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
 
         <div
-          className={styles.iconDescription}
+          className={`${styles.spacingTight} ${styles.iconDescription}`}
           dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
         />
 
         {toggleContent}
 
-        <div className={styles.icon}>
+        <div className={`${styles.spacingBase} ${styles.icon}`}>
           <Icon source={encodeURIComponent(activeStyle.svgContent)} />
         </div>
 
-        <div>
+        <div className={styles.spacingBase}>
           <Button
             url={activeStyle.svgFile.publicURL}
             download={activeStyle.svgFile.base}

@@ -20,32 +20,21 @@
 }
 
 .pressed {
-  background: color(sky);
-  border-color: darken(color(sky, dark), 4%);
-  box-shadow: 0 0 0 0 transparent,
-    inset 0 1px 1px 0 rgba(color('ink', 'lighter'), 0.1),
-    inset 0 1px 4px 0 rgba(color('ink', 'lighter'), 0.1);
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    background: color(sky, light);
+    border-color: color(sky, dark);
 
-  &:hover {
-    transition-duration: duration(fast);
-    background: darken(color(sky), 2%);
-    border-color: darken(color(sky, dark), 4%);
     box-shadow: 0 0 0 0 transparent,
       inset 0 1px 1px 0 rgba(color('ink', 'lighter'), 0.1),
-      inset 0 1px 4px 0 rgba(color('ink', 'lighter'), 0.1);
+      inset 0 1px 4px 0 rgba(color('ink', 'lighter'), 0.2);
   }
 
   &:focus {
     border-color: color('indigo');
     box-shadow: 0 0 0 1px color('indigo'),
-      inset 0 1px 1px 0 rgba(color('ink', 'lighter'), 0.1),
-      inset 0 1px 4px 0 rgba(color('ink', 'lighter'), 0.1);
-  }
-
-  &:active {
-    background: darken(color(sky), 4%);
-    border-color: darken(color(sky, dark), 4%);
-    box-shadow: 0 0 0 0 transparent,
       inset 0 1px 1px 0 rgba(color('ink', 'lighter'), 0.1),
       inset 0 1px 4px 0 rgba(color('ink', 'lighter'), 0.2);
   }
