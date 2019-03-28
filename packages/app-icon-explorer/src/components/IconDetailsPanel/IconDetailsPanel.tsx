@@ -15,8 +15,7 @@ import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {startCase} from 'lodash';
 
 import {Icon as IconInterface, StyleData} from '../../types';
-import ToggleButton from '../ToggleButton';
-import CodeBlock from './components/CodeBlock';
+import {CodeBlock, ToggleButton} from './components';
 import styles from './IconDetailsPanel.module.scss';
 
 interface Props {
