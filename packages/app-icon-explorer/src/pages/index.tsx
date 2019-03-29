@@ -132,6 +132,10 @@ export default class IndexPage extends React.Component<Props, State> {
       [styles.panelIsEmpty]: !currentIcon,
     });
 
+    // Set a key on the panel so that it fully rerenders the panel, including
+    // reseting the scroll position when you change between icons
+    const panelKey = currentIcon ? currentIcon.metadataFilename : 'emptypanel';
+
     return (
       <AppFrame
         queryParams={this.state.queryParams}
@@ -148,7 +152,7 @@ export default class IndexPage extends React.Component<Props, State> {
               {resultsMarkup}
             </div>
           </div>
-          <div className={panelClasses}>
+          <div className={panelClasses} key={panelKey}>
             <div className={styles.panelInner}>
               <div className={styles.panelHeader}>
                 <div className={styles.panelHeaderTitle}>
