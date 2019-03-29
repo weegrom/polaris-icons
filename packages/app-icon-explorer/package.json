@@ -1,10 +1,10 @@
 {
   "name": "app-icon-explorer",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "dependencies": {
     "@shopify/polaris": "^3.10.0",
-    "@shopify/polaris-icons-raw": "^1.6.0",
+    "@shopify/polaris-icons-raw": "^1.7.0",
     "@shopify/react-shortcuts": "^2.2.1",
     "@types/classnames": "^2.2.7",
     "@types/query-string": "^6.2.0",
