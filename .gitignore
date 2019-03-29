@@ -32,3 +32,4 @@ metadata.json
 /pkg/
 /spec/reports/
 /tmp/
+/vendor/
