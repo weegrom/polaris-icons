@@ -41,14 +41,7 @@ export default class IconDetailsPanel extends React.Component<Props> {
       return <EmptyState />;
     }
 
-    // Set a key to create a new component instead of reusing the existing
-    // one and thus persisting selectedStyle state across different icons
-    return (
-      <PopulatedState
-        key={this.props.icon.metadataFilename}
-        icon={this.props.icon}
-      />
-    );
+    return <PopulatedState icon={this.props.icon} />;
   }
 }
 
@@ -56,6 +49,17 @@ function PopulatedState({icon}: PopulatedStateProps) {
   const [selectedStyle, setSelectedStyle] = useState(
     'monotone' as keyof IconInterface['styles'],
   );
+
+  const [previousIcon, setPreviousIcon] = useState(
+    null as IconInterface | null,
+  );
+
+  // Reset the selected style if we change to a new icon
+  if (icon !== previousIcon) {
+    setPreviousIcon(icon);
+    setSelectedStyle('monotone');
+  }
+
   const showMonotone = () => setSelectedStyle('monotone');
   const showTwotone = () => setSelectedStyle('twotone');
 
