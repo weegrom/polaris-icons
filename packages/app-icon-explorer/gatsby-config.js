@@ -8,10 +8,10 @@ const iconsPath = dirname(
 
 module.exports = {
   siteMetadata: {
-    title: `Polaris icons (beta)`,
+    title: `Polaris icons`,
     description: `The collection of icons that we use across the Shopify platform.`,
     author: `Shopify`,
-    titleTemplate: `Polaris icons (beta)`,
+    titleTemplate: `Polaris icons`,
   },
   plugins: [
     `gatsby-plugin-sass`,
