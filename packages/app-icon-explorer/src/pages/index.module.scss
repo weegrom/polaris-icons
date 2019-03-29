@@ -9,7 +9,7 @@ $listingMaxWidth: 960px;
 
 :global {
   body {
-    min-width: $gridMinWidth;
+    min-width: 320px;
   }
 
   .contentLink {
@@ -29,7 +29,7 @@ $listingMaxWidth: 960px;
   display: grid;
   justify-items: normal;
   padding-left: $pagePadding;
-  grid-template-columns: minmax($gridColumnMinWidth, auto) $gridColumnMinWidth;
+  grid-template-columns: minmax($gridColumnMinWidth, auto);
 }
 
 .page::before {
@@ -62,30 +62,89 @@ $listingMaxWidth: 960px;
   border-top: 1px solid $borderColor;
 }
 
-.panel {
-  min-height: 100vh;
-  border-left: 1px solid $borderColor;
-  padding-right: $pagePadding;
-}
-
-.panelFixed {
-  display: flex;
-  width: $gridColumnMinWidth;
-  height: calc(100% - 60px);
-  padding: 60px $pagePadding 0 $gridGap;
-
-  @media (min-width: $gridMinWidth) {
-    position: fixed;
-    overflow-y: auto;
-  }
-
-  // Once we hit the max width then we want to account for that rather than
-  // have the panel pinned the the right edge of the screen
-  @media (min-width: $gridMaxWidth) {
-    right: calc(50vw - #{$gridMaxWidth / 2} + 1.6rem);
-  }
-}
-
 .listingWrapper {
   display: flex;
+}
+
+.panelHeader {
+  display: none;
+}
+
+@media (max-width: $gridMinWidth) {
+  .panel {
+    position: fixed;
+    z-index: 519; // same as Modal
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(33, 43, 54, 0.4);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .panelInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #ffffff;
+  }
+
+  .panelIsEmpty {
+    display: none;
+  }
+
+  .panelDetails {
+    flex: 1 1 0;
+    padding: 16px 16px 0;
+  }
+
+  .panelHeader {
+    padding: 16px;
+    border-bottom: 1px solid $color-sky;
+    background: #ffffff;
+
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+  }
+
+  .panelHeaderTitle {
+    margin-top: 4px;
+  }
+
+  .panelHeaderCloseButton {
+    margin-left: 20px;
+    margin-right: -8px;
+    padding: 8px;
+  }
+}
+
+@media (min-width: $gridMinWidth) {
+  .page {
+    grid-template-columns: minmax($gridColumnMinWidth, auto) $gridColumnMinWidth;
+  }
+
+  .panel {
+    min-height: 100vh;
+    border-left: 1px solid $borderColor;
+    padding-right: $pagePadding;
+  }
+
+  .panelDetails {
+    position: fixed;
+    display: flex;
+    width: $gridColumnMinWidth;
+    height: calc(100% - 60px);
+    padding: 60px $pagePadding 0 $gridGap;
+    overflow-y: auto;
+
+    // Once we hit the max width then we want to account for that rather than
+    // have the panel pinned the the right edge of the screen
+    @media (min-width: $gridMaxWidth) {
+      right: calc(50vw - #{$gridMaxWidth / 2} + 1.6rem);
+    }
+  }
 }

@@ -77,11 +77,13 @@
   color: $color-ink-lighter;
 }
 
-.iconDescription {
-  min-height: 4rem;
-}
-
 .link {
   display: block;
   margin-bottom: $spacing-tight;
+}
+
+@media (min-width: 769px) {
+  .iconDescription {
+    min-height: 4rem;
+  }
 }

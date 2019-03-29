@@ -1,7 +1,11 @@
 import React from 'react';
-import {graphql, navigate} from 'gatsby';
+import {graphql, navigate, Link} from 'gatsby';
+import classNames from 'classnames';
 import {sortBy} from 'lodash';
 import {parse as qsParse, stringify as qsStringify} from 'query-string';
+import {DisplayText, Icon, Scrollable} from '@shopify/polaris';
+import {MobileCancelMajorMonotone} from '@shopify/polaris-icons';
+
 import {
   AppFrame,
   EmptyState,
@@ -123,6 +127,11 @@ export default class IndexPage extends React.Component<Props, State> {
         <EmptyState />
       );
 
+    const panelClasses = classNames({
+      [styles.panel]: true,
+      [styles.panelIsEmpty]: !currentIcon,
+    });
+
     return (
       <AppFrame
         queryParams={this.state.queryParams}
@@ -139,9 +148,23 @@ export default class IndexPage extends React.Component<Props, State> {
               {resultsMarkup}
             </div>
           </div>
-          <div className={styles.panel}>
-            <div className={styles.panelFixed}>
-              <IconDetailsPanel icon={currentIcon} />
+          <div className={panelClasses}>
+            <div className={styles.panelInner}>
+              <div className={styles.panelHeader}>
+                <div className={styles.panelHeaderTitle}>
+                  <DisplayText size="small">Icon Details</DisplayText>
+                </div>
+                <Link
+                  to={`/?${qsStringify({})}`}
+                  className={styles.panelHeaderCloseButton}
+                >
+                  <Icon source={MobileCancelMajorMonotone} color="inkLighter" />
+                </Link>
+              </div>
+
+              <Scrollable className={styles.panelDetails} shadow>
+                <IconDetailsPanel icon={currentIcon} />
+              </Scrollable>
             </div>
           </div>
         </div>
