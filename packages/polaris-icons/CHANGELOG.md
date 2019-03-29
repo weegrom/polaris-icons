@@ -2,7 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+<!-- ## Unreleased -->
+
+## 3.3.0 - 2019-03-28
 
 ### Deprecated
 
@@ -16,28 +18,7 @@ All notable changes to this project will be documented in this file.
 
 ### New icons
 
-- `NoteMajorMonotone`
-- `NoteMajorTwotone`
 - `AbandonedCartMajorMonotone`
-- `CardReaderChipMajorMonotone`
-- `CardReaderChipMajorTwotone`
-- `CardReaderMajorMonotone`
-- `CardReaderMajorTwotone`
-- `CardReaderTapMajorMonotone`
-- `CardReaderTapMajorTwotone`
-- `CircleDownMajorMonotone`
-- `ClockMajorMonotone`
-- `DiscountsMajorMonotone`
-- `ImportStoreMajorMonotone`
-- `ImportStoreMajorTwotone`
-- `PhoneMajorMonotone`
-- `PhoneMajorTwotone`
-- `RefundMajorMonotone`
-- `ReportMinor`
-- `ViewMajorTwotone`
-- `BehaviorMajorMonotone`
-- `BehaviorMajorTwotone`
-
 - `AbandonedCartMajorTwotone`
 - `AccessibilityMajorMonotone`
 - `AccessibilityMajorTwotone`
@@ -47,11 +28,11 @@ All notable changes to this project will be documented in this file.
 - `AddCodeMajorTwotone`
 - `AddImageMajorMonotone`
 - `AddImageMajorTwotone`
+- `AddMajorTwotone`
 - `AddNoteMajorMonotone`
 - `AddNoteMajorTwotone`
 - `AddProductMajorMonotone`
 - `AddProductMajorTwotone`
-- `AddMajorTwotone`
 - `AffiliateMajorMonotone`
 - `AffiliateMajorTwotone`
 - `AnalyticsMajorMonotone`
@@ -67,6 +48,8 @@ All notable changes to this project will be documented in this file.
 - `BankMajorTwotone`
 - `BarcodeMajorMonotone`
 - `BarcodeMajorTwotone`
+- `BehaviorMajorMonotone`
+- `BehaviorMajorTwotone`
 - `BillingStatementDollarMajorMonotone`
 - `BillingStatementDollarMajorTwotone`
 - `BillingStatementEuroMajorMonotone`
@@ -85,20 +68,26 @@ All notable changes to this project will be documented in this file.
 - `BuyButtonButtonLayoutMajorTwotone`
 - `BuyButtonHorizontalLayoutMajorMonotone`
 - `BuyButtonHorizontalLayoutMajorTwotone`
-- `BuyButtonVerticalLayoutMajorMonotone`
-- `BuyButtonVerticalLayoutMajorTwotone`
 - `BuyButtonMajorMonotone`
 - `BuyButtonMajorTwotone`
+- `BuyButtonVerticalLayoutMajorMonotone`
+- `BuyButtonVerticalLayoutMajorTwotone`
+- `CalendarMajorMonotone`
 - `CalendarTickMajorMonotone`
 - `CalendarTickMajorTwotone`
-- `CalendarMajorMonotone`
 - `CameraMajorMonotone`
 - `CameraMajorTwotone`
+- `CardReaderChipMajorMonotone`
+- `CardReaderChipMajorTwotone`
+- `CardReaderMajorMonotone`
+- `CardReaderMajorTwotone`
+- `CardReaderTapMajorMonotone`
+- `CardReaderTapMajorTwotone`
 - `CartDownMajorMonotone`
 - `CartDownMajorTwotone`
+- `CartMajorMonotone`
 - `CartUpMajorMonotone`
 - `CartUpMajorTwotone`
-- `CartMajorMonotone`
 - `CashDollarMajorTwotone`
 - `CashEuroMajorMonotone`
 - `CashEuroMajorTwotone`
@@ -118,11 +107,13 @@ All notable changes to this project will be documented in this file.
 - `ChecklistAlternateMajorTwotone`
 - `ChecklistMajorMonotone`
 - `ChecklistMajorTwotone`
+- `CheckoutMajorMonotone`
 - `CircleCancelMajorMonotone`
 - `CircleCancelMajorTwotone`
 - `CircleDisabledMajorMonotone`
 - `CircleDotsMajorMonotone`
 - `CircleDotsMajorTwotone`
+- `CircleDownMajorMonotone`
 - `CircleDownMajorTwotone`
 - `CircleInformationMajorMonotone`
 - `CircleLeftMajorMonotone`
@@ -134,6 +125,7 @@ All notable changes to this project will be documented in this file.
 - `CircleRightMajorTwotone`
 - `CircleUpMajorMonotone`
 - `CircleUpMajorTwotone`
+- `ClockMajorMonotone`
 - `ClockMajorTwotone`
 - `CodeMajorTwotone`
 - `CollectionsMajorMonotone`
@@ -143,12 +135,12 @@ All notable changes to this project will be documented in this file.
 - `ColumnImageWithTextMajorTwotone`
 - `ConfettiMajorMonotone`
 - `ConfettiMajorTwotone`
+- `CreditCardMajorMonotone`
+- `CreditCardMajorTwotone`
 - `CreditCardPercentMajorMonotone`
 - `CreditCardPercentMajorTwotone`
 - `CreditCardSecureMajorMonotone`
 - `CreditCardSecureMajorTwotone`
-- `CreditCardMajorMonotone`
-- `CreditCardMajorTwotone`
 - `CustomerMinusMajorMonotone`
 - `CustomerMinusMajorTwotone`
 - `CustomerPlusMajorMonotone`
@@ -165,6 +157,7 @@ All notable changes to this project will be documented in this file.
 - `DiscountAutomaticMajorTwotone`
 - `DiscountCodeMajorMonotone`
 - `DiscountCodeMajorTwotone`
+- `DiscountsMajorMonotone`
 - `DnsSettingsMajorMonotone`
 - `DnsSettingsMajorTwotone`
 - `DomainAddMajorMonotone`
@@ -175,9 +168,9 @@ All notable changes to this project will be documented in this file.
 - `DragDropMajorTwotone`
 - `EditMajorMonotone`
 - `EditMajorTwotone`
+- `EmailMajorMonotone`
 - `EmailNewsletterMajorMonotone`
 - `EmailNewsletterMajorTwotone`
-- `EmailMajorMonotone`
 - `EnvelopeMajorMonotone`
 - `EnvelopeMajorTwotone`
 - `ExchangeMajorMonotone`
@@ -200,14 +193,14 @@ All notable changes to this project will be documented in this file.
 - `FlipCameraMajorTwotone`
 - `FolderDownMajorMonotone`
 - `FolderDownMajorTwotone`
+- `FolderMajorMonotone`
+- `FolderMajorTwotone`
 - `FolderMinusMajorMonotone`
 - `FolderMinusMajorTwotone`
 - `FolderPlusMajorMonotone`
 - `FolderPlusMajorTwotone`
 - `FolderUpMajorMonotone`
 - `FolderUpMajorTwotone`
-- `FolderMajorMonotone`
-- `FolderMajorTwotone`
 - `FollowUpEmailMajorMonotone`
 - `FollowUpEmailMajorTwotone`
 - `FoodMajorMonotone`
@@ -234,11 +227,13 @@ All notable changes to this project will be documented in this file.
 - `IllustrationMajorMonotone`
 - `IllustrationMajorTwotone`
 - `ImageAltMajorTwotone`
-- `ImageWithTextOverlayMajorTwotone`
-- `ImageWithTextMajorTwotone`
 - `ImageMajorMonotone`
 - `ImagesMajorMonotone`
 - `ImagesMajorTwotone`
+- `ImageWithTextMajorTwotone`
+- `ImageWithTextOverlayMajorTwotone`
+- `ImportStoreMajorMonotone`
+- `ImportStoreMajorTwotone`
 - `IncomingMajorMonotone`
 - `IncomingMajorTwotone`
 - `InventoryMajorMonotone`
@@ -275,8 +270,6 @@ All notable changes to this project will be documented in this file.
 - `MinimizeMajorTwotone`
 - `MobileAcceptMajorMonotone`
 - `MobileAcceptMajorTwotone`
-- `MobilePlusMajorMonotone`
-- `MobilePlusMajorTwotone`
 - `MobileBackArrowMajorMonotone`
 - `MobileBackArrowMajorTwotone`
 - `MobileCancelMajorTwotone`
@@ -285,15 +278,19 @@ All notable changes to this project will be documented in this file.
 - `MobileHamburgerMajorTwotone`
 - `MobileHorizontalDotsMajorMonotone`
 - `MobileHorizontalDotsMajorTwotone`
+- `MobileMajorMonotone`
+- `MobilePlusMajorMonotone`
+- `MobilePlusMajorTwotone`
 - `MobileVerticalDotsMajorMonotone`
 - `MobileVerticalDotsMajorTwotone`
-- `MobileMajorMonotone`
 - `MonerisMajorMonotone`
 - `MonerisMajorTwotone`
 - `NatureMajorMonotone`
 - `NatureMajorTwotone`
 - `NavigationMajorMonotone`
 - `NoteMajorMonotone`
+- `NoteMajorMonotone`
+- `NoteMajorTwotone`
 - `NoteMajorTwotone`
 - `NotificationMajorTwotone`
 - `OnlineStoreMajorMonotone`
@@ -303,13 +300,13 @@ All notable changes to this project will be documented in this file.
 - `PackageMajorMonotone`
 - `PageDownMajorMonotone`
 - `PageDownMajorTwotone`
+- `PageMajorMonotone`
 - `PageMinusMajorMonotone`
 - `PageMinusMajorTwotone`
 - `PagePlusMajorMonotone`
 - `PagePlusMajorTwotone`
 - `PageUpMajorMonotone`
 - `PageUpMajorTwotone`
-- `PageMajorMonotone`
 - `PaintBrushMajorMonotone`
 - `PauseCircleMajorMonotone`
 - `PauseCircleMajorTwotone`
@@ -318,6 +315,8 @@ All notable changes to this project will be documented in this file.
 - `PaymentsMajorMonotone`
 - `PhoneInMajorMonotone`
 - `PhoneInMajorTwotone`
+- `PhoneMajorMonotone`
+- `PhoneMajorTwotone`
 - `PhoneOutMajorMonotone`
 - `PhoneOutMajorTwotone`
 - `PinMajorMonotone`
@@ -342,6 +341,7 @@ All notable changes to this project will be documented in this file.
 - `RedoMajorTwotone`
 - `RefreshMajorMonotone`
 - `RefreshMajorTwotone`
+- `RefundMajorMonotone`
 - `RefundMajorTwotone`
 - `RemoveProductMajorMonotone`
 - `RemoveProductMajorTwotone`
@@ -390,10 +390,10 @@ All notable changes to this project will be documented in this file.
 - `SortDescendingMajorTwotone`
 - `SoundMajorMonotone`
 - `SoundMajorTwotone`
-- `StoreStatusMajorMonotone`
-- `StoreStatusMajorTwotone`
 - `StoreMajorMonotone`
 - `StoreMajorTwotone`
+- `StoreStatusMajorMonotone`
+- `StoreStatusMajorTwotone`
 - `TabletMajorMonotone`
 - `TabletMajorTwotone`
 - `TapChipMajorMonotone`
@@ -407,8 +407,8 @@ All notable changes to this project will be documented in this file.
 - `TextMajorTwotone`
 - `ThemeEditMajorMonotone`
 - `ThemeEditMajorTwotone`
-- `ThemeStoreMajorTwotone`
 - `ThemesMajorTwotone`
+- `ThemeStoreMajorTwotone`
 - `ThumbsDownMajorMonotone`
 - `ThumbsDownMajorTwotone`
 - `ThumbsUpMajorTwotone`
@@ -432,12 +432,12 @@ All notable changes to this project will be documented in this file.
 - `TransactionMajorTwotone`
 - `TransferInMajorMonotone`
 - `TransferInMajorTwotone`
+- `TransferMajorMonotone`
+- `TransferMajorTwotone`
 - `TransferOutMajorMonotone`
 - `TransferOutMajorTwotone`
 - `TransferWithinShopifyMajorMonotone`
 - `TransferWithinShopifyMajorTwotone`
-- `TransferMajorMonotone`
-- `TransferMajorTwotone`
 - `TransportMajorMonotone`
 - `TransportMajorTwotone`
 - `TroubleshootMajorMonotone`
@@ -452,6 +452,7 @@ All notable changes to this project will be documented in this file.
 - `UpdateInventoryMajorTwotone`
 - `VariantMajorMonotone`
 - `VariantMajorTwotone`
+- `ViewMajorTwotone`
 - `ViewportNarrowMajorMonotone`
 - `ViewportNarrowMajorTwotone`
 - `ViewportWideMajorTwotone`
@@ -463,14 +464,11 @@ All notable changes to this project will be documented in this file.
 - `WholesaleMajorMonotone`
 - `WifiMajorMonotone`
 - `WifiMajorTwotone`
-
-- `CheckoutMajorMonotone`
-
 - `AppExtensionMinor`
 - `ArchiveMinor`
 - `CapturePaymentMinor`
-- `CircleMinusOutlineMinor`
 - `CircleMinusMinor`
+- `CircleMinusOutlineMinor`
 - `CircleTickOutlineMinor`
 - `ClipboardMinor`
 - `ConnectMinor`
@@ -502,6 +500,7 @@ All notable changes to this project will be documented in this file.
 - `ReadTimeMinor`
 - `RefundMinor`
 - `ReplayMinor`
+- `ReportMinor`
 - `ResetMinor`
 - `ReturnMinor`
 - `SettingsMinor`
