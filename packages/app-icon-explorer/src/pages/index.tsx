@@ -159,7 +159,7 @@ export default class IndexPage extends React.Component<Props, State> {
                   <DisplayText size="small">Icon Details</DisplayText>
                 </div>
                 <Link
-                  to={`/?${qsStringify({})}`}
+                  to={`/?${qsStringify(isFiltered ? {q: searchText} : {})}`}
                   className={styles.panelHeaderCloseButton}
                 >
                   <Icon source={MobileCancelMajorMonotone} color="inkLighter" />
