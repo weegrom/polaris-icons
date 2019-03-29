@@ -34,10 +34,10 @@ export default function IntroHeader() {
             </DisplayText>
             <p>
               Use these icons in your projects to promote a consistent
-              experience across the Shopify platform. If you can’t find the
-              icon you need, then contribute to the collection by updating an
-              existing icon or creating a new one. If you have any questions
-              or feedback,{' '}
+              experience across the Shopify platform. If you can’t find the icon
+              you need, then contribute to the collection by updating an
+              existing icon or creating a new one. If you have any questions or
+              feedback,{' '}
               <OutboundLink
                 className="contentLink"
                 href={ghNewIssueUrl(
