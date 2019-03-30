@@ -13,6 +13,7 @@ import {Link} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {startCase} from 'lodash';
 
+import {useMedia} from '../../hooks';
 import {Icon as IconInterface, StyleData} from '../../types';
 import {CodeBlock, ToggleButton} from './components';
 import styles from './IconDetailsPanel.module.scss';
@@ -266,11 +267,17 @@ function EmptyState() {
 }
 
 function IconKeyword({iconName, word}: {iconName: string; word: string}) {
-  const linkTo = `/?${qsStringify({icon: iconName, q: `#${word}`})}`;
+  // Exclude the current icon at small sizes so that the panel is dismissed and
+  // you can see the search results instantly
+  const isSmallScreen = useMedia(['(max-width: 769px)'], [true], false);
+  const queryParams = {icon: iconName, q: `#${word}`};
+  if (isSmallScreen) {
+    delete queryParams.icon;
+  }
 
   return (
     <li>
-      <Link to={linkTo} className={styles.Tag}>
+      <Link to={`/?${qsStringify(queryParams)}`} className={styles.Tag}>
         {word}
       </Link>
     </li>
