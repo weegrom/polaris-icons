@@ -5,6 +5,7 @@ $gridColumnMinWidth: 340px;
 $gridGap: 32px;
 $gridMinWidth: 769px; // Same point at which the icon in the TopBar disappears
 $listingMaxWidth: 960px;
+$transition-slide-length: 20rem;
 
 :global {
   body {
@@ -73,15 +74,21 @@ $listingMaxWidth: 960px;
   .panel {
     position: fixed;
     z-index: 519; // same as Modal
-    top: 0;
+    top: -$transition-slide-length;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(33, 43, 54, 0.4);
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    padding-top: $transition-slide-length;
+    background-color: rgba(33, 43, 54, 0.4);
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform cubic-bezier(0.64, 0, 0.35, 1) 200ms,
+      opacity cubic-bezier(0.64, 0, 0.35, 1) 200ms;
   }
 
   .panelInner {
@@ -89,10 +96,13 @@ $listingMaxWidth: 960px;
     flex-direction: column;
     justify-content: flex-end;
     background: #ffffff;
+    max-height: 100vh;
   }
 
   .panelIsEmpty {
-    display: none;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY($transition-slide-length);
   }
 
   .panelDetails {
@@ -107,7 +117,6 @@ $listingMaxWidth: 960px;
 
     padding: 16px;
     border-bottom: 1px solid $color-sky;
-    background: #ffffff;
   }
 
   .panelHeaderTitle {

@@ -152,8 +152,8 @@ export default class IndexPage extends React.Component<Props, State> {
               {resultsMarkup}
             </div>
           </div>
-          <div className={panelClasses} key={panelKey}>
-            <div className={styles.panelInner}>
+          <div className={panelClasses}>
+            <div className={styles.panelInner} key={panelKey}>
               <div className={styles.panelHeader}>
                 <div className={styles.panelHeaderTitle}>
                   <DisplayText size="small">Icon Details</DisplayText>
