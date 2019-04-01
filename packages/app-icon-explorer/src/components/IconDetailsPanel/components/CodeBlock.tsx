@@ -24,7 +24,7 @@ export default function CodeBlock({title, children, footer, onCopy}: Props) {
     document.execCommand('copy');
     document.body.removeChild(textarea);
 
-    setCopyText('Copied to clipboard');
+    setCopyText('Copied');
     if (onCopy) {
       onCopy();
     }

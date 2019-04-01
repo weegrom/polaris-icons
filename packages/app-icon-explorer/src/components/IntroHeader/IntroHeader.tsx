@@ -63,12 +63,6 @@ export default function IntroHeader() {
               <Button url="https://github.com/Shopify/polaris-icons">
                 View on GitHub
               </Button>
-              <Button
-                plain
-                url="https://github.com/Shopify/polaris-icons/blob/master/FREQUENTLY_ASKED_QUESTIONS.md"
-              >
-                Frequently asked questions
-              </Button>
             </ButtonGroup>
           </div>
         </div>

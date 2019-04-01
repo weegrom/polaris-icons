@@ -112,7 +112,6 @@ function PopulatedState({icon}: PopulatedStateProps) {
     <div>
       <div className={styles.iconDetailsPanelInner}>
         <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
-
         <div
           className={`${styles.spacingTight} ${styles.iconDescription}`}
           dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
@@ -146,7 +145,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
                 Learn how to use{' '}
                 <OutboundLink
                   className="contentLink"
-                  href="https://polaris.shopify.com/components/images-and-icons/icon"
+                  href="https://github.com/Shopify/polaris-icons/blob/master/FREQUENTLY_ASKED_QUESTIONS.md#how-to-use-shopifypolaris-icons-with-the-shopifypolaris-icon-component"
                 >
                   Polaris icons
                 </OutboundLink>
