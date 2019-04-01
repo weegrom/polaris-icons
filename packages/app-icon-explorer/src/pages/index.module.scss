@@ -1,6 +1,6 @@
 @import '~@shopify/polaris-tokens/dist/colors';
 $borderColor: $color-sky-light;
-$pagePadding: 32px;
+$pagePadding: 20px;
 $gridColumnMinWidth: 340px;
 $gridGap: 32px;
 $gridMinWidth: 769px; // Same point at which the icon in the TopBar disappears
@@ -50,7 +50,7 @@ $transition-slide-length: 100vh;
 .listing {
   padding-top: 60px;
   padding-bottom: 48px;
-  padding-right: $gridGap;
+  padding-right: $pagePadding;
   margin: 0 auto;
   flex: 0 1 $listingMaxWidth;
 }
@@ -70,7 +70,7 @@ $transition-slide-length: 100vh;
   display: none;
 }
 
-@media (max-width: $gridMinWidth) {
+@media (max-width: $gridMinWidth - 1px) {
   .panel {
     position: fixed;
     z-index: 519; // same as Modal
@@ -106,7 +106,7 @@ $transition-slide-length: 100vh;
 
   .panelDetails {
     flex: 1 1 0;
-    padding: 16px 16px 0;
+    padding: 16px 20px 0;
   }
 
   .panelHeader {
@@ -114,7 +114,7 @@ $transition-slide-length: 100vh;
     flex: 0 0 auto;
     justify-content: space-between;
 
-    padding: 16px;
+    padding: 16px 20px;
     border-bottom: 1px solid $color-sky;
   }
 
@@ -130,11 +130,17 @@ $transition-slide-length: 100vh;
 }
 
 @media (min-width: $gridMinWidth) {
+  $pagePaddingDesktop: 32px;
+
+  .page {
+    padding-left: $pagePaddingDesktop;
+  }
+
   .panel {
     flex: 0 0 $gridColumnMinWidth;
     min-height: 100vh;
     border-left: 1px solid $borderColor;
-    padding-right: $pagePadding;
+    padding-right: $pagePaddingDesktop;
   }
 
   .panelDetails {
@@ -142,7 +148,7 @@ $transition-slide-length: 100vh;
     display: flex;
     width: $gridColumnMinWidth;
     height: calc(100% - 60px);
-    padding: 60px $pagePadding 0 $gridGap;
+    padding: 60px $pagePaddingDesktop 0 $gridGap;
     overflow-y: auto;
   }
 }

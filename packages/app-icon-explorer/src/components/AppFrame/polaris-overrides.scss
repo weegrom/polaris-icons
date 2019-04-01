@@ -1,6 +1,12 @@
 // stylelint-disable selector-class-pattern
 @import '~@shopify/polaris-tokens/dist/colors';
 
+// Fix for search field colapsing with too few margins at small sizes
+// As of polaris 3.10.0 this padding is only applied at 490px wide
+.Polaris-TopBar__SearchField {
+  padding: 0 2rem;
+}
+
 // This is naughty and fragile but we're unable to customize this using theming
 .Polaris-TopBar-SearchField__Input {
   ~ .Polaris-TopBar-SearchField__Backdrop {
