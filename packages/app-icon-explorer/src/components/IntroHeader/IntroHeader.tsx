@@ -33,19 +33,11 @@ export default function IntroHeader() {
               {data.site.siteMetadata.title}
             </DisplayText>
             <p>
-              A cohesive collection of simple and informative icons that we use
-              across the Shopify platform. Our icons draw on the visual language
-              of the Polaris design system. Each icon is an exercise in
-              distillation, in taking a metaphor and representing its most basic
-              form. All icons are available through Abstract and GitHub. Learn
-              how to use our icons in our{' '}
-              <OutboundLink
-                className="contentLink"
-                href="https://polaris.shopify.com/design/icons"
-              >
-                icon usage guidelines
-              </OutboundLink>
-              . If you have any questions or feedback,{' '}
+              Use these icons in your projects to promote a consistent
+              experience across the Shopify platform. If you can’t find the icon
+              you need, then contribute to the collection by updating an
+              existing icon or creating a new one. If you have any questions or
+              feedback,{' '}
               <OutboundLink
                 className="contentLink"
                 href={ghNewIssueUrl(
