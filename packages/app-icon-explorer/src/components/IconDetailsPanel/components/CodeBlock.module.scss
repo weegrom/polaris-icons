@@ -1,6 +1,7 @@
 @import '~@shopify/polaris-tokens/dist/colors';
 @import '~@shopify/polaris-tokens/dist/spacing';
 @import '~@shopify/polaris-tokens/dist/typography';
+@import '../../../styles/shared';
 
 .headingWrapper {
   display: flex;
@@ -16,7 +17,7 @@
   font-size: 1.3rem;
   color: $color-ink-lighter;
 
-  @media (min-width: 40em) {
+  @include when-typography-condensed {
     font-size: 1.2rem;
   }
 }
@@ -32,7 +33,7 @@
   white-space: pre-wrap;
   word-break: break-all;
 
-  @media (min-width: 40em) {
+  @include when-typography-condensed {
     font-size: 1.2rem;
     padding: $spacing-base-tight;
   }

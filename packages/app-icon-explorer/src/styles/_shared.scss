@@ -1,0 +1,32 @@
+// Shared variables
+
+// The point at which typography changes size
+$typography-condensed-em: 640px / 16px * 1em;
+
+// The point at which the navbar collapses and we shift from modal-style to
+// panel-style details
+$navbar-collapsed-em: 769px / 16px * 1em;
+
+@mixin when-typography-expanded {
+  @media (max-width: $typography-condensed-em - 0.01em) {
+    @content;
+  }
+}
+
+@mixin when-typography-condensed {
+  @media (min-width: $typography-condensed-em) {
+    @content;
+  }
+}
+
+@mixin when-details-modal {
+  @media (max-width: $navbar-collapsed-em - 0.01em) {
+    @content;
+  }
+}
+
+@mixin when-details-panel {
+  @media (min-width: $navbar-collapsed-em) {
+    @content;
+  }
+}
