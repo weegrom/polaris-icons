@@ -4,12 +4,12 @@
 # is the environment for the app deployed at https://polaris-icons.shopify.com.
 # The code for this lives in packages/app-icon-explorer
 #
-# https://services.shopify.io/services/polaris-icons/libraries
+# https://services.shopify.io/services/polaris-icons/libraries-js
 # is the environment for the library packages that are deployed to npm using
 # lerna. The code for this lives in the other packages/* folders
 #
-# https://services.shopify.io/services/polaris-icons/gem
-# is the environment for the gem deployed to packagecloud.
+# https://services.shopify.io/services/polaris-icons/libraries-ruby
+# is the environment for the gems deployed to packagecloud.
 # The code for this lives in the lib/ folder
 
 org_line: Shopify Core
@@ -26,8 +26,8 @@ security:
   data_management:
     contains_pii: false
 
-libraries:
+libraries-js:
   classification: library
 
-gem:
+libraries-ruby:
   classification: library

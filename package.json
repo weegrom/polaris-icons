@@ -12,8 +12,6 @@
     "develop": "yarn workspace app-icon-explorer run develop",
     "dev": "yarn run develop",
     "generate-icon-packages": "node scripts/generate-icon-packages.js",
-    "generate-pdfs": "mkdir -p ./vendor/assets/images; for file in packages/polaris-icons-raw/icons/polaris/*.svg; do rsvg-convert -f pdf -o `echo $file | sed -e 's/.svg$/.pdf/' -e 's/packages\\/polaris-icons-raw\\/icons\\/polaris\\//vendor\\/assets\\/images\\//'` \"$file\"; done",
-    "build-gem": "yarn run generate-pdfs; bundle exec rake build;",
     "lint": "yarn run lint:js && yarn run lint:css",
     "lint:js": "yarn run eslint '**/*.{js,ts,tsx}'",
     "lint:css": "yarn run stylelint '**/*.{scss}'",

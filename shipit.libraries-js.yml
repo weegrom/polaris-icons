@@ -17,4 +17,4 @@ deploy:
     - publish-lerna-independent-packages
 review:
   checklist:
-    - Have you deployed or are you going to deploy the gem as well?
+    - Remember to deploy the <a href="https://shipit.shopify.io/shopify/polaris-icons/libraries-ruby">gem</a> as well

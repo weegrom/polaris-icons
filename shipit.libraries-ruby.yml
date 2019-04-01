@@ -5,9 +5,12 @@ ci:
     - buildkite/polaris-icons-production-builder
     - buildkite/shopify-polaris-icons-binary-authorization-validator
     - buildkite/shopify-polaris-icons-k8s-template-validator
+dependencies:
+  override:
+    - echo "no"
 deploy:
   override:
-    - bundle exec rake build
-    - bundle exec package_cloud push shopify/gems pkg/*.gem
+    - SHA=`git rev-parse HEAD` buildkite-trigger polaris-icons-deploy-ruby
+review:
   checklist:
-    - Have you deployed or are you going to deploy the JS packages as well?
+    - Remember to deploy the <a href="https://shipit.shopify.io/shopify/polaris-icons/libraries-js">JS packages</a> as well

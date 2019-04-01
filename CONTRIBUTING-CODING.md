@@ -56,18 +56,16 @@ The release process currently involves some manual steps to complete. Please pin
 
    **Note** The packages adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-1. Log in to [Shipit](https://shipit.shopify.io/shopify/polaris-icons/libraries)
+1. Log in to [Shipit](https://shipit.shopify.io/shopify/polaris-icons/libraries-js)
 1. When CI is 🍏 on the tag commit, press `Deploy` to update packages on npm.
 
 #### Release the ruby gem
 
-**NOTE:** This isn't implemented yet so there is no need to release the gem
-
-1. Update `$GEM_NAME/version.rb`
+1. Bump the version in `packages-ruby/polaris_icons/polaris_icons.gemspec`
 1. Run `bundle install` to bump the `Gemfile.lock` version of the gem
 1. Open a PR, review and merge
 1. [Create release on GitHub](https://help.github.com/articles/creating-releases/) with a version number that matches `$GEM_NAME/version.rb`
-1. Deploy via Shipit and see your new version on https://gems.shopify.io/packages/
+1. Deploy on [shipit](https://shipit.shopify.io/shopify/polaris-icons/libraries-ruby)
 
 ## Releasing the icon explorer website
 
