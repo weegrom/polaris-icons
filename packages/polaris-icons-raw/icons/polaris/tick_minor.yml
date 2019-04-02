@@ -16,4 +16,8 @@ public: true
 set: minor
 version: 1
 keywords:
-  - N/A
+  - checkmark
+  - 'yes'
+  - ok
+  - good
+  - tick
