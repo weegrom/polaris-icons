@@ -26,6 +26,7 @@ $transition-slide-length: 100vh;
   display: flex;
   justify-content: space-between;
   justify-items: right;
+  height: 100%;
   padding: 0 20px;
 }
 
@@ -49,6 +50,10 @@ $transition-slide-length: 100vh;
   padding-bottom: 48px;
   margin: 0 auto;
   flex: 0 1 960px;
+
+  @include when-details-modal {
+    padding-top: 20px;
+  }
 }
 
 .listing > :not(:first-child) {
@@ -136,16 +141,17 @@ $transition-slide-length: 100vh;
 
   .panel {
     flex: 0 0 $panelWidth;
-    min-height: 100vh;
+    min-height: calc(100vh - 56px);
     border-left: 1px solid $borderColor;
     margin-left: $gridGap;
   }
 
   .panelDetails {
     position: fixed;
+    top: 56px;
     right: 0;
+    bottom: 0;
     width: $panelWidth;
-    height: calc(100% - 60px);
     padding: 60px $pagePadding 0 $gridGap;
     overflow-y: auto;
   }
