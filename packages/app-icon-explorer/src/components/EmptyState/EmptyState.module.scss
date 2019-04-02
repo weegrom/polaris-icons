@@ -1,35 +1,30 @@
 @import '~@shopify/polaris-tokens/dist/colors';
 
 .wrapper {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: calc(100% - 106px);
+  justify-content: space-around;
 }
 
 .content {
-  padding-bottom: 1.6rem;
   text-align: center;
+
+  // stylelint-disable-next-line selector-max-combinators
+  > * + * {
+    margin-top: 1.6rem;
+  }
 }
 
 .content svg {
   height: 41px;
   width: 41px;
   fill: $color-ink-lightest;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .content p {
   margin-top: 0.8rem;
   text-align: center;
   color: $color-ink-lighter;
-}
-
-.content img {
-  margin-bottom: 2rem;
-}
-
-.buttons {
-  justify-content: center;
-  display: flex;
 }
