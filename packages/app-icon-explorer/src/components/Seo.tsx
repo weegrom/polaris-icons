@@ -55,8 +55,7 @@ export default function Seo(props: Props) {
             meta={[
               {
                 name: 'viewport',
-                content:
-                  'width=960,initial-scale=1,shrink-to-fit=no,viewport-fit=cover',
+                content: 'width=device-width,initial-scale=1',
               },
               {
                 name: `description`,

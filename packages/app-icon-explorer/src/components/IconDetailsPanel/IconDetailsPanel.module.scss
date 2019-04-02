@@ -1,5 +1,6 @@
 @import '~@shopify/polaris-tokens/dist/colors';
 @import '~@shopify/polaris-tokens/dist/spacing';
+@import '../../styles/shared';
 
 .iconDetailsPanelInner {
   padding-bottom: $spacing-extra-loose;
@@ -77,11 +78,13 @@
   color: $color-ink-lighter;
 }
 
-.iconDescription {
-  min-height: 4rem;
-}
-
 .link {
   display: block;
   margin-bottom: $spacing-tight;
+}
+
+@include when-details-panel {
+  .iconDescription {
+    min-height: 4rem;
+  }
 }

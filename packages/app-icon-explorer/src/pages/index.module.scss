@@ -1,15 +1,12 @@
 @import '~@shopify/polaris-tokens/dist/colors';
+@import '../styles/shared';
+
 $borderColor: $color-sky-light;
-$pagePadding: 32px;
-$gridColumnMinWidth: 340px;
-$gridGap: 32px;
-$gridMinWidth: 769px; // Same point at which the icon in the TopBar disappears
-$gridMaxWidth: 100%;
-$listingMaxWidth: 960px;
+$transition-slide-length: 100vh;
 
 :global {
   body {
-    min-width: $gridMinWidth;
+    min-width: 320px;
   }
 
   .contentLink {
@@ -26,10 +23,11 @@ $listingMaxWidth: 960px;
 .page {
   position: relative;
   background: $color-white;
-  display: grid;
-  justify-items: normal;
-  padding-left: $pagePadding;
-  grid-template-columns: minmax($gridColumnMinWidth, auto) $gridColumnMinWidth;
+  display: flex;
+  justify-content: space-between;
+  justify-items: right;
+  height: 100%;
+  padding: 0 20px;
 }
 
 .page::before {
@@ -50,10 +48,12 @@ $listingMaxWidth: 960px;
 .listing {
   padding-top: 60px;
   padding-bottom: 48px;
-  padding-right: $gridGap;
-  max-width: $listingMaxWidth;
   margin: 0 auto;
-  flex: 1 1 0;
+  flex: 0 1 960px;
+
+  @include when-details-modal {
+    padding-top: 20px;
+  }
 }
 
 .listing > :not(:first-child) {
@@ -62,30 +62,97 @@ $listingMaxWidth: 960px;
   border-top: 1px solid $borderColor;
 }
 
-.panel {
-  min-height: 100vh;
-  border-left: 1px solid $borderColor;
-  padding-right: $pagePadding;
-}
-
-.panelFixed {
-  display: flex;
-  width: $gridColumnMinWidth;
-  height: calc(100% - 60px);
-  padding: 60px $pagePadding 0 $gridGap;
-
-  @media (min-width: $gridMinWidth) {
-    position: fixed;
-    overflow-y: auto;
-  }
-
-  // Once we hit the max width then we want to account for that rather than
-  // have the panel pinned the the right edge of the screen
-  @media (min-width: $gridMaxWidth) {
-    right: calc(50vw - #{$gridMaxWidth / 2} + 1.6rem);
-  }
-}
-
 .listingWrapper {
   display: flex;
+  flex: 1 1 auto;
+}
+
+.panelHeader {
+  display: none;
+}
+
+@include when-details-modal {
+  .panel {
+    position: fixed;
+    z-index: 519; // same as Modal
+    top: -$transition-slide-length;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding-top: $transition-slide-length;
+    background-color: rgba(33, 43, 54, 0.4);
+    transform: translateY(0);
+    transition: transform cubic-bezier(0.64, 0, 0.35, 1) 200ms,
+      background-color cubic-bezier(0.64, 0, 0.35, 1) 200ms;
+  }
+
+  .panelInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #ffffff;
+    max-height: 100vh;
+  }
+
+  .panelIsEmpty {
+    pointer-events: none;
+    background-color: rgba(33, 43, 54, 0);
+    transform: translateY($transition-slide-length);
+  }
+
+  .panelDetails {
+    flex: 1 1 0;
+    padding: 16px 20px 0;
+  }
+
+  .panelHeader {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+
+    padding: 16px 20px;
+    border-bottom: 1px solid $color-sky;
+  }
+
+  .panelHeaderTitle {
+    margin-top: 4px;
+  }
+
+  .panelHeaderCloseButton {
+    margin-left: 20px;
+    margin-right: -8px;
+    padding: 8px;
+  }
+}
+
+@include when-details-panel {
+  $gridGap: 32px;
+  $pagePadding: 32px;
+  $panelWidth: 340px;
+
+  .page {
+    padding: 0 0 0 $pagePadding;
+  }
+
+  .panel {
+    flex: 0 0 $panelWidth;
+    min-height: calc(100vh - 56px);
+    border-left: 1px solid $borderColor;
+    margin-left: $gridGap;
+  }
+
+  .panelDetails {
+    position: fixed;
+    top: 56px;
+    right: 0;
+    bottom: 0;
+    width: $panelWidth;
+    padding: 60px $pagePadding 0 $gridGap;
+    overflow-y: auto;
+  }
 }

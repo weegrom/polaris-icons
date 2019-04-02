@@ -13,6 +13,7 @@ import {Link} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {startCase} from 'lodash';
 
+import {useMedia} from '../../hooks';
 import {Icon as IconInterface, StyleData} from '../../types';
 import {CodeBlock, ToggleButton} from './components';
 import styles from './IconDetailsPanel.module.scss';
@@ -41,14 +42,7 @@ export default class IconDetailsPanel extends React.Component<Props> {
       return <EmptyState />;
     }
 
-    // Set a key to create a new component instead of reusing the existing
-    // one and thus persisting selectedStyle state across different icons
-    return (
-      <PopulatedState
-        key={this.props.icon.metadataFilename}
-        icon={this.props.icon}
-      />
-    );
+    return <PopulatedState icon={this.props.icon} />;
   }
 }
 
@@ -56,6 +50,17 @@ function PopulatedState({icon}: PopulatedStateProps) {
   const [selectedStyle, setSelectedStyle] = useState(
     'monotone' as keyof IconInterface['styles'],
   );
+
+  const [previousIcon, setPreviousIcon] = useState(
+    null as IconInterface | null,
+  );
+
+  // Reset the selected style if we change to a new icon
+  if (icon !== previousIcon) {
+    setPreviousIcon(icon);
+    setSelectedStyle('monotone');
+  }
+
   const showMonotone = () => setSelectedStyle('monotone');
   const showTwotone = () => setSelectedStyle('twotone');
 
@@ -262,11 +267,23 @@ function EmptyState() {
 }
 
 function IconKeyword({iconName, word}: {iconName: string; word: string}) {
-  const linkTo = `/?${qsStringify({icon: iconName, q: `#${word}`})}`;
+  // Exclude the current icon at small sizes so that the panel is dismissed and
+  // you can see the search results instantly
+  const detailsTriggerWidthPx = 769;
+  const whenDetailsModal = useMedia(
+    [`(min-width: ${detailsTriggerWidthPx / 16}em)`],
+    [true],
+    false,
+  );
+
+  const queryParams = {icon: iconName, q: `#${word}`};
+  if (!whenDetailsModal) {
+    delete queryParams.icon;
+  }
 
   return (
     <li>
-      <Link to={linkTo} className={styles.Tag}>
+      <Link to={`/?${qsStringify(queryParams)}`} className={styles.Tag}>
         {word}
       </Link>
     </li>
