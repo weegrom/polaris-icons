@@ -86,9 +86,10 @@ $transition-slide-length: 100vh;
 
     padding-top: $transition-slide-length;
     background-color: rgba(33, 43, 54, 0.4);
+    will-change: transform, background-color;
     transform: translateY(0);
     transition: transform cubic-bezier(0.64, 0, 0.35, 1) 200ms,
-      background-color cubic-bezier(0.64, 0, 0.35, 1) 200ms;
+      background-color cubic-bezier(0.35, 0, 0.64, 1) 200ms;
   }
 
   .panelInner {
