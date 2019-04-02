@@ -269,9 +269,15 @@ function EmptyState() {
 function IconKeyword({iconName, word}: {iconName: string; word: string}) {
   // Exclude the current icon at small sizes so that the panel is dismissed and
   // you can see the search results instantly
-  const isSmallScreen = useMedia(['(max-width: 769px)'], [true], false);
+  const detailsTriggerWidthPx = 769;
+  const whenDetailsModal = useMedia(
+    [`(min-width: ${detailsTriggerWidthPx / 16}em)`],
+    [true],
+    false,
+  );
+
   const queryParams = {icon: iconName, q: `#${word}`};
-  if (isSmallScreen) {
+  if (!whenDetailsModal) {
     delete queryParams.icon;
   }
 
