@@ -13,8 +13,8 @@ shared:
     run:
       - sudo chown -R circleci:circleci node_modules packages/*/bin
       - yarn: ~
-      - yarn run type-check
       - yarn run build
+      - yarn run type-check
       - yarn run test
   lint: &lint
     label: 'Lint'
