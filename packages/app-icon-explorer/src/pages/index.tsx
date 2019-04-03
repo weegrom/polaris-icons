@@ -1,10 +1,11 @@
 import React from 'react';
-import {graphql, navigate, Link} from 'gatsby';
+import {graphql, navigate} from 'gatsby';
 import classNames from 'classnames';
 import {sortBy} from 'lodash';
 import {parse as qsParse, stringify as qsStringify} from 'query-string';
 import {DisplayText, Icon, Scrollable} from '@shopify/polaris';
 import {MobileCancelMajorMonotone} from '@shopify/polaris-icons';
+import {Shortcut} from '@shopify/react-shortcuts';
 
 import {
   AppFrame,
@@ -156,14 +157,19 @@ export default class IndexPage extends React.Component<Props, State> {
             <div className={styles.panelInner} key={panelKey}>
               <div className={styles.panelHeader}>
                 <div className={styles.panelHeaderTitle}>
+                  <Shortcut
+                    ordered={['Escape']}
+                    onMatch={this.handelPanelClose}
+                  />
                   <DisplayText size="small">Icon Details</DisplayText>
                 </div>
-                <Link
-                  to={`/?${qsStringify(isFiltered ? {q: searchText} : {})}`}
+                <button
+                  type="button"
+                  onClick={this.handelPanelClose}
                   className={styles.panelHeaderCloseButton}
                 >
                   <Icon source={MobileCancelMajorMonotone} color="inkLighter" />
-                </Link>
+                </button>
               </div>
 
               <Scrollable className={styles.panelDetails} shadow>
@@ -190,6 +196,13 @@ export default class IndexPage extends React.Component<Props, State> {
     if (this.state.queryParams.q !== '') {
       this.persistSearchText('');
     }
+  };
+
+  handelPanelClose = () => {
+    const searchText = this.state.isClient ? this.state.searchText : '';
+    const isFiltered = searchText !== '';
+
+    navigate(`/?${qsStringify(isFiltered ? {q: searchText} : {})}`);
   };
 
   private persistSearchText(dirtySearchText: string) {

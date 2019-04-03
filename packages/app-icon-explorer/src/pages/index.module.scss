@@ -125,9 +125,18 @@ $transition-slide-length: 100vh;
   }
 
   .panelHeaderCloseButton {
-    margin-left: 20px;
-    margin-right: -8px;
+    margin: 0 -8px 0 20px;
     padding: 8px;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+
+    &:focus,
+    &:active {
+      outline: none;
+      border-radius: 6px;
+      background: rgba($color-ink, 0.1);
+    }
   }
 }
 
