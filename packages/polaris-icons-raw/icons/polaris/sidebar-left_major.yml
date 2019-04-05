@@ -17,3 +17,4 @@ set: major
 version: 1
 keywords:
   - N/A
+deprecated_aliases: ['sidebar_major']

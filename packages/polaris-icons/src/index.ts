@@ -646,8 +646,18 @@ export {
   default as ColorsMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/colors_major_monotone.svg';
 
+/** @deprecated ColorMajorMonotone will be removed in the next major version. Use ColorsMajorMonotone instead. */
+export {
+  default as ColorMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/colors_major_monotone.svg';
+
 export {
   default as ColorsMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/colors_major_twotone.svg';
+
+/** @deprecated ColorMajorTwotone will be removed in the next major version. Use ColorsMajorTwotone instead. */
+export {
+  default as ColorMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/colors_major_twotone.svg';
 
 export {
@@ -1970,6 +1980,11 @@ export {
   default as SelectMinor,
 } from '@shopify/polaris-icons-raw/icons/polaris/select_minor.svg';
 
+/** @deprecated ArrowUpDownMinor will be removed in the next major version. Use SelectMinor instead. */
+export {
+  default as ArrowUpDownMinor,
+} from '@shopify/polaris-icons-raw/icons/polaris/select_minor.svg';
+
 export {
   default as SendMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/send_major_monotone.svg';
@@ -2018,8 +2033,18 @@ export {
   default as SidebarLeftMajorMonotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/sidebar-left_major_monotone.svg';
 
+/** @deprecated SidebarMajorMonotone will be removed in the next major version. Use SidebarLeftMajorMonotone instead. */
+export {
+  default as SidebarMajorMonotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/sidebar-left_major_monotone.svg';
+
 export {
   default as SidebarLeftMajorTwotone,
+} from '@shopify/polaris-icons-raw/icons/polaris/sidebar-left_major_twotone.svg';
+
+/** @deprecated SidebarMajorTwotone will be removed in the next major version. Use SidebarLeftMajorTwotone instead. */
+export {
+  default as SidebarMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/sidebar-left_major_twotone.svg';
 
 export {
@@ -2485,18 +2510,3 @@ export {
 export {
   default as WifiMajorTwotone,
 } from '@shopify/polaris-icons-raw/icons/polaris/wifi_major_twotone.svg';
-
-/** @deprecated ArrowUpDownMinor will be removed in the next major verison. Use SelectMinor instead */
-export {
-  default as ArrowUpDownMinor,
-} from '@shopify/polaris-icons-raw/icons/polaris/select_minor.svg';
-
-/** @deprecated ColorMajorMonotone will be removed in the next major verison. Use ColorsMajorMonotone instead */
-export {
-  default as ColorMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/colors_major_monotone.svg';
-
-/** @deprecated SidebarMajorMonotone will be removed in the next major verison. Use SidebarLeftMajorMonotone instead */
-export {
-  default as SidebarMajorMonotone,
-} from '@shopify/polaris-icons-raw/icons/polaris/sidebar-left_major_monotone.svg';

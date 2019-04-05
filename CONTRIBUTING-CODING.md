@@ -11,6 +11,16 @@ yarn
 yarn bootstrap
 ```
 
+## Deprecation guidelines
+
+Sometimes icons need to be renamed or removed. Both of these actions are breaking changes from a developer's perspective. In order to not erode trust with our consumers and ensure painless update paths we will reduce the impact of these breaking changes by batching them up. Signal your intent to make a breaking change by deprecating an icon like so:
+
+When an icon is deprecated with no replacement (i.e. you're deleting an icon): Add `deprecated: true` to the metadata of the icon you intend to remove.
+
+When an icon is deprcated with a replacement (i.e. you're renaming an icon): Rename the icon's svgs and metadata file to the new name, then add a `deprecated_aliases` key to the metadata whose value an array of aliases that the icon was previously known as. For instance if you were to rename `foo_major.yml` to `bar_major.yml` then the bottom of the new `bar_major.yml` should contain `deprecated_aliases: ['foo_major']`. This will maintain an export with the original name but mark it as deprecated and instruct consumers to use the new name.
+
+Every 6 months or so, we shall consider releasing a new major version that removes any deprecated icons and aliases.
+
 ## Releasing the library
 
 **The npm packages and the gem need to be released at the same time.**

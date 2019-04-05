@@ -20,19 +20,66 @@ const preamble = `// DO NOT MANUALLY EDIT THIS FILE
 // Run 'yarn run generate-icon-packages' from the root of the monorepo to generate a new version`;
 
 const allSvgExportsString = glob
-  .sync('*.svg', {cwd: iconBasePath})
-  .filter(isPublicIcon)
-  .map(filenameToExport)
-  .concat(aliasExports())
+  .sync('*.yml', {cwd: iconBasePath})
+  .reduce((memo, filename) => memo.concat(exportsForMetadata(filename)), [])
   .join('\n\n');
 
 fs.writeFileSync(indexFilePath, `${preamble}\n\n${allSvgExportsString}\n`);
 
-function filenameToExport(filename) {
-  return exportString(
-    exportName(path.basename(filename, path.extname(filename))),
-    filename,
+function exportsForMetadata(filename) {
+  const metadata = jsYaml.safeLoad(
+    fs.readFileSync(`${iconBasePath}/${filename}`, 'utf8'),
   );
+
+  if (!metadata.public) {
+    return [];
+  }
+
+  function mainExportString(exportName, exportFile) {
+    return exportString(
+      exportName,
+      exportFile,
+      metadata.deprecated ? '' : undefined,
+    );
+  }
+
+  function aliasExportString(exportName, exportFile, deprecatedBaseName) {
+    return exportString(
+      filenameToExportName(deprecatedBaseName),
+      exportFile,
+      exportName,
+    );
+  }
+
+  const exportStrings = findAllPresentStyles(filename).reduce(
+    (memo, [exportName, exportFile, styleSuffix]) => {
+      return memo.concat(
+        [mainExportString(exportName, exportFile)],
+        (metadata.deprecated_aliases || [])
+          .map((deprecatedAlias) => `${deprecatedAlias}${styleSuffix}`)
+          .map((deprecatedBaseName) =>
+            aliasExportString(exportName, exportFile, deprecatedBaseName),
+          ),
+      );
+    },
+    [],
+  );
+
+  return exportStrings;
+}
+
+function findAllPresentStyles(filename) {
+  const filenamePrefix = path.basename(filename, path.extname(filename));
+
+  return glob
+    .sync(`${filenamePrefix}{,*}.svg`, {cwd: iconBasePath})
+    .map((svgFilename) => {
+      const styleSuffix = svgFilename
+        .slice(filenamePrefix.length)
+        .replace(/\.svg$/, '');
+
+      return [filenameToExportName(svgFilename), svgFilename, styleSuffix];
+    });
 }
 
 /**
@@ -41,42 +88,29 @@ function filenameToExport(filename) {
  *
  * E.g. viewport-wide_major_monotone becomes ViewportWideMajorMonotone,
  */
-function exportName(name) {
-  return name.replace(/(?:^|[-_])([a-z])/g, (match, letter) => {
-    return letter.toUpperCase();
-  });
+function filenameToExportName(filename) {
+  return path
+    .basename(filename, path.extname(filename))
+    .replace(/(?:^|[-_])([a-z])/g, (match, letter) => letter.toUpperCase());
 }
 
-function exportString(exportedName, filename) {
-  return `export {
+/**
+ *
+ * @param {*} exportedName
+ * @param {*} filename
+ * @param {undefined|string} replaceWith
+ *   If undefined then the current export is not deprecated.
+ *   If an empty string then the current export is deprected with no replacement.
+ *   If a non-empty string then the current export is deprecated with a replacement
+ */
+function exportString(exportedName, filename, replaceWith) {
+  const replaceWithSuffix = replaceWith ? ` Use ${replaceWith} instead.` : '';
+  const deprecatedNotice =
+    replaceWith === undefined
+      ? ''
+      : `/** @deprecated ${exportedName} will be removed in the next major version.${replaceWithSuffix} */\n`;
+
+  return `${deprecatedNotice}export {
   default as ${exportedName},
 } from '@shopify/polaris-icons-raw/icons/polaris/${filename}';`;
-}
-
-function isPublicIcon(name) {
-  const metadataBasename = path
-    .basename(name, path.extname(name))
-    .replace(/_(monotone|twotone)$/, '');
-
-  const metadata = jsYaml.safeLoad(
-    fs.readFileSync(`${iconBasePath}/${metadataBasename}.yml`, 'utf8'),
-  );
-  return metadata.public;
-}
-
-function aliasExports() {
-  const aliases = [
-    ['ArrowUpDownMinor', 'select_minor.svg'],
-    ['ColorMajorMonotone', 'colors_major_monotone.svg'],
-    ['SidebarMajorMonotone', 'sidebar-left_major_monotone.svg'],
-  ];
-
-  return aliases.map(([exportedName, filename]) => {
-    const useInstead = exportName(
-      path.basename(filename, path.extname(filename)),
-    );
-    const deprecatedNotice = `/** @deprecated ${exportedName} will be removed in the next major verison. Use ${useInstead} instead */`;
-
-    return `${deprecatedNotice}\n${exportString(exportedName, filename)}`;
-  });
 }
