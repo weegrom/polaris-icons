@@ -147,14 +147,14 @@ function PopulatedState({icon}: PopulatedStateProps) {
             title="Import"
             footer={
               <div>
-                Learn how to use{' '}
+                Learn how to import{' '}
                 <OutboundLink
                   className="contentLink"
                   href="https://github.com/Shopify/polaris-icons/blob/master/FREQUENTLY_ASKED_QUESTIONS.md#how-to-use-shopifypolaris-icons-with-the-shopifypolaris-icon-component"
                 >
                   Polaris icons
                 </OutboundLink>
-                .
+                into your projects.
               </div>
             }
           >
@@ -177,14 +177,14 @@ function PopulatedState({icon}: PopulatedStateProps) {
             title="Usage"
             footer={
               <div>
-                Using{' '}
+                See the{' '}
                 <OutboundLink
                   className="contentLink"
                   href="https://polaris.shopify.com/components/images-and-icons/icon"
                 >
-                  Polaris icon component
+                  icon component documentation
                 </OutboundLink>
-                .
+                in Polaris.
               </div>
             }
           >
