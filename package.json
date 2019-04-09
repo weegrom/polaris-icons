@@ -5,7 +5,6 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "publish": "lerna publish",
     "build": "lerna run build",
     "clean": "lerna run clean",
     "start": "yarn workspace app-icon-explorer run start",
@@ -18,6 +17,7 @@
     "test": "jest",
     "type-check": "tsc",
     "release": "lerna publish && git push --follow-tags",
+    "prerelease": "node scripts/identify-deprecated-icons.js",
     "heroku-postbuild": "yarn run lerna run build && yarn workspace app-icon-explorer run build-web"
   },
   "repository": {
