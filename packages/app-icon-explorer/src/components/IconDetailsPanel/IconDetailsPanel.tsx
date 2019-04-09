@@ -151,9 +151,9 @@ function PopulatedState({icon}: PopulatedStateProps) {
                   className="contentLink"
                   href="https://github.com/Shopify/polaris-icons/blob/master/FREQUENTLY_ASKED_QUESTIONS.md#how-to-use-shopifypolaris-icons-with-the-shopifypolaris-icon-component"
                 >
-                  Polaris icons 
+                  Polaris icons
                 </OutboundLink>
-                into your projects.
+                &#32; into your projects.
               </div>
             }
           >
@@ -181,9 +181,9 @@ function PopulatedState({icon}: PopulatedStateProps) {
                   className="contentLink"
                   href="https://polaris.shopify.com/components/images-and-icons/icon"
                 >
-                  icon component documentation 
+                  icon component documentation
                 </OutboundLink>
-                in Polaris.
+                &#32; in Polaris.
               </div>
             }
           >
