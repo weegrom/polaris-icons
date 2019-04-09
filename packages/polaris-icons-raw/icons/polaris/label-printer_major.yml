@@ -3,17 +3,15 @@ authors:
   - N/A
 date_added: 2019-03-15
 date_modified: 2019-03-15
-description: >
-  <!--
-    This icon is missing a description.
-    Please take a moment to fill it in using these guidelines:
-    https://docs.google.com/document/d/1fhkxHuKhLhIysjyMs-LwXBgSNFhUYR9LKHHNVb-Zs4Q/edit
-    (you can delete this comment)
-  -->
-  N/A
+description: Used to represent a label printer (a special printer that prints 4x6 shipping labels on thermal sticker paper).
 exclusive_use:
 public: true
 set: major
 version: 1
 keywords:
-  - N/A
+  - label
+  - printer
+  - 4x6
+  - shipping
+  - print
+  - thermal
