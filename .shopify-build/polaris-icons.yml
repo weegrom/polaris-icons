@@ -1,7 +1,8 @@
 containers:
   default:
     docker: circleci/node:10.13.0
-
+  ruby:
+    docker: circleci/ruby:2.5.1
 # sudo chown stuff is here because `yarn install` tries to symlink the binaries
 # defined in packages into node_modules/.bin and then fails if the files
 # aren't owned by the current user
@@ -24,6 +25,19 @@ shared:
       - sudo chown -R circleci:circleci node_modules packages/*/bin
       - yarn: ~
       - yarn run lint
+  build-gem: &build-gem
+    label: 'Build Gem'
+    container: ruby
+    timeout: 5m
+    run:
+      - sudo apt-get update
+      - sudo apt-get install librsvg2-bin
+      - cd packages-ruby/polaris_icons/
+      - bundle install
+      - bundle check
+      - ./scripts/build-gem.sh
+
 steps:
   - <<: *lint
   - <<: *build-and-tests
+  - <<: *build-gem

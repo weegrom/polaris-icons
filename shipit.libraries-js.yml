@@ -1,0 +1,20 @@
+ci:
+  require:
+    - buildkite/polaris-icons
+  hide:
+    - buildkite/polaris-icons-production-builder
+    - buildkite/shopify-polaris-icons-binary-authorization-validator
+    - buildkite/shopify-polaris-icons-k8s-template-validator
+dependencies:
+  override:
+    - yarn install
+    - yarn run bootstrap
+  post:
+    - yarn run build
+deploy:
+  override:
+    - assert-lerna-independent-version-tags
+    - publish-lerna-independent-packages
+review:
+  checklist:
+    - Remember to deploy the <a href="https://shipit.shopify.io/shopify/polaris-icons/libraries-ruby">gem</a> as well

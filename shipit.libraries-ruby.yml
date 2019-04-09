@@ -1,0 +1,16 @@
+ci:
+  require:
+    - buildkite/polaris-icons
+  hide:
+    - buildkite/polaris-icons-production-builder
+    - buildkite/shopify-polaris-icons-binary-authorization-validator
+    - buildkite/shopify-polaris-icons-k8s-template-validator
+dependencies:
+  override:
+    - echo "no"
+deploy:
+  override:
+    - SHA=`git rev-parse HEAD` buildkite-trigger polaris-icons-deploy-ruby
+review:
+  checklist:
+    - Remember to deploy the <a href="https://shipit.shopify.io/shopify/polaris-icons/libraries-js">JS packages</a> as well

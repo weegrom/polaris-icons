@@ -22,3 +22,14 @@ packages/app-icon-explorer/public
 
 # Generated metadata
 metadata.json
+
+# Bundler stuff
+/packages-ruby/polaris_icons/.bundle/
+/packages-ruby/polaris_icons/.yardoc
+/packages-ruby/polaris_icons/_yardoc/
+/packages-ruby/polaris_icons/coverage/
+/packages-ruby/polaris_icons/doc/
+/packages-ruby/polaris_icons/pkg/
+/packages-ruby/polaris_icons/spec/reports/
+/packages-ruby/polaris_icons/tmp/
+/packages-ruby/polaris_icons/images/
