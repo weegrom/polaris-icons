@@ -1,5 +1,6 @@
 export interface StyleData {
   importName: string;
+  deprecatedImportNames: string[];
   svgContent: string;
   svgFile: {
     publicURL: string;
@@ -19,4 +20,5 @@ export interface Icon {
   set: 'minor' | 'major' | 'spot';
   metadataFilename: string;
   metadataId: string;
+  deprecated: boolean;
 }

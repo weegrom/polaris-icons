@@ -235,12 +235,18 @@ function filterIcons(icons: IconInterface[], searchText: string) {
   };
 
   return icons.filter((icon) => {
+    const styles = Object.values(icon.styles).filter(Boolean) as StyleData[];
+
+    const allPossibleImportNames = styles.reduce<string[]>(
+      (memo, style) =>
+        memo.concat([style.importName], style.deprecatedImportNames),
+      [],
+    );
+
     return (
       containsText(icon.name) ||
       icon.keywords.some(containsText) ||
-      (Object.values(icon.styles).filter(Boolean) as StyleData[])
-        .map((style) => style.importName)
-        .some(containsText)
+      allPossibleImportNames.some(containsText)
     );
   });
 }
@@ -280,6 +286,7 @@ export const pageQuery = graphql`
           styles {
             monotone {
               importName
+              deprecatedImportNames
               svgContent
               svgFile {
                 publicURL
@@ -288,6 +295,7 @@ export const pageQuery = graphql`
             }
             twotone {
               importName
+              deprecatedImportNames
               svgContent
               svgFile {
                 publicURL
