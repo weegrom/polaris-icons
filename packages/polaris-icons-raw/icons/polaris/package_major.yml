@@ -3,17 +3,13 @@ authors:
   - N/A
 date_added: 2019-03-15
 date_modified: 2019-03-15
-description: >
-  <!--
-    This icon is missing a description.
-    Please take a moment to fill it in using these guidelines:
-    https://docs.google.com/document/d/1fhkxHuKhLhIysjyMs-LwXBgSNFhUYR9LKHHNVb-Zs4Q/edit
-    (you can delete this comment)
-  -->
-  N/A
+description: Used to represent a package or box that merchants can ship their products in.
 exclusive_use:
 public: true
 set: major
 version: 1
 keywords:
-  - N/A
+  - shipping
+  - box
+  - package
+  - cardboard
