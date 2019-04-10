@@ -18,13 +18,15 @@ const allDeprecationsString = glob
 
 if (allDeprecationsString) {
   console.log(
-    `The following deprecations and aliases were found.
-If you are releasing a major version please consider removing them first.
+    `The following deprecated icons and aliases were found.
 
-${allDeprecationsString}`,
+${allDeprecationsString}
+
+If you are releasing a major version please consider removing these deprecations first.
+Learn more: https://github.com/Shopify/polaris-icons/blob/master/CONTRIBUTING-CODING.md#deprecation-guidelines`,
   );
 } else {
-  console.log('No depreacted icons or aliases were found');
+  console.log('No deprecated icons or aliases were found');
 }
 
 function deprecationsForMetadata(filename) {

@@ -86,7 +86,7 @@ function findAllPresentStyles(filename) {
  * Capitalizes the first letter and any letter following a hyphen or underscore
  * and removes hyphens and underscores
  *
- * E.g. viewport-wide_major_monotone becomes ViewportWideMajorMonotone,
+ * E.g. viewport-wide_major_monotone becomes ViewportWideMajorMonotone.
  */
 function filenameToExportName(filename) {
   return path
@@ -101,7 +101,7 @@ function filenameToExportName(filename) {
  * @param {undefined|string} replaceWith
  *   If undefined then the current export is not deprecated.
  *   If an empty string then the current export is deprected with no replacement.
- *   If a non-empty string then the current export is deprecated with a replacement
+ *   If a non-empty string then the current export is deprecated with a replacement.
  */
 function exportString(exportedName, filename, replaceWith) {
   const replaceWithSuffix = replaceWith ? ` Use ${replaceWith} instead.` : '';
