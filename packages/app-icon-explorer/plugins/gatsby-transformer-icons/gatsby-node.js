@@ -37,7 +37,7 @@ async function onCreateNode({
 
   const monotoneSvgPath = node.absolutePath.replace(
     /\.yml$/,
-    metadata.set === 'major' ? `${monotoneSuffix}.svg` : `.svg`,
+    `${monotoneSuffix}.svg`,
   );
   const twotoneSvgPath = node.absolutePath.replace(
     /\.yml$/,

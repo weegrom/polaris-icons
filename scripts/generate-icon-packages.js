@@ -35,26 +35,10 @@ function exportsForMetadata(filename) {
     return [];
   }
 
-  function mainExportString(exportName, exportFile) {
-    return exportString(
-      exportName,
-      exportFile,
-      metadata.deprecated ? '' : undefined,
-    );
-  }
-
-  function aliasExportString(exportName, exportFile, deprecatedBaseName) {
-    return exportString(
-      filenameToExportName(deprecatedBaseName),
-      exportFile,
-      exportName,
-    );
-  }
-
   const exportStrings = findAllPresentStyles(filename).reduce(
     (memo, [exportName, exportFile, styleSuffix]) => {
       return memo.concat(
-        [mainExportString(exportName, exportFile)],
+        [mainExportString(exportName, exportFile, metadata.deprecated)],
         (metadata.deprecated_aliases || [])
           .map((deprecatedAlias) => `${deprecatedAlias}${styleSuffix}`)
           .map((deprecatedBaseName) =>
@@ -80,6 +64,18 @@ function findAllPresentStyles(filename) {
 
       return [filenameToExportName(svgFilename), svgFilename, styleSuffix];
     });
+}
+
+function mainExportString(exportName, exportFile, isDeprecated) {
+  return exportString(exportName, exportFile, isDeprecated ? '' : undefined);
+}
+
+function aliasExportString(exportName, exportFile, deprecatedBaseName) {
+  return exportString(
+    filenameToExportName(deprecatedBaseName),
+    exportFile,
+    exportName,
+  );
 }
 
 /**
