@@ -4,7 +4,7 @@ authors:
 date_added: 2019-03-15
 date_modified: 2019-03-15
 description: >
-  Development store (feature exclusive to Shopify Plus Partners).
+  Used to represent a development store (feature exclusive to Shopify Plus Partners).
 exclusive_use:
 public: true
 set: major
