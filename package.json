@@ -5,19 +5,20 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "publish": "lerna publish",
     "build": "lerna run build",
     "clean": "lerna run clean",
     "start": "yarn workspace app-icon-explorer run start",
     "develop": "yarn workspace app-icon-explorer run develop",
     "dev": "yarn run develop",
     "generate-icon-packages": "node scripts/generate-icon-packages.js",
+    "identify-deprecated-icons": "node scripts/identify-deprecated-icons.js",
     "lint": "yarn run lint:js && yarn run lint:css",
     "lint:js": "yarn run eslint '**/*.{js,ts,tsx}'",
     "lint:css": "yarn run stylelint '**/*.{scss}'",
     "test": "jest",
     "type-check": "tsc",
     "release": "lerna publish && git push --follow-tags",
+    "prerelease": "node scripts/identify-deprecated-icons.js",
     "heroku-postbuild": "yarn run lerna run build && yarn workspace app-icon-explorer run build-web"
   },
   "repository": {

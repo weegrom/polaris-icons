@@ -39,5 +39,21 @@ allIconMetadataFiles.forEach(({iconPath, iconMetadata}) => {
 
       expect(path.basename(iconPath)).toEqual(`${expectedName}.yml`);
     });
+
+    (iconMetadata.deprecated_aliases || []).forEach((alias) => {
+      it(`deprecated alias ${alias} does not conflict with other icon names`, () => {
+        const otherNames = allIconMetadataFiles.reduce((memo, fileData) => {
+          return memo.concat(
+            [path.basename(fileData.iconPath, path.extname(fileData.iconPath))],
+            // Don't include aliases for current item
+            fileData.iconPath === iconPath
+              ? []
+              : fileData.iconMetadata.deprecated_aliases || [],
+          );
+        }, []);
+
+        expect(otherNames).not.toContain(alias);
+      });
+    });
   });
 });

@@ -1,4 +1,4 @@
-/* eslint-disable node/no-extraneous-require */
+/* eslint-disable node/no-extraneous-require, camelcase */
 const fs = require('fs');
 const path = require('path');
 
@@ -24,14 +24,25 @@ async function onCreateNode({
     return;
   }
 
-  const metadata = jsYaml.load(await loadNodeContent(node));
+  // Add default values for fields that may be omitted
+  const metadata = {
+    deprecated: false,
+    deprecated_aliases: [],
+    ...jsYaml.load(await loadNodeContent(node)),
+  };
   const metadataFilename = path.basename(node.base, '.yml');
+
+  const monotoneSuffix = metadata.set === 'major' ? '_monotone' : '';
+  const twotoneSuffix = '_twotone';
 
   const monotoneSvgPath = node.absolutePath.replace(
     /\.yml$/,
-    metadata.set === 'major' ? '_monotone.svg' : '.svg',
+    `${monotoneSuffix}.svg`,
   );
-  const twotoneSvgPath = node.absolutePath.replace(/\.yml$/, '_twotone.svg');
+  const twotoneSvgPath = node.absolutePath.replace(
+    /\.yml$/,
+    `${twotoneSuffix}.svg`,
+  );
 
   const yamlNode = {
     ...metadata,
@@ -42,8 +53,16 @@ async function onCreateNode({
     parent: node.id,
     descriptionHtml: marked(metadata.description),
     styles: {
-      monotone: dataForSvg(getNodes, monotoneSvgPath),
-      twotone: dataForSvg(getNodes, twotoneSvgPath),
+      monotone: dataForSvg(
+        getNodes,
+        monotoneSvgPath,
+        metadata.deprecated_aliases.map((alias) => alias + monotoneSuffix),
+      ),
+      twotone: dataForSvg(
+        getNodes,
+        twotoneSvgPath,
+        metadata.deprecated_aliases.map((alias) => alias + twotoneSuffix),
+      ),
     },
     internal: {
       contentDigest: createContentDigest(metadata),
@@ -55,7 +74,7 @@ async function onCreateNode({
   actions.createParentChildLink({parent: node, child: yamlNode});
 }
 
-function dataForSvg(getNodes, pathToSvg) {
+function dataForSvg(getNodes, pathToSvg, deprecatedAliases) {
   if (!fs.existsSync(pathToSvg)) {
     return undefined;
   }
@@ -66,8 +85,8 @@ function dataForSvg(getNodes, pathToSvg) {
 
   return {
     importName: pascalCase(path.basename(svgFileNode.base, svgFileNode.ext)),
+    deprecatedImportNames: deprecatedAliases.map(pascalCase),
     svgContent: fs.readFileSync(pathToSvg, 'utf8'),
-    // eslint-disable-next-line camelcase
     svgFile___NODE: svgFileNode.id,
   };
 }
