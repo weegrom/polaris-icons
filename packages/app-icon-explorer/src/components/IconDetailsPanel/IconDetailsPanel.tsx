@@ -153,7 +153,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
                 >
                   Polaris icons
                 </OutboundLink>
-                &#32; into your projects.
+                {' '} into your projects.
               </div>
             }
           >
@@ -183,7 +183,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
                 >
                   icon component documentation
                 </OutboundLink>
-                &#32; in Polaris.
+                {' '} in Polaris.
               </div>
             }
           >
