@@ -1,6 +1,6 @@
 filename: packages/polaris-icons/CHANGELOG.md
 include:
-  - /^packages\/polaris-icons-raw\/icons\//
+  - /^packages\/polaris-icons-raw\/icons\/.*\.svg$/
   - /^packages\/polaris-icons\//
 inProgressMessage: missing an entry in packages/polaris-icons/CHANGELOG.md
 skipLabel: skip changelog
