@@ -16,4 +16,7 @@ public: true
 set: major
 version: 1
 keywords:
-  - N/A
+  - menu
+  - overflow
+  - dots
+  - three dots
