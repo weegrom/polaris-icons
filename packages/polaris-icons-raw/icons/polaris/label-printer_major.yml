@@ -1,13 +1,6 @@
 name: label printer
-authors:
-  - N/A
-date_added: 2019-03-15
-date_modified: 2019-03-15
-description: Used to represent a label printer (a special printer that prints 4x6 shipping labels on thermal sticker paper).
-exclusive_use:
-public: true
 set: major
-version: 1
+description: Used to represent a label printer (a special printer that prints 4x6 shipping labels on thermal sticker paper).
 keywords:
   - label
   - printer
@@ -15,3 +8,13 @@ keywords:
   - shipping
   - print
   - thermal
+authors:
+  # - Sasha Oliveira
+  # - Co-author’s name (optional)
+  # (delete this comment block)
+  - N/A
+public: true
+version: 1
+date_added: 2019-03-15
+date_modified: 2019-03-15
+exclusive_use:

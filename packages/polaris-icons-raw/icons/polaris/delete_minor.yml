@@ -1,17 +1,16 @@
 name: delete
-authors:
-  - Adam Whitcroft
-date_added: 2018-11-14
-date_modified: 2018-11-14
-description: >
-  Used to denote a destructive action to delete an item.
-exclusive_use:
-public: true
 set: minor
-version: 1
+description: Used to denote a destructive action to delete an item.
 keywords:
   - delete
   - remove
   - trash
   - garbage
   - get rid of
+authors:
+  - Adam Whitcroft
+public: true
+version: 1
+date_added: 2018-11-14
+date_modified: 2018-11-14
+exclusive_use:

@@ -1,16 +1,18 @@
 name: resources
-authors:
-  - N/A
-date_added: 2019-03-15
-date_modified: 2019-03-15
-description: >
-  Used to represent resources to learn more about a topic or feature.
-exclusive_use:
-public: true
 set: major
-version: 1
+description: Used to represent resources to learn more about a topic or feature.
 keywords:
   - resources
   - learn more
   - glasses
   - research
+authors:
+  # - Sasha Oliveira
+  # - Co-author’s name (optional)
+  # (delete this comment block)
+  - N/A
+public: true
+version: 1
+date_added: 2019-03-15
+date_modified: 2019-03-15
+exclusive_use:

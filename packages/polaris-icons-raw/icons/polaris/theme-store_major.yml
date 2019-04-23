@@ -1,16 +1,18 @@
 name: theme store
-authors:
-  - N/A
-date_added: 2019-03-11
-date_modified: 2019-03-11
-description: >
-  Used to represent the Shopify theme store.
-exclusive_use: 'Shopify theme store'
-public: true
 set: major
-version: 1
+description: Used to represent the Shopify theme store.
 keywords:
   - theme
   - store
   - shop
   - customize
+authors:
+  # - Sasha Oliveira
+  # - Co-author’s name (optional)
+  # (delete this comment block)
+  - N/A
+public: true
+version: 1
+date_added: 2019-03-11
+date_modified: 2019-03-11
+exclusive_use: Shopify theme store

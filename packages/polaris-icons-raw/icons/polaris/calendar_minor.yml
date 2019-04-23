@@ -1,14 +1,6 @@
 name: calendar
-authors:
-  - Adam Whitcroft
-date_added: 2018-11-14
-date_modified: 2018-11-14
-description: >
-  Used to denote the action of opening a date picker.
-exclusive_use:
-public: true
 set: minor
-version: 1
+description: Used to denote the action of opening a date picker.
 keywords:
   - calendar
   - date
@@ -16,3 +8,10 @@ keywords:
   - month
   - year
   - day
+authors:
+  - Adam Whitcroft
+date_added: 2018-11-14
+date_modified: 2018-11-14
+public: true
+version: 1
+exclusive_use:

@@ -1,13 +1,16 @@
 name: risk
-authors:
-  - N/A
-date_added: 2019-03-15
-date_modified: 2019-03-15
-description: Used to represent elevated risk on a payment or order, usually the risk of credit card fraud.
-exclusive_use:
-public: true
 set: major
-version: 1
+description: Used to represent elevated risk on a payment or order, usually the risk of credit card fraud.
 keywords:
   - risk
   - fraud
+authors:
+  # - Sasha Oliveira
+  # - Co-author’s name (optional)
+  # (delete this comment block)
+  - N/A
+public: true
+version: 1
+date_added: 2019-03-15
+date_modified: 2019-03-15
+exclusive_use:

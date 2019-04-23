@@ -1,17 +1,16 @@
 name: profile
-authors:
-  - Adam Whitcroft
-date_added: 2019-03-11
-date_modified: 2019-03-11
-description: >
-  Used to represent a staff member.
-exclusive_use:
-public: true
 set: major
-version: 1
+description: Used to represent a staff member.
 keywords:
   - user
   - profile
   - me
   - portrait
   - staff
+authors:
+  - Adam Whitcroft
+public: true
+version: 1
+date_added: 2019-03-11
+date_modified: 2019-03-11
+exclusive_use:

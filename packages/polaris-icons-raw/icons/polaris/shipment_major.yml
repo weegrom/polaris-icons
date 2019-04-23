@@ -1,13 +1,6 @@
 name: shipment
-authors:
-  - N/A
-date_added: 2019-03-01
-date_modified: 2019-03-01
-description: Used to represent shipping-related events or actions such as shipping labels or tracking information.
-exclusive_use:
-public: true
 set: major
-version: 1
+description: Used to represent shipping-related events or actions such as shipping labels or tracking information.
 keywords:
   - shipping
   - shipment
@@ -17,3 +10,13 @@ keywords:
   - fulfilment
   - label
   - tracking
+authors:
+  # - Sasha Oliveira
+  # - Co-author’s name (optional)
+  # (delete this comment block)
+  - N/A
+public: true
+version: 1
+date_added: 2019-03-01
+date_modified: 2019-03-01
+exclusive_use:

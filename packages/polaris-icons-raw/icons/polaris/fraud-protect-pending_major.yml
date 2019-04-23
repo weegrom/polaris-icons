@@ -1,16 +1,16 @@
 name: fraud protect pending
-authors:
-  - Money UX team
-date_added: 2019-03-15
-date_modified: 2019-03-15
-description: Used to represent that the Fraud Protect status is pending.
-exclusive_use:
-public: false
 set: major
-version: 1
+description: Used to represent that the Fraud Protect status is pending.
 keywords:
   - fraud protect
   - pending
   - chargebacks
   - risk
   - fraud
+authors:
+  - Money UX team
+public: false
+version: 1
+date_added: 2019-03-15
+date_modified: 2019-03-15
+exclusive_use:

@@ -1,15 +1,14 @@
 name: export
-authors:
-  - Adam Whitcroft
-date_added: 2018-11-14
-date_modified: 2018-11-14
-description: >
-  Used to denote the action of exporting content.
-exclusive_use:
-public: true
 set: minor
-version: 1
+description: Used to denote the action of exporting content.
 keywords:
   - export
   - take out
   - resource
+authors:
+  - Adam Whitcroft
+public: true
+version: 1
+date_added: 2018-11-14
+date_modified: 2018-11-14
+exclusive_use:

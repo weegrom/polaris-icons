@@ -1,15 +1,15 @@
 name: fraud protect
-authors:
-  - Money UX team
-date_added: 2019-03-15
-date_modified: 2019-03-15
-description: Used to represent that an order is protected by Fraud Protect from chargebacks due to fraud.
-exclusive_use:
-public: false
 set: major
-version: 1
+description: Used to represent that an order is protected by Fraud Protect from chargebacks due to fraud.
 keywords:
   - fraud protect
   - protected
   - risk
   - fraud
+authors:
+  - Money UX team
+public: false
+version: 1
+date_added: 2019-03-15
+date_modified: 2019-03-15
+exclusive_use:

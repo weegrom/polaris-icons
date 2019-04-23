@@ -1,17 +1,16 @@
 name: balance
-authors:
-  - Brian Potstra
-date_added: 2019-03-15
-date_modified: 2019-03-15
-description: >
-  The account’s current balance. This amount is comprised of any transaction not yet included in a payout.
-exclusive_use:
-public: true
 set: major
-version: 1
+description: The account’s current balance. This amount is comprised of any transaction not yet included in a payout.
 keywords:
   - balance
   - wallet
   - money
   - transaction
   - payout
+authors:
+  - Brian Potstra
+public: true
+version: 1
+date_added: 2019-03-15
+date_modified: 2019-03-15
+exclusive_use:

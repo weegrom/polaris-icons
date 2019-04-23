@@ -1,14 +1,6 @@
 name: view
-authors:
-  - Adam Whitcroft
-date_added: 2018-11-14
-date_modified: 2018-11-14
-description: >
-  Used to denote the action of previewing an online store.
-exclusive_use:
-public: true
 set: minor
-version: 1
+description: Used to denote the action of previewing an online store.
 keywords:
   - view
   - preview
@@ -18,3 +10,10 @@ keywords:
   - see
   - show
   - reveal
+authors:
+  - Adam Whitcroft
+public: true
+version: 1
+date_added: 2018-11-14
+date_modified: 2018-11-14
+exclusive_use:

@@ -1,14 +1,6 @@
 name: tick small
-authors:
-  - Adam Whitcroft
-date_added: 2018-11-14
-date_modified: 2018-11-14
-description: >
-  Used to denote the action of checking a Polaris checkbox.
-exclusive_use: Checkbox
-public: true
 set: minor
-version: 1
+description: Used to denote the action of checking a Polaris checkbox.
 keywords:
   - checkmark
   - 'yes'
@@ -16,3 +8,10 @@ keywords:
   - good
   - passed
   - tick
+authors:
+  - Adam Whitcroft
+public: true
+version: 1
+date_added: 2018-11-14
+date_modified: 2018-11-14
+exclusive_use: Checkbox

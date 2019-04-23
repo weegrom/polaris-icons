@@ -1,16 +1,15 @@
 name: circle plus outline
-authors:
-  - Adam Whitcroft
-date_added: 2018-11-14
-date_modified: 2018-11-14
-description: >
-  Used to denote the action of adding new content, like adding a new variant option name in the mobile app.
-exclusive_use:
-public: true
 set: minor
-version: 1
+description: Used to denote the action of adding new content, like adding a new variant option name in the mobile app.
 keywords:
   - plus
   - circle
   - outline
   - +
+authors:
+  - Adam Whitcroft
+public: true
+version: 1
+date_added: 2018-11-14
+date_modified: 2018-11-14
+exclusive_use:

@@ -1,14 +1,6 @@
 name: sandbox
-authors:
-  - Brian Potstra
-date_added: 2019-03-15
-date_modified: 2019-03-15
-description: >
-  Used to represent a development store (feature exclusive to Shopify Plus Partners).
-exclusive_use:
-public: true
 set: major
-version: 1
+description: Used to represent a development store (feature exclusive to Shopify Plus Partners).
 keywords:
   - sandbox
   - plus
@@ -16,3 +8,10 @@ keywords:
   - partner
   - development
   - testing
+authors:
+  - Brian Potstra
+public: true
+version: 1
+date_added: 2019-03-15
+date_modified: 2019-03-15
+exclusive_use:

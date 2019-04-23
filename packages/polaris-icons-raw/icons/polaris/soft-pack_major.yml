@@ -1,18 +1,21 @@
 name: soft pack
-authors:
-  - N/A
-date_added: 2019-03-01
-date_modified: 2019-03-01
-description: Used to represent a soft pack envelope (or bubble mailer) that merchants can use to ship orders to their customers.
-exclusive_use:
-public: true
 set: major
-version: 1
+description: Used to represent a soft pack envelope (or bubble mailer) that merchants can use to ship orders to their customers.
 keywords:
-  - shipping 
+  - shipping
   - packaging
   - envelope
   - bubble
   - mailer
   - bubblewrap
   - padded
+authors:
+  # - Sasha Oliveira
+  # - Co-author’s name (optional)
+  # (delete this comment block)
+  - N/A
+public: true
+version: 1
+date_added: 2019-03-01
+date_modified: 2019-03-01
+exclusive_use:

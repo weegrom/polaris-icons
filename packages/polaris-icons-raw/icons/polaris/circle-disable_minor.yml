@@ -1,14 +1,6 @@
 name: circle disable
-authors:
-  - Adam Whitcroft
-date_added: 2018-11-14
-date_modified: 2018-11-14
-description: >
-  Used to denote the action of disabling something, like a discount code.
-exclusive_use:
-public: true
 set: minor
-version: 1
+description: Used to denote the action of disabling something, like a discount code.
 keywords:
   - stop
   - not permitted
@@ -19,3 +11,10 @@ keywords:
   - round
   - disabled
   - barred
+authors:
+  - Adam Whitcroft
+public: true
+version: 1
+date_added: 2018-11-14
+date_modified: 2018-11-14
+exclusive_use:

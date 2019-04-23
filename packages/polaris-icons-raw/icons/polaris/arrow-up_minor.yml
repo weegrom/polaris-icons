@@ -1,14 +1,13 @@
 name: arrow up
+set: minor
 authors:
   - Adam Whitcroft
-date_added: 2018-11-14
-date_modified: 2018-11-14
-description: >
-  Used to represent a positive trend when looking at analytical information.
-exclusive_use:
-public: true
-set: minor
-version: 1
+description: Used to represent a positive trend when looking at analytical information.
 keywords:
   - arrow
   - up
+public: true
+version: 1
+date_added: 2018-11-14
+date_modified: 2018-11-14
+exclusive_use:

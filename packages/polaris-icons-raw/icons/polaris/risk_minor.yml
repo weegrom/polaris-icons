@@ -1,16 +1,16 @@
 name: risk
-authors:
-  - Adam Whitcroft
-date_added: 2018-11-14
-date_modified: 2018-11-14
-description: >
-  Used to represent risk associated with orders.
-exclusive_use:
-public: true
 set: minor
-version: 1
+description:
+  Used to represent risk associated with orders.
 keywords:
   - risk
   - warning
   - triangle
   - alert
+authors:
+  - Adam Whitcroft
+public: true
+version: 1
+date_added: 2018-11-14
+date_modified: 2018-11-14
+exclusive_use:

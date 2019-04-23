@@ -1,14 +1,17 @@
 name: abandoned cart
-authors:
-  - N/A
-date_added: 2019-03-12
-date_modified: 2019-03-12
-description: Used to represent a prospective purchase that a buyer didn’t complete.
-exclusive_use:
-public: true
 set: major
-version: 1
+description: Used to represent a prospective purchase that a buyer didn’t complete.
 keywords:
   - orders
   - sales
   - funnel
+authors:
+  # - Sasha Oliveira
+  # - Co-author’s name (optional)
+  # (delete this comment block)
+  - N/A
+public: true
+version: 1
+date_added: 2019-03-12
+date_modified: 2019-03-12
+exclusive_use:

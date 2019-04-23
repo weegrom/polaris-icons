@@ -1,19 +1,30 @@
 name: checklist alternate
-authors:
+set: major
+description:
+  # Description:
+  #
+  #   Action: "Used to denote <x action>"
+  #   Wayfinding: "Used to help direct merchants to <x>"
+  #   Concept: "Used to represent <x>"
+  #   Education: "Used to give merchants more information about <context x>"
+  #
+  # Full guidelines: https://bit.ly/2GdMpmg
+  #
+  # (delete this comment block)
+  N/A
+keywords:
+  # - synonym
+  # - another synonym
+  # - related shape or symbol
+  # (delete this comment block)
   - N/A
+authors:
+  # - Sasha Oliveira
+  # - Co-author’s name (optional)
+  # (delete this comment block)
+  - N/A
+public: true
+version: 1
 date_added: 2019-03-15
 date_modified: 2019-03-15
-description: >
-  <!--
-    This icon is missing a description.
-    Please take a moment to fill it in using these guidelines:
-    https://docs.google.com/document/d/1fhkxHuKhLhIysjyMs-LwXBgSNFhUYR9LKHHNVb-Zs4Q/edit
-    (you can delete this comment)
-  -->
-  N/A
 exclusive_use:
-public: true
-set: major
-version: 1
-keywords:
-  - N/A

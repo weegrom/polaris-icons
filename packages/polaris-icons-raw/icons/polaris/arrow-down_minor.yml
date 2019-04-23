@@ -1,14 +1,14 @@
 name: arrow down
+set: minor
+description:
+  Used to represent a negative trend when looking at analytical information.
+keywords:
+  - arrow
+  - down
 authors:
   - Adam Whitcroft
 date_added: 2018-11-14
 date_modified: 2018-11-14
-description: >
-  Used to represent a negative trend when looking at analytical information.
-exclusive_use:
 public: true
-set: minor
 version: 1
-keywords:
-  - arrow
-  - down
+exclusive_use:

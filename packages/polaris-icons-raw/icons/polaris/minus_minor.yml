@@ -1,14 +1,7 @@
 name: minus
-authors:
-  - Adam Whitcroft
-date_added: 2018-11-14
-date_modified: 2018-11-14
-description: >
-  Used to denote the action of removing an item.
-exclusive_use:
-public: true
 set: minor
-version: 1
+description:
+  Used to denote the action of removing an item.
 keywords:
   - minus
   - negative
@@ -18,3 +11,10 @@ keywords:
   - '-'
   - substract
   - less
+authors:
+  - Adam Whitcroft
+public: true
+version: 1
+date_added: 2018-11-14
+date_modified: 2018-11-14
+exclusive_use:
