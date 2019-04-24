@@ -65,6 +65,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
   const showTwotone = () => setSelectedStyle('twotone');
 
   const activeStyle = icon.styles[selectedStyle] as StyleData;
+  const packageName = icon.public ? 'polaris-icons' : 'polaris-icons-internal';
 
   /* eslint-disable react/jsx-no-bind */
   const toggleContent =
@@ -166,7 +167,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
               {'} '}
             </CodeBlock.ImportItems>
             <CodeBlock.Import>
-              from {`'@shopify/polaris-icons'`};
+              from {`'@shopify/${packageName}'`};
             </CodeBlock.Import>
           </CodeBlock>
         </div>

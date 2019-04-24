@@ -100,7 +100,8 @@
       },
       {
         "files": [
-          "packages/polaris-icons/src/index.ts"
+          "packages/polaris-icons/src/index.ts",
+          "packages/polaris-icons-internal/src/index.ts"
         ],
         "rules": {
           "shopify/images-no-direct-imports": "off"
