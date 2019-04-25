@@ -8,10 +8,14 @@ const {select, selectAll} = require('hast-util-select');
 const nameRegex = /(?<=_)(major|minor|spot)(?:_(monotone|twotone))?(?=\.svg)/;
 
 const allIconFiles = glob
-  .sync(path.resolve(__dirname, '../icons/polaris/*.svg'))
+  .sync(path.resolve(__dirname, '../icons/*/*.svg'))
   .map((absoluteIconPath) => {
     // We don't care about the first item, only the groups matches
-    const [, set, style] = nameRegex.exec(absoluteIconPath) || [];
+    const [, set, styleFromFilename] = nameRegex.exec(absoluteIconPath) || [];
+
+    const style =
+      styleFromFilename ||
+      (['major', 'minor', 'spot'].includes(set) ? 'monotone' : 'image');
 
     const iconSource = fs.readFileSync(absoluteIconPath, 'utf-8');
 
@@ -114,16 +118,18 @@ allIconFiles.forEach(
         );
       });
 
-      const expectedFillsString = expectedFillColors.join(',');
-      it(`has no nodes that use fill colors other than [${expectedFillsString}]`, () => {
-        const nodesWithInvalidFill = selectAll('[fill]', iconAst).filter(
-          (node) => {
-            return !expectedFillColors.includes(node.properties.fill);
-          },
-        );
+      if (expectedFillColors) {
+        const expectedFillsString = expectedFillColors.join(',');
+        it(`has no nodes that use fill colors other than [${expectedFillsString}]`, () => {
+          const nodesWithInvalidFill = selectAll('[fill]', iconAst).filter(
+            (node) => {
+              return !expectedFillColors.includes(node.properties.fill);
+            },
+          );
 
-        expect(nodeSources(nodesWithInvalidFill, iconSource)).toEqual([]);
-      });
+          expect(nodeSources(nodesWithInvalidFill, iconSource)).toEqual([]);
+        });
+      }
     });
   },
 );
@@ -138,7 +144,7 @@ function expectedViewboxForSet(set) {
   return viewboxPerSet[set];
 }
 
-function expectedFillsForStyle(style = 'monotone') {
+function expectedFillsForStyle(style) {
   const fillsPerStyle = {
     monotone: ['#212B36', '#212b36'],
     twotone: ['#919EAB', '#919eab', '#FFF', '#fff'],

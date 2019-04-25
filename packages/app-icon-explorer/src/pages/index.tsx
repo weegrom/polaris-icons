@@ -1,7 +1,7 @@
 import React from 'react';
 import {graphql, navigate} from 'gatsby';
 import classNames from 'classnames';
-import {sortBy} from 'lodash';
+import {capitalize, sortBy} from 'lodash';
 import {parse as qsParse, stringify as qsStringify} from 'query-string';
 import {DisplayText, Icon, Scrollable} from '@shopify/polaris';
 import {MobileCancelMajorMonotone} from '@shopify/polaris-icons';
@@ -15,7 +15,7 @@ import {
   IconDetailsPanel,
   IntroHeader,
 } from '../components';
-import {Icon as IconInterface, StyleData} from '../types';
+import {Icon as IconInterface} from '../types';
 
 import styles from './index.module.scss';
 
@@ -94,8 +94,8 @@ export default class IndexPage extends React.Component<Props, State> {
       this.props.data.allPolarisYaml.edges.map((edge) => edge.node),
       ['name'],
     );
-    const [majorIcons, minorIcons] = buildIconSets(
-      filterIcons(icons, searchText),
+    const iconSets = Object.entries(
+      buildIconSets(filterIcons(icons, searchText)),
     );
 
     const isFiltered = searchText !== '';
@@ -108,25 +108,23 @@ export default class IndexPage extends React.Component<Props, State> {
 
     const introHeaderMarkup = isFiltered ? null : <IntroHeader />;
 
-    const resultsMarkup =
-      majorIcons.length || minorIcons.length ? (
-        <>
+    const anySetHasMatches = iconSets.some(([, iconSet]) => iconSet.length > 0);
+
+    const resultsMarkup = anySetHasMatches ? (
+      <>
+        {iconSets.map(([setName, icons]) => (
           <IconsListing
-            heading="Major icons"
-            icons={majorIcons}
+            key={setName}
+            heading={`${capitalize(setName)} icons`}
+            icons={icons}
             activeIconId={activeIconId}
             showCount={isFiltered}
           />
-          <IconsListing
-            heading="Minor icons"
-            icons={minorIcons}
-            activeIconId={activeIconId}
-            showCount={isFiltered}
-          />
-        </>
-      ) : (
-        <EmptyState />
-      );
+        ))}
+      </>
+    ) : (
+      <EmptyState />
+    );
 
     const panelClasses = classNames({
       [styles.panel]: true,
@@ -235,9 +233,7 @@ function filterIcons(icons: IconInterface[], searchText: string) {
   };
 
   return icons.filter((icon) => {
-    const styles = Object.values(icon.styles).filter(Boolean) as StyleData[];
-
-    const allPossibleImportNames = styles.reduce<string[]>(
+    const allPossibleImportNames = icon.styles.reduce<string[]>(
       (memo, style) =>
         memo.concat([style.importName], style.deprecatedImportNames),
       [],
@@ -252,18 +248,14 @@ function filterIcons(icons: IconInterface[], searchText: string) {
 }
 
 function buildIconSets(icons: IconInterface[]) {
-  return icons.reduce(
-    (memo, icon) => {
-      if (icon.set === 'major') {
-        memo[0].push(icon);
-      } else if (icon.set === 'minor') {
-        memo[1].push(icon);
-      }
+  return icons.reduce<{[key: string]: IconInterface[]}>((memo, icon) => {
+    if (!memo[icon.set]) {
+      memo[icon.set] = [];
+    }
+    memo[icon.set].push(icon);
 
-      return memo;
-    },
-    [[], []] as IconInterface[][],
-  );
+    return memo;
+  }, {});
 }
 
 export const pageQuery = graphql`
@@ -283,24 +275,15 @@ export const pageQuery = graphql`
           descriptionHtml
           public
           keywords
+          imageSize
           styles {
-            monotone {
-              importName
-              deprecatedImportNames
-              svgContent
-              svgFile {
-                publicURL
-                base
-              }
-            }
-            twotone {
-              importName
-              deprecatedImportNames
-              svgContent
-              svgFile {
-                publicURL
-                base
-              }
+            styleName
+            importName
+            deprecatedImportNames
+            svgContent
+            svgFile {
+              publicURL
+              base
             }
           }
         }

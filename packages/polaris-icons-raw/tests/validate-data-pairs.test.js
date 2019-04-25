@@ -4,7 +4,7 @@ const glob = require('glob');
 const nameRegex = /(.+_(?:major|minor|spot))(?:_(monotone|twotone))?(?:\.(svg|yml))/;
 
 const allFiles = glob
-  .sync(path.resolve(__dirname, '../icons/polaris/*.{svg,yml}'))
+  .sync(path.resolve(__dirname, '../icons/*/*.{svg,yml}'))
   .reduce((memo, filePath) => {
     const [, name, style = 'monotone', extension] =
       nameRegex.exec(path.basename(filePath)) || [];

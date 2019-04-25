@@ -11,7 +11,7 @@ const ajvInstance = new Ajv({allErrors: true});
 const validate = ajvInstance.compile(metadataSchema);
 
 const allIconMetadataFiles = glob
-  .sync(path.resolve(__dirname, '../icons/polaris/*.yml'))
+  .sync(path.resolve(__dirname, '../icons/*/*.yml'))
   .map((absoluteIconPath) => {
     return {
       iconPath: path.relative(`${__dirname}/../..`, absoluteIconPath),

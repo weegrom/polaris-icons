@@ -18,7 +18,7 @@ async function onCreateNode({
 }) {
   const isIconMetadatafile =
     node.internal.mediaType === 'text/yaml' &&
-    node.dir.endsWith('polaris-icons-raw/icons/polaris');
+    path.dirname(node.dir).endsWith('polaris-icons-raw/icons');
 
   if (!isIconMetadatafile) {
     return;
@@ -32,12 +32,16 @@ async function onCreateNode({
   };
   const metadataFilename = path.basename(node.base, '.yml');
 
-  const monotoneSuffix = metadata.set === 'major' ? '_monotone' : '';
+  const primaryStyleName = ['major', 'minor', 'spot'].includes(metadata.set)
+    ? 'monotone'
+    : 'image';
+
+  const primarySuffix = metadata.set === 'major' ? '_monotone' : '';
   const twotoneSuffix = '_twotone';
 
-  const monotoneSvgPath = node.absolutePath.replace(
+  const primaryStyleSvgPath = node.absolutePath.replace(
     /\.yml$/,
-    `${monotoneSuffix}.svg`,
+    `${primarySuffix}.svg`,
   );
   const twotoneSvgPath = node.absolutePath.replace(
     /\.yml$/,
@@ -52,18 +56,21 @@ async function onCreateNode({
     children: [],
     parent: node.id,
     descriptionHtml: marked(metadata.description),
-    styles: {
-      monotone: dataForSvg(
+    imageSize: sizeForSet(metadata.set),
+    styles: [
+      dataForSvg(
         getNodes,
-        monotoneSvgPath,
-        metadata.deprecated_aliases.map((alias) => alias + monotoneSuffix),
+        primaryStyleName,
+        primaryStyleSvgPath,
+        metadata.deprecated_aliases.map((alias) => alias + primarySuffix),
       ),
-      twotone: dataForSvg(
+      dataForSvg(
         getNodes,
+        'twotone',
         twotoneSvgPath,
         metadata.deprecated_aliases.map((alias) => alias + twotoneSuffix),
       ),
-    },
+    ].filter(Boolean),
     internal: {
       contentDigest: createContentDigest(metadata),
       type: 'PolarisYaml',
@@ -74,7 +81,16 @@ async function onCreateNode({
   actions.createParentChildLink({parent: node, child: yamlNode});
 }
 
-function dataForSvg(getNodes, pathToSvg, deprecatedAliases) {
+function sizeForSet(set) {
+  const sizePerSet = {
+    spot: [41, 41],
+    payment: [40, 24],
+  };
+
+  return sizePerSet[set] ? sizePerSet[set] : [20, 20];
+}
+
+function dataForSvg(getNodes, styleName, pathToSvg, deprecatedAliases) {
   if (!fs.existsSync(pathToSvg)) {
     return undefined;
   }
@@ -84,6 +100,7 @@ function dataForSvg(getNodes, pathToSvg, deprecatedAliases) {
   );
 
   return {
+    styleName,
     importName: pascalCase(path.basename(svgFileNode.base, svgFileNode.ext)),
     deprecatedImportNames: deprecatedAliases.map(pascalCase),
     svgContent: fs.readFileSync(pathToSvg, 'utf8'),

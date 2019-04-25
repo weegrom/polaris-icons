@@ -33,7 +33,6 @@
 }
 
 .icon {
-  --icon-size: 20px;
   display: flex;
   flex-direction: column;
   min-height: 88px;
@@ -42,9 +41,7 @@
   > img {
     box-sizing: content-box;
     flex: 1 0 auto;
-    padding: 0 calc(50% - (var(--icon-size, 20px) / 2));
-    height: var(--icon-size, 20px);
-    width: var(--icon-size, 20px);
+    padding: 0 calc(50% - (var(--icon-width, 20px) / 2));
   }
 }
 

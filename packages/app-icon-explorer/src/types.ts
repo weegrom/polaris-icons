@@ -1,4 +1,5 @@
 export interface StyleData {
+  styleName: string;
   importName: string;
   deprecatedImportNames: string[];
   svgContent: string;
@@ -12,12 +13,10 @@ export interface Icon {
   name: string;
   public: boolean;
   keywords: string[];
-  styles: {
-    monotone: StyleData;
-    twotone?: StyleData;
-  };
+  styles: StyleData[];
   descriptionHtml: string;
   set: 'minor' | 'major' | 'spot';
+  imageSize: number;
   metadataFilename: string;
   metadataId: string;
   deprecated: boolean;

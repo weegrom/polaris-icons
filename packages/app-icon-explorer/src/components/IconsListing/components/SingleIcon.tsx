@@ -36,10 +36,10 @@ export default function SingleIcon({icon, isActive = false}: Props) {
     <Link to={linkTo} className={className} onClick={trackLink}>
       <div className={styles.iconSvgWrapper}>
         <img
-          width="20"
-          height="20"
+          width={icon.imageSize[0]}
+          height={icon.imageSize[1]}
           src={`data:image/svg+xml;utf8,${encodeURIComponent(
-            icon.styles.monotone.svgContent,
+            icon.styles[0].svgContent,
           )}`}
           alt=""
         />

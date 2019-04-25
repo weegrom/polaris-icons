@@ -47,9 +47,7 @@ export default class IconDetailsPanel extends React.Component<Props> {
 }
 
 function PopulatedState({icon}: PopulatedStateProps) {
-  const [selectedStyle, setSelectedStyle] = useState(
-    'monotone' as keyof IconInterface['styles'],
-  );
+  const [selectedStyle, setSelectedStyle] = useState(0);
 
   const [previousIcon, setPreviousIcon] = useState(
     null as IconInterface | null,
@@ -58,11 +56,11 @@ function PopulatedState({icon}: PopulatedStateProps) {
   // Reset the selected style if we change to a new icon
   if (icon !== previousIcon) {
     setPreviousIcon(icon);
-    setSelectedStyle('monotone');
+    setSelectedStyle(0);
   }
 
-  const showMonotone = () => setSelectedStyle('monotone');
-  const showTwotone = () => setSelectedStyle('twotone');
+  const showPrimary = () => setSelectedStyle(0);
+  const showTwotone = () => setSelectedStyle(1);
 
   const activeStyle = icon.styles[selectedStyle] as StyleData;
 
@@ -71,16 +69,13 @@ function PopulatedState({icon}: PopulatedStateProps) {
     icon.set === 'major' ? (
       <div>
         <ButtonGroup fullWidth segmented>
-          <ToggleButton
-            pressed={selectedStyle === 'monotone'}
-            onClick={showMonotone}
-          >
+          <ToggleButton pressed={selectedStyle === 0} onClick={showPrimary}>
             Monotone
           </ToggleButton>
           <ToggleButton
-            pressed={selectedStyle === 'twotone'}
+            pressed={selectedStyle === 1}
             onClick={showTwotone}
-            disabled={!icon.styles.twotone}
+            disabled={!icon.styles[1]}
           >
             Twotone
           </ToggleButton>
@@ -125,6 +120,9 @@ function PopulatedState({icon}: PopulatedStateProps) {
 
         <div className={`${styles.spacingBase} ${styles.icon}`}>
           <img
+            width={icon.imageSize[0]}
+            height={icon.imageSize[1]}
+            style={{'--icon-width': `${icon.imageSize[0]}px`} as any}
             src={`data:image/svg+xml;utf8,${encodeURIComponent(
               activeStyle.svgContent,
             )}`}
