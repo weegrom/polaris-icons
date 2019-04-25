@@ -56,8 +56,8 @@
     },
     "set": {
       "type": "string",
-      "enum": ["major", "minor", "spot"],
-      "description": "Which set this icon belongs to (major, minor, spot)."
+      "enum": ["major", "minor", "spot", "payment"],
+      "description": "Which set this icon belongs to (major, minor, spot, payment)."
     },
     "version": {
       "type": "integer",

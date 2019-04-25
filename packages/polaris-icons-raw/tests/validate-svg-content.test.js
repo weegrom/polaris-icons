@@ -5,7 +5,7 @@ const unified = require('unified');
 const parse = require('rehype-parse');
 const {select, selectAll} = require('hast-util-select');
 
-const nameRegex = /(?<=_)(major|minor|spot)(?:_(monotone|twotone))?(?=\.svg)/;
+const nameRegex = /(?<=_)(major|minor|spot|payment)(?:_(monotone|twotone))?(?=\.svg)/;
 
 const allIconFiles = glob
   .sync(path.resolve(__dirname, '../icons/*/*.svg'))
@@ -139,6 +139,7 @@ function expectedViewboxForSet(set) {
     major: '0 0 20 20',
     minor: '0 0 20 20',
     spot: '0 0 41 41',
+    payment: '0 0 100 60',
   };
 
   return viewboxPerSet[set];
@@ -148,6 +149,7 @@ function expectedFillsForStyle(style) {
   const fillsPerStyle = {
     monotone: ['#212B36', '#212b36'],
     twotone: ['#919EAB', '#919eab', '#FFF', '#fff'],
+    image: undefined,
   };
 
   return fillsPerStyle[style];

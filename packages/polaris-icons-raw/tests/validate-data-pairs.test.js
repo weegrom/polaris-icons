@@ -1,7 +1,7 @@
 const path = require('path');
 const glob = require('glob');
 
-const nameRegex = /(.+_(?:major|minor|spot))(?:_(monotone|twotone))?(?:\.(svg|yml))/;
+const nameRegex = /(.+_(?:major|minor|spot|payment))(?:_(monotone|twotone))?(?:\.(svg|yml))/;
 
 const allFiles = glob
   .sync(path.resolve(__dirname, '../icons/*/*.{svg,yml}'))
