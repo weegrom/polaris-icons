@@ -18,7 +18,7 @@ async function onCreateNode({
 }) {
   const isIconMetadatafile =
     node.internal.mediaType === 'text/yaml' &&
-    path.dirname(node.dir).endsWith('polaris-icons-raw/icons');
+    node.dir.includes('/polaris-icons-raw/icons/');
 
   if (!isIconMetadatafile) {
     return;
@@ -37,16 +37,39 @@ async function onCreateNode({
     : 'image';
 
   const primarySuffix = metadata.set === 'major' ? '_monotone' : '';
-  const twotoneSuffix = '_twotone';
 
   const primaryStyleSvgPath = node.absolutePath.replace(
     /\.yml$/,
     `${primarySuffix}.svg`,
   );
-  const twotoneSvgPath = node.absolutePath.replace(
-    /\.yml$/,
-    `${twotoneSuffix}.svg`,
-  );
+
+  const styles = [
+    dataForSvg(
+      getNodes,
+      primaryStyleName,
+      primaryStyleSvgPath,
+      metadata.deprecated_aliases.map((alias) => alias + primarySuffix),
+    ),
+  ];
+
+  if (metadata.set === 'major') {
+    const twotoneSuffix = '_twotone';
+    const twotoneSvgPath = node.absolutePath.replace(
+      /\.yml$/,
+      `${twotoneSuffix}.svg`,
+    );
+
+    if (fs.existsSync(twotoneSvgPath)) {
+      styles.push(
+        dataForSvg(
+          getNodes,
+          'twotone',
+          twotoneSvgPath,
+          metadata.deprecated_aliases.map((alias) => alias + twotoneSuffix),
+        ),
+      );
+    }
+  }
 
   const yamlNode = {
     ...metadata,
@@ -57,20 +80,7 @@ async function onCreateNode({
     parent: node.id,
     descriptionHtml: marked(metadata.description),
     imageSize: sizeForSet(metadata.set),
-    styles: [
-      dataForSvg(
-        getNodes,
-        primaryStyleName,
-        primaryStyleSvgPath,
-        metadata.deprecated_aliases.map((alias) => alias + primarySuffix),
-      ),
-      dataForSvg(
-        getNodes,
-        'twotone',
-        twotoneSvgPath,
-        metadata.deprecated_aliases.map((alias) => alias + twotoneSuffix),
-      ),
-    ].filter(Boolean),
+    styles,
     internal: {
       contentDigest: createContentDigest(metadata),
       type: 'PolarisYaml',
@@ -83,18 +93,16 @@ async function onCreateNode({
 
 function sizeForSet(set) {
   const sizePerSet = {
+    major: [20, 20],
+    minor: [20, 20],
     spot: [41, 41],
     payment: [40, 24],
   };
 
-  return sizePerSet[set] ? sizePerSet[set] : [20, 20];
+  return sizePerSet[set];
 }
 
 function dataForSvg(getNodes, styleName, pathToSvg, deprecatedAliases) {
-  if (!fs.existsSync(pathToSvg)) {
-    return undefined;
-  }
-
   const svgFileNode = getNodes().find(
     (fileNode) => fileNode.absolutePath === pathToSvg,
   );
