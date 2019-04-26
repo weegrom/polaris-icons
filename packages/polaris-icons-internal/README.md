@@ -14,9 +14,9 @@ Make sure your app is using `@shopify/polaris` version [`3.10.0`](https://github
 
 ```js
 import {Icon} from '@shopify/polaris';
-import {AddMajorMonotone} from '@shopify/polaris-icons';
+import {FraudProtectMajorMonotone} from '@shopify/polaris-icons-internal';
 
-<Icon source={AddMajorMonotone} />;
+<Icon source={FraudProtectMajorMonotone} />;
 ```
 
 ## Development

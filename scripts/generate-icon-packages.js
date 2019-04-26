@@ -10,30 +10,44 @@ const iconBasePath = path.resolve(
   '../packages/polaris-icons-raw/icons/polaris',
 );
 
-const indexFilePath = path.resolve(
-  __dirname,
-  '../packages/polaris-icons/src/index.ts',
-);
-
 const preamble = `// DO NOT MANUALLY EDIT THIS FILE
 // This file was automatically generated
 // Run 'yarn run generate-icon-packages' from the root of the monorepo to generate a new version`;
 
-const allSvgExportsString = glob
+const allSvgExports = glob
   .sync('*.yml', {cwd: iconBasePath})
-  .reduce((memo, filename) => memo.concat(exportsForMetadata(filename)), [])
-  .join('\n\n');
+  .reduce((memo, filename) => {
+    const {packageName, exportStrings} = exportsForMetadata(filename);
 
-fs.writeFileSync(indexFilePath, `${preamble}\n\n${allSvgExportsString}\n`);
+    if (!memo[packageName]) {
+      memo[packageName] = [];
+    }
+
+    memo[packageName].push(...exportStrings);
+
+    return memo;
+  }, {});
+
+Object.entries(allSvgExports).forEach(([packageName, exportStrings]) => {
+  const allSvgExportsString = exportStrings.join('\n\n');
+  fs.writeFileSync(
+    indexFilePath(packageName),
+    `${preamble}\n\n${allSvgExportsString}\n`,
+  );
+});
+
+function indexFilePath(packageName) {
+  return path.resolve(__dirname, `../packages/${packageName}/src/index.ts`);
+}
 
 function exportsForMetadata(filename) {
   const metadata = jsYaml.safeLoad(
     fs.readFileSync(`${iconBasePath}/${filename}`, 'utf8'),
   );
 
-  if (!metadata.public) {
-    return [];
-  }
+  const packageName = metadata.public
+    ? 'polaris-icons'
+    : 'polaris-icons-internal';
 
   const exportStrings = findAllPresentStyles(filename).reduce(
     (memo, [exportName, exportFile, styleSuffix]) => {
@@ -49,7 +63,7 @@ function exportsForMetadata(filename) {
     [],
   );
 
-  return exportStrings;
+  return {packageName, exportStrings};
 }
 
 function findAllPresentStyles(filename) {
