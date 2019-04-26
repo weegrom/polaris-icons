@@ -17,7 +17,7 @@
     "lint:css": "yarn run stylelint '**/*.{scss}'",
     "test": "jest",
     "type-check": "tsc",
-    "release": "lerna publish && git push --follow-tags",
+    "release": "lerna publish",
     "prerelease": "node scripts/identify-deprecated-icons.js",
     "heroku-postbuild": "yarn run lerna run build && yarn workspace app-icon-explorer run build-web"
   },
