@@ -7,6 +7,16 @@ const {select, selectAll} = require('hast-util-select');
 
 const nameRegex = /(?<=_)(major|minor|spot)(?:_(monotone|twotone))?(?=\.svg)/;
 
+const configPerSetAndStyle = new Map([
+  ['major_monotone', {viewbox: '0 0 20 20', colors: ['#637381']}],
+  [
+    'major_twotone',
+    {viewbox: '0 0 20 20', colors: ['#637381', '#FFF', '#fff']},
+  ],
+  ['minor', {viewbox: '0 0 20 20', colors: ['#212B36', '#212b36']}],
+  ['spot', {viewbox: '0 0 41 41', colors: ['#212B36', '#212b36']}],
+]);
+
 const allIconFiles = glob
   .sync(path.resolve(__dirname, '../icons/polaris/*.svg'))
   .map((absoluteIconPath) => {
@@ -15,14 +25,18 @@ const allIconFiles = glob
 
     const iconSource = fs.readFileSync(absoluteIconPath, 'utf-8');
 
+    const {viewbox, colors} = configPerSetAndStyle.get(
+      [set, style].filter(Boolean).join('_'),
+    );
+
     return {
       iconPath: path.relative(`${__dirname}/../..`, absoluteIconPath),
       iconSource,
       iconAst: unified()
         .use(parse, {fragment: true, space: 'svg'})
         .parse(iconSource),
-      expectedViewbox: expectedViewboxForSet(set),
-      expectedFillColors: expectedFillsForStyle(style),
+      expectedViewbox: viewbox,
+      expectedFillColors: colors,
     };
   });
 
@@ -127,25 +141,6 @@ allIconFiles.forEach(
     });
   },
 );
-
-function expectedViewboxForSet(set) {
-  const viewboxPerSet = {
-    major: '0 0 20 20',
-    minor: '0 0 20 20',
-    spot: '0 0 41 41',
-  };
-
-  return viewboxPerSet[set];
-}
-
-function expectedFillsForStyle(style = 'monotone') {
-  const fillsPerStyle = {
-    monotone: ['#212B36', '#212b36'],
-    twotone: ['#919EAB', '#919eab', '#FFF', '#fff'],
-  };
-
-  return fillsPerStyle[style];
-}
 
 function nodeSources(nodes, iconSource) {
   return nodes.map((node) =>

@@ -86,10 +86,9 @@ function componentFromSvgFile(filename, contentPerFilename) {
       replaceAttrValues: {
         '#FFF': 'currentColor',
         '#fff': 'currentColor',
+        '#637381': '{undefined}',
         '#212B36': '{undefined}',
         '#212b36': '{undefined}',
-        '#919EAB': '{undefined}',
-        '#919eab': '{undefined}',
       },
       template: ({template}, opts, {jsx}) => template.ast`(props) => ${jsx}`,
       jsx: {

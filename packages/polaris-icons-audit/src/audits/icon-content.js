@@ -61,14 +61,7 @@ function testHasExpectedViewbox({iconAst}) {
 }
 
 function testHasExpectedFillColors({iconAst, iconSource}) {
-  const expectedFillColors = [
-    '#212B36',
-    '#212b36',
-    '#919EAB',
-    '#919eab',
-    '#FFF',
-    '#fff',
-  ];
+  const expectedFillColors = ['#637381', '#212B36', '#212b36', '#FFF', '#fff'];
 
   const nodesWithInvalidFill = selectAll('[fill]', iconAst).filter((node) => {
     return !expectedFillColors.includes(node.properties.fill);
@@ -78,7 +71,7 @@ function testHasExpectedFillColors({iconAst, iconSource}) {
   const problems = nodeStrs.map((nodeStr) => `      ${nodeStr}`).join('\n');
 
   return problems
-    ? `Has elements that use a fill that is not "#212B36" or "#919EAB" or "#FFF":\n${problems}`
+    ? `Has elements that use a fill that is not "#637381" or "#212B36" or "#FFF":\n${problems}`
     : '';
 }
 
