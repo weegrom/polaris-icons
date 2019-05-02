@@ -1,17 +1,6 @@
 name: mobile accept
 set: major
-description:
-  # Description:
-  #
-  #   Action: "Used to denote <x action>"
-  #   Wayfinding: "Used to help direct merchants to <x>"
-  #   Concept: "Used to represent <x>"
-  #   Education: "Used to give merchants more information about <context x>"
-  #
-  # Full guidelines: https://bit.ly/2GdMpmg
-  #
-  # (delete this comment block)
-  N/A
+description: Used to represent a confirm action. Most commonly used in the toolbar in an _edit_ context.
 keywords:
   - accept
   - save
