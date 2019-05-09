@@ -107,6 +107,9 @@ spec:
       containers:
         - name: web
           image: gcr.io/shopify-docker-images/apps/production/polaris-icons:<%= current_sha %>
+          envFrom:
+          - configMapRef:
+              name: application-state
           args:
             - web
           ports:
