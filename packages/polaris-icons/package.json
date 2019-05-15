@@ -7,9 +7,10 @@
   "module": "index.es.js",
   "types": "index.d.ts",
   "scripts": {
+    "prebuild": "yarn run clean",
     "build": "yarn run rollup -c",
     "prepublish": "yarn run build",
-    "clean": "rimraf build types index.js index.es.js"
+    "clean": "rimraf build types index.js index.es.js images"
   },
   "publishConfig": {
     "access": "public",
@@ -18,7 +19,8 @@
   "files": [
     "index.js",
     "index.es.js",
-    "index.d.ts"
+    "index.d.ts",
+    "images/*"
   ],
   "repository": {
     "type": "git",

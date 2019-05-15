@@ -1,9 +1,10 @@
 // rollup.config.js
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
-import svgr from '@svgr/rollup';
-import {svgOptions} from '@shopify/images/optimize';
 import customTypes from '../../config/rollup/plugins/customTypes';
+import svgBuild from '../../config/rollup/plugins/svgBuild';
+
+const WHITE_REGEX = /^#fff(?:fff)?$/i;
 
 const rollupConfig = {
   input: 'src/index.ts',
@@ -30,18 +31,12 @@ const rollupConfig = {
     warn(warning);
   },
   plugins: [
-    svgr({
+    svgBuild({
       include: '../polaris-icons-raw/**/*.svg',
-      exclude: 'node_modules/**',
-      svgoConfig: svgOptions(),
-      replaceAttrValues: {
-        '#FFF': 'currentColor',
-        '#fff': 'currentColor',
-        '#637381': '{undefined}',
-        '#212B36': '{undefined}',
-        '#212b36': '{undefined}',
+      outputFolder: './images',
+      replaceFill: {
+        transform: (fill) => (WHITE_REGEX.test(fill) ? 'currentColor' : ''),
       },
-      babel: false,
     }),
     babel({
       exclude: 'node_modules/**',

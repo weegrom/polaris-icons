@@ -16,9 +16,11 @@ build
 packages/app-icon-explorer/.cache
 packages/app-icon-explorer/public
 
-# Built index files
+# Built index files and images
 /packages/polaris-icons/index.*
+/packages/polaris-icons/images
 /packages/polaris-icons-internal/index.*
+/packages/polaris-icons-internal/images
 
 # Generated metadata
 metadata.json
