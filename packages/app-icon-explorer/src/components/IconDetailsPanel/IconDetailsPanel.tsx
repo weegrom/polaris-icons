@@ -92,15 +92,17 @@ function PopulatedState({icon}: PopulatedStateProps) {
     );
   /* eslint-enable react/jsx-no-bind */
 
+  /* eslint-disable react/jsx-child-element-spacing */
   const editMetadataContent = showBanner(icon) ? (
     <Banner>
       <p>
-        This icon is missing information.{' '}
+        This icon is missing information.
+        <br />
         <OutboundLink
           className="contentLink"
           href={ghIconMetadataEditUrl(icon.metadataFilename)}
         >
-          Update the metadata for this icon
+          Update icon metadata
         </OutboundLink>
       </p>
     </Banner>
@@ -112,6 +114,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
       Edit icon metadata
     </OutboundLink>
   );
+  /* eslint-enable react/jsx-child-element-spacing */
 
   return (
     <div>
