@@ -8,12 +8,12 @@ import SvgoBuilder from 'svgo';
 /**
  * A rollup plugin that acts upon SVG files. It will:
  *
- * - Run our SVGO optimisation config over the svg contents
- * - Write the svg to the specified `outputFolder`, for people that wish to use
+ * - Run our SVGO optimization config over the SVG contents
+ * - Write the SVG to the specified `outputFolder`, for people that wish to use
  *   the raw icons
- * - Pass the optimized svg into SVGr and return the result so that rollup can
- *   inline the result into js output, for people who wish to import React
- *   components from the index file
+ * - Pass the optimized SVG into SVGR and return the result so that rollup can
+ *   inline the result into JavaScript output, for people who wish to import
+ *   React components from the index file
  */
 export default function svgrPlugin(options = {}) {
   const filter = createFilter(options.include || '**/*.svg', options.exclude);
