@@ -1,24 +1,56 @@
-# `polaris-icons-internal`
+# @shopify/polaris-icons-internal
 
-This is a **private** package. That means this package can not be used by open source projects, only internal Shopify projects.
+> This package exports a JavaScript file containing the Polaris icons that are for Shopify use only.
 
-`polaris-icons-internal` exports a JS file that then exports all of Shopify's private icons as JS exports.
+## Getting started
+
+This package is published to Shopify's private npm registry, and can't be used for open source projects.
+
+Although it's possible to use this package directly, we recommend using the icons in this package through [Polaris React](https://github.com/Shopify/polaris-react) in combination with the `Icon` component from that project. Make sure that your app is using Polaris React version 3.10.0 or higher.
+
+## Installation
+
+After you have Polaris React installed, you need to add the `polaris-icons-internal` package as a dependency.
+
+Run the following command using [npm](https://www.npmjs.com/):
+
+```
+npm install @shopify/polaris-icons-internal --save
+```
+
+If you prefer [Yarn](https://yarnpkg.com/en/), then use the following command instead:
+
+```
+yarn add @shopify/polaris-icons-internal
+```
 
 ## Usage
 
-You should use this package if you are working in an internal, non-open source, Shopify project, and want to use the icons included in it.
+Import the `Icon` component from Polaris React and an icon from `polaris-icons-internal` into your project.
 
-We suggest using the icons from this package in combination with the `Icon` component from `@shopify/polaris`.
+1. Include the icon component from Polaris React:
 
-Make sure your app is using `@shopify/polaris` version [`3.10.0`](https://github.com/Shopify/polaris-react/releases/tag/v3.10.0) or higher.
+   ```tsx
+   import {Icon} from '@shopify/polaris';
+   ```
 
-```js
-import {Icon} from '@shopify/polaris';
-import {FraudProtectMajorMonotone} from '@shopify/polaris-icons-internal';
+2. Include a private icon from `polaris-icons-internal`:
 
-<Icon source={FraudProtectMajorMonotone} />;
-```
+   ```tsx
+   import {FraudProtectMajorMonotone} from '@shopify/polaris-icons-internal';
+   ```
 
-## Development
+3. Pass the imported Polaris icon to the `source` prop of the `Icon` component:
 
-You should make changes to this package if you want to add a new icon, remove an icon, or modify an existing icon (e.g.: change a file's name).
+   ```tsx
+   <Icon source={FraudProtectMajorMonotone} />
+   ```
+
+## Contributing 🙌
+
+Make changes to this package to add, remove, or rename icons that are for Shopify use only. See our [contributing guide](https://github.com/Shopify/polaris-icons/blob/master/CONTRIBUTING.md). 👀
+
+## Licenses 📝
+
+- Source code is under a [custom license](https://github.com/Shopify/polaris-icons/blob/master/LICENSE.md) based on MIT. The license restricts Polaris icons usage to applications that integrate or interoperate with Shopify software or services, with additional restrictions for external, stand-alone applications.
+- All icons and images are licensed under the [Polaris Design Guidelines License Agreement](https://polaris.shopify.com/legal/license).
