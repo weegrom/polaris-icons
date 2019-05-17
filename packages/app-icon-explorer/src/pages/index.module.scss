@@ -146,16 +146,14 @@ $transition-slide-length: 100vh;
   $panelWidth: 340px;
 
   .page {
-    display: grid;
-    grid-gap: $gridGap;
-    grid-template-columns: auto $panelWidth;
     padding: 0 0 0 $pagePadding;
   }
 
   .panel {
-    width: 100%;
+    flex: 0 0 $panelWidth;
     min-height: calc(100vh - 56px);
     border-left: 1px solid $borderColor;
+    margin-left: $gridGap;
   }
 
   .panelDetails {
