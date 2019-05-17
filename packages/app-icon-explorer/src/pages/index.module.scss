@@ -5,6 +5,10 @@ $borderColor: $color-sky-light;
 $transition-slide-length: 100vh;
 
 :global {
+  html {
+    overflow-y: scroll;
+  }
+
   body {
     min-width: 320px;
   }
@@ -65,6 +69,7 @@ $transition-slide-length: 100vh;
 .listingWrapper {
   display: flex;
   flex: 1 1 auto;
+  width: 100%;
 }
 
 .panelHeader {
@@ -146,14 +151,16 @@ $transition-slide-length: 100vh;
   $panelWidth: 340px;
 
   .page {
+    display: grid;
+    grid-gap: $gridGap;
+    grid-template-columns: 1fr $panelWidth;
     padding: 0 0 0 $pagePadding;
   }
 
   .panel {
-    flex: 0 0 $panelWidth;
+    width: 100%;
     min-height: calc(100vh - 56px);
     border-left: 1px solid $borderColor;
-    margin-left: $gridGap;
   }
 
   .panelDetails {
