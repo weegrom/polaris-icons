@@ -18,7 +18,8 @@
     "packages/*/build": true,
     "packages-ruby/*/{images,pkg}": true,
     "packages/app-icon-explorer/{.cache,public}": true,
-    "packages/polaris-icons{,-internal}/index{.js,.es.js,.d.ts}": true
+    "packages/polaris-icons{,-internal}/index{.js,.es.js,.d.ts}": true,
+    "packages/polaris-icons{,-internal}/images": true
   },
   "javascript.validate.enable": false,
   "jest.autoEnable": false,
@@ -32,7 +33,8 @@
     "packages-ruby/*/{images,pkg}": true,
     ".{dev,shadowenv.d}": true,
     "packages/app-icon-explorer/{.cache,public}": true,
-    "packages/polaris-icons{,-internal}/index{.js,.es.js,.d.ts}": true
+    "packages/polaris-icons{,-internal}/index{.js,.es.js,.d.ts}": true,
+    "packages/polaris-icons{,-internal}/images": true
   },
   "stylelint.enable": true,
   "typescript.tsdk": "./node_modules/typescript/lib"
