@@ -4,42 +4,24 @@
 
 > This package is a command line utility that can be run by any project to generate an audit of SVG usage.
 
-## Getting started
-
-Make sure that you have available the repository you want to audit and the `shopify/polaris-icons` repository. For example, to audit a folder in `shopify/web`, run the following command:
-
-```sh
-dev clone shopify/web && dev clone shopify/polaris-icons
-```
-
-Next, checkout the `polaris-icons-audit` package:
-
-```sh
-dev cd polaris-icons
-cd packages/polaris-icons-audit
-```
-
 ## Usage
 
-This package includes the following audits:
-
-- duplicate-basenames
-- duplicate-content
-- folder-names
-- icon-content
+This package's audits can be used without installation by using `npx`.
 
 To run all audits on a folder, specify the relative folder path. For example:
 
 ```sh
-node bin/cli.js audit ../../../web/app
+npx @shopify/polaris-icons-audit audit ./app
 ```
 
 To run a subset of audits, pass a comma-separated list of
 audits to the `--reports` parameter. For example:
 
 ```sh
-node bin/cli.js audit ../../../web/app --reports=duplicate-content
+npx @shopify/polaris-icons-audit audit ./app --reports=duplicate-content
 ```
+
+Valid report names are: `duplicate-basenames`, `duplicate-content`, `folder-names` and `icon-content`.
 
 ## Contributing 🙌
 
