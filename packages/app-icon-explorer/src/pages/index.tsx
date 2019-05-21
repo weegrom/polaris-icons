@@ -161,7 +161,7 @@ export default class IndexPage extends React.Component<Props, State> {
                     ordered={['Escape']}
                     onMatch={this.handelPanelClose}
                   />
-                  <DisplayText size="small">Icon Details</DisplayText>
+                  <DisplayText size="small">Icon details</DisplayText>
                 </div>
                 <button
                   type="button"
