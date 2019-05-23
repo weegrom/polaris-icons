@@ -37,12 +37,17 @@
   display: flex;
   flex-direction: column;
   min-height: 88px;
-  background-color: $color-sky-lighter;
+  background: radial-gradient($color-sky 22%, transparent 23%),
+    $color-sky-lighter;
+  background-size: 0.6rem 0.6rem;
+  background-position: 0.2rem 0.8rem;
+  width: 274px;
+  border-radius: 0.3rem;
 
   > img {
     box-sizing: content-box;
     flex: 1 0 auto;
-    padding: 0 calc(50% - (var(--icon-size, 20px) / 2));
+    padding: 0 calc(51% - (var(--icon-size, 20px) / 2));
     height: var(--icon-size, 20px);
     width: var(--icon-size, 20px);
   }
@@ -64,7 +69,7 @@
     display: inline-flex;
     align-items: center;
     background-color: $color-sky;
-    border-radius: 3px;
+    border-radius: 0.3rem;
   }
 
   a {
