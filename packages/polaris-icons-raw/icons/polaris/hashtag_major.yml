@@ -13,11 +13,10 @@ description:
   # (delete this comment block)
   N/A
 keywords:
-  # - synonym
-  # - another synonym
-  # - related shape or symbol
-  # (delete this comment block)
-  - N/A
+  - pound
+  - '#'
+  - sharp
+  - num
 authors:
   # - Sasha Oliveira
   # - Co-author’s name (optional)
