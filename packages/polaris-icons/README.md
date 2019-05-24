@@ -46,6 +46,12 @@ Import the `Icon` component from Polaris React and any icon from Polaris icons i
    <Icon source={AddMajorMonotone} />
    ```
 
+### SVG files
+
+For consumers who don’t use React, we provide SVG files within the `images` folder.
+
+View the list of available files on [unpkg](https://unpkg.com/@shopify/polaris-icons/images/).
+
 ## Contributing 🙌
 
 Make changes to this package to add, remove, or rename publicly available icons. See our [contributing guide](https://github.com/Shopify/polaris-icons/blob/master/CONTRIBUTING.md). 👀

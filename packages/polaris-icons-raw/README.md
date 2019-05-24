@@ -1,6 +1,6 @@
 # @shopify/polaris-icons-raw
 
-> This package contains SVG files and metadata for all of the Polaris icons. This is a helper package that's imported by the `polaris-icons` and `polaris-icons-internal` packages.
+> This package contains SVG files and metadata for all of the Polaris icons. This is a helper package that’s used to build the contents of the `polaris-icons` and `polaris-icons-internal` packages.
 
 ## Usage
 

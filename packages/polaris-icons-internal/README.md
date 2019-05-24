@@ -46,6 +46,10 @@ Import the `Icon` component from Polaris React and an icon from `polaris-icons-i
    <Icon source={FraudProtectMajorMonotone} />
    ```
 
+### SVG files
+
+For consumers who don’t use React, we provide SVG files within the `images` folder.
+
 ## Contributing 🙌
 
 Make changes to this package to add, remove, or rename icons that are for Shopify use only. See our [contributing guide](https://github.com/Shopify/polaris-icons/blob/master/CONTRIBUTING.md). 👀
