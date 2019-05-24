@@ -92,17 +92,15 @@ function PopulatedState({icon}: PopulatedStateProps) {
     );
   /* eslint-enable react/jsx-no-bind */
 
-  /* eslint-disable react/jsx-child-element-spacing */
   const editMetadataContent = showBanner(icon) ? (
     <Banner>
       <p>
-        This icon is missing information.
-        <br />
+        This icon is missing information.{' '}
         <OutboundLink
           className="contentLink"
           href={ghIconMetadataEditUrl(icon.metadataFilename)}
         >
-          Update icon metadata
+          Update the metadata for this icon
         </OutboundLink>
       </p>
     </Banner>
@@ -114,7 +112,6 @@ function PopulatedState({icon}: PopulatedStateProps) {
       Edit icon metadata
     </OutboundLink>
   );
-  /* eslint-enable react/jsx-child-element-spacing */
 
   return (
     <div>
@@ -122,7 +119,9 @@ function PopulatedState({icon}: PopulatedStateProps) {
         <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
         <div
           className={`${styles.spacingTight} ${styles.iconDescription}`}
-          dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
+          dangerouslySetInnerHTML={{
+            __html: getIconDescription(icon.descriptionHtml, icon.deprecated),
+          }}
         />
 
         {toggleContent}
@@ -230,6 +229,13 @@ function PopulatedState({icon}: PopulatedStateProps) {
       </div>
     </div>
   );
+}
+
+function getIconDescription(iconDescriptionHTML: string, deprecated: boolean) {
+  if (deprecated) return 'This icon has been deprecated, please use <icon>.';
+  return /N\/A/.test(iconDescriptionHTML)
+    ? 'No description yet.'
+    : iconDescriptionHTML;
 }
 
 function showBanner(icon: IconInterface) {
