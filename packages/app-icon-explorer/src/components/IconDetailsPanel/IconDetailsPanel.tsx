@@ -153,7 +153,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
                 Learn how to{' '}
                 <OutboundLink
                   className="contentLink"
-                  href="https://github.com/Shopify/polaris-icons/blob/master/FREQUENTLY_ASKED_QUESTIONS.md#how-to-use-shopifypolaris-icons-with-the-shopifypolaris-icon-component"
+                  href="https://github.com/Shopify/polaris-icons/tree/master/packages/polaris-icons#usage"
                 >
                   import icons
                 </OutboundLink>
