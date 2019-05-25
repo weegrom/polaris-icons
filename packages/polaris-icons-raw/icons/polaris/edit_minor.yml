@@ -1,23 +1,13 @@
 name: edit
 set: minor
 description:
-  # Description:
-  #
-  #   Action: "Used to denote <x action>."
-  #   Wayfinding: "Used to help direct merchants to <x>."
-  #   Concept: "Used to represent <x>."
-  #   Education: "Used to give merchants more information about <context x>."
-  #
-  # Full guidelines: https://bit.ly/2GdMpmg
-  #
-  # (delete this comment block)
-  N/A
+  Used to represent the action of editing or modifying information.
 keywords:
-  # - synonym
-  # - another synonym
-  # - related shape or symbol
-  # (delete this comment block)
-  - N/A
+  - pencil
+  - paper
+  - edit
+  - page
+  - change
 authors:
   # - Sasha Oliveira
   # - Co-author’s name (optional)
