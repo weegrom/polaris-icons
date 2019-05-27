@@ -1,5 +1,4 @@
 import React from 'react';
-import {OutboundLink} from 'gatsby-plugin-google-gtag';
 import {Button, DisplayText, TextStyle} from '@shopify/polaris';
 import styles from './EmptyState.module.scss';
 
@@ -13,29 +12,15 @@ export default function EmptyState() {
         <DisplayText size="small">No icons found</DisplayText>
         <p>
           <TextStyle variation="subdued">
-            Submit a new icon or see our{' '}
-            <OutboundLink
-              className="contentLink"
-              href="https://vault.shopify.com/Polaris-icon-creation-guidelines"
-            >
-              <span>icon creation guidelines</span>
-            </OutboundLink>
-            .
+            Open a GitHub issue to suggest a new icon or send us feedback.
           </TextStyle>
         </p>
         <div>
-          <Button url={ghNewIssueUrl('submit-a-new-icon.md', '[Submission]')}>
-            Submit icon
+          <Button url="https://github.com/Shopify/polaris-icons/issues/new/choose">
+            Open an issue
           </Button>
         </div>
       </div>
     </div>
   );
-}
-
-function ghNewIssueUrl(template: string, title: string) {
-  const encodedTemplate = encodeURIComponent(template);
-  const encodedTitle = encodeURIComponent(title);
-
-  return `https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=New&template=${encodedTemplate}&title=${encodedTitle}`;
 }
