@@ -7,7 +7,6 @@ import {
 } from '@shopify/polaris';
 import {StaticQuery, graphql} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-google-gtag';
-import {ghNewIssueUrl} from '../IconDetailsPanel';
 
 import styles from './IntroHeader.module.scss';
 
@@ -33,29 +32,10 @@ export default function IntroHeader() {
               {data.site.siteMetadata.title}
             </DisplayText>
             <p>
-              Use these icons in your projects to promote a consistent
-              experience across the Shopify platform. If you can’t find the icon
-              you need, then contribute to the collection by updating an
-              existing icon or creating a new one. If you have any questions or
-              feedback,{' '}
-              <OutboundLink
-                className="contentLink"
-                href={ghNewIssueUrl(
-                  'feedback-for-polaris-icons-ui.md',
-                  '[feedback] ',
-                  ['HYPD'],
-                )}
-              >
-                open an issue
-              </OutboundLink>{' '}
-              or find us in{' '}
-              <OutboundLink
-                className="contentLink"
-                href="https://shopify.slack.com/messages/CCNUS0FML"
-              >
-                #polaris-tooling
-              </OutboundLink>{' '}
-              on Slack.
+              A collection of simple and informative icons that draw on the
+              visual language of the Polaris design system. Use these icons in
+              your projects or third-party apps to promote a consistent
+              experience across the Shopify platform.
             </p>
           </TextContainer>
           <div className={styles.buttons}>
@@ -63,6 +43,12 @@ export default function IntroHeader() {
               <Button url="https://github.com/Shopify/polaris-icons">
                 View on GitHub
               </Button>
+              <OutboundLink
+                className="contentLink"
+                href="https://github.com/Shopify/polaris-icons/blob/master/WELCOME.md"
+              >
+                Learn more
+              </OutboundLink>
             </ButtonGroup>
           </div>
         </div>
