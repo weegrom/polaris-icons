@@ -37,7 +37,6 @@
   display: flex;
   flex-direction: column;
   min-height: 88px;
-  background-color: $color-sky-lighter;
 
   > img {
     box-sizing: content-box;
@@ -45,6 +44,11 @@
     padding: 0 calc(50% - (var(--icon-size, 20px) / 2));
     height: var(--icon-size, 20px);
     width: var(--icon-size, 20px);
+    border-radius: 0.3rem;
+    background: radial-gradient($color-sky 0.1rem, transparent 0.1rem),
+      $color-sky-lighter;
+    background-size: 0.6rem 0.6rem;
+    background-position: calc(50% - 3px) calc(50% - 3px);
   }
 }
 
@@ -64,7 +68,7 @@
     display: inline-flex;
     align-items: center;
     background-color: $color-sky;
-    border-radius: 3px;
+    border-radius: 0.3rem;
   }
 
   a {
