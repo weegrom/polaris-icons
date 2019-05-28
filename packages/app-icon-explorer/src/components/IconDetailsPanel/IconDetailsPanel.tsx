@@ -7,6 +7,8 @@ import {
   ButtonGroup,
   TextStyle,
   Banner,
+  Badge,
+  Stack,
 } from '@shopify/polaris';
 import {stringify as qsStringify} from 'query-string';
 import {Link} from 'gatsby';
@@ -113,10 +115,15 @@ function PopulatedState({icon}: PopulatedStateProps) {
     </OutboundLink>
   );
 
+  const deprecatedContent = icon.deprecated ? <Badge>Deprecated</Badge> : null;
+
   return (
     <div>
       <div className={styles.iconDetailsPanelInner}>
-        <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
+        <Stack distribution="leading" spacing="tight">
+          <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
+          {deprecatedContent}
+        </Stack>
         <div
           className={`${styles.spacingTight} ${styles.iconDescription}`}
           dangerouslySetInnerHTML={{
