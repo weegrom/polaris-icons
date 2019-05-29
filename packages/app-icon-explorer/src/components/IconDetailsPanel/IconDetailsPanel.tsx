@@ -124,12 +124,10 @@ function PopulatedState({icon}: PopulatedStateProps) {
           <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
           {deprecatedContent}
         </Stack>
-        <div
-          className={`${styles.spacingTight} ${styles.iconDescription}`}
-          dangerouslySetInnerHTML={{
-            __html: getIconDescription(icon.descriptionHtml, icon.deprecated),
-          }}
-        />
+        <div className={`${styles.spacingTight} ${styles.iconDescription}`}>
+          <div dangerouslySetInnerHTML={{__html: getIconDescription(icon)}} />
+          <DeprecationMessage icon={icon} />
+        </div>
         {toggleContent}
 
         <div className={`${styles.spacingBase} ${styles.icon}`}>
@@ -238,20 +236,9 @@ function PopulatedState({icon}: PopulatedStateProps) {
 }
 
 function getIconDescription(icon: IconInterface) {
-  const description = /N\/A/.test(icon.descriptionHtml)
+  return /N\/A/.test(icon.descriptionHtml)
     ? 'No description yet.'
     : icon.descriptionHtml;
-
-  //   let deprecationMessage = '';
-  // if (icon.deprecatedAliases) {
-  //   deprecationMessage = 'This icon has been deprecated, please use .';
-  // }
-
-  // if (icon.deprecated) {
-  //   deprecationMessage = 'This icon has been deprecated and will be removed in the next major version.';
-  // }
-
-  return description + (deprecationMessage ? `<br>${deprecationMessage}` : '');
 }
 
 function showBanner(icon: IconInterface) {
@@ -289,6 +276,27 @@ function EmptyState() {
       </div>
     </div>
   );
+}
+
+function DeprecationMessage({icon}: {icon: IconInterface}) {
+  if (icon.deprecatedAliases) {
+    const names = icon.deprecatedAliases
+      .map((alias) => startCase(alias.replace(/_.+$/, '')))
+      .map((alias) => `"${alias}"`)
+      .join(',');
+
+    return <p>This icon was previously known as {names}</p>;
+  }
+
+  if (icon.deprecated) {
+    return (
+      <p>
+        This icon is deprecated and will be removed in the next major version.
+      </p>
+    );
+  }
+
+  return null;
 }
 
 function IconKeyword({iconName, word}: {iconName: string; word: string}) {
