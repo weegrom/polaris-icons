@@ -130,7 +130,6 @@ function PopulatedState({icon}: PopulatedStateProps) {
             __html: getIconDescription(icon.descriptionHtml, icon.deprecated),
           }}
         />
-
         {toggleContent}
 
         <div className={`${styles.spacingBase} ${styles.icon}`}>
@@ -238,11 +237,21 @@ function PopulatedState({icon}: PopulatedStateProps) {
   );
 }
 
-function getIconDescription(iconDescriptionHTML: string, deprecated: boolean) {
-  if (deprecated) return 'This icon has been deprecated, please use <icon>.';
-  return /N\/A/.test(iconDescriptionHTML)
+function getIconDescription(icon: IconInterface) {
+  const description = /N\/A/.test(icon.descriptionHtml)
     ? 'No description yet.'
-    : iconDescriptionHTML;
+    : icon.descriptionHtml;
+
+  //   let deprecationMessage = '';
+  // if (icon.deprecatedAliases) {
+  //   deprecationMessage = 'This icon has been deprecated, please use .';
+  // }
+
+  // if (icon.deprecated) {
+  //   deprecationMessage = 'This icon has been deprecated and will be removed in the next major version.';
+  // }
+
+  return description + (deprecationMessage ? `<br>${deprecationMessage}` : '');
 }
 
 function showBanner(icon: IconInterface) {

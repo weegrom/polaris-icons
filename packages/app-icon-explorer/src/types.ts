@@ -21,5 +21,5 @@ export interface Icon {
   metadataFilename: string;
   metadataId: string;
   deprecated: boolean;
-  deprecatedAliases: boolean;
+  deprecatedAliases: string[];
 }
