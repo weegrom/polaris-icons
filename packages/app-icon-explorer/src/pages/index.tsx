@@ -284,6 +284,7 @@ export const pageQuery = graphql`
           public
           keywords
           deprecated
+          deprecatedAliases
           styles {
             monotone {
               importName

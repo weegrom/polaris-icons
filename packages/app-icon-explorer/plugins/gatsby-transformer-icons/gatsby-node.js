@@ -44,6 +44,10 @@ async function onCreateNode({
     `${twotoneSuffix}.svg`,
   );
 
+  // Use camelCase
+  metadata.deprecatedAliases = metadata.deprecated_aliases;
+  delete metadata.deprecated_aliases;
+
   const yamlNode = {
     ...metadata,
     metadataFilename,
@@ -56,12 +60,12 @@ async function onCreateNode({
       monotone: dataForSvg(
         getNodes,
         monotoneSvgPath,
-        metadata.deprecated_aliases.map((alias) => alias + monotoneSuffix),
+        metadata.deprecatedAliases.map((alias) => alias + monotoneSuffix),
       ),
       twotone: dataForSvg(
         getNodes,
         twotoneSvgPath,
-        metadata.deprecated_aliases.map((alias) => alias + twotoneSuffix),
+        metadata.deprecatedAliases.map((alias) => alias + twotoneSuffix),
       ),
     },
     internal: {
