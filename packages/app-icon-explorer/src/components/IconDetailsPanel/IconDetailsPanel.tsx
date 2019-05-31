@@ -279,7 +279,7 @@ function EmptyState() {
 }
 
 function DeprecationMessage({icon}: {icon: IconInterface}) {
-  if (icon.deprecatedAliases) {
+  if (icon.deprecatedAliases.length > 0) {
     const names = icon.deprecatedAliases
       .map((alias) => startCase(alias.replace(/_.+$/, '')))
       .map((alias) => `"${alias}"`)
