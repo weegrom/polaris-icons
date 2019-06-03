@@ -6,6 +6,7 @@ import {
   Button,
   ButtonGroup,
   TextStyle,
+  TextContainer,
   Banner,
   Badge,
   Stack,
@@ -125,8 +126,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
           {deprecatedContent}
         </Stack>
         <div className={`${styles.spacingTight} ${styles.iconDescription}`}>
-          <div dangerouslySetInnerHTML={{__html: getIconDescription(icon)}} />
-          <DeprecationMessage icon={icon} />
+          <DescriptionMessage icon={icon} />
         </div>
         {toggleContent}
 
@@ -235,12 +235,6 @@ function PopulatedState({icon}: PopulatedStateProps) {
   );
 }
 
-function getIconDescription(icon: IconInterface) {
-  return /N\/A/.test(icon.descriptionHtml)
-    ? 'No description yet.'
-    : icon.descriptionHtml;
-}
-
 function showBanner(icon: IconInterface) {
   return (
     Object.values(icon).some(
@@ -268,6 +262,12 @@ export function ghNewIssueUrl(
   return `https://github.com/Shopify/polaris-icons/issues/new?assignees=${stringifiedAssignees}&labels=${stringifiedLabels}&template=${encodedTemplate}&title=${encodedTitle}`;
 }
 
+function stringifyAliases(aliases: string[]) {
+  return aliases
+    .map((alias) => `"${startCase(alias.replace(/_.+$/, ''))}"`)
+    .join(',');
+}
+
 function EmptyState() {
   return (
     <div className={styles.empty}>
@@ -278,25 +278,34 @@ function EmptyState() {
   );
 }
 
-function DeprecationMessage({icon}: {icon: IconInterface}) {
-  if (icon.deprecatedAliases.length > 0) {
-    const names = icon.deprecatedAliases
-      .map((alias) => startCase(alias.replace(/_.+$/, '')))
-      .map((alias) => `"${alias}"`)
-      .join(',');
-
-    return <p>This icon was previously known as {names}</p>;
-  }
-
+function DescriptionMessage({icon}: {icon: IconInterface}) {
   if (icon.deprecated) {
     return (
       <p>
-        This icon is deprecated and will be removed in the next major version.
+        This icon is deprecated and has no replacement. It will be removed in
+        the next major version.
       </p>
     );
   }
 
-  return null;
+  const deprecatedAliasesContent =
+    icon.deprecatedAliases.length > 0 ? (
+      <p>
+        This icon was previously called{' '}
+        {stringifyAliases(icon.deprecatedAliases)}.
+      </p>
+    ) : null;
+
+  const iconDescription = /N\/A/.test(icon.descriptionHtml)
+    ? 'No description yet.'
+    : icon.descriptionHtml;
+
+  return (
+    <TextContainer>
+      <div dangerouslySetInnerHTML={{__html: iconDescription}} />
+      {deprecatedAliasesContent}
+    </TextContainer>
+  );
 }
 
 function IconKeyword({iconName, word}: {iconName: string; word: string}) {
