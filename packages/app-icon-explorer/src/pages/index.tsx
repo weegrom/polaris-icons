@@ -283,6 +283,8 @@ export const pageQuery = graphql`
           descriptionHtml
           public
           keywords
+          deprecated
+          deprecatedAliases
           styles {
             monotone {
               importName

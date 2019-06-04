@@ -6,7 +6,10 @@ import {
   Button,
   ButtonGroup,
   TextStyle,
+  TextContainer,
   Banner,
+  Badge,
+  Stack,
 } from '@shopify/polaris';
 import {stringify as qsStringify} from 'query-string';
 import {Link} from 'gatsby';
@@ -92,11 +95,10 @@ function PopulatedState({icon}: PopulatedStateProps) {
     );
   /* eslint-enable react/jsx-no-bind */
 
-  /* eslint-disable react/jsx-child-element-spacing */
   const editMetadataContent = showBanner(icon) ? (
     <Banner>
       <p>
-        This icon is missing information.
+        This icon is missing information.{''}
         <br />
         <OutboundLink
           className="contentLink"
@@ -114,17 +116,19 @@ function PopulatedState({icon}: PopulatedStateProps) {
       Edit icon metadata
     </OutboundLink>
   );
-  /* eslint-enable react/jsx-child-element-spacing */
+
+  const deprecatedContent = icon.deprecated ? <Badge>Deprecated</Badge> : null;
 
   return (
     <div>
       <div className={styles.iconDetailsPanelInner}>
-        <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
-        <div
-          className={`${styles.spacingTight} ${styles.iconDescription}`}
-          dangerouslySetInnerHTML={{__html: icon.descriptionHtml}}
-        />
-
+        <Stack distribution="leading" spacing="tight">
+          <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
+          {deprecatedContent}
+        </Stack>
+        <div className={`${styles.spacingTight} ${styles.iconDescription}`}>
+          <DescriptionMessage icon={icon} />
+        </div>
         {toggleContent}
 
         <div className={`${styles.spacingBase} ${styles.icon}`}>
@@ -261,6 +265,12 @@ export function ghNewIssueUrl(
   return `https://github.com/Shopify/polaris-icons/issues/new?assignees=${stringifiedAssignees}&labels=${stringifiedLabels}&template=${encodedTemplate}&title=${encodedTitle}`;
 }
 
+function stringifyAliases(aliases: string[]) {
+  return aliases
+    .map((alias) => `"${startCase(alias.replace(/_.+$/, ''))}"`)
+    .join(',');
+}
+
 function EmptyState() {
   return (
     <div className={styles.empty}>
@@ -268,6 +278,36 @@ function EmptyState() {
         <TextStyle variation="subdued">Choose an icon to begin</TextStyle>
       </div>
     </div>
+  );
+}
+
+function DescriptionMessage({icon}: {icon: IconInterface}) {
+  if (icon.deprecated) {
+    return (
+      <p>
+        This icon is deprecated and has no replacement. It will be removed in
+        the next major version.
+      </p>
+    );
+  }
+
+  const deprecatedAliasesContent =
+    icon.deprecatedAliases.length > 0 ? (
+      <p>
+        This icon was previously called{' '}
+        {stringifyAliases(icon.deprecatedAliases)}.
+      </p>
+    ) : null;
+
+  const iconDescription = /N\/A/.test(icon.descriptionHtml)
+    ? 'No description yet.'
+    : icon.descriptionHtml;
+
+  return (
+    <TextContainer>
+      <div dangerouslySetInnerHTML={{__html: iconDescription}} />
+      {deprecatedAliasesContent}
+    </TextContainer>
   );
 }
 
