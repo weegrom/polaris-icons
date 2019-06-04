@@ -98,12 +98,13 @@ function PopulatedState({icon}: PopulatedStateProps) {
   const editMetadataContent = showBanner(icon) ? (
     <Banner>
       <p>
-        This icon is missing information.{' '}
+        This icon is missing information.{''}
+        <br />
         <OutboundLink
           className="contentLink"
           href={ghIconMetadataEditUrl(icon.metadataFilename)}
         >
-          Update the metadata for this icon
+          Update icon metadata
         </OutboundLink>
       </p>
     </Banner>
