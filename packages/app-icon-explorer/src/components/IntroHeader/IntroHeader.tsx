@@ -33,9 +33,12 @@ export default function IntroHeader() {
             </DisplayText>
             <p>
               A collection of simple and informative icons that draw on the
-              visual language of the Polaris design system. Use these icons in
-              your projects or third-party apps to promote a consistent
-              experience across the Shopify platform.
+              visual language of the{' '}
+              <OutboundLink href="https://polaris.shopify.com">
+                Polaris design system
+              </OutboundLink>
+              . Use these icons in your projects or third-party apps to promote
+              a consistent experience across the Shopify platform.
             </p>
           </TextContainer>
           <div className={styles.buttons}>
