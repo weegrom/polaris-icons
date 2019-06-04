@@ -149,7 +149,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
           <CodeBlock
             title="Import"
             footer={
-              <div>
+              <>
                 Learn how to{' '}
                 <OutboundLink
                   className="contentLink"
@@ -158,7 +158,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
                   import icons
                 </OutboundLink>
                 .
-              </div>
+              </>
             }
           >
             <CodeBlock.Import>import</CodeBlock.Import>
@@ -179,7 +179,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
           <CodeBlock
             title="Usage"
             footer={
-              <div>
+              <>
                 Learn more about the{' '}
                 <OutboundLink
                   className="contentLink"
@@ -188,14 +188,16 @@ function PopulatedState({icon}: PopulatedStateProps) {
                   icon component
                 </OutboundLink>
                 .
-              </div>
+              </>
             }
           >
             <CodeBlock.Tag>&lt;Icon</CodeBlock.Tag>
             <br />
             <CodeBlock.Attribute>{'  '}source</CodeBlock.Attribute>
             <CodeBlock.Tag>=</CodeBlock.Tag>
-            <CodeBlock.Import>{`{${activeStyle.importName}}`}</CodeBlock.Import>
+            <CodeBlock.ImportItems>{`{${
+              activeStyle.importName
+            }}`}</CodeBlock.ImportItems>
             <CodeBlock.Tag> /&gt;</CodeBlock.Tag>
           </CodeBlock>
         </div>

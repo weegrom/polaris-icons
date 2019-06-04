@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Subheading} from '@shopify/polaris';
+import {Subheading, TextStyle} from '@shopify/polaris';
 import styles from './CodeBlock.module.scss';
 
 interface Props {
@@ -34,7 +34,11 @@ export default function CodeBlock({title, children, footer, onCopy}: Props) {
     }, 1500);
   }
 
-  const footerMarkup = footer ? <div>{footer}</div> : undefined;
+  const footerMarkup = footer ? (
+    <div>
+      <TextStyle variation="subdued">{footer}</TextStyle>
+    </div>
+  ) : null;
 
   return (
     <div>
