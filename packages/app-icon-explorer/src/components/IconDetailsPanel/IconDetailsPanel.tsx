@@ -102,7 +102,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
         <br />
         <OutboundLink
           className="contentLink"
-          href={ghIconMetadataEditUrl(icon.metadataFilename)}
+          href={ghIconMetadataEditUrl(icon.metadataId, icon.metadataFilename)}
         >
           Update icon metadata
         </OutboundLink>
@@ -111,7 +111,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
   ) : (
     <OutboundLink
       className="contentLink"
-      href={ghIconMetadataEditUrl(icon.metadataFilename)}
+      href={ghIconMetadataEditUrl(icon.metadataId, icon.metadataFilename)}
     >
       Edit icon metadata
     </OutboundLink>
@@ -246,9 +246,9 @@ function showBanner(icon: IconInterface) {
   );
 }
 
-function ghIconMetadataEditUrl(filename: string) {
-  const encodedMessage = encodeURIComponent(`Fix metadata for ${filename}`);
-  return `https://github.com/Shopify/polaris-icons/edit/master/packages/polaris-icons-raw/icons/polaris/${filename}.yml?message=${encodedMessage}&target_branch=fix-${filename}`;
+function ghIconMetadataEditUrl(name: string, filename: string) {
+  const encodedMessage = encodeURIComponent(`[${name}] Fix metadata`);
+  return `https://github.com/Shopify/polaris-icons/edit/master/packages/polaris-icons-raw/icons/polaris/${filename}.yml?message=${encodedMessage}&target_branch=fix-${filename}&description=https://polaris-icons.shopify.com/?icon=${name}`;
 }
 
 export function ghNewIssueUrl(
