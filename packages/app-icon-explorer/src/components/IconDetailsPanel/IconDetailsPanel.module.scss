@@ -82,11 +82,6 @@
   color: $color-ink-lighter;
 }
 
-.link {
-  display: block;
-  margin-bottom: $spacing-tight;
-}
-
 @include when-details-panel {
   .iconDescription {
     min-height: 4rem;

@@ -12,16 +12,6 @@ $transition-slide-length: 100vh;
   body {
     min-width: 320px;
   }
-
-  .contentLink {
-    text-decoration: none;
-    color: $color-blue;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
 }
 
 .page {

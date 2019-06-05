@@ -5,6 +5,8 @@ import {
   Subheading,
   Button,
   ButtonGroup,
+  Link,
+  UnstyledLink,
   TextStyle,
   TextContainer,
   Banner,
@@ -12,8 +14,7 @@ import {
   Stack,
 } from '@shopify/polaris';
 import {stringify as qsStringify} from 'query-string';
-import {Link} from 'gatsby';
-import {OutboundLink} from 'gatsby-plugin-google-gtag';
+
 import {startCase} from 'lodash';
 
 import {useMedia} from '../../hooks';
@@ -100,21 +101,17 @@ function PopulatedState({icon}: PopulatedStateProps) {
       <p>
         This icon is missing information.{''}
         <br />
-        <OutboundLink
-          className="contentLink"
-          href={ghIconMetadataEditUrl(icon.metadataId, icon.metadataFilename)}
+        <Link
+          url={ghIconMetadataEditUrl(icon.metadataId, icon.metadataFilename)}
         >
           Update icon metadata
-        </OutboundLink>
+        </Link>
       </p>
     </Banner>
   ) : (
-    <OutboundLink
-      className="contentLink"
-      href={ghIconMetadataEditUrl(icon.metadataId, icon.metadataFilename)}
-    >
+    <Link url={ghIconMetadataEditUrl(icon.metadataId, icon.metadataFilename)}>
       Edit icon metadata
-    </OutboundLink>
+    </Link>
   );
 
   const deprecatedContent = icon.deprecated ? <Badge>Deprecated</Badge> : null;
@@ -155,12 +152,9 @@ function PopulatedState({icon}: PopulatedStateProps) {
             footer={
               <>
                 Learn how to{' '}
-                <OutboundLink
-                  className="contentLink"
-                  href="https://github.com/Shopify/polaris-icons/tree/master/packages/polaris-icons#usage"
-                >
+                <Link url="https://github.com/Shopify/polaris-icons/tree/master/packages/polaris-icons#usage">
                   import icons
-                </OutboundLink>
+                </Link>
                 .
               </>
             }
@@ -185,12 +179,9 @@ function PopulatedState({icon}: PopulatedStateProps) {
             footer={
               <>
                 Learn more about the{' '}
-                <OutboundLink
-                  className="contentLink"
-                  href="https://polaris.shopify.com/components/images-and-icons/icon"
-                >
+                <Link url="https://polaris.shopify.com/components/images-and-icons/icon">
                   icon component
-                </OutboundLink>
+                </Link>
                 .
               </>
             }
@@ -220,19 +211,18 @@ function PopulatedState({icon}: PopulatedStateProps) {
         </div>
 
         <div>
-          <OutboundLink
-            href={ghNewIssueUrl(
+          <Link
+            url={ghNewIssueUrl(
               'submit-changes-to-an-existing-icon.md',
               `[Submission] ${icon.metadataFilename} changes`,
               ['Update'],
             )}
-            className={`${styles.link} contentLink`}
           >
             Create a new version of this icon
-          </OutboundLink>
-
-          {editMetadataContent}
+          </Link>
         </div>
+
+        <div className={styles.spacingTight}>{editMetadataContent}</div>
       </div>
     </div>
   );
@@ -328,9 +318,12 @@ function IconKeyword({iconName, word}: {iconName: string; word: string}) {
 
   return (
     <li>
-      <Link to={`/?${qsStringify(queryParams)}`} className={styles.Tag}>
+      <UnstyledLink
+        url={`/?${qsStringify(queryParams)}`}
+        className={styles.Tag}
+      >
         {word}
-      </Link>
+      </UnstyledLink>
     </li>
   );
 }

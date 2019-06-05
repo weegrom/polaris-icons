@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
-import {AppProvider, Frame, TopBar} from '@shopify/polaris';
+import {AppProvider, Frame, TopBar, LinkProps} from '@shopify/polaris';
 import {ShortcutProvider, Shortcut} from '@shopify/react-shortcuts';
+import {Link as InternalLink} from 'gatsby';
+import {OutboundLink} from 'gatsby-plugin-google-gtag';
+
 import {QueryParamsContext, IQueryParamsContext} from './context';
 import '@shopify/polaris/styles.scss';
 import './polaris-overrides.scss';
@@ -70,7 +73,7 @@ export default function AppFrame(props: Props) {
 
   return (
     <QueryParamsContext.Provider value={props.queryParams}>
-      <AppProvider theme={theme}>
+      <AppProvider theme={theme} linkComponent={Link}>
         <ShortcutProvider>
           <Shortcut ordered={['s']} onMatch={triggerSearchFocus} />
           <Frame topBar={topBarMarkup}>{props.children}</Frame>
@@ -78,4 +81,20 @@ export default function AppFrame(props: Props) {
       </AppProvider>
     </QueryParamsContext.Provider>
   );
+}
+
+function Link({children, url = '', ...rest}: LinkProps) {
+  return isOutboundLink(url) ? (
+    <OutboundLink href={url} {...rest}>
+      {children}
+    </OutboundLink>
+  ) : (
+    <InternalLink to={url} {...rest}>
+      {children}
+    </InternalLink>
+  );
+}
+
+function isOutboundLink(url: string) {
+  return /^(?:[a-z][a-z\d+.-]*:|\/\/)/.test(url);
 }

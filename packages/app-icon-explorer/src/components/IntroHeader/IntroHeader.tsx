@@ -4,9 +4,9 @@ import {
   DisplayText,
   Button,
   ButtonGroup,
+  Link,
 } from '@shopify/polaris';
 import {StaticQuery, graphql} from 'gatsby';
-import {OutboundLink} from 'gatsby-plugin-google-gtag';
 
 import styles from './IntroHeader.module.scss';
 
@@ -34,9 +34,9 @@ export default function IntroHeader() {
             <p>
               A collection of simple and informative icons that draw on the
               visual language of the{' '}
-              <OutboundLink href="https://polaris.shopify.com">
+              <Link url="https://polaris.shopify.com">
                 Polaris design system
-              </OutboundLink>
+              </Link>
               . Use these icons in your projects or third-party apps to promote
               a consistent experience across the Shopify platform.
             </p>
@@ -46,12 +46,12 @@ export default function IntroHeader() {
               <Button url="https://github.com/Shopify/polaris-icons">
                 View on GitHub
               </Button>
-              <OutboundLink
-                className="contentLink"
-                href="https://github.com/Shopify/polaris-icons/blob/master/WELCOME.md"
+              <Button
+                plain
+                url="https://github.com/Shopify/polaris-icons/blob/master/WELCOME.md"
               >
                 Learn more
-              </OutboundLink>
+              </Button>
             </ButtonGroup>
           </div>
         </div>

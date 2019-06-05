@@ -1,8 +1,7 @@
 import React, {useContext} from 'react';
-import {Link} from 'gatsby';
 import classNames from 'classnames';
 import {stringify as qsStringify} from 'query-string';
-import {Caption} from '@shopify/polaris';
+import {Caption, UnstyledLink} from '@shopify/polaris';
 import {QueryParamsContext} from '../../AppFrame';
 import {Icon as IconInterface} from '../../../types';
 import styles from './SingleIcon.module.scss';
@@ -33,7 +32,7 @@ export default function SingleIcon({icon, isActive = false}: Props) {
   const linkTo = `/?${qsStringify({icon: icon.metadataId, q: queryParams.q})}`;
 
   return (
-    <Link to={linkTo} className={className} onClick={trackLink}>
+    <UnstyledLink url={linkTo} className={className} onClick={trackLink}>
       <div className={styles.iconSvgWrapper}>
         <img
           width="20"
@@ -47,6 +46,6 @@ export default function SingleIcon({icon, isActive = false}: Props) {
       <div className={styles.iconLabel}>
         <Caption>{icon.name}</Caption>
       </div>
-    </Link>
+    </UnstyledLink>
   );
 }
