@@ -13,16 +13,13 @@ description:
   # (delete this comment block)
   N/A
 keywords:
-  # - synonym
-  # - another synonym
-  # - related shape or symbol
-  # (delete this comment block)
-  - N/A
+  - email
+  - letter
+  - mail
+  - rectangle
+  - invite
 authors:
-  # - Sasha Oliveira
-  # - Co-author’s name (optional)
-  # (delete this comment block)
-  - N/A
+  - Adam Whitcroft
 public: true
 version: 1
 date_added: 2019-03-15
