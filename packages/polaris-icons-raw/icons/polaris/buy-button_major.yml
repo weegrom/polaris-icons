@@ -1,28 +1,13 @@
 name: buy button
 set: major
 description:
-  # Description:
-  #
-  #   Action: "Used to denote <x action>."
-  #   Wayfinding: "Used to help direct merchants to <x>."
-  #   Concept: "Used to represent <x>."
-  #   Education: "Used to give merchants more information about <context x>."
-  #
-  # Full guidelines: https://bit.ly/2GdMpmg
-  #
-  # (delete this comment block)
-  N/A
+  Used to represent our Buy Button.
 keywords:
-  # - synonym
-  # - another synonym
-  # - related shape or symbol
-  # (delete this comment block)
-  - N/A
+  - button
+  - buy button
+  - press
 authors:
-  # - Sasha Oliveira
-  # - Co-author’s name (optional)
-  # (delete this comment block)
-  - N/A
+  - Adam Whitcroft
 public: true
 version: 1
 date_added: 2019-03-15
