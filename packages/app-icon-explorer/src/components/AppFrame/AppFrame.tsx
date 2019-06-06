@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {AppProvider, Frame, TopBar, LinkProps} from '@shopify/polaris';
+import {AppProvider, Frame, TopBar, UnstyledLinkProps} from '@shopify/polaris';
 import {ShortcutProvider, Shortcut} from '@shopify/react-shortcuts';
 import {Link as InternalLink} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-google-gtag';
@@ -83,13 +83,23 @@ export default function AppFrame(props: Props) {
   );
 }
 
-function Link({children, url = '', ...rest}: LinkProps) {
+function Link({children, url = '', ...rest}: UnstyledLinkProps) {
+  // Downloadable links shouldn't use OutboundLink as OutboundLink always forces
+  // a page navigation, which we don't want
+  if (rest.download) {
+    return (
+      <a href={url} {...rest}>
+        {children}
+      </a>
+    );
+  }
+
   return isOutboundLink(url) ? (
-    <OutboundLink href={url} {...rest}>
+    <OutboundLink href={url} {...rest as any}>
       {children}
     </OutboundLink>
   ) : (
-    <InternalLink to={url} {...rest}>
+    <InternalLink to={url} {...rest as any}>
       {children}
     </InternalLink>
   );
