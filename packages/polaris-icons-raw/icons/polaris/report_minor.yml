@@ -1,23 +1,11 @@
 name: report
 set: minor
 description:
-  # Description:
-  #
-  #   Action: "Used to denote <x action>."
-  #   Wayfinding: "Used to help direct merchants to <x>."
-  #   Concept: "Used to represent <x>."
-  #   Education: "Used to give merchants more information about <context x>."
-  #
-  # Full guidelines: https://bit.ly/2GdMpmg
-  #
-  # (delete this comment block)
-  N/A
+  Used to represent analytics or a report.
 keywords:
-  # - synonym
-  # - another synonym
-  # - related shape or symbol
-  # (delete this comment block)
-  - N/A
+  - analytics
+  - report
+  - reporting
 authors:
   - Adam Whitcroft
 public: true
