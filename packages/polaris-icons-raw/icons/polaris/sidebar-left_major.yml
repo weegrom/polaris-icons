@@ -13,11 +13,12 @@ description:
   # (delete this comment block)
   N/A
 keywords:
-  # - synonym
-  # - another synonym
-  # - related shape or symbol
-  # (delete this comment block)
-  - N/A
+  - sidebar
+  - layout
+  - section
+  - dashed
+  - rectangle
+  - left
 authors:
   # - Sasha Oliveira
   # - Co-author’s name (optional)
