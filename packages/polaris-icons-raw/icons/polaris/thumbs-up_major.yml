@@ -1,23 +1,16 @@
 name: thumbs up
 set: major
 description:
-  # Description:
-  #
-  #   Action: "Used to denote <x action>."
-  #   Wayfinding: "Used to help direct merchants to <x>."
-  #   Concept: "Used to represent <x>."
-  #   Education: "Used to give merchants more information about <context x>."
-  #
-  # Full guidelines: https://bit.ly/2GdMpmg
-  #
-  # (delete this comment block)
-  N/A
+  Used to represent an action to like or approve of something.
 keywords:
   - social
-  - thumb
   - thumbs up
   - hand
   - like
+  - approve
+  - positive
+  - yes
+  - upvote
 authors:
   - Adam Whitcroft
 public: true
