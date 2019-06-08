@@ -25,7 +25,7 @@ allIconMetadataFiles.forEach(({iconPath, iconMetadata}) => {
   describe(`Metadata: packages/${iconPath}`, () => {
     it(`has a valid schema`, () => {
       validate(iconMetadata);
-      expect(validate.errors).toBeNull();
+      expect(ajvInstance.errorsText(validate.errors)).toBe('No errors');
     });
 
     it(`has filename that matches the schema name and set `, () => {
