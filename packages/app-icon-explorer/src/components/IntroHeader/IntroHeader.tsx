@@ -48,7 +48,7 @@ export default function IntroHeader() {
               </Button>
               <Button
                 plain
-                url="https://github.com/Shopify/polaris-icons/blob/master/WELCOME.md"
+                url="https://github.com/Shopify/polaris-icons/blob/master/README.md"
               >
                 Learn more
               </Button>
