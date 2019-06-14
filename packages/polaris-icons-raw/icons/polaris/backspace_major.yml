@@ -4,6 +4,8 @@ description:
   Used to represent backspace on a mobile keyboard.
 keywords:
   - backspace
+  - x
+  - delete
 authors:
   - Adam Whitcroft
 public: true
