@@ -18,8 +18,8 @@ classification: tier3
 url: https://polaris-icons.shopify.com
 ci_url: https://buildkite.com/shopify/polaris-icons
 slack_channels:
+  - polaris
   - polaris-icons
-  - polaris-icon-guild
 oncall_url: https://shopify.pagerduty.com/services/PQNFXB1
 security:
   data_management:
