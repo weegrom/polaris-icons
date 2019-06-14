@@ -2,6 +2,10 @@
 
 This guide is made for people who want to contribute code to the repository. If you're not comfortable doing that, there's other ways you can help.
 
+## Code of conduct
+
+We expect all participants to read our [code of conduct](https://github.com/Shopify/polaris-tokens/blob/master/.github/CODE_OF_CONDUCT.md) to understand which actions are and aren’t tolerated.
+
 ## Developing
 
 This package uses [Lerna](https://github.com/lerna/lerna). That means you have to install sub-package dependencies before you can start developing:
