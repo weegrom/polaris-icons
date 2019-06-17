@@ -23,7 +23,7 @@
 }
 
 .code {
-  font-family: unquote($font-stack-monospace);
+  font-family: $font-stack-monospace;
   font-size: 1.4rem;
   line-height: 1.5;
   border-radius: 0.3rem;
