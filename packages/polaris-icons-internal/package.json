@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/Shopify/polaris-icons/issues"
   },
-  "homepage": "https://github.com/shopify/polaris-icons/tree/master/packages/polaris-icons-internal#readme",
+  "homepage": "https://polaris-icons.shopify.com",
   "devDependencies": {
     "@shopify/polaris-icons-raw": "^1.7.1",
     "rollup": "^1.3.2"
