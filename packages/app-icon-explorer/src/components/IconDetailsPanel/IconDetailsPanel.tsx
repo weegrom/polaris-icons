@@ -21,6 +21,7 @@ import {useMedia} from '../../hooks';
 import {Icon as IconInterface, StyleData} from '../../types';
 import {CodeBlock, ToggleButton} from './components';
 import styles from './IconDetailsPanel.module.scss';
+import {Seo} from '..';
 
 interface Props {
   icon?: IconInterface;
@@ -116,6 +117,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
 
   return (
     <div>
+      <Seo title={`${startCase(icon.name)} (${icon.set})`} />
       <div className={styles.iconDetailsPanelInner}>
         <Stack distribution="leading" spacing="tight">
           <Heading>{`${startCase(icon.name)} (${icon.set})`}</Heading>
@@ -262,6 +264,7 @@ function stringifyAliases(aliases: string[]) {
 function EmptyState() {
   return (
     <div className={styles.empty}>
+      <Seo title="Polaris icons" />
       <div>
         <TextStyle variation="subdued">Choose an icon to begin</TextStyle>
       </div>

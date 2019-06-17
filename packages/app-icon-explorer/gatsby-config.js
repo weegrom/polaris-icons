@@ -11,7 +11,7 @@ module.exports = {
     title: `Polaris icons`,
     description: `The collection of icons that we use across the Shopify platform.`,
     author: `Shopify`,
-    titleTemplate: `Polaris icons`,
+    titleTemplate: `%s - Polaris icons`,
   },
   plugins: [
     `gatsby-plugin-sass`,

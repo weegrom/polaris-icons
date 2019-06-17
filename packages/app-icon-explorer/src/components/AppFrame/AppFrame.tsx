@@ -1,5 +1,10 @@
 import React, {useState, useCallback} from 'react';
 import {AppProvider, Frame, TopBar, UnstyledLinkProps} from '@shopify/polaris';
+import {
+  colorSkyLight,
+  colorInkLightest,
+  colorWhite,
+} from '@shopify/polaris-tokens';
 import {ShortcutProvider, Shortcut} from '@shopify/react-shortcuts';
 import {Link as InternalLink} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-google-gtag';
@@ -11,17 +16,17 @@ import './polaris-overrides.scss';
 const theme = {
   colors: {
     topBar: {
-      background: '#ffffff',
-      backgroundDarker: '#fff',
-      backgroundLighter: '#F4F6F8',
-      color: '#919EAB',
+      background: colorWhite,
+      backgroundDarker: colorWhite,
+      backgroundLighter: colorSkyLight,
+      color: colorInkLightest,
     },
   },
   logo: {
     width: 104,
     topBarSource: require('../../../static/images/shopify-logo.svg'),
     url: '/',
-    accessibilityLabel: 'Polaris Icons',
+    accessibilityLabel: 'Polaris icons',
   },
 };
 

@@ -1,19 +1,28 @@
 import React from 'react';
+import {EmptyState, Page, AppProvider, Link} from '@shopify/polaris';
+import {Seo} from '../components';
 
-import {AppFrame, Seo} from '../components';
+import {NotFound} from '../illustrations';
 
 export default function NotFoundPage() {
-  const handleSearchChange = (_: string) => {};
-
   return (
-    <AppFrame
-      queryParams={{}}
-      searchText=""
-      onSearchChange={handleSearchChange}
-    >
-      <Seo title="404: Not found" />
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </AppFrame>
+    <AppProvider>
+      <>
+        <Seo title="404: Not found" />
+        <Page title="">
+          <EmptyState
+            heading="There’s no page at this address"
+            image={NotFound}
+          >
+            <p>
+              Check the URL and try again,
+              {''}
+              <br />
+              or <Link url="/">go to the home page</Link>.
+            </p>
+          </EmptyState>
+        </Page>
+      </>
+    </AppProvider>
   );
 }
