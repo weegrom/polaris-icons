@@ -37,7 +37,7 @@ allIconMetadataFiles.forEach(({iconPath, iconMetadata}) => {
         .map((str) => str.replace(/[()]/g, '').replace(/ /g, '-'))
         .join('_');
 
-      expect(path.basename(iconPath)).toEqual(`${expectedName}.yml`);
+      expect(path.basename(iconPath)).toStrictEqual(`${expectedName}.yml`);
     });
 
     // Skip icons missing a description untill we know every icon has one

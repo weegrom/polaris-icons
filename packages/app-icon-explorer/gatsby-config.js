@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+/* eslint-disable babel/camelcase */
 const {dirname} = require('path');
 const resolve = require('resolve');
 

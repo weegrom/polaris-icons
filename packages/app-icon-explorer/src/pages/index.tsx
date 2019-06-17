@@ -159,13 +159,13 @@ export default class IndexPage extends React.Component<Props, State> {
                 <div className={styles.panelHeaderTitle}>
                   <Shortcut
                     ordered={['Escape']}
-                    onMatch={this.handelPanelClose}
+                    onMatch={this.handlePanelClose}
                   />
                   <DisplayText size="small">Icon details</DisplayText>
                 </div>
                 <button
                   type="button"
-                  onClick={this.handelPanelClose}
+                  onClick={this.handlePanelClose}
                   className={styles.panelHeaderCloseButton}
                 >
                   <Icon source={MobileCancelMajorMonotone} color="inkLighter" />
@@ -182,23 +182,23 @@ export default class IndexPage extends React.Component<Props, State> {
     );
   }
 
-  handleSearchChange = (value: string) => {
+  private handleSearchChange = (value: string) => {
     this.setState({searchText: value});
   };
 
-  handleSearchBlur = () => {
+  private handleSearchBlur = () => {
     if (this.state.queryParams.q !== this.state.searchText) {
       this.persistSearchText(this.state.searchText);
     }
   };
 
-  handleSearchCancel = () => {
+  private handleSearchCancel = () => {
     if (this.state.queryParams.q !== '') {
       this.persistSearchText('');
     }
   };
 
-  handelPanelClose = () => {
+  private handlePanelClose = () => {
     const searchText = this.state.isClient ? this.state.searchText : '';
     const isFiltered = searchText !== '';
 
@@ -208,9 +208,9 @@ export default class IndexPage extends React.Component<Props, State> {
   private persistSearchText(dirtySearchText: string) {
     if (dirtySearchText !== '' && (window as any).gtag) {
       (window as any).gtag('event', 'search', {
-        /* eslint-disable-next-line camelcase */
+        /* eslint-disable-next-line babel/camelcase */
         event_category: 'icons',
-        /* eslint-disable-next-line camelcase */
+        /* eslint-disable-next-line babel/camelcase */
         search_term: dirtySearchText,
       });
     }

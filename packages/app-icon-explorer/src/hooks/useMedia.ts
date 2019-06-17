@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 
 // Taken from https://usehooks.com/useMedia/
 export default function useMedia<T>(
@@ -10,12 +10,12 @@ export default function useMedia<T>(
   const mediaQueryLists = queries.map((q) => window.matchMedia(q));
 
   // Function that gets value based on matching media query
-  const getValue = () => {
+  const getValue = useCallback(() => {
     // Get index of first media query that matches
     const index = mediaQueryLists.findIndex((mql) => mql.matches);
     // Return related value or defaultValue if none
     return typeof values[index] === 'undefined' ? defaultValue : values[index];
-  };
+  }, [defaultValue, mediaQueryLists, values]);
 
   // State and setter for matched value
   const [value, setValue] = useState(getValue);
@@ -30,7 +30,7 @@ export default function useMedia<T>(
     mediaQueryLists.forEach((mql) => mql.addListener(handler));
     // Remove listeners on cleanup
     return () => mediaQueryLists.forEach((mql) => mql.removeListener(handler));
-  }, []);
+  }, [getValue, mediaQueryLists]);
 
   return value;
 }

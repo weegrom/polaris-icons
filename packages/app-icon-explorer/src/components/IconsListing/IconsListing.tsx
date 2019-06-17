@@ -11,21 +11,25 @@ interface Props {
   activeIconId?: string;
 }
 
-export default function IconsListing(props: Props) {
-  if (!props.icons.length) {
+export default function IconsListing({
+  icons,
+  heading,
+  showCount,
+  activeIconId,
+}: Props) {
+  if (!icons.length) {
     return null;
   }
 
-  const iconsMarkup = props.icons.map((icon: IconInterface) => (
+  const iconsMarkup = icons.map((icon: IconInterface) => (
     <SingleIcon
       key={icon.metadataId}
       icon={icon}
-      isActive={props.activeIconId === icon.metadataId}
+      isActive={activeIconId === icon.metadataId}
     />
   ));
 
-  const headingMarkup =
-    props.heading + (props.showCount ? ` (${props.icons.length})` : '');
+  const headingMarkup = heading + (showCount ? ` (${icons.length})` : '');
 
   return (
     <div>

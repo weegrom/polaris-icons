@@ -3,8 +3,7 @@ module.exports = function(api) {
 
   return {
     presets: [
-      ['@babel/preset-typescript'],
-      ['babel-preset-shopify/web', {modules: false}],
+      ['babel-preset-shopify/web', {modules: false, typescript: true}],
       ['babel-preset-shopify/react'],
     ],
   };

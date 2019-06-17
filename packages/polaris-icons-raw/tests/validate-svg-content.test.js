@@ -45,18 +45,18 @@ allIconFiles.forEach(
     describe(`SVG Contents: packages/${iconPath}`, () => {
       it(`has an xml namespace`, () => {
         const xmlns = select(':root', iconAst).properties.xmlns;
-        expect(xmlns).toEqual('http://www.w3.org/2000/svg');
+        expect(xmlns).toStrictEqual('http://www.w3.org/2000/svg');
       });
 
       it(`has a viewbox of "${expectedViewbox}"`, () => {
         const viewBox = select(':root', iconAst).properties.viewBox;
-        expect(viewBox).toEqual(expectedViewbox);
+        expect(viewBox).toStrictEqual(expectedViewbox);
       });
 
       it('has no groups (<g>) or masks (<mask>)', () => {
         const groupNodes = selectAll('g, mask', iconAst);
 
-        expect(nodeSources(groupNodes, iconSource)).toEqual([]);
+        expect(nodeSources(groupNodes, iconSource)).toStrictEqual([]);
       });
 
       it('tags are self-closing whenever possible', () => {
@@ -64,10 +64,9 @@ allIconFiles.forEach(
         const allNodeStrings = nodeSources(allNodes, iconSource);
 
         allNodes.forEach((node, i) => {
+          // eslint-disable-next-line shopify/jest/no-if
           if (node.children.length === 0) {
-            expect(allNodeStrings[i].includes(`</${node.tagName}>`)).toBe(
-              false,
-            );
+            expect(allNodeStrings[i]).not.toContain(`</${node.tagName}>`);
           }
         });
       });
@@ -78,7 +77,9 @@ allIconFiles.forEach(
           iconAst,
         );
 
-        expect(nodeSources(nodesWithUndefinedFill, iconSource)).toEqual([]);
+        expect(nodeSources(nodesWithUndefinedFill, iconSource)).toStrictEqual(
+          [],
+        );
       });
 
       it('only has <path>s that only use the [d, fill, fill-rule] attributes', () => {
@@ -91,9 +92,9 @@ allIconFiles.forEach(
           },
         );
 
-        expect(nodeSources(nodesWithDisallowedAttributes, iconSource)).toEqual(
-          [],
-        );
+        expect(
+          nodeSources(nodesWithDisallowedAttributes, iconSource),
+        ).toStrictEqual([]);
       });
 
       it('only has <polygon>s that only use the [fill, points] attributes', () => {
@@ -107,9 +108,9 @@ allIconFiles.forEach(
           return Object.keys(node.properties).some(propIsAllowed);
         });
 
-        expect(nodeSources(nodesWithDisallowedAttributes, iconSource)).toEqual(
-          [],
-        );
+        expect(
+          nodeSources(nodesWithDisallowedAttributes, iconSource),
+        ).toStrictEqual([]);
       });
 
       it('only has <circle>s that only use the [cx, cy, r, fill, fill-rule] attributes', () => {
@@ -123,9 +124,9 @@ allIconFiles.forEach(
           return Object.keys(node.properties).some(propIsAllowed);
         });
 
-        expect(nodeSources(nodesWithDisallowedAttributes, iconSource)).toEqual(
-          [],
-        );
+        expect(
+          nodeSources(nodesWithDisallowedAttributes, iconSource),
+        ).toStrictEqual([]);
       });
 
       const expectedFillsString = expectedFillColors.join(',');
@@ -136,7 +137,7 @@ allIconFiles.forEach(
           },
         );
 
-        expect(nodeSources(nodesWithInvalidFill, iconSource)).toEqual([]);
+        expect(nodeSources(nodesWithInvalidFill, iconSource)).toStrictEqual([]);
       });
     });
   },

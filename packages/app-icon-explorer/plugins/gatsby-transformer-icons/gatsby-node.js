@@ -1,4 +1,4 @@
-/* eslint-disable node/no-extraneous-require, camelcase */
+/* eslint-disable import/no-extraneous-dependencies, babel/camelcase */
 const fs = require('fs');
 const path = require('path');
 

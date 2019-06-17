@@ -23,11 +23,13 @@ describe('duplicate-content audit', () => {
   });
 
   it('has a name', () => {
-    expect(duplicateBasenames.auditName).toEqual('duplicate-content');
+    expect(duplicateBasenames.auditName).toStrictEqual('duplicate-content');
   });
 
   it('sets a pass status when there are no warnings', () => {
-    expect(duplicateBasenames(auditArgs(['icon1.svg', 'icon2.svg']))).toEqual({
+    expect(
+      duplicateBasenames(auditArgs(['icon1.svg', 'icon2.svg'])),
+    ).toStrictEqual({
       summary: 'Found 0 content hashes shared by multiple files',
       status: 'pass',
       info: '',
@@ -37,7 +39,7 @@ describe('duplicate-content audit', () => {
   it('warns when there is duplicate content', () => {
     const filenames = ['icon1.svg', 'icon2.svg', 'icon3.svg', 'icon4.svg'];
 
-    expect(duplicateBasenames(auditArgs(filenames))).toEqual({
+    expect(duplicateBasenames(auditArgs(filenames))).toStrictEqual({
       summary: 'Found 2 content hashes shared by multiple files',
       status: 'error',
       info: `  842c10e94df137b85999d5e25816fdd1 matches content used in 2 files:
@@ -64,7 +66,7 @@ describe('duplicate-content audit', () => {
     });
 
     it('compares against polaris-icon content', () => {
-      expect(duplicateBasenames(auditArgs(['icon1.svg']))).toEqual({
+      expect(duplicateBasenames(auditArgs(['icon1.svg']))).toStrictEqual({
         summary: 'Found 1 content hashes shared by multiple files',
         status: 'error',
         info: `  842c10e94df137b85999d5e25816fdd1 matches content used in 2 files:

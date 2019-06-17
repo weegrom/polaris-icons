@@ -27,11 +27,12 @@ Object.entries(allFiles).forEach(([basename, data]) => {
     it(`has an svg file and a yml file`, () => {
       const expectedData = {yml: true, 'svg.monotone': true};
 
+      // eslint-disable-next-line shopify/jest/no-if
       if (basename.includes('_major')) {
         expectedData['svg.twotone'] = true;
       }
 
-      expect(data).toEqual(expectedData);
+      expect(data).toStrictEqual(expectedData);
     });
   });
 });

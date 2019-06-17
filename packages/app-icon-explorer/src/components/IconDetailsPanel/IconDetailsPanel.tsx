@@ -71,7 +71,6 @@ function PopulatedState({icon}: PopulatedStateProps) {
   const activeStyle = icon.styles[selectedStyle] as StyleData;
   const packageName = icon.public ? 'polaris-icons' : 'polaris-icons-internal';
 
-  /* eslint-disable react/jsx-no-bind */
   const toggleContent =
     icon.set === 'major' ? (
       <div>
@@ -94,7 +93,6 @@ function PopulatedState({icon}: PopulatedStateProps) {
     ) : (
       undefined
     );
-  /* eslint-enable react/jsx-no-bind */
 
   const editMetadataContent = showBanner(icon) ? (
     <Banner>

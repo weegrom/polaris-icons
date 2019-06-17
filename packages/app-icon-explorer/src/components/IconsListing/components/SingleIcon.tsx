@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useCallback} from 'react';
 import classNames from 'classnames';
 import {stringify as qsStringify} from 'query-string';
 import {Caption, UnstyledLink} from '@shopify/polaris';
@@ -17,16 +17,16 @@ export default function SingleIcon({icon, isActive = false}: Props) {
     [styles.active]: isActive,
   });
 
-  const trackLink = () => {
+  const trackLink = useCallback(() => {
     if ((window as any).gtag) {
       (window as any).gtag('event', 'select_icon', {
-        /* eslint-disable-next-line camelcase */
+        /* eslint-disable-next-line babel/camelcase */
         event_category: 'icons',
-        /* eslint-disable-next-line camelcase */
+        /* eslint-disable-next-line babel/camelcase */
         event_label: icon.metadataId,
       });
     }
-  };
+  }, [icon.metadataId]);
 
   const queryParams = useContext(QueryParamsContext);
   const linkTo = `/?${qsStringify({icon: icon.metadataId, q: queryParams.q})}`;

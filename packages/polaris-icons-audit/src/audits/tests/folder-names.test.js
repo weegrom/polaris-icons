@@ -2,7 +2,7 @@ const folderNames = require('../folder-names');
 
 describe('folder-names audit', () => {
   it('has a name', () => {
-    expect(folderNames.auditName).toEqual('folder-names');
+    expect(folderNames.auditName).toStrictEqual('folder-names');
   });
 
   it('counts files in folders', () => {
@@ -15,7 +15,7 @@ describe('folder-names audit', () => {
       'foo/bar/baz/icons/icon1.svg',
     ];
 
-    expect(folderNames({filenames})).toEqual({
+    expect(folderNames({filenames})).toStrictEqual({
       summary: 'Found 6 svgs, placed into 3 folders',
       status: 'info',
       info: `  4 svgs found within a "icons" folder

@@ -15,7 +15,7 @@ function auditArgs(filenames) {
 
 describe('folder-names audit', () => {
   it('has a name', () => {
-    expect(iconContent.auditName).toEqual('icon-content');
+    expect(iconContent.auditName).toStrictEqual('icon-content');
   });
 
   it('has a filter that applies to icons only', () => {
@@ -25,11 +25,11 @@ describe('folder-names audit', () => {
       'illustrations/image1.svg',
     ].filter(iconContent.filter);
 
-    expect(filteredFilenames).toEqual(['icons/icon1.svg']);
+    expect(filteredFilenames).toStrictEqual(['icons/icon1.svg']);
   });
 
   it('sets a pass status when there are no warnings', () => {
-    expect(iconContent(auditArgs(['valid.svg']))).toEqual({
+    expect(iconContent(auditArgs(['valid.svg']))).toStrictEqual({
       summary: 'Found 0 icon svgs with unexpected content',
       status: 'pass',
       info: '',
@@ -37,7 +37,7 @@ describe('folder-names audit', () => {
   });
 
   it('warns about icons that have an invalid xml namespace', () => {
-    expect(iconContent(auditArgs(['invalid-xmlns.svg']))).toEqual({
+    expect(iconContent(auditArgs(['invalid-xmlns.svg']))).toStrictEqual({
       summary: 'Found 1 icon svgs with unexpected content',
       status: 'warn',
       info: `  invalid-xmlns.svg has 1 issues:
@@ -46,7 +46,7 @@ describe('folder-names audit', () => {
   });
 
   it('warns about icons that have an invalid viewbox', () => {
-    expect(iconContent(auditArgs(['invalid-viewbox.svg']))).toEqual({
+    expect(iconContent(auditArgs(['invalid-viewbox.svg']))).toStrictEqual({
       summary: 'Found 1 icon svgs with unexpected content',
       status: 'warn',
       info: `  invalid-viewbox.svg has 1 issues:
@@ -55,7 +55,7 @@ describe('folder-names audit', () => {
   });
 
   it('warns about icons that use invalid fill colors', () => {
-    expect(iconContent(auditArgs(['invalid-fill.svg']))).toEqual({
+    expect(iconContent(auditArgs(['invalid-fill.svg']))).toStrictEqual({
       summary: 'Found 1 icon svgs with unexpected content',
       status: 'warn',
       info: `  invalid-fill.svg has 1 issues:
@@ -73,7 +73,7 @@ describe('folder-names audit', () => {
       'invalid-everything.svg',
     ]);
 
-    expect(iconContent(args)).toEqual({
+    expect(iconContent(args)).toStrictEqual({
       summary: 'Found 4 icon svgs with unexpected content',
       status: 'warn',
       info: `  invalid-xmlns.svg has 1 issues:

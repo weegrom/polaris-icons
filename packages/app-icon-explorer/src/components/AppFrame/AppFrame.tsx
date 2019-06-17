@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {AppProvider, Frame, TopBar, UnstyledLinkProps} from '@shopify/polaris';
 import {ShortcutProvider, Shortcut} from '@shopify/react-shortcuts';
 import {Link as InternalLink} from 'gatsby';
@@ -34,29 +34,39 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export default function AppFrame(props: Props) {
+export default function AppFrame({
+  queryParams,
+  searchText,
+  onSearchChange,
+  onSearchBlur,
+  onSearchCancel,
+  children,
+}: Props) {
   const [searchIsFocused, setSearchIsFocused] = useState(false);
 
-  function handleSearchChange(value: string) {
-    props.onSearchChange(value);
-  }
+  const handleSearchChange = useCallback(
+    (value: string) => {
+      onSearchChange(value);
+    },
+    [onSearchChange],
+  );
 
-  function handleSearchBlur() {
+  const handleSearchBlur = useCallback(() => {
     setSearchIsFocused(false);
-    if (props.onSearchBlur) {
-      props.onSearchBlur();
+    if (onSearchBlur) {
+      onSearchBlur();
     }
-  }
+  }, [onSearchBlur]);
 
-  function handleSearchCancel() {
-    if (props.onSearchCancel) {
-      props.onSearchCancel();
+  const handleSearchCancel = useCallback(() => {
+    if (onSearchCancel) {
+      onSearchCancel();
     }
-  }
+  }, [onSearchCancel]);
 
-  function triggerSearchFocus() {
+  const triggerSearchFocus = useCallback(() => {
     setSearchIsFocused(true);
-  }
+  }, [setSearchIsFocused]);
 
   const searchFieldMarkup = (
     <TopBar.SearchField
@@ -64,7 +74,7 @@ export default function AppFrame(props: Props) {
       onChange={handleSearchChange}
       onBlur={handleSearchBlur}
       onCancel={handleSearchCancel}
-      value={props.searchText}
+      value={searchText}
       placeholder="Search"
     />
   );
@@ -72,11 +82,11 @@ export default function AppFrame(props: Props) {
   const topBarMarkup = <TopBar searchField={searchFieldMarkup} />;
 
   return (
-    <QueryParamsContext.Provider value={props.queryParams}>
+    <QueryParamsContext.Provider value={queryParams}>
       <AppProvider theme={theme} linkComponent={Link}>
         <ShortcutProvider>
           <Shortcut ordered={['s']} onMatch={triggerSearchFocus} />
-          <Frame topBar={topBarMarkup}>{props.children}</Frame>
+          <Frame topBar={topBarMarkup}>{children}</Frame>
         </ShortcutProvider>
       </AppProvider>
     </QueryParamsContext.Provider>

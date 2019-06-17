@@ -9,13 +9,13 @@ describe('duplicate-basenames audit', () => {
   });
 
   it('has a name', () => {
-    expect(duplicateBasenames.auditName).toEqual('duplicate-basenames');
+    expect(duplicateBasenames.auditName).toStrictEqual('duplicate-basenames');
   });
 
   it('sets a pass status when there are no warnings', () => {
     const filenames = ['foo/icons/icon1.svg', 'foo/icons/icon2.svg'];
 
-    expect(duplicateBasenames({filenames})).toEqual({
+    expect(duplicateBasenames({filenames})).toStrictEqual({
       summary: 'Found 0 basenames shared by multiple files',
       status: 'pass',
       info: '',
@@ -33,7 +33,7 @@ describe('duplicate-basenames audit', () => {
       'baz/icons/add.svg',
     ];
 
-    expect(duplicateBasenames({filenames})).toEqual({
+    expect(duplicateBasenames({filenames})).toStrictEqual({
       summary: 'Found 2 basenames shared by multiple files',
       status: 'warning',
       info: `  icon1 is used in 3 files:
@@ -63,7 +63,7 @@ describe('duplicate-basenames audit', () => {
       'zug/icons/icon2.svg',
     ];
 
-    expect(duplicateBasenames({filenames})).toEqual({
+    expect(duplicateBasenames({filenames})).toStrictEqual({
       summary: 'Found 1 basenames shared by multiple files',
       status: 'warning',
       info: `  icon1 is used in 12 files:
@@ -88,7 +88,7 @@ describe('duplicate-basenames audit', () => {
 
       const filenames = ['foo/icons/icon1.svg'];
 
-      expect(duplicateBasenames({filenames})).toEqual({
+      expect(duplicateBasenames({filenames})).toStrictEqual({
         summary: 'Found 1 basenames shared by multiple files',
         status: 'warning',
         info: `  icon1 is used in 2 files:
@@ -105,7 +105,7 @@ describe('duplicate-basenames audit', () => {
 
       const filenames = ['foo/icons/icon2.svg'];
 
-      expect(duplicateBasenames({filenames})).toEqual({
+      expect(duplicateBasenames({filenames})).toStrictEqual({
         summary: 'Found 0 basenames shared by multiple files',
         status: 'pass',
         info: ``,
