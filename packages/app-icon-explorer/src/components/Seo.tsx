@@ -32,10 +32,6 @@ export default function Seo({
 }: Props) {
   const data = useStaticQuery(detailsQuery);
   const metaDescription = description || data.site.siteMetadata.description;
-  const titleTemplate =
-    title === data.site.siteMetadata.title
-      ? data.site.siteMetadata.title
-      : data.site.siteMetadata.titleTemplate;
 
   return (
     <Helmet
@@ -43,7 +39,8 @@ export default function Seo({
         lang,
       }}
       title={title}
-      titleTemplate={titleTemplate}
+      defaultTitle={data.site.siteMetadata.title}
+      titleTemplate={data.site.siteMetadata.titleTemplate}
       link={[
         {
           rel: 'icon',

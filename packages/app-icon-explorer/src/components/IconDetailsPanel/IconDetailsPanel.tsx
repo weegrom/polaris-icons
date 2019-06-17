@@ -264,7 +264,6 @@ function stringifyAliases(aliases: string[]) {
 function EmptyState() {
   return (
     <div className={styles.empty}>
-      <Seo title="Polaris icons" />
       <div>
         <TextStyle variation="subdued">Choose an icon to begin</TextStyle>
       </div>
