@@ -213,7 +213,7 @@ function PopulatedState({icon}: PopulatedStateProps) {
         <div>
           <Link
             url={ghNewIssueUrl(
-              'submit-changes-to-an-existing-icon.md',
+              'suggest-changes-to-an-existing-icon.md',
               `[Submission] ${icon.metadataFilename} changes`,
               ['Update'],
             )}

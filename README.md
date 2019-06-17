@@ -40,7 +40,7 @@ If you can’t find the icon you need, you can [suggest a new icon](https://gith
 
 ### Suggest changes to an icon
 
-If you notice an existing icon that’s out-of-date or needs improvements, you can [suggest changes](https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=submit-changes-to-an-existing-icon.md&title=%5BSubmission%5D) to that icon.
+If you notice an existing icon that’s out-of-date or needs improvements, you can [suggest changes](https://github.com/Shopify/polaris-icons/issues/new?assignees=&labels=Update&template=suggest-changes-to-an-existing-icon.md&title=%5BSubmission%5D) to that icon.
 
 ### Submit feedback
 
