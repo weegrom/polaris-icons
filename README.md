@@ -2,6 +2,8 @@
 
 Polaris icons are simple and informative icons that draw on the visual language of the [Polaris design system](https://polaris.shopify.com). Use these icons in your projects or third-party apps to promote a consistent experience across the Shopify platform.
 
+Browse and search Polaris icons: <https://polaris-icons.shopify.com>.
+
 ## On this page
 
 - [Packages](#packages)
@@ -18,7 +20,7 @@ The Polaris icons repository contains a set of packages. The packages are all re
 - [**`@shopify/polaris-icons-internal`**](./packages/polaris-icons-internal) - Exports a JavaScript file containing the Polaris icons that are for Shopify use only. This package is published to Shopify’s private npm registry.
 - [**`@shopify/polaris-icons-raw`**](./packages/polaris-icons-raw) - Contains SVG files for the Polaris icons. This is a helper package that’s imported by the [`polaris-icons`](./packages/polaris-icons) and [`polaris-icons-internal`](./packages/polaris-icons-internal) packages, and is published to Shopify's private npm registry.
 - [**`@shopify/polaris-icons-audit`**](./packages/polaris-icons-audit) - A command line utility that can be run by any project to generate an audit of SVG usage. This package is published to the [public npm registry](https://www.npmjs.com/package/@shopify/polaris-icons).
-- [**`app-icon-explorer`**](./packages/app-icon-explorer) - A [Gatsby static website](https://polaris-icons.shopify.com) that displays the Polaris icons in the [`polaris-icons-raw`](./packages/polaris-icons-raw) package in an interactive, user-friendly way. This is a private package that’s not published to npm.
+- [**`app-icon-explorer`**](./packages/app-icon-explorer) - A [Gatsby](https://www.gatsbyjs.org) static website hosted at <https://polaris-icons.shopify.com> that displays the Polaris icons in the [`polaris-icons-raw`](./packages/polaris-icons-raw) package in an interactive, user-friendly way. This is a private package that’s not published to npm.
 
 ## Implementing icons
 
