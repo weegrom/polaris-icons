@@ -2,7 +2,9 @@
 
 [![npm version](https://img.shields.io/npm/v/@shopify/polaris-icons.svg?style=flat)](https://www.npmjs.com/package/@shopify/polaris-icons)
 
-> This package exports a JavaScript file containing the Polaris icons that can be used by partners building on the Shopify platform.
+> This package exports a JavaScript file containing the Polaris icons that can be used by partners building on the Shopify platform, and contains SVG files in the [`/images/` directory](https://unpkg.com/@shopify/polaris-icons/images/).
+
+Browse and search Polaris icons: <https://polaris-icons.shopify.com>.
 
 ## Getting started
 
