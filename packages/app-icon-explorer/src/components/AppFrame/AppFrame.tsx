@@ -80,7 +80,7 @@ export default function AppFrame({
       onBlur={handleSearchBlur}
       onCancel={handleSearchCancel}
       value={searchText}
-      placeholder="Search"
+      placeholder="Search icons"
     />
   );
 
