@@ -54,4 +54,4 @@ Education around icon creation is coming soon. For now, see our [icon creation g
 
 ## Questions?
 
-If you’ve got any questions, head over to the `#polaris-icons` channel on Slack. Or for any questions or feedback about [Polaris icons UI](https://polaris-icons.shopify.com), head over to `#polaris-tooling`.
+If you’ve got any questions, head over to the `#polaris-icons` channel on Slack. Or for any questions or feedback about [Polaris icons explorer](https://polaris-icons.shopify.com), head over to `#polaris-tooling`.

@@ -44,7 +44,7 @@ If you notice an existing icon that’s out-of-date or needs improvements, you c
 
 ### Submit feedback
 
-We welcome your feedback about the [Polaris icons UI](https://polaris-icons.shopify.com/). [Let us know](https://github.com/Shopify/polaris-icons/issues/new?assignees=HYPD&labels=&template=feedback-for-polaris-icons-ui.md&title=%5BFeedback%5D) about bugs, typos, or any suggestions you have that might help us to evolve this tool.
+We welcome your feedback about the [Polaris icons explorer](https://polaris-icons.shopify.com/). [Let us know](https://github.com/Shopify/polaris-icons/issues/new?assignees=HYPD&labels=&template=feedback-for-polaris-icons-ui.md&title=%5BFeedback%5D) about bugs, typos, or any suggestions you have that might help us to evolve this tool.
 
 To learn more about contributing to Polaris icons, see our [contributing guide](https://github.com/Shopify/polaris-icons/blob/master/CONTRIBUTING.md). 👀
 

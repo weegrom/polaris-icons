@@ -8,7 +8,7 @@ const iconsPath = dirname(
 
 module.exports = {
   siteMetadata: {
-    title: `Polaris icons`,
+    title: `Polaris icons explorer`,
     description: `The collection of icons that we use across the Shopify platform.`,
     author: `Shopify`,
     titleTemplate: `%s - Polaris icons`,
@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Polaris icons`,
-        short_name: `Polaris icons`,
+        name: `Polaris icons explorer`,
+        short_name: `Polaris icons explorer`,
         start_url: `/`,
         display: `minimal-ui`,
         // This path is relative to the root of the site.
