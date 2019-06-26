@@ -2,7 +2,7 @@
 
 > This package is a Gatsby static website that displays the Polaris icons in the `polaris-icons-raw` package in an interactive, user-friendly way.
 
-Use the [Polaris icons explorer](https://polaris-icons.shopify.com) to discover and implement Polaris icons in your projects.
+Use the [Polaris icon explorer](https://polaris-icons.shopify.com) to discover and implement Polaris icons in your projects.
 
 ## Development
 
