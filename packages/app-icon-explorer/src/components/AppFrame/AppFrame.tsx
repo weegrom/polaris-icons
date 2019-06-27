@@ -8,6 +8,7 @@ import {
 import {ShortcutProvider, Shortcut} from '@shopify/react-shortcuts';
 import {Link as InternalLink} from 'gatsby';
 import {OutboundLink} from 'gatsby-plugin-google-gtag';
+import styles from './AppFrame.module.scss';
 
 import {QueryParamsContext, IQueryParamsContext} from './context';
 import '@shopify/polaris/styles.scss';
@@ -84,7 +85,28 @@ export default function AppFrame({
     />
   );
 
-  const topBarMarkup = <TopBar searchField={searchFieldMarkup} />;
+  const topBarMarkup = (
+    <TopBar
+      searchField={searchFieldMarkup}
+      userMenu={
+        <OutboundLink
+          className={styles.developers}
+          href="https://developers.shopify.com/"
+        >
+          developers.shopify.com{' '}
+          <svg
+            className={styles.triangle}
+            aria-hidden="true"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 7 7"
+          >
+            <path d="M7,7V0H0L7,7z" />
+          </svg>
+        </OutboundLink>
+      }
+    />
+  );
 
   return (
     <QueryParamsContext.Provider value={queryParams}>

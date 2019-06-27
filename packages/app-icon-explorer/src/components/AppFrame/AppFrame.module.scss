@@ -1,0 +1,28 @@
+@import '~@shopify/polaris-tokens/dist/colors';
+
+.developers {
+  flex-shrink: 0;
+  margin-right: 1.6em;
+  padding: 0.6rem 0;
+
+  color: $color-ink;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.6rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.developers svg {
+  height: 7px;
+  width: 7px;
+  vertical-align: super;
+  fill: $color-ink-lightest;
+  transition: fill, 300ms;
+}
+
+.developers:hover svg {
+  fill: $color-ink;
+}
