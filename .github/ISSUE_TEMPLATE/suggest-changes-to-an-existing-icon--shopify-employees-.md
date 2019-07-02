@@ -1,5 +1,5 @@
 ---
-name: Suggest changes to an existing icon
+name: Suggest changes to an existing icon (Shopify employees)
 about: For modifications of existing icons already in Polaris icons
 title: "[Suggestion]"
 labels: Update

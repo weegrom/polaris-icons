@@ -1,17 +1,17 @@
 ---
-name: Suggest changes to an existing icon
-about: For modifications of existing icons already in Polaris icons
-title: "[Suggestion]"
-labels: Update
+name: Suggest a new icon (Shopify employees)
+about: For adding new icons to Polaris icons
+title: "[Suggestion] Icon name"
+labels: New
 assignees: ''
 
 ---
 
 <!--
-Follow this template to change an existing icon.
+Follow this template to suggest a new icon.
 
-You should already understand the impact of this change,
-where the icon is used, etc.
+First check Abstract or https://polaris-icons.shopify.com
+to see if the icon you need already exists.
 
 Any questions?
 - https://vault.shopify.com/Polaris-icon-creation-guidelines
@@ -22,13 +22,9 @@ Any questions?
 
 @yourslackhandle
 
-### Original icon name
+### What team and project is this for?
 
-arrow down (minor)
-
-### When would you like it by?
-
-DD/MM/YYYY
+Team - Project
 
 ### How will this icon be used?
 
@@ -41,10 +37,10 @@ creating this icon, and any additional context.
 
 <!--
 Make sure you’ve created a branch with your new icon
-inside of Abstract (Polaris - Icons project) and link it here
+inside of Abstract (Polaris - Icons project) and link it here.
 -->
 
-### Updated icon SVG
+### Icon SVG
 
 <!--
 Link to the SVG file (you can host it in Google Drive)
@@ -55,13 +51,14 @@ or paste the SVG code below:
 <svg xmlns="http://www.w3.org/2000/svg" ...
 ```
 
-### Icon metadata (optional)
+### Icon metadata
 
 <!--
-If the icon metadata needs to be updated,
-copy and paste it from the appropriate `.yml` file, located in:
+If you’re adding a new icon, the following metadata needs
+to be completed before we can accept this contribution.
+
+You can find example metadata files in any `.yml` file here:
 https://github.com/Shopify/polaris-icons/tree/master/packages/polaris-icons-raw/icons/polaris
-then apply the changes below.
 -->
 
 ```yml

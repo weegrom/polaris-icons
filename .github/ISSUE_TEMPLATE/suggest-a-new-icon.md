@@ -1,9 +1,10 @@
 ---
 name: Suggest a new icon
 about: For adding new icons to Polaris icons
-title: '[Suggestion] Icon name'
+title: "[Suggestion] Icon name"
 labels: New
 assignees: ''
+
 ---
 
 <!--
